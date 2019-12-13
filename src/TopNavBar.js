@@ -4,10 +4,43 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Slide from '@material-ui/core/Slide';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import { Box } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+// import Slide from '@material-ui/core/Slide';
 
-function HideOnScroll(props) {
-    const { children } = props;
+function ScaleOnScroll(props) {
+    const { children, initialSize, finalSize } = props;
     const trigger = useScrollTrigger();
+
+    const normalStyle = makeStyles({
+        root: {
+            transition: 'font-size 0.5s',
+            fontSize: initialSize
+        }
+    });
+    
+    const scaledStyle = makeStyles({
+        root: {
+            transition: 'font-size 0.5s',
+            fontSize: finalSize
+        }
+    });    
+
+    if (!trigger) {
+        const classes = normalStyle();
+        return  (
+            <Box classes={{ root: classes.root }}>
+                {children}
+            </Box>
+        );   
+    } else {
+        const classes = scaledStyle();
+        return (
+            <Box classes={{ root: classes.root }}>
+                {children}
+            </Box>
+        );
+    }
 
     return (
         <Slide appear={false} direction="down" in={!trigger}>
@@ -18,15 +51,18 @@ function HideOnScroll(props) {
 
 function NavBar(props) {
     return (
-        <HideOnScroll>
+        <Slide in={true}>
             <AppBar>
-                <Toolbar>
-                    <Typography variant="h5">
-                        TRYST
-                    </Typography>
+                <Toolbar variant="dense">
+                        {/* ScaleOnScroll animates NavBar font here */}
+                        <Typography variant="h6">
+                            	<ScaleOnScroll initialSize={40} finalSize={20}>
+                                    TRYST
+                                </ScaleOnScroll>
+                        </Typography>
                 </Toolbar>
             </AppBar>
-        </HideOnScroll>
+        </Slide>
     )
 }
 
