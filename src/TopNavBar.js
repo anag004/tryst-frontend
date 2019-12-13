@@ -7,7 +7,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { Box } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import NavBarButton from './NavBarButton';
-
+import EventDropDown from './EventDropDown';
 
 function ScaleOnScroll(props) {
     const { children, initialSize, finalSize } = props;
@@ -66,7 +66,7 @@ function NavBar(props) {
                                 </ScaleOnScroll>
                         </Typography>
                         <NavBarButton>Home</NavBarButton>
-                        <NavBarButton>Events</NavBarButton>
+                        <EventDropDown/>
                         <NavBarButton>About Us</NavBarButton>
                         <NavBarButton>Login</NavBarButton>
                 </Toolbar>
