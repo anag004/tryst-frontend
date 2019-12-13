@@ -1,8 +1,6 @@
-import React, { Children } from 'react';
-import ButtonBase from '@material-ui/core/ButtonBase';
+import React from 'react';
 import { makeStyles } from "@material-ui/core/styles";
 import { Button } from '@material-ui/core';
-import { withStyles } from '@material-ui/core/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 

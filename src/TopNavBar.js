@@ -6,10 +6,8 @@ import Slide from '@material-ui/core/Slide';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import { Box } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
 import NavBarButton from './NavBarButton';
-import ButtonGroup from '@material-ui/core/ButtonGroup';
-import { green, purple } from '@material-ui/core/colors';
+
 
 function ScaleOnScroll(props) {
     const { children, initialSize, finalSize } = props;
@@ -47,12 +45,6 @@ function ScaleOnScroll(props) {
             </Box>
         );
     }
-
-    return (
-        <Slide appear={false} direction="down" in={!trigger}>
-            {children}
-        </Slide>
-    );
 }
 
 const useStyles = makeStyles(theme => ({
