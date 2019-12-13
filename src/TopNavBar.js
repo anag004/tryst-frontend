@@ -18,7 +18,10 @@ function ScaleOnScroll(props) {
     const normalStyle = makeStyles({
         root: {
             transition: 'font-size 0.5s',
-            fontSize: initialSize
+            fontSize: 20,
+            '@media (min-width:600px)': {
+                fontSize: initialSize,
+            }
         }
     });
     

@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Button } from '@material-ui/core';
 import { withStyles } from '@material-ui/core/styles';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 // Code to style the ripples
 // const rippleStyles = makeStyles({
@@ -25,18 +26,16 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 const largeButtonStyle = makeStyles(theme => ({
     root: {
         transition: 'all 0.5s',
-        color: theme.palette.getContrastText(theme.palette.primary.light),
-        backgroundColor: theme.palette.primary.light,
-        marginRight: theme.spacing(2)
+        color: theme.palette.getContrastText(theme.palette.primary.dark),
+        marginRight: theme.spacing(2),
     },
   }));
 
 const smallButtonStyle = makeStyles(theme => ({
     root: {
         transition: 'all 0.5s',
-        color: theme.palette.getContrastText(theme.palette.primary.light),
-        backgroundColor: theme.palette.primary.light,
-        marginRight: theme.spacing(1)
+        color: theme.palette.getContrastText(theme.palette.primary.dark),
+        marginRight: theme.spacing(1),
     },
 }));
 
@@ -45,8 +44,9 @@ function NavBarButton(props) {
     const classesLarge = largeButtonStyle();
     const classesSmall = smallButtonStyle();
     const trigger = useScrollTrigger();
-    
-    if (!trigger) {
+    const largeScreen = useMediaQuery('(min-width:600px)');
+
+    if (!trigger && largeScreen) {
         return (
             <Button className={classesLarge.root} size="large" {...others}>
                 {children}
