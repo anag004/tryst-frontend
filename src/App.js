@@ -6,7 +6,7 @@ import SignUp from "./Form/SignUp"
 import SignIn from "./Form/SignIn"
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ImageBanner from './ImageBanner';
-
+import PageSection from './PageSection';
 
 const theme = createMuiTheme({
   palette: {
@@ -14,7 +14,15 @@ const theme = createMuiTheme({
     secondary: { main: '#4CAF50' }
   }
 });
-
+const events=[
+  { image:"https://source.unsplash.com/random", Title:"Robo Fights"},
+  { image:"https://source.unsplash.com/random", Title:"2"},
+  { image:"https://source.unsplash.com/random", Title:"3"},
+  { image:"https://source.unsplash.com/random", Title:"4"},
+  { image:"https://source.unsplash.com/random", Title:"5"},
+  { image:"https://source.unsplash.com/random", Title:"6"},
+  { image:"https://source.unsplash.com/random", Title:"7"},
+]
 const mainFeaturedPost = {
   title: 'Events @Tryst',
   description:
@@ -31,10 +39,24 @@ function App() {
           <React.Fragment>
             <NavBar/>
             <ImageBanner post={mainFeaturedPost} />
-            <DummyText/>
-    
-            <SignIn/>
-            <SignUp/>
+            <PageSection 
+              heading="Event Section 1"
+              headingAlignment="center"
+              containerBackgroundColor="green"
+              subheading="Here lies subheading"
+              subheadingAlignment="right"
+              events={events}
+              textColor="white"
+            />
+            <PageSection 
+              heading="Event Section 1"
+              headingAlignment="center"
+              containerBackgroundColor="green"
+              subheading="Here is your subheading"
+              subheadingAlignment="right"
+              events={events}
+              textColor="white"
+            />
           </React.Fragment>
         </ThemeProvider>
   );
