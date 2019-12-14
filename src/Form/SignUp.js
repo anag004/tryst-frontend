@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from 'react'
-import { Button, TextField, MenuItem, FormControl, Grid } from '@material-ui/core';
+import { Button, TextField, MenuItem, FormControl, Grid, Typography, Link } from '@material-ui/core';
 export default class Form extends Component{
     state={
         data:{
@@ -77,6 +77,9 @@ export default class Form extends Component{
         ];
         return(
             <Fragment>
+                <Typography component="h1" variant="h5">
+                    Sign Up
+                </Typography>
                 <form onSubmit={this.handleSubmit}>
                     <FormControl style={{margin:10,width:300}}>
                         <Grid container spacing={2}>
@@ -194,6 +197,14 @@ export default class Form extends Component{
                         <Button className=".zoom" type="submit" variant="contained" color="primary" component="span" >
                             Submit
                         </Button>
+                        <br/>
+                        <Grid container>
+                            <Grid item xs >
+                                <Link href="#" variant="body2">
+                                    Already a User? Sign In
+                                </Link>
+                            </Grid>
+                        </Grid>
                     </FormControl>
                 </form>
             </Fragment>

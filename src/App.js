@@ -2,6 +2,8 @@ import React from 'react';
 import './App.css';
 import NavBar from "./TopNavBar";
 import DummyText from "./DummyText";
+import SignUp from "./Form/SignUp"
+import SignIn from "./Form/SignIn"
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
 
@@ -17,7 +19,8 @@ function App() {
         <ThemeProvider theme={theme}>
           <React.Fragment>
             <NavBar/>
-            <DummyText/>
+            <SignIn/>
+            <SignUp/>
           </React.Fragment>
         </ThemeProvider>
   );
