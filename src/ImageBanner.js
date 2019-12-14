@@ -28,6 +28,7 @@ const useStyles = makeStyles(theme => ({
     imageBannerContent: {
       position: 'relative',
       padding: theme.spacing(3),
+      marginTop: theme.spacing(5),
       [theme.breakpoints.up('md')]: {
         padding: theme.spacing(6),
         paddingRight: 0,
