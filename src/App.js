@@ -4,7 +4,7 @@ import NavBar from "./TopNavBar";
 import DummyText from "./DummyText";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ImageBanner from './ImageBanner';
-
+import PageSection from './PageSection';
 
 const theme = createMuiTheme({
   palette: {
@@ -29,7 +29,11 @@ function App() {
           <React.Fragment>
             <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} />
-            <DummyText/>
+            <PageSection 
+              heading="Event Section 1"
+              headingAlignment="center"
+              containerBackgroundColor="black"
+            />
           </React.Fragment>
         </ThemeProvider>
   );
