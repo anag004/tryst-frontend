@@ -65,7 +65,7 @@ export default class Form extends Component{
                                     helperText={this.state.errors.email}
                                     onBlur={()=>this.isDisabled("email")}
                                     autoComplete="email"
-                                    autoFocus
+                                    
                                 />
                             </Grid>
                             <Grid item xs={12}>
