@@ -26,7 +26,7 @@ function ScaleOnScroll(props) {
     const scaledStyle = makeStyles({
         root: {
             transition: 'font-size 0.5s',
-            fontSize: finalSize
+            fontSize: finalSize,
         }
     });    
 
@@ -93,7 +93,7 @@ function NavBar(props) {
 
     return (
         <Slide in={true}>
-            <AppBar classes={ scrollPosition ? {} : classesAppBarTransparent } className={classesAppBarTransition} {...others}>
+            <AppBar classes={ scrollPosition ? {} : classesAppBarTransparent } className={classesAppBarTransition} elevation={scrollPosition ? 4 : 0} {...others}>
                 <Toolbar variant="dense">
                         {/* ScaleOnScroll animates NavBar font here */}
                         <Typography variant="h6" className={classes.title}>
