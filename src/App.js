@@ -14,12 +14,12 @@ const theme = createMuiTheme({
 });
 
 const mainFeaturedPost = {
-  title: 'Title of a longer featured blog post',
+  title: 'Events @Tryst',
   description:
-    "Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.",
+    "We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor.",
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
-  linkText: 'Continue reading…',
+  linkText: 'Continue Reading...'
 };
 
 

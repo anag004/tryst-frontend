@@ -5,6 +5,7 @@ import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+import Fade from '@material-ui/core/Fade';
 
 const useStyles = makeStyles(theme => ({
     imageBanner: {
@@ -48,15 +49,21 @@ const useStyles = makeStyles(theme => ({
         <Grid container>
           <Grid item md={6}>
             <div className={classes.imageBannerContent}>
-              <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                {post.title}
-              </Typography>
-              <Typography variant="h5" color="inherit" paragraph>
-                {post.description}
-              </Typography>
-              <Link variant="subtitle1" href="#">
-                {post.linkText}
-              </Link>
+              <Fade in={true} timeout={1000}>
+                  <Typography component="h1" variant="h3" color="inherit" gutterBottom>
+                    {post.title}
+                  </Typography>
+              </Fade>
+              <Fade in={true} timeout={2000}>
+                  <Typography variant="h5" color="inherit" paragraph>
+                    {post.description}
+                  </Typography>
+              </Fade>
+              <Fade in={true} timeout={3000}>
+                  <Link variant="subtitle1" href="#">
+                    {post.linkText}
+                  </Link>
+              </Fade>
             </div>
           </Grid>
         </Grid>
