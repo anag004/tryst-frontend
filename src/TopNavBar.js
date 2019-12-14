@@ -22,11 +22,11 @@ function ScaleOnScroll(props) {
             }
         }
     });
-    
+
     const scaledStyle = makeStyles({
         root: {
             transition: 'font-size 0.5s',
-            fontSize: finalSize
+            fontSize: finalSize,
         }
     });    
 
@@ -54,10 +54,46 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function NavBar(props) {
+    const { threshold, ...others } = props;
+
+    const handleScroll = (event) => {
+        const currScrollPosition = window.pageYOffset > threshold;
+        if (currScrollPosition != scrollPosition) {
+            setScrollPosition(currScrollPosition);
+        }
+    }
+
+    const [scrollPosition, setScrollPosition] = React.useState(null);
+
+    window.addEventListener('scroll', handleScroll);
+
+    const appBarStyleTransparent = makeStyles({
+        root: {
+            backgroundColor: 'transparent'
+        }
+    });
+
+    const appBarStyleOpaque = makeStyles({
+        root: {
+            transition: 'all 0.5s'
+        }
+    });
+
+    const appBarTransition = makeStyles({
+        root: {
+            transition: 'all 0.5s'
+        }
+    });
+
     const classes = useStyles();
+    const classesAppBarTransparent = appBarStyleTransparent();
+    // const classesAppBarOpaque = appBarStyleOpaque();
+    const classesAppBarOpaque = {};
+    const classesAppBarTransition = appBarTransition();
+
     return (
         <Slide in={true}>
-            <AppBar>
+            <AppBar classes={ scrollPosition ? {} : classesAppBarTransparent } className={classesAppBarTransition} elevation={scrollPosition ? 4 : 0} {...others}>
                 <Toolbar variant="dense">
                         {/* ScaleOnScroll animates NavBar font here */}
                         <Typography variant="h6" className={classes.title}>

@@ -81,12 +81,10 @@ function EventDropDown(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = event => {
-        console.log("CLICK CALLED");
         setAnchorEl(event.currentTarget);
     }
 
     const handleClose = event => {
-        console.log("CLOSE CALLED");
         setAnchorEl(null);
     }
 
