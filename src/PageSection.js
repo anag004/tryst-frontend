@@ -3,7 +3,8 @@ import React, { useState } from 'react';
 import Container from '@material-ui/core/Container';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
-import { Paper, Card, Grid, CardMedia, CardContent, Fade, Link } from '@material-ui/core';
+import { Fade, Link } from '@material-ui/core';
+import MyCard from './MyCard'
 
 function PageSection(props) {
     const { heading, headingAlignment, containerBackgroundColor, subheading, subheadingAlignment, textColor, events, ...others } = props;
@@ -17,18 +18,6 @@ function PageSection(props) {
             marginLeft:"20px",
             marginTop:"20px",
         },
-        card: {
-            // width:300,
-            height:320,
-            margin:10
-        },
-        cardMedia: {
-            paddingTop: '56.25%', // 16:9
-            height:"30%"
-        },
-        cardContent: {
-            flexGrow: 1,
-        },
         scrollingWrapper:{
             overflowX: "scroll",
             overflowY: "hidden",
@@ -38,7 +27,8 @@ function PageSection(props) {
             display: "inline-block",
             width:280,
             height:370,
-            margin:10
+            margin:15,
+            overflow:"hidden"
         },
     });
     const [onHover,setOnHover]=useState(false);
@@ -57,17 +47,7 @@ function PageSection(props) {
                     <div className={classes.scrollingWrapper}>
                         {events.map(obj=>(//link for the specific event. 
                             <Link className={classes.scrollingCards} href="#">
-                                <Card className={classes.card} >
-                                    <CardMedia
-                                        className={classes.cardMedia}
-                                        image={obj.image}
-                                    />
-                                    <CardContent className={classes.cardContent}>
-                                        <Typography gutterBottom variant="h5" component="h2" color={textColor}>
-                                            {obj.Title}
-                                        </Typography>
-                                    </CardContent>
-                                </Card> 
+                                 <MyCard event={obj} textColor={textColor}/>
                             </Link>
                         ))}
                     </div>
