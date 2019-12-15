@@ -2,7 +2,7 @@ import React, { useState, Fragment } from 'react';
 import { Card, CardMedia, CardContent, Typography, Zoom} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 
-function PageSection(props) {
+function MyCard(props) {
     const {event, textColor, ...others } = props;
     const [onHover,setOnHover]=useState(false);
 
@@ -43,4 +43,4 @@ function PageSection(props) {
     );
 }
 
-export default PageSection;
+export default MyCard;
