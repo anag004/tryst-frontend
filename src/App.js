@@ -46,7 +46,7 @@ function App() {
               subheading="Here lies subheading"
               subheadingAlignment="right"
               events={events}
-              textColor="white"
+              textColor="white" 
             />
             <PageSection 
               heading="Event Section 1"

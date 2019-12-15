@@ -15,8 +15,10 @@ function PageSection(props) {
             color:textColor,
             padding:"20px",
             paddingLeft:"30px",
-            marginLeft:"20px",
-            marginTop:"20px",
+            marginTop:10,
+            width:"100%",
+        
+            backgroundSize: 'cover',
         },
         scrollingWrapper:{
             overflowX: "scroll",
@@ -36,7 +38,7 @@ function PageSection(props) {
     const classes = useStyle();
 
     return (
-        <Container className={classes.root} onMouseEnter={()=>{setOnHover(true)}} onMouseLeave={()=>setOnHover(false)}>
+        <Container className={classes.root} maxWidth="false" onMouseEnter={()=>{setOnHover(true)}} onMouseLeave={()=>setOnHover(false)}>
             <Link href="#" color="inherit">
 {/*this link is for the event category page.*/}
                 <Typography variant="h2" align={headingAlignment} color="inherit" >{heading}</Typography>
