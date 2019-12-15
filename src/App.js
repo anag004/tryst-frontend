@@ -31,8 +31,10 @@ function App() {
             <ImageBanner post={mainFeaturedPost} />
             <PageSection 
               heading="Event Section 1"
-              headingAlignment="center"
-              containerBackgroundColor="black"
+              headingAlignment="left"
+              containerBackgroundColor="white"
+              textColor="black"
+              description="This is the first event category at tryst. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula mauris, tempor ut turpis eget, congue ullamcorper nisi."
             />
           </React.Fragment>
         </ThemeProvider>
