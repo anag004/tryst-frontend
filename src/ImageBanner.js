@@ -23,12 +23,15 @@ const useStyles = makeStyles(theme => ({
       bottom: 0,
       right: 0,
       left: 0,
-      backgroundColor: 'rgba(0,0,0,.3)',
+      background: `linear-gradient(
+        rgba(0, 0, 0, 0.9),
+        rgba(0,0, 0, 0.3)
+      )`
     },
     imageBannerContent: {
       position: 'relative',
       padding: theme.spacing(3),
-      marginTop: theme.spacing(5),
+      margin: theme.spacing(8),
       [theme.breakpoints.up('md')]: {
         padding: theme.spacing(6),
         paddingRight: 0,
