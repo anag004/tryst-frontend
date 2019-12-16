@@ -34,7 +34,7 @@ function App() {
             <PageSection 
               heading="Event Section 1"
               headingAlignment="center"
-              containerBackgroundColor="grey"
+              containerBackgroundColor="white"
               textColor="black"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
             >
@@ -58,7 +58,18 @@ function App() {
               textColor="white"
               description="This is the second event category at tryst. Lorem ipsum dolor sit amet. "
             >
-                
+                <EventCardRow>
+                    <SimpleGrid n="3"/>
+                </EventCardRow>
+                <EventCardRow>
+                    <SimpleGrid n="2"/>
+                </EventCardRow>
+                <EventCardRow>
+                    <SimpleGrid n="3"/>
+                </EventCardRow>
+                <EventCardRow>
+                    <SimpleGrid n="4"/>
+                </EventCardRow>
             </PageSection> */}
           </React.Fragment>
         </ThemeProvider>

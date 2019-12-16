@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ({
     container: {
-        margin: theme.spacing(3)
+        margin: theme.spacing(1)
     }
 }));
 
@@ -13,8 +13,10 @@ export default function EventCardRow(props) {
     const classes = useStyles();
     
     return (
-        <Grid container spacing={2} className={classes.container} {...others}>
-            {children}
-        </Grid>
+        <div style={{ paddingLeft:0, paddingRight:20 }}>
+            <Grid container spacing={2} className={classes.container} {...others}>
+                {children}
+            </Grid>
+        </div>
     )
 }

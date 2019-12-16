@@ -20,8 +20,6 @@ function PageSection(props) {
             backgroundColor: containerBackgroundColor,
             color: textColor,
             padding: theme.spacing(3),
-            margin: 0,
-            width: '100%'
         },
     }));
 
@@ -30,7 +28,7 @@ function PageSection(props) {
 
     return (
         <ThemeProvider theme={theme}>
-            <Container {...others} classes={classes}>
+            <Container {...others} classes={classes} maxWidth={false}> 
                 <Fade in={true}>
                     <Typography variant="h3" align={headingAlignment}>{heading}</Typography>
                 </Fade>
