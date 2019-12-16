@@ -47,30 +47,24 @@ function App() {
                 <EventCardRow>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
-                <EventCardRow>
-                    <SimpleGrid n="4"/>
-                </EventCardRow>
             </PageSection>
-            {/* <PageSection 
+            <PageSection 
               heading="Event Section 2"
               headingAlignment="center"
-              containerBackgroundColor="black"
+              containerBackgroundColor="#7BC5AE"
               textColor="white"
               description="This is the second event category at tryst. Lorem ipsum dolor sit amet. "
             >
                 <EventCardRow>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
                 <EventCardRow>
-                    <SimpleGrid n="2"/>
+                    <SimpleGrid n="2" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
                 <EventCardRow>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
-                <EventCardRow>
-                    <SimpleGrid n="4"/>
-                </EventCardRow>
-            </PageSection> */}
+            </PageSection>
           </React.Fragment>
         </ThemeProvider>
   );
