@@ -31,7 +31,7 @@ function App() {
   return (
         <ThemeProvider theme={theme}>
           <React.Fragment>
-            <NavBar/>
+            <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} />
             <PageSection 
               heading="Event Section 1"
