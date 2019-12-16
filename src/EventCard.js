@@ -17,7 +17,6 @@ export default function EventCard(props) {
     const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, others } = props;
     const useStyles = makeStyles((theme) => ({
         root: {
-            borderRadius: '0px',
             backgroundColor: backgroundColor ? backgroundColor : "white",
         },
         media: {
