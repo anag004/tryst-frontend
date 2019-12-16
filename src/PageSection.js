@@ -7,127 +7,22 @@ import EventCard from './EventCard';
 import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 import Fade from '@material-ui/core/Fade';
 import { borders } from '@material-ui/system';
+import SimpleGrid from './SimpleGrid';
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 
-function getRandomNumber(lowerBound, higherBound, snapping) {
-    const diff = (higherBound - lowerBound) / snapping;
-    return lowerBound + diff * Math.floor(snapping * Math.random());
-}
-
-// Returns a grid of cards for demo purposes
-function SimpleGrid(props) {
-    const {n} = props;
-    let arr = [];
-
-    for (let i = 0; i < n; i++) {
-        arr.push(i);
-    }
-
-    
-    const maxHeight = 800;
-    const dummyText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula mauris, tempor ut turpis eget, congue ullamcorper nisi. Praesent ac venenatis quam. Proin porta velit at pharetra maximus. Quisque at augue fringilla, tincidunt elit sit amet, vestibulum eros. Duis eu diam volutpat, ullamcorper mauris feugiat, porttitor odio. Pellentesque leo mi, pulvinar eu condimentum ut, viverra eu enim. Curabitur maximus nisl quis augue consequat, et mollis velit pretium. Nulla faucibus ac augue eget gravida.`;
-
-
-    return (
-        <>
-            <React.Fragment>
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={4}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={4}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={4}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={6}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={3}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={3}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={3}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={6}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={3}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={8}
-                />
-                <EventCard
-                    maxHeight={maxHeight} 
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
-                    xs={4}
-                />
-            </React.Fragment>
-        </>
-    );
-}
-
 function PageSection(props) {
-    const { heading, headingAlignment, containerBackgroundColor, textColor, description,...others } = props;
+    const { heading, headingAlignment, containerBackgroundColor, textColor, description, children, ...others } = props;
 
     const useStyle = makeStyles((theme) => ({
         root: {
             backgroundColor: containerBackgroundColor,
             color: textColor,
             padding: theme.spacing(3),
+            margin: 0,
+            width: '100%'
         },
-
-        container: {
-            margin: theme.spacing(3)
-        }
     }));
 
     const classes = useStyle();
@@ -142,9 +37,7 @@ function PageSection(props) {
                 <Fade in={true}> 
                     <Typography variant="h5" align={headingAlignment}>{description}</Typography>
                 </Fade>
-                <Grid container spacing={2} className={classes.container} justify="space-between">
-                    <SimpleGrid n="10"/>
-                </Grid>
+                {children}
             </Container>
         </ThemeProvider>
     );

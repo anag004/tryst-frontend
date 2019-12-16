@@ -5,6 +5,8 @@ import DummyText from "./DummyText";
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ImageBanner from './ImageBanner';
 import PageSection from './PageSection';
+import EventCardRow from './EventCardRow'
+import SimpleGrid from './SimpleGrid';
 
 const theme = createMuiTheme({
   palette: {
@@ -32,10 +34,32 @@ function App() {
             <PageSection 
               heading="Event Section 1"
               headingAlignment="center"
-              containerBackgroundColor="white"
+              containerBackgroundColor="grey"
               textColor="black"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
-            />
+            >
+                <EventCardRow>
+                    <SimpleGrid n="3"/>
+                </EventCardRow>
+                <EventCardRow>
+                    <SimpleGrid n="2"/>
+                </EventCardRow>
+                <EventCardRow>
+                    <SimpleGrid n="3"/>
+                </EventCardRow>
+                <EventCardRow>
+                    <SimpleGrid n="4"/>
+                </EventCardRow>
+            </PageSection>
+            {/* <PageSection 
+              heading="Event Section 2"
+              headingAlignment="center"
+              containerBackgroundColor="black"
+              textColor="white"
+              description="This is the second event category at tryst. Lorem ipsum dolor sit amet. "
+            >
+                
+            </PageSection> */}
           </React.Fragment>
         </ThemeProvider>
   );
