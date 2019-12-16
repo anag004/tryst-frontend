@@ -16,9 +16,6 @@ import Box from '@material-ui/core/Box';
 export default function EventCard(props) {
     const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, others } = props;
     const useStyles = makeStyles((theme) => ({
-        card: {
-            flexGrow: 0.5
-        },
         root: {
             borderRadius: '0px',
             backgroundColor: backgroundColor ? backgroundColor : "white",
@@ -29,7 +26,7 @@ export default function EventCard(props) {
     }));
     const classes = useStyles();
     return (
-            <Grid item xs={xs}>
+            <Grid item xs>
                 <Zoom>
                     <Card className={classes.card} classes={classes} >
                         <CardActionArea>
