@@ -4,9 +4,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import EventCard from './EventCard';
-
 import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
-
+import Fade from '@material-ui/core/Fade';
 
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
@@ -32,12 +31,17 @@ function PageSection(props) {
     return (
         <ThemeProvider theme={theme}>
             <Container {...others} classes={classes}>
-                <Typography variant="h3" align={headingAlignment}>{heading}</Typography>
-                <Typography variant="h5" align={headingAlignment}>{description}</Typography>
+                <Fade in={true}>
+                    <Typography variant="h3" align={headingAlignment}>{heading}</Typography>
+                </Fade>
+                <Fade in={true}> 
+                    <Typography variant="h5" align={headingAlignment}>{description}</Typography>
+                </Fade>
                 <Grid container spacing={2} className={classes.container}>
                         {cards.map(() => 
                             <Grid item>
                                 <EventCard
+                                    maxWidth={200} maxHeight={200}
                                     cardHeading = "Bubba Grump Shrimp Co."
                                     cardDescription = "Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging across all continents except Antarctica"
                                     cardImage = "http://source.unsplash.com/collection/146130/random"
