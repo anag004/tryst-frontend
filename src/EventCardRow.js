@@ -9,12 +9,12 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function EventCardRow(props) {
-    const {children, clickAction, ...others} = props;
+    const {children, clickHandler, ...others} = props;
     const classes = useStyles();
     
     return (
         <div style={{ paddingLeft:0, paddingRight:20 }}>
-            <Grid container spacing={2} className={classes.container} onClick={clickAction} {...others}>
+            <Grid container spacing={2} className={classes.container} onClick={clickHandler} {...others}>
                 {children}
             </Grid>
         </div>

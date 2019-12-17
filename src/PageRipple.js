@@ -16,24 +16,26 @@ const useStyles = makeStyles((theme) => ({
 }));    
 
 export default function PageRipple(props) {
-    const { activated, positionX, positionY, ...others } = props;
+    const { activated, positionX, positionY, screenWidth, screenHeight, ...others } = props;
     const classes = useStyles();
+    const maxDimension = Math.max(screenWidth, screenHeight) * Math.sqrt(2);
 
     const splash = keyframes`
         0% {
-            top: 50%;
-            left: 50%;
-            width: 1%;
-            height: 1%;
+            top: ${positionY}px;
+            left: ${positionX}px;
+            width: 1px;
+            height: 1px;
             border-radius: 50%;
         }
       
         100% {
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
+            top: ${(screenHeight - maxDimension) / 2}px;
+            left: ${(screenWidth - maxDimension) / 2}px;
+            width: ${maxDimension}px;
+            height: ${maxDimension}px;
             border-radius: 20%;
+            background-color: white;
         }
     `;
 
@@ -47,7 +49,7 @@ export default function PageRipple(props) {
         left: -50%;
         width: 200%;
         height: 200%;
-        border-radius: 20%;
+        border-radius: 50%;
     `;
 
     if (activated) {

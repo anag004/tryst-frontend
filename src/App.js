@@ -53,15 +53,26 @@ const pageSectionNamesWithIds=[
 
 function App() {
   const [activateRippleEffect, setActivateRippleEffect] = React.useState(false);
+  const [positionX, setPositionX] = React.useState(false);
+  const [positionY, setPositionY] = React.useState(false);
+  const [screenWidth, setScreenWidth] = React.useState(false);
+  const [screenHeight, setScreenHeight] = React.useState(false);
 
   const handleClick = (event) => {
     setActivateRippleEffect(true);
+    setPositionX(event.clientX); setPositionY(event.clientY);
+    setScreenWidth(window.innerWidth); setScreenHeight(window.innerHeight);
   }
 
   return (
         <ThemeProvider theme={theme}>
           <React.Fragment>
-            <PageRipple activated={activateRippleEffect}/>
+            <PageRipple activated={activateRippleEffect} 
+                        positionX={positionX} 
+                        positionY={positionY} 
+                        screenHeight={screenHeight} 
+                        screenWidth={screenWidth}
+            />
             <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             <PageSection 
@@ -72,13 +83,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="1"
             >
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick}>
                     <SimpleGrid n="2"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
             </PageSection>
@@ -90,13 +101,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="2"
             >
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="2" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
             </PageSection>
@@ -108,13 +119,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="3"
             >
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
             </PageSection>
@@ -126,13 +137,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="4"
             >
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="2"/>
                 </EventCardRow>
-                <EventCardRow onClick={handleClick}>
+                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
             </PageSection>
