@@ -41,10 +41,10 @@ const useStyles = makeStyles(theme => ({
 
   export default function ImageBanner(props) {
     const classes = useStyles();
-    const { post } = props;
+    const { post, ...others } = props;
   
     return (
-      <Paper className={classes.imageBanner} style={{ backgroundImage: `url(${post.image})` }}>
+      <Paper className={classes.imageBanner} style={{ backgroundImage: `url(${post.image})` }} {...others}>
         {/* Increase the priority of the hero background image */}
         {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
         <div className={classes.overlay} />

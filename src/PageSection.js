@@ -29,13 +29,15 @@ function PageSection(props) {
     return (
         <ThemeProvider theme={theme}>
             <Container {...others} classes={classes} maxWidth={false}> 
-                <Fade in={true}>
-                    <Typography variant="h3" align={headingAlignment}>{heading}</Typography>
-                </Fade>
-                <Fade in={true}> 
-                    <Typography variant="h5" align={headingAlignment}>{description}</Typography>
-                </Fade>
-                {children}
+                <Container>
+                    <Fade in={true}>
+                        <Typography variant="h3" align={headingAlignment}>{heading}</Typography>
+                    </Fade>
+                    <Fade in={true}> 
+                        <Typography variant="h5" align={headingAlignment}>{description}</Typography>
+                    </Fade>
+                    {children}
+                </Container>
             </Container>
         </ThemeProvider>
     );
