@@ -9,7 +9,8 @@ import ImageBanner from './ImageBanner';
 import PageSection from './PageSection';
 import EventCardRow from './EventCardRow'
 import SimpleGrid from './SimpleGrid';
-import CategorySpeedDial from './CategorySpeedDial'
+import CategorySpeedDial from './CategorySpeedDial';
+import PageRipple from './PageRipple';
 
 const theme = createMuiTheme({
   palette: {
@@ -49,10 +50,18 @@ const pageSectionNamesWithIds=[
     id: "0"
   } 
 ]
+
 function App() {
+  const [activateRippleEffect, setActivateRippleEffect] = React.useState(false);
+
+  const handleClick = (event) => {
+    setActivateRippleEffect(true);
+  }
+
   return (
         <ThemeProvider theme={theme}>
           <React.Fragment>
+            <PageRipple activated={activateRippleEffect}/>
             <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             <PageSection 
@@ -63,13 +72,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="1"
             >
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="2"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
             </PageSection>
@@ -81,13 +90,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="2"
             >
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="2" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
             </PageSection>
@@ -99,13 +108,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="3"
             >
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
             </PageSection>
@@ -117,13 +126,13 @@ function App() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="4"
             >
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="2"/>
                 </EventCardRow>
-                <EventCardRow>
+                <EventCardRow onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
             </PageSection>

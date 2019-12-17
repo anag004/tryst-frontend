@@ -11,6 +11,8 @@ import Typography from '@material-ui/core/Typography';
 import Zoom from 'react-reveal';
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
+import { IconButton } from '@material-ui/core';
+import ShareIcon from '@material-ui/icons/Share';
 
 
 export default function EventCard(props) {
@@ -39,15 +41,6 @@ export default function EventCard(props) {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                        {   /* UNCOMMENT TO GET BUTTONS */
-                            /* <CardActions>
-                                <Button size="small" color="primary">
-                                    Register
-                                </Button>
-                                <Button size="small" color="primary">
-                                    Learn More
-                                </Button>
-                            </CardActions> */}
                     </Card>
                 </Zoom>
             </Grid>
