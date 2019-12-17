@@ -29,7 +29,7 @@ function PageSection(props) {
     return (
         <ThemeProvider theme={theme}>
             <Container {...others} classes={classes} maxWidth={false}> 
-                <Container>
+                <Container maxWidth="md">
                     <Fade in={true}>
                         <Typography variant="h3" align={headingAlignment}>{heading}</Typography>
                     </Fade>
