@@ -27,30 +27,32 @@ const mainFeaturedPost = {
 
 const pageSectionNamesWithIds=[
   {
-    name:"Workshops",
-    id:"1"
+    name:"Section4",
+    id:"4"
   },
   {
-    name:"Competitions",
-    id:"2"
-  },
-  {
-    name:"Lectures",
+    name:"Section3",
     id:"3"
   },
   {
-    name:"More",
-    id:"4"
+    name:"Section2",
+    id:"2"
   },
-    
-    
+  {
+    name:"Section1",
+    id:"1"
+  },
+  {
+    name: "Home",
+    id: "0"
+  } 
 ]
 function App() {
   return (
         <ThemeProvider theme={theme}>
           <React.Fragment>
             <NavBar threshold={10}/>
-            <ImageBanner post={mainFeaturedPost} />
+            <ImageBanner post={mainFeaturedPost} id="0"/>
             <PageSection 
               heading="Event Section 1"
               headingAlignment="center"
