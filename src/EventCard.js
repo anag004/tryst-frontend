@@ -39,14 +39,15 @@ export default function EventCard(props) {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                        {/* <CardActions>
-                            <Button size="small" color="primary">
-                                Register
-                            </Button>
-                            <Button size="small" color="primary">
-                                Learn More
-                            </Button>
-                        </CardActions> */}
+                        {   /* UNCOMMENT TO GET BUTTONS */
+                            /* <CardActions>
+                                <Button size="small" color="primary">
+                                    Register
+                                </Button>
+                                <Button size="small" color="primary">
+                                    Learn More
+                                </Button>
+                            </CardActions> */}
                     </Card>
                 </Zoom>
             </Grid>
