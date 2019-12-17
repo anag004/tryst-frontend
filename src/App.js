@@ -20,6 +20,9 @@ function App() {
             <Route path="/events">
               <EventsPage/>
             </Route>
+            <Route path="/">
+              <EventsPage/>
+            </Route>
           </Switch>
         </Router>
   );
