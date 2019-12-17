@@ -13,10 +13,10 @@ import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
 import ShareIcon from '@material-ui/icons/Share';
+import { withRouter } from 'react-router-dom';
 
-
-export default function EventCard(props) {
-    const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, others } = props;
+function EventCard(props) {
+    const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, others } = props;
     const useStyles = makeStyles((theme) => ({
         root: {
             backgroundColor: backgroundColor ? backgroundColor : "white",
@@ -25,12 +25,17 @@ export default function EventCard(props) {
             height: 140,
         },
     }));
+    
     const classes = useStyles();
+    const handleClick = () => {
+        setTimeout(() => history.push('/event/1') , 600);
+    } 
+
     return (
             <Grid item xs>
                 <Zoom>
                     <Card className={classes.card} classes={classes} >
-                        <CardActionArea>
+                        <CardActionArea onClick={handleClick}>
                             <CardMedia className={classes.media} image={cardImage} {...others}/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
@@ -46,3 +51,5 @@ export default function EventCard(props) {
             </Grid>
     );
 }
+
+export default withRouter(EventCard);
