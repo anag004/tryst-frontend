@@ -19,7 +19,6 @@ const useStyles = makeStyles(theme => ({
     right:0,
   },
 }));
-// const actions = [{name:"1",id:"1"},{name:"2",id:"2"},{name:"3",id:"3"},{name:"4",id:"4"}];
 
 export default function CategorySpeedDial(props) {
     const {actions,...others}=props
@@ -37,7 +36,7 @@ export default function CategorySpeedDial(props) {
     const handleClick=(action)=>{
         var x=document.getElementById(action.id).offsetTop
         x=x-50        //nav bar offset
-        window.scrollTo(0, x) 
+        window.scrollTo({left:0, top:x, behavior:'smooth'}) 
     }
     return (
       <React.Fragment>
