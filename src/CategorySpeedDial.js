@@ -3,6 +3,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import Backdrop from '@material-ui/core/Backdrop';
+import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
 
 
 const useStyles = makeStyles(theme => ({
@@ -38,25 +40,28 @@ export default function CategorySpeedDial(props) {
         window.scrollTo(0, x) 
     }
     return (
-    <div className={classes.root}>
-        <SpeedDial
-        ariaLabel="SpeedDial openIcon example"
-        className={classes.speedDial}
-        icon={<NavigationIcon rotate={90}/>}
-        onClose={handleClose}
-        onOpen={handleOpen}
-        open={open}
-        >
-        {actions.map(action => (
-            <SpeedDialAction
-                key={action.name}
-                icon={action.icon}
-                tooltipTitle={action.name}
-                onClick={()=>{handleClick(action)}}
-                tooltipOpen
-            />
-        ))}
-        </SpeedDial>
-    </div>
+      <React.Fragment>
+        <Backdrop open={open} />
+        <div className={classes.root}>
+            <SpeedDial
+              ariaLabel="SpeedDial openIcon example"
+              className={classes.speedDial}
+              icon={<SpeedDialIcon icon={<NavigationIcon/>}/>}
+              onClose={handleClose}
+              onOpen={handleOpen}
+              open={open}
+            >
+            {actions.map(action => (
+                <SpeedDialAction
+                    key={action.name}
+                    icon={action.icon}
+                    tooltipTitle={action.name}
+                    onClick={()=>{handleClick(action)}}
+                    tooltipOpen
+                />
+            ))}
+            </SpeedDial>
+        </div>
+      </React.Fragment>
     );
 }

@@ -127,7 +127,7 @@ function App() {
               <CategorySpeedDial actions={pageSectionNamesWithIds}/>
             </div>
           </React.Fragment>
-        </ThemeProvider>
+      </ThemeProvider>
   );
 }
 
