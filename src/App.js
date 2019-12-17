@@ -74,37 +74,37 @@ function App() {
             <PageSection 
               heading="Event Section 2"
               headingAlignment="center"
-              containerBackgroundColor="white"
-              textColor="black"
+              containerBackgroundColor="#7BC5AE"
+              textColor="white"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="2"
             >
                 <EventCardRow>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
                 <EventCardRow>
-                    <SimpleGrid n="2"/>
+                    <SimpleGrid n="2" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
                 <EventCardRow>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
               heading="Event Section 3"
               headingAlignment="center"
-              containerBackgroundColor="white"
-              textColor="black"
+              containerBackgroundColor="#A67F78"
+              textColor="white"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="3"
             >
                 <EventCardRow>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
                 <EventCardRow>
-                    <SimpleGrid n="2"/>
+                  <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
                 <EventCardRow>
-                    <SimpleGrid n="3"/>
+                  <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
