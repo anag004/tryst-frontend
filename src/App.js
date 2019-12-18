@@ -15,10 +15,19 @@ function App() {
         <Router>
           <Switch>
             <Route path="/event/1">
-              <EventDetail heading="Super Event" containerBackgroundColor="green" textColor="white"/>
+              <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
+            </Route>
+            <Route path="/event/2">
+              <EventDetail heading="Super Event" containerBackgroundColor="#7BC5AE" textColor="white"/>
+            </Route>
+            <Route path="/event/3">
+              <EventDetail heading="Super Event" containerBackgroundColor="#A67F78" textColor="white"/>
             </Route>
             <Route path="/events">
               <EventsPage/>
+            </Route>
+            <Route path="/event/4">
+              <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
             </Route>
             <Route path="/">
               <EventsPage/>

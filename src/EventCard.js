@@ -16,7 +16,7 @@ import ShareIcon from '@material-ui/icons/Share';
 import { withRouter } from 'react-router-dom';
 
 function EventCard(props) {
-    const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, others } = props;
+    const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, others } = props;
     const useStyles = makeStyles((theme) => ({
         root: {
             backgroundColor: backgroundColor ? backgroundColor : "white",
@@ -28,7 +28,8 @@ function EventCard(props) {
     
     const classes = useStyles();
     const handleClick = () => {
-        setTimeout(() => history.push('/event/1') , 600);
+        console.log("PUSHING " + linkTo);
+        setTimeout(() => history.push(linkTo) , 600);
     } 
 
     return (

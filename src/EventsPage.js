@@ -59,7 +59,7 @@ export default function EventsPage() {
   const [screenHeight, setScreenHeight] = React.useState(false);
   const [transitionColor,setTransitionColor] = React.useState("green");
 
-  const color1="green",color2="#7BC5AE",color3="#A67F78", color4="white"; 
+  const color1="white",color2="#7BC5AE",color3="#A67F78", color4="white"; 
 
   const handleClick = (event) => {
     setActivateRippleEffect(true);
@@ -89,13 +89,13 @@ export default function EventsPage() {
               id="1"
             >
                 <EventCardRow data-color={color1}  clickHandler={handleClick}>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" linkTo="/event/1"/>
                 </EventCardRow>
                 <EventCardRow data-color={color1} clickHandler={handleClick}>
-                    <SimpleGrid n="2"/>
+                    <SimpleGrid n="2" linkTo="/event/1"/>
                 </EventCardRow>
                 <EventCardRow data-color={color1} clickHandler={handleClick}>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" linkTo="/event/1"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
@@ -107,13 +107,13 @@ export default function EventsPage() {
               id="2"
             >
                 <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
-                    <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
+                    <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
                 </EventCardRow>
                 <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
-                    <SimpleGrid n="2" backgroundColor="#D1EDE1"/>
+                    <SimpleGrid n="2" backgroundColor="#D1EDE1" linkTo="/event/2"/>
                 </EventCardRow>
                 <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
-                    <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
+                    <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
@@ -125,13 +125,13 @@ export default function EventsPage() {
               id="3"
             >
                 <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
-                    <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
+                    <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
                 </EventCardRow>
                 <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
-                  <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
+                  <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
                 </EventCardRow>
                 <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
-                  <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
+                  <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
@@ -143,13 +143,13 @@ export default function EventsPage() {
               id="4"
             >
                 <EventCardRow data-color={color4}  clickHandler={handleClick} onClick={handleClick}>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" linkTo="/event/4"/>
                 </EventCardRow>
                 <EventCardRow data-color={color4} clickHandler={handleClick} onClick={handleClick}>
-                    <SimpleGrid n="2"/>
+                    <SimpleGrid n="2" linkTo="/event/4"/>
                 </EventCardRow>
                 <EventCardRow data-color={color4} clickHandler={handleClick} onClick={handleClick}>
-                    <SimpleGrid n="3"/>
+                    <SimpleGrid n="3" linkTo="/event/4"/>
                 </EventCardRow>
             </PageSection>
             <div style={{position:"fixed", bottom:40,right:40}}>
