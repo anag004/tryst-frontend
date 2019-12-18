@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
 }));    
 
 export default function PageRipple(props) {
-    const { activated, positionX, positionY, screenWidth, screenHeight, ...others } = props;
+    const { activated, positionX, positionY, screenWidth, screenHeight,backgroundColor, ...others } = props;
     const classes = useStyles();
     const maxDimension = Math.max(screenWidth, screenHeight) * Math.sqrt(2);
 
@@ -35,13 +35,13 @@ export default function PageRipple(props) {
             width: ${maxDimension}px;
             height: ${maxDimension}px;
             border-radius: 20%;
-            background-color: white;
+            background-color: ${backgroundColor};
         }
     `;
 
     const Splash = styled.div`
         position: fixed;
-        background-color: white;
+        background-color:  ${backgroundColor};
         animation-name: ${splash};
         animation-duration: 0.5s;
         animation-timing-function: ease-in-out;

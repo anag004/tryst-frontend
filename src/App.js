@@ -15,7 +15,7 @@ function App() {
         <Router>
           <Switch>
             <Route path="/event/1">
-              <EventDetail heading="Super Event"/>
+              <EventDetail heading="Super Event" containerBackgroundColor="green" textColor="white"/>
             </Route>
             <Route path="/events">
               <EventsPage/>

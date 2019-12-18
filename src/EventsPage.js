@@ -57,11 +57,15 @@ export default function EventsPage() {
   const [positionY, setPositionY] = React.useState(false);
   const [screenWidth, setScreenWidth] = React.useState(false);
   const [screenHeight, setScreenHeight] = React.useState(false);
+  const [transitionColor,setTransitionColor] = React.useState("green");
+
+  const color1="green",color2="#7BC5AE",color3="#A67F78", color4="white"; 
 
   const handleClick = (event) => {
     setActivateRippleEffect(true);
     setPositionX(event.clientX); setPositionY(event.clientY);
     setScreenWidth(window.innerWidth); setScreenHeight(window.innerHeight);
+    setTransitionColor(event.currentTarget.dataset.color)
   }
 
   return (
@@ -72,78 +76,79 @@ export default function EventsPage() {
                         positionY={positionY} 
                         screenHeight={screenHeight} 
                         screenWidth={screenWidth}
+                        backgroundColor={transitionColor}
             />
             <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             <PageSection 
               heading="Event Section 1"
               headingAlignment="center"
-              containerBackgroundColor="white"
+              containerBackgroundColor={color1}
               textColor="black"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="1"
             >
-                <EventCardRow clickHandler={handleClick}>
+                <EventCardRow data-color={color1}  clickHandler={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick}>
+                <EventCardRow data-color={color1} clickHandler={handleClick}>
                     <SimpleGrid n="2"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick}>
+                <EventCardRow data-color={color1} clickHandler={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
               heading="Event Section 2"
               headingAlignment="center"
-              containerBackgroundColor="#7BC5AE"
+              containerBackgroundColor={color2}
               textColor="white"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="2"
             >
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="2" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
               heading="Event Section 3"
               headingAlignment="center"
-              containerBackgroundColor="#A67F78"
+              containerBackgroundColor={color3}
               textColor="white"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="3"
             >
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9"/>
                 </EventCardRow>
             </PageSection>
             <PageSection 
               heading="Event Section 4"
               headingAlignment="center"
-              containerBackgroundColor="white"
+              containerBackgroundColor={color4}
               textColor="black"
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="4"
             >
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color4}  clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color4} clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="2"/>
                 </EventCardRow>
-                <EventCardRow clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color4} clickHandler={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3"/>
                 </EventCardRow>
             </PageSection>
