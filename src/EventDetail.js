@@ -33,17 +33,17 @@ export default function EventDetail(props) {
     return (
         <Container maxWidth="false" classes={classes}>
             <div className={classes.imageBanner}>
-                <Fade in={true} timeout={1000}> 
+                <Fade in={true} timeout={500}> 
                     <ImageBanner post={post}/>
                 </Fade>
             </div>
-            <Fade in={true} timeout={2000} className={classes.heading}>
+            <Fade in={true} timeout={1000} className={classes.heading}>
                 <Typography variant="h2" color="inherit" paragraph>
                     {post.title}
                 </Typography>
             </Fade>
             <br/>
-            <Fade in={true} timeout={2000}>
+            <Fade in={true} timeout={1500}>
                 <Typography variant="h5" color="inherit" paragraph>
                     {post.description}
                 </Typography>

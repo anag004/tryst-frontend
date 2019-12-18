@@ -43,7 +43,7 @@ export default function PageRipple(props) {
         position: fixed;
         background-color:  ${backgroundColor};
         animation-name: ${splash};
-        animation-duration: 0.5s;
+        animation-duration: 0.3s;
         animation-timing-function: ease-in-out;
         top: -50%;
         left: -50%;
