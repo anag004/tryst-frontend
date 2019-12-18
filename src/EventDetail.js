@@ -2,6 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Container, makeStyles, Fade } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
+import Fade from '@material-ui/core/Fade';
 
 export default function EventDetail(props) {
     const {heading, containerBackgroundColor,textColor, ...others} = props;
