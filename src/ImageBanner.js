@@ -56,7 +56,7 @@ const useStyles = makeStyles(theme => ({
                     {post.title}
                   </Typography>
               </Fade>
-              {/* <Fade in={true} timeout={2000}>
+              <Fade in={true} timeout={2000}>
                   <Typography variant="h5" color="inherit" paragraph>
                     {post.description}
                   </Typography>
@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
                   <Link variant="subtitle1" href="#">
                     {post.linkText}
                   </Link>
-              </Fade> */}
+              </Fade>
             </div>
           </Grid>
         </Grid>
