@@ -1,57 +1,48 @@
-import React, { Component } from 'react'
-import { Button, TextField, FormControl, Grid, Typography, Link, Container } from '@material-ui/core';
-export default class Form extends Component{
-    state={
-        data:{
-            email:"",
-            password:""
-        },
-        errors:{
-            email:"",
-            password:""
-        },
+import React, { Component, useState } from 'react'
+import { Button, TextField, FormControl, Grid, Typography, Link, Container, makeStyles, Paper } from '@material-ui/core';
+
+const useStyle = makeStyles (() => ({
+    overlay:{
+        position: 'relative',
         
-    }
-    handleChange=name=>({target:{value}})=>{
-        this.setState({
-            data:{
-                ...this.state.data,
-                [name]:value
-            }
-        })
-    }
-    isDisabled=name=>{//validation
-        const errors=this.state.errors;
-        const data=this.state.data
-        const emailRegex=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-        switch(name){
-            case "password":
-                errors.password=data.password.length<8?"Password must be at least 8 characters long":"";
-                break;
-            case "email":
-                errors.email=data.email.length===0||!emailRegex.test(data.email)?"Invalid Email":"";
-                break;
-            default:
-                break;
+    },
+    paper:{
+        position:"absolute",
+        bottom:0,
+        top:0,
+        left:0,
+        right:0,
+        backgroundColor:"#D5D3D6"
+    },
+    input:{
+        "&:-webkit-autofill": {
+            WebkitBoxShadow: "0 0 0 1000px #D5D3D6 inset"
         }
-        this.setState({
-            ...this.state,
-            errors
-        })
     }
-    handleSubmit=()=>{
+    
+}))
+export default function SignIn(){
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+    const [emailError,setEmailError]=useState("");
+    const [passwordError,setPasswordError]=useState("");
+    const emailRegex=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    
+    const handleSubmit=()=>{
         //to do
     }
-    render(){
-        const {email,password} =this.state.data
-        return(
-            <Container maxWidth="xs">
-                <Typography component="h1" variant="h5">
+    
+    const classes=useStyle();
+    return(
+        <Paper className={classes.paper}>
+            <Container maxWidth="xs"className={classes.overlay} >
+                <Typography component="h1" variant="h3">
                     Sign In
                 </Typography>
-                <form onSubmit={this.handleSubmit}>
+                <br/>
+                <form onSubmit={handleSubmit}>
                     <FormControl style={{margin:10}}>
-                        <Grid container>
+                        <Grid container className={classes.grid}>
                             <Grid item xs={12}>
                                 <TextField
                                     id="email"
@@ -59,15 +50,18 @@ export default class Form extends Component{
                                     value={email}
                                     required
                                     fullWidth
+                                    inputProps={{ className: classes.input }}
                                     variant="outlined"
-                                    onChange={this.handleChange('email')}
-                                    error={this.state.errors.email.length===0?false:true}
-                                    helperText={this.state.errors.email}
-                                    onBlur={()=>this.isDisabled("email")}
+                                    onChange={e=>setEmail(e.target.value)}
+                                    error={emailError.length===0?false:true}
+                                    helperText={emailError}
+                                    onBlur={()=>{setEmailError(email.length===0||!emailRegex.test(email)?"Invalid Email":"")}}
                                     autoComplete="email"
                                     autoFocus
                                 />
+                                
                             </Grid>
+                            <br/>
                             <Grid item xs={12}>
                                 <br/>
                                 <TextField
@@ -76,12 +70,13 @@ export default class Form extends Component{
                                     placeholder="At least 8 characters long"
                                     value={password}
                                     required
+                                    inputProps={{ className: classes.input }}
                                     variant="outlined"
                                     fullWidth
-                                    onChange={this.handleChange('password')}
-                                    error={this.state.errors.password.length===0?false:true}
-                                    helperText={this.state.errors.password}
-                                    onBlur={()=>this.isDisabled("password")}
+                                    onChange={e=>setPassword(e.target.value)}
+                                    error={passwordError.length===0?false:true}
+                                    helperText={passwordError}
+                                    onBlur={()=>setPasswordError(password.length<8?"Password must be at least 8 characters long":"")}
                                     type="password"
                                     autoComplete="current-password"
                                 />
@@ -106,6 +101,6 @@ export default class Form extends Component{
                     </FormControl>
                 </form>
             </Container>
-        )
-    }
+        </Paper>
+    )
 }

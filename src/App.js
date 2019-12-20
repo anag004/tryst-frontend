@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import './App.css';
 import EventsPage from './EventsPage';
 import {
@@ -9,10 +9,13 @@ import {
 } from "react-router-dom";
 import EventDetail from './EventDetail';
 import HomePage from './HomePage';
+import SignIn from './Form/SignIn';
+import SignUp from './Form/SignUp';
 
 
 function App() {
   return (
+      <Fragment>
         <Router>
           <Switch>
             <Route path="/home">
@@ -33,11 +36,19 @@ function App() {
             <Route path="/event/4">
               <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
             </Route>
-            <Route path="/">
+            <Route path="/" exact>
               <EventsPage/>
+            </Route>
+            
+            <Route path="/login">
+              <SignIn/>
+            </Route>
+            <Route path="/signUp">
+              <SignUp/>
             </Route>
           </Switch>
         </Router>
+      </Fragment>
   );
 }
 

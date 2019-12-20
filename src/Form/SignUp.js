@@ -1,134 +1,119 @@
-import React, { Component, Fragment } from 'react'
-import { Button, TextField, MenuItem, FormControl, Grid, Typography, Link } from '@material-ui/core';
-export default class Form extends Component{
-    state={
-        data:{
-            firstName:"",
-            lastName:"",
-            email:"",
-            college:"IIT Delhi",
-            otherCollege:"",
-            phoneNumber:"",
-            gender:"Male",
-            password:""
-        },
-        errors:{
-            firstName:"",
-            lastName:"",
-            email:"",
-            otherCollege:"",
-            phoneNumber:"",
-            password:""
-        },
-        
-    }
-    
-    handleChange=name=>({target:{value}})=>{
-        this.setState({
-            data:{
-                ...this.state.data,
-                [name]:value
-            }
-        })
-    }
-    isDisabled=name=>{//validation
-        const errors=this.state.errors;
-        const data=this.state.data
-        const emailRegex=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
-        const phoneRegex=/^([+]\d{2})?\d{10}$/;
-        switch(name){
-            case "firstName":
-                errors.firstName=data.firstName.length===0?"Please Enter your Name":"";
-                break;
-            case "lastName":
-                errors.lastName=data.lastName.length===0?"Please Enter your Name":"";
-                break;
-            case "password":
-                errors.password=data.password.length<8?"Password must be at least 8 characters long":"";
-                break;
-            case "otherCollege":
-                errors.otherCollege=data.otherCollege.length===0?"Please enter your College":"";
-                break;
-            case "email":
-                errors.email=data.email.length===0||!emailRegex.test(data.email)?"Invalid Email":"";
-                break;
-            case "phoneNumber":
-                errors.phoneNumber=!phoneRegex.test(data.phoneNumber)?"Invalid Mobile Number":"";
-                break; 
-            default:
-                break;
+import React, { Component, Fragment, useState } from 'react'
+import { Button, TextField, MenuItem, FormControl, Grid, Typography, Link, Container, makeStyles } from '@material-ui/core';
+
+const useStyle = makeStyles (() => ({
+    overlay:{
+        position: 'relative',
+    },
+    div:{
+        position:"absolute",
+        right:0,
+        left:0,
+        height:"100%",
+        backgroundColor:"#D5D3D6",
+        backgroundSize:"cover"
+    },
+    input:{
+        "&:-webkit-autofill": {
+            WebkitBoxShadow: "0 0 0 1000px #D5D3D6 inset"
         }
-        this.setState({
-            ...this.state,
-            errors
-        })
     }
+}))
+
+export default function SignUp(){
+    const [firstName,setFirstName]=useState("");
+    const [lastName,setLastName]=useState("");
+    const [email,setEmail]=useState("");
+    const [password,setPassword]=useState("");
+    const [college,setCollege]=useState("IIT Delhi");
+    const [otherCollege,setOtherCollege]=useState("");
+    const [phoneNumber,setPhoneNumber]=useState("");
+    const [gender,setGender]=useState("");
     
-    handleSubmit=()=>{
+    const [emailError,setEmailError]=useState("");
+    const [passwordError,setPasswordError]=useState("");
+    const [firstNameError,setFirstNameError]=useState("");
+    const [lastNameError,setLastNameError]=useState("");
+    const [otherCollegeError,setOtherCollegeError]=useState("");
+    const [phoneNumberError,setPhoneNumberError]=useState("");
+    const emailRegex=/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    const phoneRegex=/^([+]\d{2})?\d{10}$/;
+    const handleSubmit=()=>{
         //To be specified
 
     }
-    render(){
-        const {firstName,lastName,email,college,otherCollege,phoneNumber,gender,password} =this.state.data
-        const gender_select=[ 
-            {value:"Male"},
-            {value: 'Female'},
-            {value:"other"} 
-        ];
-        return(
-            <Fragment>
-                <Typography component="h1" variant="h5">
+    const gender_select=[ 
+        {value:"Male"},
+        {value: 'Female'},
+        {value:"other"} 
+    ];
+    const classes=useStyle();
+    return(
+        <div className={classes.div}>
+            <Container maxWidth="sm" className={classes.overlay}>
+                <Typography component="h1" variant="h3">
                     Sign Up
                 </Typography>
-                <form onSubmit={this.handleSubmit}>
-                    <FormControl style={{margin:10,width:300}}>
+                <form onSubmit={handleSubmit}>
+                    <FormControl style={{margin:20}}>
                         <Grid container spacing={2}>
                             <Grid item xs={12} sm={6}>
                                 <TextField
+                                    variant="outlined"
                                     required
                                     label="First Name"
                                     value={firstName}
-                                    onChange={this.handleChange('firstName')}
-                                    error={this.state.errors.firstName.length===0?false:true}
-                                    helperText={this.state.errors.firstName}
-                                    onBlur={()=>this.isDisabled("firstName")}
+                                    onChange={e=>setFirstName(e.target.value)}
+                                    error={firstNameError.length===0?false:true}
+                                    helperText={firstNameError}
+                                    onBlur={()=>setFirstNameError(firstName.length===0?"Please Enter your Name":"")}
+                                    inputProps={{ className: classes.input }}
                                 />
                             </Grid>
                             <Grid item xs={12} sm={6}>
                                 <TextField
                                     required
+                                    inputProps={{ className: classes.input }}
+                                    variant="outlined"
                                     label="Last Name"
                                     value={lastName}
-                                    onChange={this.handleChange('lastName')}
-                                    error={this.state.errors.lastName.length===0?false:true}
-                                    helperText={this.state.errors.lastName}
-                                    onBlur={()=>this.isDisabled("lastName")}
+                                    onChange={e=>setLastName(e.target.value)}
+                                    error={lastNameError.length===0?false:true}
+                                    helperText={lastNameError}
+                                    onBlur={()=>setLastNameError(lastName.length===0?"Please Enter your Name":"")}
                                 />
                             </Grid>
                         </Grid>
+                        <br/>
                         <Grid container>
                             <Grid item xs={12}>
                                 <TextField
+                                    id="email"
+                                    inputProps={{ className: classes.input }}
                                     label="Email Address"
                                     value={email}
                                     required
                                     fullWidth
-                                    onChange={this.handleChange('email')}
-                                    error={this.state.errors.email.length===0?false:true}
-                                    helperText={this.state.errors.email}
-                                    onBlur={()=>this.isDisabled("email")}
+                                    variant="outlined"
+                                    onChange={e=>setEmail(e.target.value)}
+                                    error={emailError.length===0?false:true}
+                                    helperText={emailError}
+                                    onBlur={()=>{setEmailError(email.length===0||!emailRegex.test(email)?"Invalid Email":"")}}
+                                    autoComplete="email"
                                 />
                             </Grid>
-                            <Grid item xs={12}>
+                            <Grid item xs={12} style={{marginTop:20}}>
                                 <TextField
                                     label="Mobile Number"
+                                    inputProps={{ className: classes.input }}
                                     required
+                                    variant="outlined"
                                     fullWidth
                                     value={phoneNumber}
-                                    onChange={this.handleChange('phoneNumber')}
-                                    error={this.state.errors.phoneNumber.length===0?false:true}
-                                    helperText={this.state.errors.phoneNumber}
-                                    onBlur={()=>this.isDisabled("phoneNumber")}
+                                    onChange={e=>setPhoneNumber(e.target.value)}
+                                    error={phoneNumberError.length===0?false:true}
+                                    helperText={phoneNumberError}
+                                    onBlur={()=>setPhoneNumberError(!phoneRegex.test(phoneNumber)?"Invalid Mobile Number":"")}
                                 />
                             </Grid>
                         </Grid>
@@ -142,7 +127,7 @@ export default class Form extends Component{
                                     select
                                     fullWidth
                                     value={gender}
-                                    onChange={this.handleChange('gender')}
+                                    onChange={e=>setGender(e.target.value)}
                                 >
                                     {gender_select.map( option=>(
                                         <MenuItem value={option.value}>
@@ -159,42 +144,49 @@ export default class Form extends Component{
                                     variant="filled"
                                     value={college}
                                     fullWidth
-                                    onChange={this.handleChange('college')}
+                                    onChange={e=>setCollege(e.target.value)}
                                 >
                                     <MenuItem value="IIT Delhi"> IIT Delhi</MenuItem>
                                     <MenuItem value="other"> other</MenuItem>
                                 </TextField>
                             </Grid>
                         </Grid>
+                        <br/>
                         {college==="other"
                             ?<Fragment>
                                 <TextField
                                     required
+                                    variant="outlined"
                                     label="College"
+                                    inputProps={{ className: classes.input }}
                                     value={otherCollege}
-                                    onChange={this.handleChange('otherCollege')}
-                                    error={this.state.errors.otherCollege.length===0?false:true}
-                                    helperText={this.state.errors.otherCollege}
-                                    onBlur={()=>{this.isDisabled("otherCollege")}}
+                                    onChange={e=>setOtherCollege(e.target.value)}
+                                    error={otherCollegeError.length===0?false:true}
+                                    helperText={otherCollegeError}
+                                    onBlur={()=>setOtherCollegeError(otherCollege.length===0?"Please enter your College":"")}
                             
                                 />
+                                <br/>
                             </Fragment>
                             :null
                         }
-                        
                         <TextField
                             label="Password"
                             placeholder="At least 8 characters long"
+                            inputProps={{ className: classes.input }}
                             value={password}
                             required
-                            onChange={this.handleChange('password')}
-                            error={this.state.errors.password.length===0?false:true}
-                            helperText={this.state.errors.password}
-                            onBlur={()=>this.isDisabled("password")}
+                            variant="outlined"
+                            fullWidth
+                            onChange={e=>setPassword(e.target.value)}
+                            error={passwordError.length===0?false:true}
+                            helperText={passwordError}
+                            onBlur={()=>setPasswordError(password.length<8?"Password must be at least 8 characters long":"")}
                             type="password"
+                            autoComplete="current-password"
                         />
                         <br/>
-                        <Button className=".zoom" type="submit" variant="contained" color="primary" component="span" >
+                        <Button type="submit" variant="contained" color="primary" component="span" >
                             Submit
                         </Button>
                         <br/>
@@ -207,7 +199,7 @@ export default class Form extends Component{
                         </Grid>
                     </FormControl>
                 </form>
-            </Fragment>
-        )
-    }
+            </Container>
+        </div>
+    )
 }
