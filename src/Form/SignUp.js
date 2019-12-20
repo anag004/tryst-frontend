@@ -1,21 +1,23 @@
 import React, { Component, Fragment, useState } from 'react'
 import { Button, TextField, MenuItem, FormControl, Grid, Typography, Container, makeStyles } from '@material-ui/core';
 import { Link } from "react-router-dom";
+import NavBar from '../TopNavBar';
 const useStyle = makeStyles (() => ({
     overlay:{
         position: 'relative',
+        marginTop:40
     },
     div:{
         position:"absolute",
         right:0,
         left:0,
         height:"122%",
-        backgroundColor:"#D5D3D6",
+        backgroundColor:"#7B9466",
         backgroundSize:"cover"
     },
     input:{
         "&:-webkit-autofill": {
-            WebkitBoxShadow: "0 0 0 1000px #D5D3D6 inset"
+            WebkitBoxShadow: "0 0 0 1000px #7B9466 inset"
         }
     },
     link:{
@@ -54,6 +56,7 @@ export default function SignUp(){
     const classes=useStyle();
     return(
         <div className={classes.div}>
+            <NavBar threshold={10}/>
             <Container maxWidth="sm" className={classes.overlay}>
                 <Typography component="h1" variant="h3">
                     Sign Up

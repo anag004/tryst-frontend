@@ -1,10 +1,12 @@
 import React, { Component, useState } from 'react'
 import { Button, TextField, FormControl, Grid, Typography, Container, makeStyles, Paper } from '@material-ui/core';
 import { Link } from "react-router-dom";
+import NavBar from '../TopNavBar';
 
 const useStyle = makeStyles (() => ({
     overlay:{
         position: 'relative',
+        marginTop:40
         
     },
     paper:{
@@ -13,11 +15,11 @@ const useStyle = makeStyles (() => ({
         top:0,
         left:0,
         right:0,
-        backgroundColor:"#D5D3D6"
+        backgroundColor:"#7BC5AE"
     },
     input:{
         "&:-webkit-autofill": {
-            WebkitBoxShadow: "0 0 0 1000px #D5D3D6 inset"
+            WebkitBoxShadow: "0 0 0 1000px #7BC5AE inset"
         }
     },
     link:{
@@ -40,8 +42,9 @@ export default function SignIn(){
     const classes=useStyle();
     return(
         <Paper className={classes.paper}>
+            <NavBar threshold={0}/>
             <Container maxWidth="xs"className={classes.overlay} >
-                <Typography component="h1" variant="h3">
+                <Typography component="h1" variant="h3" >
                     Sign In
                 </Typography>
                 <br/>

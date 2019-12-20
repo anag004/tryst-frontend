@@ -11,7 +11,7 @@ import EventDetail from './EventDetail';
 import HomePage from './HomePage';
 import SignIn from './Form/SignIn';
 import SignUp from './Form/SignUp';
-
+import AboutUs from './AboutUs'
 
 function App() {
   return (
@@ -46,6 +46,10 @@ function App() {
             <Route path="/signUp">
               <SignUp/>
             </Route>
+            <Route path="/aboutUs">
+              <AboutUs/>
+            </Route>
+            
           </Switch>
         </Router>
       </Fragment>

@@ -51,6 +51,9 @@ function ScaleOnScroll(props) {
 const useStyles = makeStyles(theme => ({
     title: {
         flexGrow: 1
+    },
+    link:{
+        textDecoration:"none",
     }
 }));
 
@@ -102,12 +105,17 @@ function NavBar(props) {
                                     TRYST
                                 </ScaleOnScroll>
                         </Typography>
-                        <Link to="/home">
+                        <Link to="/home" className={classes.link}>
                             <NavBarButton>Home</NavBarButton>
                         </Link>
-                        <EventDropDown/>
-                        <NavBarButton>About Us</NavBarButton>
-                        <Link to="/login">
+                        <Link to="/events" className={classes.link}>
+                            <EventDropDown/>
+                        </Link>
+                        
+                        <Link to="/aboutUs" className={classes.link}>
+                            <NavBarButton>About Us</NavBarButton>
+                        </Link>
+                        <Link to="/login" className={classes.link}>
                             <NavBarButton>Login</NavBarButton>
                         </Link>
                 </Toolbar>
