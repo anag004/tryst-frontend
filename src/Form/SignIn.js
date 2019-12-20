@@ -1,5 +1,6 @@
 import React, { Component, useState } from 'react'
-import { Button, TextField, FormControl, Grid, Typography, Link, Container, makeStyles, Paper } from '@material-ui/core';
+import { Button, TextField, FormControl, Grid, Typography, Container, makeStyles, Paper } from '@material-ui/core';
+import { Link } from "react-router-dom";
 
 const useStyle = makeStyles (() => ({
     overlay:{
@@ -18,6 +19,10 @@ const useStyle = makeStyles (() => ({
         "&:-webkit-autofill": {
             WebkitBoxShadow: "0 0 0 1000px #D5D3D6 inset"
         }
+    },
+    link:{
+        textDecoration:"none",
+
     }
     
 }))
@@ -86,14 +91,14 @@ export default function SignIn(){
                         <Button className=".zoom" type="submit" variant="contained" color="primary" component="span" >
                             Submit
                         </Button>
-                        <Grid container>
-                            <Grid item xs alignContent="flex-start">
-                                <Link href="#" variant="body2">
+                        <Grid container style={{marginTop:10}}>
+                            <Grid item xs alignContent="flex-start" >
+                                <Link href="#" variant="body2" className={classes.link}>
                                     Forgot password?
                                 </Link>
                             </Grid>
                             <Grid item>
-                                <Link href="#" variant="body2">
+                                <Link to="/signUp" variant="body2" className={classes.link} >
                                     Don't have an account? Sign Up
                                 </Link>
                             </Grid>

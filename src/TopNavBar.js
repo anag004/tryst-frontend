@@ -107,7 +107,9 @@ function NavBar(props) {
                         </Link>
                         <EventDropDown/>
                         <NavBarButton>About Us</NavBarButton>
-                        <NavBarButton>Login</NavBarButton>
+                        <Link to="/login">
+                            <NavBarButton>Login</NavBarButton>
+                        </Link>
                 </Toolbar>
             </AppBar>
         </Slide>
