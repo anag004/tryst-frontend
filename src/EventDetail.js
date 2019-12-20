@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
+import NavBar from './TopNavBar';
 
 export default function EventDetail(props) {
     const {heading, containerBackgroundColor,textColor, ...others} = props;
@@ -38,24 +39,26 @@ export default function EventDetail(props) {
             
         },
         dialog: {
-            backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
+            marginTop:30,
+            // backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',
+            // backgroundSize: 'cover',
+            // backgroundRepeat: 'no-repeat',
+            // backgroundPosition: 'center',
+            
           },
         imageBanner:{
-            height:420,
-            width:1000,
+            height:window.innerWidth>1000?390:"auto",
+            width:window.innerWidth>1000?1000:"auto",
             overflow:"hidden",
-            marginLeft:8
+            margin:"auto"
         },
         data:{
-            margin:20,
-            fontSize:25
+            margin:window.innerWidth>1000?20:10,
+            fontSize:window.innerWidth>1000?25:15,
         },
         tabs:{
-            fontSize:20,
-            marginTop:20,
+            fontSize:window.innerWidth>1000?20:"auto",
+            marginTop:window.innerWidth>1000?20:"auto",
             color:"black",  
         },
         category:{
@@ -72,42 +75,40 @@ export default function EventDetail(props) {
     const classes=useStyle()
     return (
         <div className={classes.root}>
-            
+            <img src="http://source.unsplash.com/collection/146130/random" style={{width:window.innerWidth,height:window.innerHeight, position:"center"}} />
             <Dialog
                 open={true}
                 maxWidth="false"
                 className={classes.dialog}
-                // TransitionComponent={Transition}
             >
+                <NavBar/>
                 <DialogTitle className={classes.category}>
                     {post.category}
                 </DialogTitle>
-                {/* <Paper className={classes.paper}> */}
-                    <DialogContent className={classes.dialogContent}>
-                        <div className={classes.imageBanner}>
-                            <ImageBanner post={post}/>
-                        </div>
-                        <Typography variant="h3" className={classes.heading} > {post.title} </Typography>
-                        <Tabs
-                            value={value}
-                            onChange={handleChange}
-                            indicatorColor="primary"
-                            textColor="primary"
-                            variant="fullWidth"
-                            // className={classes.tabs}    
-                        >
-                            <Tab label="About" value="about" className={classes.tabs} />
-                            <Tab label="Details" value="details" className={classes.tabs} />
-                            <Tab label="Prizes" value="prize" className={classes.tabs} />
-                            <Tab label="Register" value="register" className={classes.tabs} />
-                        </Tabs>
-                        <div className={classes.data}>
-                            {post.postDescription[value]}
-                        </div>
-                    </DialogContent>
-                {/* </Paper> */}
+                <DialogContent className={classes.dialogContent}>
+                    <div className={classes.imageBanner}>
+                        <ImageBanner post={post}/>
+                    </div>
+                    <Typography variant="h3" className={classes.heading} > {post.title} </Typography>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        indicatorColor="primary"
+                        textColor="primary"
+                        variant="scrollable"
+                        scrollButtons='auto'
+                        // className={classes.tabs}    
+                    >
+                        <Tab label="About" value="about" className={classes.tabs} />
+                        <Tab label="Details" value="details" className={classes.tabs} />
+                        <Tab label="Prizes" value="prize" className={classes.tabs} />
+                        <Tab label="Register" value="register" className={classes.tabs} />
+                    </Tabs>
+                    <div className={classes.data}>
+                        {post.postDescription[value]}
+                    </div>
+                </DialogContent>
             </Dialog>
-            
         </div>
     );
 }
