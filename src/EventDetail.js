@@ -45,17 +45,17 @@ export default function EventDetail(props) {
           },
         imageBanner:{
             height:420,
-            width:1000,
+            width:window.innerWidth>1000?1000:"auto",
             overflow:"hidden",
-            marginLeft:8
+            marginLeft:"auto"
         },
         data:{
-            margin:20,
-            fontSize:25
+            margin:window.innerWidth>1000?20:10,
+            fontSize:window.innerWidth>1000?20:15
         },
         tabs:{
-            fontSize:20,
-            marginTop:20,
+            fontSize:window.innerWidth>1000?20:"auto",
+            marginTop:window.innerWidth>1000?20:"auto",
             color:"black",  
         },
         category:{
@@ -93,7 +93,8 @@ export default function EventDetail(props) {
                             onChange={handleChange}
                             indicatorColor="primary"
                             textColor="primary"
-                            variant="fullWidth"
+                            variant="scrollable"
+                            scrollButtons="auto"
                             // className={classes.tabs}    
                         >
                             <Tab label="About" value="about" className={classes.tabs} />
