@@ -9,7 +9,7 @@ const useStyle = makeStyles (() => ({
         position:"absolute",
         right:0,
         left:0,
-        height:"100%",
+        height:"122%",
         backgroundColor:"#D5D3D6",
         backgroundSize:"cover"
     },
@@ -28,7 +28,7 @@ export default function SignUp(){
     const [college,setCollege]=useState("IIT Delhi");
     const [otherCollege,setOtherCollege]=useState("");
     const [phoneNumber,setPhoneNumber]=useState("");
-    const [gender,setGender]=useState("");
+    const [gender,setGender]=useState("Male");
     
     const [emailError,setEmailError]=useState("");
     const [passwordError,setPasswordError]=useState("");
