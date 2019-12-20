@@ -8,6 +8,7 @@ import { Box } from '@material-ui/core';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import NavBarButton from './NavBarButton';
 import EventDropDown from './EventDropDown';
+import { Link } from "react-router-dom";
 
 function ScaleOnScroll(props) {
     const { children, initialSize, finalSize } = props;
@@ -101,7 +102,9 @@ function NavBar(props) {
                                     TRYST
                                 </ScaleOnScroll>
                         </Typography>
-                        <NavBarButton>Home</NavBarButton>
+                        <Link to="/home">
+                            <NavBarButton>Home</NavBarButton>
+                        </Link>
                         <EventDropDown/>
                         <NavBarButton>About Us</NavBarButton>
                         <NavBarButton>Login</NavBarButton>
