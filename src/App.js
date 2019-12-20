@@ -8,12 +8,16 @@ import {
   Link
 } from "react-router-dom";
 import EventDetail from './EventDetail';
+import HomePage from './HomePage';
 
 
 function App() {
   return (
         <Router>
           <Switch>
+            <Route path="/home">
+              <HomePage/>
+            </Route>
             <Route path="/event/1">
               <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
             </Route>
