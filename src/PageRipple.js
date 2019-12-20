@@ -22,19 +22,11 @@ export default function PageRipple(props) {
 
     const splash = keyframes`
         0% {
-            top: ${positionY}px;
-            left: ${positionX}px;
-            width: 1px;
-            height: 1px;
-            border-radius: 50%;
+            transform: translate(${positionX - screenWidth/2}px, ${positionY - screenHeight/2}px);
         }
       
         100% {
-            top: ${(screenHeight - maxDimension) / 2}px;
-            left: ${(screenWidth - maxDimension) / 2}px;
-            width: ${maxDimension}px;
-            height: ${maxDimension}px;
-            border-radius: 20%;
+            transform: scale(${maxDimension});
             background-color: ${backgroundColor};
         }
     `;
@@ -43,12 +35,10 @@ export default function PageRipple(props) {
         position: fixed;
         background-color:  ${backgroundColor};
         animation-name: ${splash};
-        animation-duration: 0.3s;
+        animation-duration: 0.4s;
         animation-timing-function: ease-in-out;
-        top: -50%;
-        left: -50%;
-        width: 200%;
-        height: 200%;
+        height: 1px; 
+        width: 1px;
         border-radius: 50%;
     `;
 
