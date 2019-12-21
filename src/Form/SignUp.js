@@ -11,7 +11,6 @@ const useStyle = makeStyles (() => ({
         position:"absolute",
         right:0,
         left:0,
-        height:"122%",
         backgroundColor:"#7B9466",
         backgroundSize:"cover"
     },
