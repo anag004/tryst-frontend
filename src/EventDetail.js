@@ -39,7 +39,7 @@ export default function EventDetail(props) {
             
         },
         dialog: {
-            marginTop:30,
+            marginTop:window.innerWidth>500?30:50,
             // backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',
             // backgroundSize: 'cover',
             // backgroundRepeat: 'no-repeat',
@@ -78,7 +78,8 @@ export default function EventDetail(props) {
             <img src="http://source.unsplash.com/collection/146130/random" style={{width:window.innerWidth,height:window.innerHeight, position:"center"}} />
             <Dialog
                 open={true}
-                maxWidth="false"
+                maxWidth={false}
+                fullScreen={window.innerWidth>500?"false"==="true":"true"==="true"}
                 className={classes.dialog}
             >
                 <NavBar/>

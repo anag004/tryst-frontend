@@ -37,7 +37,7 @@ function App() {
               <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
             </Route>
             <Route path="/" exact>
-              <EventsPage/>
+              <HomePage/>
             </Route>
             
             <Route path="/login">

@@ -2,7 +2,7 @@ import React from 'react';
 import Container from '@material-ui/core/Container';
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
-import { Paper } from '@material-ui/core';
+import { Paper, Fade } from '@material-ui/core';
 import NavBar from './TopNavBar';
 
 const useStyles = makeStyles(theme => ({
@@ -33,12 +33,16 @@ export default function HomePage(props) {
     return (
         <Container disableGutters="true" classes={classes}>
             <NavBar threshold={10}/>
-            <Typography variant="h3" color="secondary" align="center" className={classes.heading}>
-                ABOUT TRYST
-            </Typography>
-            <Paper elevation={20} component="h3" background="inherit" className={classes.paper}>
-                {aboutTryst}
-            </Paper>
+            <Fade in={true} timeout={1000}>
+                <Typography variant="h3" color="secondary" align="center" className={classes.heading}>
+                    ABOUT TRYST
+                </Typography>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+                <Paper elevation={20} component="h3" background="inherit" className={classes.paper}>
+                    {aboutTryst}
+                </Paper>
+            </Fade>
         </Container>
     )
 }
