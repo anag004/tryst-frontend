@@ -8,6 +8,9 @@ const useStyles = makeStyles(theme => ({
     root: {
         backgroundColor:"black",
         backgroundImage: "url(https://source.unsplash.com/random)",
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
         height: '100%',
         position: 'fixed',
     }

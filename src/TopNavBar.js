@@ -54,6 +54,9 @@ const useStyles = makeStyles(theme => ({
     },
     link:{
         textDecoration:"none",
+    },
+    toolbar:{
+        overflowX:"auto"
     }
 }));
 
@@ -98,7 +101,7 @@ function NavBar(props) {
     return (
         <Slide in={true}>
             <AppBar classes={ scrollPosition ? {} : classesAppBarTransparent } className={classesAppBarTransition} elevation={scrollPosition ? 4 : 0} {...others}>
-                <Toolbar variant="dense">
+                <Toolbar variant="dense" className={classes.toolbar}>
                         {/* ScaleOnScroll animates NavBar font here */}
                         <Typography variant="h6" className={classes.title}>
                             	<ScaleOnScroll initialSize={40} finalSize={20}>
@@ -114,6 +117,15 @@ function NavBar(props) {
                         
                         <Link to="/aboutUs" className={classes.link}>
                             <NavBarButton>About Us</NavBarButton>
+                        </Link>
+                        <Link to="/lodging" className={classes.link}>
+                            <NavBarButton>Lodging</NavBarButton>
+                        </Link>
+                        <Link to="/team" className={classes.link}>
+                            <NavBarButton>Team</NavBarButton>
+                        </Link>
+                        <Link to="/sponsors" className={classes.link}>
+                            <NavBarButton>Sponsors</NavBarButton>
                         </Link>
                         <Link to="/login" className={classes.link}>
                             <NavBarButton>Login</NavBarButton>

@@ -12,6 +12,9 @@ import HomePage from './HomePage';
 import SignIn from './Form/SignIn';
 import SignUp from './Form/SignUp';
 import AboutUs from './AboutUs'
+import Lodging from './Additional Pages/Lodging'
+import Sponsors from './Additional Pages/Sponsors';
+import Team from './Additional Pages/Team';
 
 function App() {
   return (
@@ -49,7 +52,15 @@ function App() {
             <Route path="/aboutUs">
               <AboutUs/>
             </Route>
-            
+            <Route path="/lodging">
+              <Lodging/>
+            </Route>
+            <Route path="/team">
+              <Team/>
+            </Route>
+            <Route path="/sponsors">
+              <Sponsors/>
+            </Route>
           </Switch>
         </Router>
       </Fragment>

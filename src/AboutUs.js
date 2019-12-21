@@ -13,7 +13,8 @@ const useStyles = makeStyles(theme => ({
     },
     heading:{
         margin:"auto",
-        marginTop:40
+        marginTop:50,
+        fontWeight:"500",
     },
     paper:{
         position:"absolute",
