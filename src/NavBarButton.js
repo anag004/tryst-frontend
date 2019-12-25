@@ -4,23 +4,6 @@ import { Button } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
-// Code to style the ripples
-// const rippleStyles = makeStyles({
-//     root: {
-//         backgroundImage: "linear-gradient(to right, #fbc2eb 0%, #a6c1ee 51%, #fbc2eb 100%)",
-//     },
-// });
-
-// function NavBarButton(props) {
-//     let {children, ...other} = props;
-//     const rippleClasses = rippleStyles();
-//     return (
-//         <ButtonBase {...other} variant="outlined" color="primary" TouchRippleProps={{classes: {ripple: rippleClasses.root, rippleVisible: rippleClasses.root, ripplePulsate: rippleClasses.root}}}>
-//             {children}
-//         </ButtonBase>
-//     )
-// }
-
 const largeButtonStyle = makeStyles(theme => ({
     root: {
         transition: 'all 0.5s',

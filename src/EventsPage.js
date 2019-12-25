@@ -79,7 +79,6 @@ export default function EventsPage() {
                         screenWidth={screenWidth}
                         backgroundColor={transitionColor}
             />
-            <NavDrawer/>
             <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             <PageSection 
