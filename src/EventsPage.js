@@ -11,6 +11,7 @@ import EventCardRow from './EventCardRow'
 import SimpleGrid from './SimpleGrid';
 import CategorySpeedDial from './CategorySpeedDial';
 import PageRipple from './PageRipple';
+import NavDrawer from './NavDrawer';
 
 const theme = createMuiTheme({
   palette: {
@@ -78,6 +79,7 @@ export default function EventsPage() {
                         screenWidth={screenWidth}
                         backgroundColor={transitionColor}
             />
+            <NavDrawer/>
             <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             <PageSection 
