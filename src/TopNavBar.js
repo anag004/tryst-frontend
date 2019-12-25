@@ -11,6 +11,7 @@ import EventDropDown from './EventDropDown';
 import { Link } from "react-router-dom";
 import NavDrawer from './NavDrawer';
 import NavBarMenuButton from './NavBarMenuButton';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 
 
 function ScaleOnScroll(props) {
@@ -65,6 +66,7 @@ const useStyles = makeStyles(theme => ({
 
 function NavBar(props) {
     const { threshold, ...others } = props;
+    const largeScreen = useMediaQuery('(min-width:850px)');
 
     const handleScroll = (event) => {
         const currScrollPosition = window.pageYOffset > threshold;
@@ -118,30 +120,34 @@ function NavBar(props) {
                                         TRYST
                                     </ScaleOnScroll>
                             </Typography>
-                            <NavBarMenuButton onClick={toggleDrawer}/>
-                            {/* <Link to="/home" className={classes.link}>
-                                <NavBarButton>Home</NavBarButton>
-                            </Link>
-                            <Link to="/events" className={classes.link}>
-                                <EventDropDown/>
-                            </Link>
-                            
-                            <Link to="/aboutUs" className={classes.link}>
-                                <NavBarButton>About Us</NavBarButton>
-                            </Link>
-                            <Link to="/lodging" className={classes.link}>
-                                <NavBarButton>Lodging</NavBarButton>
-                            </Link>
-                            <Link to="/team" className={classes.link}>
-                                <NavBarButton>Team</NavBarButton>
-                            </Link>
-                            <Link to="/sponsors" className={classes.link}>
-                                <NavBarButton>Sponsors</NavBarButton>
-                            </Link>
-                            <Link to="/login" className={classes.link}>
-                                <NavBarButton>Login</NavBarButton>
-                            </Link> */}
-    
+                            { largeScreen
+                                ? (
+                                    <React.Fragment>
+                                        <Link to="/home" className={classes.link}>
+                                            <NavBarButton>Home</NavBarButton>
+                                        </Link>
+                                        <Link to="/events" className={classes.link}>
+                                            <EventDropDown/>
+                                        </Link>
+                                        <Link to="/aboutUs" className={classes.link}>
+                                            <NavBarButton>About Us</NavBarButton>
+                                        </Link>
+                                        <Link to="/lodging" className={classes.link}>
+                                            <NavBarButton>Lodging</NavBarButton>
+                                        </Link>
+                                        <Link to="/team" className={classes.link}>
+                                            <NavBarButton>Team</NavBarButton>
+                                        </Link>
+                                        <Link to="/sponsors" className={classes.link}>
+                                            <NavBarButton>Sponsors</NavBarButton>
+                                        </Link>
+                                        <Link to="/login" className={classes.link}>
+                                            <NavBarButton>Login</NavBarButton>
+                                        </Link> 
+                                    </React.Fragment>
+                                )
+                                : <NavBarMenuButton onClick={toggleDrawer}/>
+                            }
                     </Toolbar>
                 </AppBar>
             </Slide>
