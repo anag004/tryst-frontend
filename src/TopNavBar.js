@@ -10,8 +10,8 @@ import NavBarButton from './NavBarButton';
 import EventDropDown from './EventDropDown';
 import { Link } from "react-router-dom";
 import NavDrawer from './NavDrawer';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
+import NavBarMenuButton from './NavBarMenuButton';
+
 
 function ScaleOnScroll(props) {
     const { children, initialSize, finalSize } = props;
@@ -118,14 +118,7 @@ function NavBar(props) {
                                         TRYST
                                     </ScaleOnScroll>
                             </Typography>
-                            <IconButton
-                                color="inherit"
-                                aria-label="open drawer"
-                                onClick={toggleDrawer}
-                                edge="start"
-                            >
-                                <MenuIcon fontSize="small"/>
-                            </IconButton>
+                            <NavBarMenuButton onClick={toggleDrawer}/>
                             {/* <Link to="/home" className={classes.link}>
                                 <NavBarButton>Home</NavBarButton>
                             </Link>
