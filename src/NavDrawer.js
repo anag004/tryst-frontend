@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -17,6 +18,9 @@ const useStyles = makeStyles((theme) => ({
     listText: {
         textAlign: 'center',
         fontWeight: 'bold'
+    },
+    link: {
+        textDecoration: "none"
     }
 }));
 
@@ -31,14 +35,16 @@ export default function NavDrawer(props) {
             onClick={toggleDrawer}
         >
             <List>
-                {['Home', 'Events', 'About Us', 'Lodging', 'Team', 'Sponsors', 'Login'].map((text) => (
-                <ListItem button key={text}>
-                    <ListItemText 
-                        primary={text} 
-                        className={classes.listText}
-                        primaryTypographyProps={{style: {fontWeight: 'bold'}}}
-                    />
-                </ListItem>
+                {[['Home', '/home'], ['Events', '/events'], ['About Us', '/aboutUs'], ['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors'], ['Login', '/login']].map((text) => (
+                <Link className={classes.link} to={text[1]}>
+                    <ListItem button key={text[0]}>
+                        <ListItemText 
+                            primary={text[0]} 
+                            className={classes.listText}
+                            primaryTypographyProps={{style: {fontWeight: 'bold'}}}
+                        />
+                    </ListItem>
+                </Link>
                 ))}
             </List>
         </div>
@@ -52,7 +58,7 @@ export default function NavDrawer(props) {
                 elevation={16} 
                 classes={classes} 
                 onClose={toggleDrawer}
-                transitionDuration={{enter: 500, exit:500}}
+                transitionDuration={{enter: 200, exit:200}}
                 { ...others }
             >
                {sideList()}
