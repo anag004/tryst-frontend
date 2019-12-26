@@ -30,13 +30,13 @@ function Sponsors(props) {
     return (
         <ThemeProvider theme={theme}>
             <NavBar threshold={10}/>
-            <br/><br/>
             <PageSection
                 heading="The Team"
                 headingAlignment="center"
-                containerBackgroundColor="white"
-                textColor="black"
+                containerBackgroundColor="#7BC5AE"
+                textColor="white"
                 description=""
+                padding={9}
             >
                 <SponsorCardRow>                      
                     <TeamCard
@@ -47,13 +47,58 @@ function Sponsors(props) {
                     />
                 </SponsorCardRow>
                 <SponsorCardRow>
-                    <SponsorGrid n="3"/>
+                    <TeamCard
+                        cardHeading="Vatsal Sharma"
+                        cardDescription="CTM, Infra and Workshop"
+                        cardImage=""
+                        email="workshops@tryst-iitd.com"
+                    />
+                    <TeamCard
+                        cardHeading="Adit Gupta"
+                        cardDescription="CTM, Admin and Finance"
+                        cardImage=""
+                        email="finance@tryst-iitd.com"
+                    />
+                    <TeamCard
+                        cardHeading="Siddharth Khera"
+                        cardDescription="CTM, Events and Social"
+                        cardImage=""
+                        email="events@tryst-iitd.com"
+                    />
                 </SponsorCardRow>
                 <SponsorCardRow>
-                    <SponsorGrid n="2"/>
+                    <TeamCard
+                        cardHeading="Kartikeya Sharma"
+                        cardDescription="CTM, Publicity and Creative"
+                        cardImage=""
+                        email="publicity@tryst-iitd.com"
+                    />
+                    <TeamCard
+                        cardHeading="Yash Agarwal"
+                        cardDescription="CTM, Guest Lecture"
+                        cardImage=""
+                        email="guest@tryst-iitd.com"
+                    />
+                    <TeamCard
+                        cardHeading="Abhishree Arora"
+                        cardDescription="CTM, Marketing"
+                        cardImage=""
+                        email="marketing@tryst-iitd.com"
+                    />
                 </SponsorCardRow>
                 <SponsorCardRow>
-                    <SponsorGrid n="3"/>
+                    <TeamCard
+                        cardHeading="Ayush Patel"
+                        cardDescription="Technical Co-ordinator"
+                        cardImage=""
+                        email="patel.ayush@gmail.com"
+                    />
+                    <TeamCard
+                        cardHeading="Arpan Mangal"
+                        cardDescription="Technical Co-ordinator"
+                        cardImage=""
+                        email="mangalarpan@gmail.com"
+                    />
                 </SponsorCardRow>
 
             </PageSection>

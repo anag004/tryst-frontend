@@ -13,13 +13,13 @@ let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 
 function PageSection(props) {
-    const { heading, headingAlignment, containerBackgroundColor, textColor, description, children, ...others } = props;
+    const { heading, padding, headingAlignment, containerBackgroundColor, textColor, description, children, ...others } = props;
 
     const useStyle = makeStyles((theme) => ({
         root: {
             backgroundColor: containerBackgroundColor,
             color: textColor,
-            padding: theme.spacing(3),
+            padding: padding ? theme.spacing(padding) : theme.spacing(3),
         },
     }));
 

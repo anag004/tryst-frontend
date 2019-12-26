@@ -17,7 +17,7 @@ function SponsorCard(props) {
     const useStyles = makeStyles((theme) => ({
         root: {
             backgroundColor: backgroundColor ? backgroundColor : "white",
-            maxWidth:200,
+            maxWidth:300,
             alignItems:"center",
             margin:"auto"
 
@@ -32,7 +32,7 @@ function SponsorCard(props) {
 
     if (cardImage == "") {
         const hash = md5(email + cardHeading + cardDescription);
-        gravatar = `https://www.gravatar.com/avatar/${hash}?s=200&d=identicon&r=PG`;
+        gravatar = `https://www.gravatar.com/avatar/${hash}?s=300&d=identicon&r=PG`;
     }
 
     return (
@@ -53,11 +53,6 @@ function SponsorCard(props) {
                                 </Link>
                             </CardContent>
                         </CardActionArea>
-                        {/* <CardActions>
-                            <Link href={"mailto:" + email} color="inherit">
-                                {email}
-                            </Link>
-                        </CardActions> */}
                     </Card>
                 </Zoom>
             </Grid>
