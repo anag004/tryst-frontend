@@ -19,7 +19,8 @@ function PageSection(props) {
         root: {
             backgroundColor: containerBackgroundColor,
             color: textColor,
-            padding: padding ? theme.spacing(padding) : theme.spacing(3),
+            padding: theme.spacing(3),
+            paddingTop: padding ? theme.spacing(padding) : theme.spacing(3)
         },
     }));
 

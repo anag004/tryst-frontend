@@ -19,8 +19,7 @@ function SponsorCard(props) {
             backgroundColor: backgroundColor ? backgroundColor : "white",
             maxWidth:300,
             alignItems:"center",
-            margin:"auto"
-
+            margin:"auto",
         },
         media: {
             height: 140,
@@ -32,7 +31,7 @@ function SponsorCard(props) {
 
     if (cardImage == "") {
         const hash = md5(email + cardHeading + cardDescription);
-        gravatar = `https://www.gravatar.com/avatar/${hash}?s=300&d=identicon&r=PG`;
+        gravatar = `https://www.gravatar.com/avatar/${hash}?s=150&d=identicon&r=PG`;
     }
 
     return (
