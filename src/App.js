@@ -11,8 +11,7 @@ import EventDetail from './EventDetail';
 import HomePage from './HomePage';
 import SignIn from './Form/SignIn';
 import SignUp from './Form/SignUp';
-import AboutUs from './AboutUs'
-import Lodging from './Additional Pages/Lodging'
+import Lodging from './Additional Pages/Lodging';
 import Sponsors from './Additional Pages/Sponsors';
 import Team from './Additional Pages/Team';
 
@@ -48,9 +47,6 @@ function App() {
             </Route>
             <Route path="/signUp">
               <SignUp/>
-            </Route>
-            <Route path="/aboutUs">
-              <AboutUs/>
             </Route>
             <Route path="/lodging">
               <Lodging/>

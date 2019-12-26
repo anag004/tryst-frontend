@@ -35,7 +35,7 @@ export default function NavDrawer(props) {
             onClick={toggleDrawer}
         >
             <List>
-                {[['Home', '/home'], ['Events', '/events'], ['About Us', '/aboutUs'], ['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors'], ['Login', '/login']].map((text) => (
+                {[['Home', '/home'], ['Events', '/events'],['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors'], ['Login', '/login']].map((text) => (
                 <Link className={classes.link} to={text[1]}>
                     <ListItem button key={text[0]}>
                         <ListItemText 
