@@ -5,13 +5,19 @@ import PageSection from '../PageSection';
 import SponsorCardRow from './SponsorCardRow';
 import SponsorGrid from './SponsorGrid';
 import NavBar from '../TopNavBar';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
+import TeamCard from './TeamCard';
+
+const theme = createMuiTheme({
+    palette: {
+      primary: { main: '#2196F3' },
+      secondary: { main: '#4CAF50' }
+    }
+  });
 
 function Sponsors(props) {
     const useStyles = makeStyles((theme) => ({
-        root: {
-            backgroundColor:"#1b2963",
-            
-        },
         media: {
             height: 140,
         },
@@ -22,20 +28,24 @@ function Sponsors(props) {
     
     const classes = useStyles();
     return (
-        <div className={classes.root}>
+        <ThemeProvider theme={theme}>
             <NavBar threshold={10}/>
             <br/><br/>
             <PageSection
-                heading="Our Team"
+                heading="The Team"
                 headingAlignment="center"
-                containerBackgroundColor="#1b2963"
-                textColor="red"
+                containerBackgroundColor="white"
+                textColor="black"
                 description=""
             >
-                <SponsorCardRow>
-                    <SponsorGrid n="1"/>
+                <SponsorCardRow>                      
+                    <TeamCard
+                        cardHeading="Abhinav Arora"
+                        cardDescription="Overall Co-ordinator"
+                        cardImage=""
+                        email="admin@tryst-iitd.com"
+                    />
                 </SponsorCardRow>
-                
                 <SponsorCardRow>
                     <SponsorGrid n="3"/>
                 </SponsorCardRow>
@@ -47,7 +57,7 @@ function Sponsors(props) {
                 </SponsorCardRow>
 
             </PageSection>
-        </div>
+        </ThemeProvider>
     );
 }
 
