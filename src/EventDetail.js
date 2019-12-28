@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
+import TopNavBar from './TopNavBar';
 
 export default function EventDetail(props) {
     const {heading, containerBackgroundColor,textColor, ...others} = props;
@@ -13,12 +14,11 @@ export default function EventDetail(props) {
 
     const post = {
         category:"Tryst Event Category 1",
-        title: 'Events @Tryst',
+        title: 'Event',
         description:
-          "We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum..",
+          "Learn to build and deploy smart AI ",
         image: 'https://source.unsplash.com/random',
         imgText: 'main image description',
-        linkText: 'Continue Reading...',
         postDescription:{
             about:"We are hosting some amazing events this year",
             details:"the event will be held a s folows on this date and this time",
@@ -71,44 +71,29 @@ export default function EventDetail(props) {
     }));
     const classes=useStyle()
     return (
-        <div className={classes.root}>
-            
-            <Dialog
-                open={true}
-                maxWidth="false"
-                className={classes.dialog}
-                // TransitionComponent={Transition}
-            >
-                <DialogTitle className={classes.category}>
-                    {post.category}
-                </DialogTitle>
-                {/* <Paper className={classes.paper}> */}
-                    <DialogContent className={classes.dialogContent}>
-                        <div className={classes.imageBanner}>
-                            <ImageBanner post={post}/>
-                        </div>
-                        <Typography variant="h3" className={classes.heading} > {post.title} </Typography>
-                        <Tabs
-                            value={value}
-                            onChange={handleChange}
-                            indicatorColor="primary"
-                            textColor="primary"
-                            variant="scrollable"
-                            scrollButtons="auto"
-                            // className={classes.tabs}    
-                        >
-                            <Tab label="About" value="about" className={classes.tabs} />
-                            <Tab label="Details" value="details" className={classes.tabs} />
-                            <Tab label="Prizes" value="prize" className={classes.tabs} />
-                            <Tab label="Register" value="register" className={classes.tabs} />
-                        </Tabs>
-                        <div className={classes.data}>
-                            {post.postDescription[value]}
-                        </div>
-                    </DialogContent>
-                {/* </Paper> */}
-            </Dialog>
-            
-        </div>
+        <React.Fragment>
+            <TopNavBar threshold={10}/>
+            <ImageBanner post={post}/>
+            <Paper className={classes.paper}>
+                    <Typography variant="h3" className={classes.heading} > {post.title} </Typography>
+                    <Tabs
+                        value={value}
+                        onChange={handleChange}
+                        indicatorColor="primary"
+                        textColor="primary"
+                        variant="scrollable"
+                        scrollButtons="auto"
+                        // className={classes.tabs}    
+                    >
+                        <Tab label="About" value="about" className={classes.tabs} />
+                        <Tab label="Details" value="details" className={classes.tabs} />
+                        <Tab label="Prizes" value="prize" className={classes.tabs} />
+                        <Tab label="Register" value="register" className={classes.tabs} />
+                    </Tabs>
+                    <div className={classes.data}>
+                        {post.postDescription[value]}
+                    </div>
+            </Paper>
+        </React.Fragment>
     );
 }
