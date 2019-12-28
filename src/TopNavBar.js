@@ -138,9 +138,6 @@ function NavBar(props) {
                                         <Link to="/sponsors" className={classes.link}>
                                             <NavBarButton>Sponsors</NavBarButton>
                                         </Link>
-                                        <Link to="/login" className={classes.link}>
-                                            <NavBarButton>Login</NavBarButton>
-                                        </Link> 
                                     </React.Fragment>
                                 )
                                 : <NavBarMenuButton onClick={toggleDrawer}/>
