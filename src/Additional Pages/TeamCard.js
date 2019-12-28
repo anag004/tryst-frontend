@@ -41,7 +41,7 @@ function SponsorCard(props) {
                         <CardActionArea>
                             <CardMedia className={classes.media} image={cardImage === "" ? gravatar : cardImage} {...others}/>
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
+                                <Typography gutterBottom variant="h6" component="h2">
                                     {cardHeading}
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">

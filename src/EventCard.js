@@ -47,7 +47,7 @@ function EventCard(props) {
                         <CardActionArea onClick={(e) => {rippleTriggerFunction(e); handleClick(e)}}>
                             <CardMedia className={classes.media} image={cardImage} {...others}/>
                             <CardContent>
-                                <Typography gutterBottom variant="h5" component="h2">
+                                <Typography gutterBottom variant="h6" component="h2">
                                     {cardHeading}
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
