@@ -4,6 +4,9 @@ import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, 
 import ImageBanner from './ImageBanner';
 import TopNavBar from './TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import AddIcon from '@material-ui/icons/Add';
+import Fab from '@material-ui/core/Fab';
+import Grow from '@material-ui/core/Grow';
 
 const theme = createMuiTheme({
     palette: {
@@ -18,6 +21,16 @@ export default function EventDetail(props) {
     const useStyle = makeStyles((theme) => ({
         root: {
             padding:theme.spacing(3)
+        }, 
+
+        fab: {
+            margin: 0,
+            top: 'auto',
+            right: 20,
+            bottom: 20,
+            left: 'auto',
+            position: 'fixed',
+            zIndex: 2
         }
     }));
 
@@ -47,6 +60,12 @@ export default function EventDetail(props) {
 
     return (
         <ThemeProvider theme={theme}>
+            <Grow in={true}>
+                <Fab variant="extended" className={classes.fab} size="medium">
+                    <AddIcon fontSize="small"/>
+                    register
+                </Fab>
+            </Grow>
             <TopNavBar threshold={10}/>
             <Fade in={true}  timeout={1000}>
                 <ImageBanner post={post}/>
