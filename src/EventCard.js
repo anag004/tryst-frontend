@@ -16,6 +16,8 @@ import ShareIcon from '@material-ui/icons/Share';
 import { withRouter } from 'react-router-dom';
 import FavoriteIcon from '@material-ui/icons/Favorite';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import InstagramIcon from '@material-ui/icons/Instagram';
 
 function EventCard(props) {
     const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, rippleTriggerFunction, others } = props;
@@ -26,7 +28,7 @@ function EventCard(props) {
         media: {
             height: 140,
         },
-        expand: {
+        register: {
             marginLeft: 'auto'
         }
     }));
@@ -55,17 +57,12 @@ function EventCard(props) {
                         </CardActionArea>
                         <CardActions disableSpacing>
                             <IconButton aria-label="add to favorites">
-                                <FavoriteIcon fontSize="small"/>
+                                <FacebookIcon fontSize="small"/>
                             </IconButton>
                             <IconButton aria-label="share">
-                                <ShareIcon fontSize="small"/>
+                                <InstagramIcon fontSize="small"/>
                             </IconButton>
-                            <IconButton
-                                className={classes.expand}
-                                aria-label="show more"
-                            >
-                                <ExpandMoreIcon fontSize="small"/>
-                            </IconButton>
+                            <Button className={classes.register}>Register</Button>
                         </CardActions>
                     </Card>
                 </Zoom>
