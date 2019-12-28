@@ -47,16 +47,9 @@ export default function EventDetail(props) {
           "Learn to build and deploy smart AI ",
         image: 'https://source.unsplash.com/random',
         imgText: 'main image description',
-        postDescription:{
-            about:"We are hosting some amazing events this year",
-            details:"the event will be held a s folows on this date and this time",
-            prize:"The prizes for the event are as follows",
-            register:"Follow below to register"
-        },
     };
 
     const classes = useStyle();
-    // const paperClasses = paperStyle();
 
     return (
         <ThemeProvider theme={theme}>
