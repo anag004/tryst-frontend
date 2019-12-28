@@ -1,49 +1,80 @@
-import React from 'react';
-import Container from '@material-ui/core/Container';
-import { makeStyles } from "@material-ui/core/styles";
+import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Paper, Fade } from '@material-ui/core';
-import NavBar from '../TopNavBar';
+import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper } from '@material-ui/core';
+import ImageBanner from '../ImageBanner';
+import TopNavBar from '../TopNavBar';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 
-const useStyles = makeStyles(theme => ({
-    root: {
-        backgroundColor: "black",
-        height: '100%',
-        position: 'fixed',
-    },
-    heading:{
-        margin:"auto",
-        marginTop:50,
-        fontWeight:"500"
-    },
-    paper:{
-        position:"absolute",
-        bottom:20,
-        top:80,
-        margin:40,
-        padding:20,
-        paddingBottom:-30,
-        overflow:"scroll",
-        backgroundColor:"#D5D3D6"
+const theme = createMuiTheme({
+    palette: {
+        primary: { main: '#2196F3' },
+        secondary: { main: '#4CAF50' }
     }
-}));
-const lodging="Tryst has been hosting enthusiastic students and participants in huge numbers since its inception. We, at Tryst, aim to ensure that the overall experience of all the attendees, participants and speakers is safe and comfortable. In this process, we also provide paid accommodation to all those interested to stay within IITD campus, during Tryst. The tariffs for the accommodation are also basic and minimal. Please follow this link to book your accommodation at IIT Delhi during Tryst 2020.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor. We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor. We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor. We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor. Tryst is the annual Technical and Manangement festival of IIt Delhi. We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor. We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor. We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor. We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor."
+});
 
-export default function HomePage(props) {
-    const classes = useStyles();
+export default function Lodging(props) {
+    const {heading, containerBackgroundColor,textColor, ...others} = props;
+
+    const useStyle = makeStyles((theme) => ({
+        root: {
+            padding:theme.spacing(3)
+        }, 
+    }));
+
+    const post = {
+        category:"Lodging",
+        title: 'Lodging@Tryst',
+        description:
+          "Stay on campus while you enjoy what Tryst has to offer",
+        image: 'https://source.unsplash.com/random',
+        imgText: 'main image description',
+    };
+
+    const classes = useStyle();
+
     return (
-        <Container disableGutters="true" classes={classes}>
-            <NavBar threshold={10}/>
+        <ThemeProvider theme={theme}>
+            <TopNavBar threshold={10}/>
+            <Fade in={true}  timeout={1000}>
+                <ImageBanner post={post}/>
+            </Fade>
             <Fade in={true} timeout={1000}>
-                <Typography variant="h3" color="secondary" align="center" className={classes.heading}>
-                    LODGING
-                </Typography>
+                <Container classes={classes} maxWidth="sm">
+                    <Typography variant="h4" align="center">Affordable. Convenient. Unique</Typography>
+                    <br/>
+                    <Typography variant="body1">
+                        Stay in one of the 13 hostels at IITD and experience IITD's unique hostel culture. Never be more than 5 minutes away from the action. All for a fraction of the cost of a hotel. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo. Nunc imperdiet cursus nibh, at feugiat turpis mollis at. Maecenas venenatis risus id ex scelerisque iaculis. Integer sed arcu ultrices, gravida tellus eget, rhoncus tortor. Donec condimentum quis lectus nec fringilla. Proin viverra mauris at tellus molestie lacinia. 
+                    </Typography>
+                    <br></br>
+                    <Typography variant="h4">Eligibility</Typography>
+                    <br></br>
+                    You must satisfy the following criteria to be eligible for a reservation
+                    <Typography variant="body1">
+                        <ol>
+                            <li>We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend. </li>
+                            <li>We do <b>not</b> talk about Fight Club. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa.</li>
+                            <li>We do <i>not</i> talk about Fight Club. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. </li>
+                            <li>We do <u>not</u> talk about Fight Club.  Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo</li>
+                        </ol>
+                    </Typography>
+                    <Typography variant="h4">Rates</Typography>
+                    <br></br>
+                    Dirt cheap rates
+                    <Typography variant="body1">
+                        <ul>
+                            <li><i>One night: </i> 2000 INR</li>
+                            <li><i>Two nights: </i> 3000 INR</li>
+                            <li><i>Three nights: </i> 5000 INR</li>
+                        </ul>
+                    </Typography>
+                    <Typography variant="body2">
+                        <b> 
+                            Contact urnasemper@gmail.com to make resevations.
+                        </b>
+                    </Typography>
+                </Container>
             </Fade>
-            <Fade in={true} timeout={2000}>
-                <Paper elevation={20} component="h3" background="inherit" className={classes.paper}>
-                    {lodging}
-                </Paper>
-            </Fade>
-        </Container>
-    )
+            
+        </ThemeProvider>
+    );
 }
