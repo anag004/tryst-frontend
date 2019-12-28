@@ -37,7 +37,7 @@ function EventCard(props) {
     const classes = useStyles();
 
     const handleClick = (event) => {
-        setTimeout(() => history.push(linkTo) , 700);
+        setTimeout(() => history.push(linkTo) , 600);
     } 
 
     return (
