@@ -9,13 +9,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function EventCardRow(props) {
-    const {children, clickHandler, ...others} = props;
+    const {children, rippleTriggerFunction, ...others} = props;
     const classes = useStyles();
-    
+
     return (
         <div style={{ paddingLeft:0, paddingRight:20 }}>
-            <Grid container spacing={2} className={classes.container} onClick={clickHandler} {...others}>
-                {children}
+            <Grid container spacing={2} className={classes.container} {...others}>
+                {
+                    React.Children.map(children, child => 
+                        React.cloneElement(child, { rippleTriggerFunction: rippleTriggerFunction })
+                    )
+                }
             </Grid>
         </div>
     )

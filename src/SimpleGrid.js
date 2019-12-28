@@ -3,7 +3,7 @@ import EventCard from './EventCard';
 
 // Returns a grid of cards for demo purposes
 function SimpleGrid(props) {
-    const {n, backgroundColor, linkTo} = props;
+    const {n, backgroundColor, linkTo, rippleTriggerFunction} = props;
     let arr = [];
 
     for (let i = 0; i < n; i++) {
@@ -24,6 +24,7 @@ function SimpleGrid(props) {
                     xs={8}
                     backgroundColor = {backgroundColor}
                     linkTo = {linkTo}
+                    rippleTriggerFunction={rippleTriggerFunction}
                 />
             )}
         </>

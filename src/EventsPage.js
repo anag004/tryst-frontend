@@ -89,13 +89,13 @@ export default function EventsPage() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="1"
             >
-                <EventCardRow data-color={color1}  clickHandler={handleClick}>
+                <EventCardRow data-color={color1}  rippleTriggerFunction={handleClick}>
                     <SimpleGrid n="3" linkTo="/event/1"/>
                 </EventCardRow>
-                <EventCardRow data-color={color1} clickHandler={handleClick}>
+                <EventCardRow data-color={color1} rippleTriggerFunction={handleClick}>
                     <SimpleGrid n="2" linkTo="/event/1"/>
                 </EventCardRow>
-                <EventCardRow data-color={color1} clickHandler={handleClick}>
+                <EventCardRow data-color={color1} rippleTriggerFunction={handleClick}>
                     <SimpleGrid n="3" linkTo="/event/1"/>
                 </EventCardRow>
             </PageSection>
@@ -107,13 +107,13 @@ export default function EventsPage() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="2"
             >
-                <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color2} rippleTriggerFunction={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
                 </EventCardRow>
-                <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color2} rippleTriggerFunction={handleClick} onClick={handleClick}>
                     <SimpleGrid n="2" backgroundColor="#D1EDE1" linkTo="/event/2"/>
                 </EventCardRow>
-                <EventCardRow data-color={color2} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color2} rippleTriggerFunction={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
                 </EventCardRow>
             </PageSection>
@@ -125,13 +125,13 @@ export default function EventsPage() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="3"
             >
-                <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color3} rippleTriggerFunction={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
                 </EventCardRow>
-                <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color3} rippleTriggerFunction={handleClick} onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
                 </EventCardRow>
-                <EventCardRow data-color={color3} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color3} rippleTriggerFunction={handleClick} onClick={handleClick}>
                   <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
                 </EventCardRow>
             </PageSection>
@@ -143,13 +143,13 @@ export default function EventsPage() {
               description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
               id="4"
             >
-                <EventCardRow data-color={color4}  clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color4}  rippleTriggerFunction={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" linkTo="/event/4"/>
                 </EventCardRow>
-                <EventCardRow data-color={color4} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color4} rippleTriggerFunction={handleClick} onClick={handleClick}>
                     <SimpleGrid n="2" linkTo="/event/4"/>
                 </EventCardRow>
-                <EventCardRow data-color={color4} clickHandler={handleClick} onClick={handleClick}>
+                <EventCardRow data-color={color4} rippleTriggerFunction={handleClick} onClick={handleClick}>
                     <SimpleGrid n="3" linkTo="/event/4"/>
                 </EventCardRow>
             </PageSection>

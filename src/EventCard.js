@@ -14,9 +14,11 @@ import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
 import ShareIcon from '@material-ui/icons/Share';
 import { withRouter } from 'react-router-dom';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 function EventCard(props) {
-    const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, others } = props;
+    const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, rippleTriggerFunction, others } = props;
     const useStyles = makeStyles((theme) => ({
         root: {
             backgroundColor: backgroundColor ? backgroundColor : "white",
@@ -24,18 +26,23 @@ function EventCard(props) {
         media: {
             height: 140,
         },
+        expand: {
+            marginLeft: 'auto'
+        }
     }));
     
+    console.log(rippleTriggerFunction);
     const classes = useStyles();
-    const handleClick = () => {
-        setTimeout(() => history.push(linkTo) , 600);
+
+    const handleClick = (event) => {
+        setTimeout(() => history.push(linkTo) , 700);
     } 
 
     return (
             <Grid item xs>
                 <Zoom>
                     <Card className={classes.card} classes={classes} >
-                        <CardActionArea onClick={handleClick}>
+                        <CardActionArea onClick={(e) => {rippleTriggerFunction(e); handleClick(e)}}>
                             <CardMedia className={classes.media} image={cardImage} {...others}/>
                             <CardContent>
                                 <Typography gutterBottom variant="h5" component="h2">
@@ -46,6 +53,20 @@ function EventCard(props) {
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
+                        <CardActions disableSpacing>
+                            <IconButton aria-label="add to favorites">
+                                <FavoriteIcon fontSize="small"/>
+                            </IconButton>
+                            <IconButton aria-label="share">
+                                <ShareIcon fontSize="small"/>
+                            </IconButton>
+                            <IconButton
+                                className={classes.expand}
+                                aria-label="show more"
+                            >
+                                <ExpandMoreIcon fontSize="small"/>
+                            </IconButton>
+                        </CardActions>
                     </Card>
                 </Zoom>
             </Grid>
