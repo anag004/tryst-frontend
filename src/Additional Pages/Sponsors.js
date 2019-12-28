@@ -43,10 +43,7 @@ function Sponsors(props) {
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
-            <NavBar threshold={10}/>
-            <Fade in={true}  timeout={1000}>
-                <ImageBanner post={post}/>
-            </Fade>
+            <NavBar threshold={10} disableOpacity={true}/>
             <br/><br/>
             <PageSection
                 heading="Title Sponsors"

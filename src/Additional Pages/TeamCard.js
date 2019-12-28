@@ -16,8 +16,8 @@ function SponsorCard(props) {
     const { cardHeading, cardImage, backgroundColor, cardDescription, email, others } = props;
     const useStyles = makeStyles((theme) => ({
         root: {
-            backgroundColor: backgroundColor ? backgroundColor : "white",
-            maxWidth:300,
+            backgroundColor: backgroundColor ? backgroundColor : "#efefef",
+            maxWidth:200,
             alignItems:"center",
             margin:"auto",
         },

@@ -65,7 +65,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 function NavBar(props) {
-    const { threshold, ...others } = props;
+    const { threshold, disableOpacity, ...others } = props;
     const largeScreen = useMediaQuery('(min-width:850px)');
 
     const handleScroll = (event) => {
@@ -112,7 +112,7 @@ function NavBar(props) {
         <React.Fragment>
             <NavDrawer visible={visible} toggleDrawer={toggleDrawer}/>
             <Slide in={true}>
-                <AppBar classes={ scrollPosition ? {} : classesAppBarTransparent } className={classesAppBarTransition} elevation={scrollPosition ? 4 : 0} {...others}>
+                <AppBar classes={ (scrollPosition || disableOpacity) ? {} : classesAppBarTransparent } className={classesAppBarTransition} elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
                     <Toolbar variant="dense" className={classes.toolbar}>
                             {/* ScaleOnScroll animates NavBar font here */}
                             <Typography variant="h6" className={classes.title}>

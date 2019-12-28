@@ -8,6 +8,8 @@ import NavBar from '../TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import TeamCard from './TeamCard';
+import ImageBanner from '../ImageBanner';
+import Fade from '@material-ui/core/Fade';
 
 const theme = createMuiTheme({
     palette: {
@@ -25,18 +27,27 @@ function Sponsors(props) {
             marginTop:100,
         }
     }));
+
+    const post = {
+        category:"The Team",
+        title: 'The Organizing Team',
+        description:
+          "The people who make sure Tryst is user friendly and bug-free",
+        image: 'https://source.unsplash.com/random',
+        imgText: 'main image description',
+    };
     
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
-            <NavBar threshold={10}/>
+            <NavBar threshold={10} disableOpacity={true}/>
             <PageSection
-                heading="The Team"
+                heading="The Tryst Team"
                 headingAlignment="center"
-                containerBackgroundColor="#7BC5AE"
-                textColor="white"
-                description=""
-                padding={9}
+                containerBackgroundColor="white"
+                textColor="black"
+                description="The people who make sure Tryst runs bug-free"
+                padding={12}
             >
                 <SponsorCardRow>                      
                     <TeamCard
@@ -69,7 +80,7 @@ function Sponsors(props) {
                 <SponsorCardRow>
                     <TeamCard
                         cardHeading="Kartikeya Sharma"
-                        cardDescription="CTM, Publicity and Creative"
+                        cardDescription="CTM, Publicity"
                         cardImage=""
                         email="publicity@tryst-iitd.com"
                     />
