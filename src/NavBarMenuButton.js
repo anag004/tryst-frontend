@@ -1,8 +1,9 @@
 import React from 'react';
-import { makeStyles } from "@material-ui/core/styles";
-import { Button } from '@material-ui/core';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import { makeStyles } from "@material-ui/core/styles";
 
 const largeButtonStyle = makeStyles(theme => ({
     root: {
@@ -17,11 +18,12 @@ const smallButtonStyle = makeStyles(theme => ({
         transition: 'all 0.5s',
         color: theme.palette.getContrastText(theme.palette.primary.dark),
         marginRight: theme.spacing(1),
+        // transform: 'scale(0.7)'
     },
 }));
 
-function NavBarButton(props) {
-    const {children, ...others} = props;
+export default function NavBarMenuButton(props) {
+    const {...others} = props;
     const classesLarge = largeButtonStyle();
     const classesSmall = smallButtonStyle();
     const trigger = useScrollTrigger();
@@ -29,17 +31,27 @@ function NavBarButton(props) {
 
     if (!trigger && largeScreen) {
         return (
-            <Button className={classesLarge.root} size="large" {...others}>
-                {children}
-            </Button>
+            <IconButton
+                classes={classesLarge}
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                {...others}
+            >
+                <MenuIcon fontSize="large"/>
+            </IconButton>
         );
     } else {
         return (
-            <Button className={classesSmall.root} size="small" {...others}>
-                {children}
-            </Button>
+            <IconButton
+                classes={classesSmall}
+                color="inherit"
+                aria-label="open drawer"
+                edge="start"
+                {...others}
+            >
+                <MenuIcon fontSize="small"/>
+            </IconButton>
         );
     }
 }
-
-export default NavBarButton;

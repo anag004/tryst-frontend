@@ -11,6 +11,7 @@ import EventCardRow from './EventCardRow'
 import SimpleGrid from './SimpleGrid';
 import CategorySpeedDial from './CategorySpeedDial';
 import PageRipple from './PageRipple';
+import NavDrawer from './NavDrawer';
 
 const theme = createMuiTheme({
   palette: {

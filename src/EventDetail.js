@@ -38,10 +38,12 @@ export default function EventDetail(props) {
             
         },
         dialog: {
-            backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
+            marginTop:window.innerWidth>500?30:50,
+            // backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',
+            // backgroundSize: 'cover',
+            // backgroundRepeat: 'no-repeat',
+            // backgroundPosition: 'center',
+            
           },
         imageBanner:{
             height:420,
