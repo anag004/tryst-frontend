@@ -3,14 +3,29 @@ import Typography from '@material-ui/core/Typography';
 import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
 import TopNavBar from './TopNavBar';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+
+const theme = createMuiTheme({
+    palette: {
+        primary: { main: '#2196F3' },
+        secondary: { main: '#4CAF50' }
+    }
+});
 
 export default function EventDetail(props) {
     const {heading, containerBackgroundColor,textColor, ...others} = props;
-    const [value, setValue] = React.useState("about");
 
-    // const Transition = React.forwardRef(function Transition(props) {
-    //     return <Slide timeout={1000} direction="up" />;
-    // });
+    const useStyle = makeStyles((theme) => ({
+        root: {
+            padding:theme.spacing(3)
+        }
+    }));
+
+    // const paperStyle = makeStyles((theme) => ({
+    //     root: {
+    //         maxWidth: 850,
+    //     }
+    // }));
 
     const post = {
         category:"Tryst Event Category 1",
@@ -27,75 +42,52 @@ export default function EventDetail(props) {
         },
     };
 
-    const handleChange = (event, newValue) => {
-        setValue(newValue);
-        // showData(post.description.{newValue})
-    };
-    
-    const useStyle = makeStyles (() => ({
-        root:{
-            scrollbarWidth:"none",
-            
-        },
-        dialog: {
-            marginTop:window.innerWidth>500?30:50,
-            // backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',
-            // backgroundSize: 'cover',
-            // backgroundRepeat: 'no-repeat',
-            // backgroundPosition: 'center',
-            
-          },
-        imageBanner:{
-            height:420,
-            width:window.innerWidth>1000?1000:"auto",
-            overflow:"hidden",
-            marginLeft:"auto"
-        },
-        data:{
-            margin:window.innerWidth>1000?20:10,
-            fontSize:window.innerWidth>1000?20:15
-        },
-        tabs:{
-            fontSize:window.innerWidth>1000?20:"auto",
-            marginTop:window.innerWidth>1000?20:"auto",
-            color:"black",  
-        },
-        category:{
-            fontSize:20,
-            backgroundColor:"#D5D3D6",
-        },
-        heading:{
-            marginTop:20
-        },
-        dialogContent:{
-            backgroundColor:"#D5D3D6",
-        }
-    }));
-    const classes=useStyle()
+    const classes = useStyle();
+    // const paperClasses = paperStyle();
+
     return (
-        <React.Fragment>
+        <ThemeProvider theme={theme}>
             <TopNavBar threshold={10}/>
-            <ImageBanner post={post}/>
-            <Paper className={classes.paper}>
-                    <Typography variant="h3" className={classes.heading} > {post.title} </Typography>
-                    <Tabs
-                        value={value}
-                        onChange={handleChange}
-                        indicatorColor="primary"
-                        textColor="primary"
-                        variant="scrollable"
-                        scrollButtons="auto"
-                        // className={classes.tabs}    
-                    >
-                        <Tab label="About" value="about" className={classes.tabs} />
-                        <Tab label="Details" value="details" className={classes.tabs} />
-                        <Tab label="Prizes" value="prize" className={classes.tabs} />
-                        <Tab label="Register" value="register" className={classes.tabs} />
-                    </Tabs>
-                    <div className={classes.data}>
-                        {post.postDescription[value]}
-                    </div>
-            </Paper>
-        </React.Fragment>
+            <Fade in={true}  timeout={1000}>
+                <ImageBanner post={post}/>
+            </Fade>
+            <Fade in={true} timeout={1000}>
+                <Container classes={classes} maxWidth="sm">
+                    <Typography variant="h4">Description</Typography>
+                    <br/>
+                    <Typography variant="body1">
+                        This is an awesome event in which two people design an AI together. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo. Nunc imperdiet cursus nibh, at feugiat turpis mollis at. Maecenas venenatis risus id ex scelerisque iaculis. Integer sed arcu ultrices, gravida tellus eget, rhoncus tortor. Donec condimentum quis lectus nec fringilla. Proin viverra mauris at tellus molestie lacinia. 
+                    </Typography>
+                    <br></br>
+                    <Typography variant="h4">Rules</Typography>
+                    <br></br>
+                    All of the rules below are binding and failure to follow will result in immediate disqualification. 
+                    <Typography variant="body1">
+                        <ol>
+                            <li>We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend. </li>
+                            <li>We do <b>not</b> talk about Fight Club. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa.</li>
+                            <li>We do <i>not</i> talk about Fight Club. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. </li>
+                            <li>We do <u>not</u> talk about Fight Club.  Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo</li>
+                        </ol>
+                    </Typography>
+                    <Typography variant="h4">Prizes</Typography>
+                    <br></br>
+                    Some amazing prizes to make you rich
+                    <Typography variant="body1">
+                        <ul>
+                            <li><i>First prize: </i> 35000 INR</li>
+                            <li><i>Second prize: </i> 20000 INR</li>
+                            <li><i>Third prize: </i> 10000 INR</li>
+                        </ul>
+                    </Typography>
+                    <Typography variant="body2">
+                        <b> 
+                            Contact urnasemper@gmail.com for any queries.
+                        </b>
+                    </Typography>
+                </Container>
+            </Fade>
+            
+        </ThemeProvider>
     );
 }

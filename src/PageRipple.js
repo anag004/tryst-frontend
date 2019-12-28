@@ -16,10 +16,11 @@ const useStyles = makeStyles((theme) => ({
 }));    
 
 export default function PageRipple(props) {
-    const { activated, positionX, positionY, screenWidth, screenHeight,backgroundColor, ...others } = props;
+    const { activated, positionX, positionY, screenWidth, screenHeight, ...others } = props;
     const classes = useStyles();
     const maxDimension = Math.max(screenWidth, screenHeight) * Math.sqrt(2);
-
+    const backgroundColor = "#FFF";
+    
     const splash = keyframes`
         0% {
             transform: translate(${positionX - screenWidth/2}px, ${positionY - screenHeight/2}px);
