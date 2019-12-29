@@ -51,64 +51,64 @@ function Sponsors(props) {
             >
                 <SponsorCardRow>                      
                     <TeamCard
-                        cardHeading="Abhinav Arora"
+                        cardHeading="Sarthak Kala"
                         cardDescription="Overall Co-ordinator"
                         cardImage=""
-                        email="admin@tryst-iitd.com"
+                        email="sarthakkala22@gmail.com"
                     />
                 </SponsorCardRow>
                 <SponsorCardRow>
                     <TeamCard
-                        cardHeading="Vatsal Sharma"
-                        cardDescription="CTM, Infra and Workshop"
-                        cardImage=""
+                        cardHeading="Atishya Jain"
+                        cardDescription="CTM, Technical"
+                        cardImage="https://drive.google.com/open?id=1W6mPBRCa7BzWho63o4v5TaFNGY6xUHJe"
                         email="workshops@tryst-iitd.com"
                     />
                     <TeamCard
-                        cardHeading="Adit Gupta"
-                        cardDescription="CTM, Admin and Finance"
-                        cardImage=""
-                        email="finance@tryst-iitd.com"
-                    />
-                    <TeamCard
-                        cardHeading="Siddharth Khera"
-                        cardDescription="CTM, Events and Social"
-                        cardImage=""
-                        email="events@tryst-iitd.com"
-                    />
-                </SponsorCardRow>
-                <SponsorCardRow>
-                    <TeamCard
-                        cardHeading="Kartikeya Sharma"
+                        cardHeading="Shubham Verma"
                         cardDescription="CTM, Publicity"
-                        cardImage=""
-                        email="publicity@tryst-iitd.com"
+                        cardImage="https://drive.google.com/open?id=1xQMJTusnpmT38CK8MIO-zHcFG3NznslI"
+                        email="vermashubham28896@gmail.com"
                     />
                     <TeamCard
-                        cardHeading="Yash Agarwal"
-                        cardDescription="CTM, Guest Lecture"
-                        cardImage=""
-                        email="guest@tryst-iitd.com"
-                    />
-                    <TeamCard
-                        cardHeading="Abhishree Arora"
-                        cardDescription="CTM, Marketing"
-                        cardImage=""
-                        email="marketing@tryst-iitd.com"
+                        cardHeading="Sonal Jangir"
+                        cardDescription="CTM, Logistics"
+                        cardImage="https://drive.google.com/open?id=10dqZ_tgLmffuZ-kA-89u5AMgXJ01AeTk"
+                        email="sonal16j@gmail.com"
                     />
                 </SponsorCardRow>
                 <SponsorCardRow>
                     <TeamCard
-                        cardHeading="Ayush Patel"
-                        cardDescription="Technical Co-ordinator"
-                        cardImage=""
-                        email="patel.ayush@gmail.com"
+                        cardHeading="Satyageet Yadav"
+                        cardDescription="CTM, Events"
+                        cardImage="https://drive.google.com/open?id=1wf7bc4_Pi-DoQMRy2tjJs-YVOEy0mrD9"
+                        email="satyageetyadav01@gmail.com"
                     />
                     <TeamCard
-                        cardHeading="Arpan Mangal"
+                        cardHeading="John Doe"
+                        cardDescription="CTM, Stuff"
+                        cardImage=""
+                        email="urnasemper@tryst-iitd.com"
+                    />
+                    <TeamCard
+                        cardHeading="John Doe"
+                        cardDescription="CTM, Stuff"
+                        cardImage=""
+                        email="urnasemper@tryst-iitd.com"
+                    />
+                </SponsorCardRow>
+                <SponsorCardRow>
+                    <TeamCard
+                        cardHeading="John Doe"
                         cardDescription="Technical Co-ordinator"
                         cardImage=""
-                        email="mangalarpan@gmail.com"
+                        email="urnasemper@tryst-iitd.com"
+                    />
+                    <TeamCard
+                        cardHeading="John Doe"
+                        cardDescription="Technical Co-ordinator"
+                        cardImage=""
+                        email="urnasemper@tryst-iitd.com"
                     />
                 </SponsorCardRow>
 
