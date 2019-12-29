@@ -94,7 +94,7 @@ function EventDropDown(props) {
                     Events
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
-                    <Link className={linkClasses.link} to="/events">
+                    <Link className={linkClasses.link} to="/events#home">
                         <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
                     </Link>
                     <Link className={linkClasses.link} to="/events#section1">
@@ -119,7 +119,7 @@ function EventDropDown(props) {
                     Events
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
-                    <Link className={linkClasses.link} to="/events">
+                    <Link className={linkClasses.link} to="/events#home">
                         <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
                     </Link>
                     <Link className={linkClasses.link} to="/events#section1">

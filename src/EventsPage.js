@@ -5,6 +5,7 @@ import DummyText from "./DummyText";
 import SignUp from "./Form/SignUp"
 import SignIn from "./Form/SignIn"
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { makeStyles } from "@material-ui/core/styles";
 import ImageBanner from './ImageBanner';
 import PageSection from './PageSection';
 import EventCardRow from './EventCardRow'
@@ -52,6 +53,15 @@ const pageSectionNamesWithIds=[
   } 
 ]
 
+const useStyles = makeStyles(theme => ({
+    anchor:  {
+      display: "block",
+      position: "relative",
+      top: -45,
+      visibility: "hidden",
+    }
+}))
+
 export default function EventsPage() {
   const [activateRippleEffect, setActivateRippleEffect] = React.useState(false);
   const [positionX, setPositionX] = React.useState(false);
@@ -59,6 +69,7 @@ export default function EventsPage() {
   const [screenWidth, setScreenWidth] = React.useState(false);
   const [screenHeight, setScreenHeight] = React.useState(false);
   const [transitionColor,setTransitionColor] = React.useState("green");
+  const classes = useStyles();
 
   const color1="white",color2="#7BC5AE",color3="#A67F78", color4="white"; 
 
@@ -68,6 +79,7 @@ export default function EventsPage() {
     setScreenWidth(window.innerWidth); setScreenHeight(window.innerHeight);
     setTransitionColor(event.currentTarget.dataset.color)
   }
+
 
   return (
         <ThemeProvider theme={theme}>
@@ -80,8 +92,10 @@ export default function EventsPage() {
                         backgroundColor={transitionColor}
             />
             <NavBar threshold={10}/>
+            <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
-            <div id="section1">
+            <div id="section1" className={classes.anchor}>
+            </div>
               <PageSection 
                 heading="Event Section 1"
                 headingAlignment="center"
@@ -100,8 +114,9 @@ export default function EventsPage() {
                       <SimpleGrid n="3" linkTo="/event/1"/>
                   </EventCardRow>
               </PageSection>
+            
+            <div id="section2" className={classes.anchor}>
             </div>
-            <div id="section2">
               <PageSection 
                 heading="Event Section 2"
                 headingAlignment="center"
@@ -120,8 +135,9 @@ export default function EventsPage() {
                       <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
                   </EventCardRow>
               </PageSection>
+            
+            <div id="section3" className={classes.anchor}>
             </div>
-            <div id="section3">
               <PageSection 
                 heading="Event Section 3"
                 headingAlignment="center"
@@ -140,8 +156,9 @@ export default function EventsPage() {
                     <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
                   </EventCardRow>
               </PageSection>
+           
+            <div id="section4" className={classes.anchor}>
             </div>
-            <div id="section4">
               <PageSection 
                 heading="Event Section 4"
                 headingAlignment="center"
@@ -160,7 +177,7 @@ export default function EventsPage() {
                       <SimpleGrid n="3" linkTo="/event/4"/>
                   </EventCardRow>
               </PageSection>
-            </div>
+            
             <div style={{position:"fixed", bottom:40,right:40}}>
               <CategorySpeedDial actions={pageSectionNamesWithIds}/>
             </div>

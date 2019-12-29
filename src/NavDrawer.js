@@ -53,7 +53,7 @@ export default function NavDrawer(props) {
                                 />
                             </ListItem>
                             <Collapse in={eventCollapse}>
-                                    {[['All events', '/events'], ['Event Section 1', '/events#section1'], ['Event Section 2', '/events#section2'],['Event Section 3', '/events#section3'], ['Event Section 4', '/events#section4']].map((subtext) => (
+                                    {[['All events', '/events#home'], ['Event Section 1', '/events#section1'], ['Event Section 2', '/events#section2'],['Event Section 3', '/events#section3'], ['Event Section 4', '/events#section4']].map((subtext) => (
                                         <Link to={subtext[1]} className={classes.link} onClick={toggleDrawer}>
                                             <ListItem button key={subtext[0]}>
                                                 <ListItemText 
