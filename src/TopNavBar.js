@@ -126,9 +126,7 @@ function NavBar(props) {
                                         <Link to="/home" className={classes.link}>
                                             <NavBarButton>Home</NavBarButton>
                                         </Link>
-                                        <Link to="/events" className={classes.link}>
-                                            <EventDropDown/>
-                                        </Link>
+                                        <EventDropDown/>
                                         <Link to="/lodging" className={classes.link}>
                                             <NavBarButton>Lodging</NavBarButton>
                                         </Link>

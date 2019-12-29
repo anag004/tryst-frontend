@@ -94,11 +94,12 @@ function EventDropDown(props) {
                 <Button className={classesLarge.root} size="large" onClick={handleClick} {...others}> 	
                     Events
                 </Button>
-                <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose}>
-                    <StyledMenuItem>Financial</StyledMenuItem>
-                    <StyledMenuItem>Workshops</StyledMenuItem>
-                    <StyledMenuItem>Competitions</StyledMenuItem>
-                    <StyledMenuItem>Technical</StyledMenuItem>
+                <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
+                    <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 1</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 2</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 3</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
                 </StyledMenu>
             </div>
         );
@@ -109,10 +110,11 @@ function EventDropDown(props) {
                     Events
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
-                    <StyledMenuItem onClick={handleClose}>Financial</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Workshops</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Competitions</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Technical</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 1</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 2</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 3</StyledMenuItem>
+                    <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
                 </StyledMenu>
             </div>
         );
