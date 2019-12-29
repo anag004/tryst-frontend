@@ -23,7 +23,7 @@ export default function Lodging(props) {
 
     const post = {
         category:"Lodging",
-        title: 'Lodging@Tryst',
+        title: "Lodging @Tryst",
         description:
           "Stay on campus while you enjoy what Tryst has to offer",
         image: 'https://source.unsplash.com/random',
