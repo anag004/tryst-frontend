@@ -25,7 +25,8 @@ const smallButtonStyle = makeStyles(theme => ({
 
 const linkStyle = makeStyles(theme => ({
     link: {
-        textDecoration: "none"
+        textDecoration: "none",
+        color: "black"
     },
 }));
 

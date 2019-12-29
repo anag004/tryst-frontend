@@ -22,7 +22,8 @@ const useStyles = makeStyles((theme) => ({
         fontWeight: 'bold'
     },
     link: {
-        textDecoration: "none"
+        textDecoration: "none",
+        color: "black"
     },
 }));
 
