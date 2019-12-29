@@ -7,6 +7,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import AddIcon from '@material-ui/icons/Add';
 import Fab from '@material-ui/core/Fab';
 import Grow from '@material-ui/core/Grow';
+import ScrollToTop from './ScrollToTop';
 
 const theme = createMuiTheme({
     palette: {
@@ -53,53 +54,53 @@ export default function EventDetail(props) {
 
     return (
         <ThemeProvider theme={theme}>
-            <Grow in={true}>
-                <Fab variant="extended" className={classes.fab} size="medium">
-                    <AddIcon fontSize="small"/>
-                    register
-                </Fab>
-            </Grow>
-            <TopNavBar threshold={10}/>
-            <Fade in={true}  timeout={1000}>
-                <ImageBanner post={post}/>
-            </Fade>
-            <Fade in={true} timeout={1000}>
-                <Container classes={classes} maxWidth="sm">
-                    <Typography variant="h4">Description</Typography>
-                    <br/>
-                    <Typography variant="body1">
-                        This is an awesome event in which two people design an AI together. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo. Nunc imperdiet cursus nibh, at feugiat turpis mollis at. Maecenas venenatis risus id ex scelerisque iaculis. Integer sed arcu ultrices, gravida tellus eget, rhoncus tortor. Donec condimentum quis lectus nec fringilla. Proin viverra mauris at tellus molestie lacinia. 
-                    </Typography>
-                    <br></br>
-                    <Typography variant="h4">Rules</Typography>
-                    <br></br>
-                    All of the rules below are binding and failure to follow will result in immediate disqualification. 
-                    <Typography variant="body1">
-                        <ol>
-                            <li>We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend. </li>
-                            <li>We do <b>not</b> talk about Fight Club. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa.</li>
-                            <li>We do <i>not</i> talk about Fight Club. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. </li>
-                            <li>We do <u>not</u> talk about Fight Club.  Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo</li>
-                        </ol>
-                    </Typography>
-                    <Typography variant="h4">Prizes</Typography>
-                    <br></br>
-                    Some amazing prizes to make you rich
-                    <Typography variant="body1">
-                        <ul>
-                            <li><i>First prize: </i> 35000 INR</li>
-                            <li><i>Second prize: </i> 20000 INR</li>
-                            <li><i>Third prize: </i> 10000 INR</li>
-                        </ul>
-                    </Typography>
-                    <Typography variant="body2">
-                        <b> 
-                            Contact urnasemper@gmail.com for any queries.
-                        </b>
-                    </Typography>
-                </Container>
-            </Fade>
-            
+            <ScrollToTop/>
+                <Grow in={true}>
+                    <Fab variant="extended" className={classes.fab} size="medium">
+                        <AddIcon fontSize="small"/>
+                        register
+                    </Fab>
+                </Grow>
+                <TopNavBar threshold={10}/>
+                <Fade in={true}  timeout={1000}>
+                    <ImageBanner post={post}/>
+                </Fade>
+                <Fade in={true} timeout={1000}>
+                    <Container classes={classes} maxWidth="sm">
+                        <Typography variant="h4">Description</Typography>
+                        <br/>
+                        <Typography variant="body1">
+                            This is an awesome event in which two people design an AI together. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo. Nunc imperdiet cursus nibh, at feugiat turpis mollis at. Maecenas venenatis risus id ex scelerisque iaculis. Integer sed arcu ultrices, gravida tellus eget, rhoncus tortor. Donec condimentum quis lectus nec fringilla. Proin viverra mauris at tellus molestie lacinia. 
+                        </Typography>
+                        <br></br>
+                        <Typography variant="h4">Rules</Typography>
+                        <br></br>
+                        All of the rules below are binding and failure to follow will result in immediate disqualification. 
+                        <Typography variant="body1">
+                            <ol>
+                                <li>We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend. </li>
+                                <li>We do <b>not</b> talk about Fight Club. Etiam bibendum, augue eu ultrices ullamcorper, lacus tortor condimentum justo, eget vestibulum nulla magna egestas massa.</li>
+                                <li>We do <i>not</i> talk about Fight Club. Maecenas sapien lacus, placerat in ipsum vel, ultricies dapibus mi. </li>
+                                <li>We do <u>not</u> talk about Fight Club.  Fusce sagittis turpis quis justo lacinia pulvinar. Duis porta mollis turpis at commodo</li>
+                            </ol>
+                        </Typography>
+                        <Typography variant="h4">Prizes</Typography>
+                        <br></br>
+                        Some amazing prizes to make you rich
+                        <Typography variant="body1">
+                            <ul>
+                                <li><i>First prize: </i> 35000 INR</li>
+                                <li><i>Second prize: </i> 20000 INR</li>
+                                <li><i>Third prize: </i> 10000 INR</li>
+                            </ul>
+                        </Typography>
+                        <Typography variant="body2">
+                            <b> 
+                                Contact urnasemper@gmail.com for any queries.
+                            </b>
+                        </Typography>
+                    </Container>
+                </Fade>
         </ThemeProvider>
     );
 }

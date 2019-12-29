@@ -4,6 +4,7 @@ import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, 
 import ImageBanner from '../ImageBanner';
 import TopNavBar from '../TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import ScrollToTop from '../ScrollToTop';
 
 const theme = createMuiTheme({
     palette: {
@@ -34,6 +35,7 @@ export default function Lodging(props) {
 
     return (
         <ThemeProvider theme={theme}>
+            <ScrollToTop/>
             <TopNavBar threshold={10}/>
             <Fade in={true}  timeout={1000}>
                 <ImageBanner post={post}/>
