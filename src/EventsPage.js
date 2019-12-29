@@ -81,78 +81,86 @@ export default function EventsPage() {
             />
             <NavBar threshold={10}/>
             <ImageBanner post={mainFeaturedPost} id="0"/>
-            <PageSection 
-              heading="Event Section 1"
-              headingAlignment="center"
-              containerBackgroundColor={color1}
-              textColor="black"
-              description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
-              id="1"
-            >
-                <EventCardRow data-color={color1}  rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="3" linkTo="/event/1"/>
-                </EventCardRow>
-                <EventCardRow data-color={color1} rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="2" linkTo="/event/1"/>
-                </EventCardRow>
-                <EventCardRow data-color={color1} rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="3" linkTo="/event/1"/>
-                </EventCardRow>
-            </PageSection>
-            <PageSection 
-              heading="Event Section 2"
-              headingAlignment="center"
-              containerBackgroundColor={color2}
-              textColor="white"
-              description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
-              id="2"
-            >
-                <EventCardRow data-color={color2} rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
-                </EventCardRow>
-                <EventCardRow data-color={color2} rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="2" backgroundColor="#D1EDE1" linkTo="/event/2"/>
-                </EventCardRow>
-                <EventCardRow data-color={color2} rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
-                </EventCardRow>
-            </PageSection>
-            <PageSection 
-              heading="Event Section 3"
-              headingAlignment="center"
-              containerBackgroundColor={color3}
-              textColor="white"
-              description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
-              id="3"
-            >
-                <EventCardRow data-color={color3} rippleTriggerFunction={handleClick}>
+            <div id="section1">
+              <PageSection 
+                heading="Event Section 1"
+                headingAlignment="center"
+                containerBackgroundColor={color1}
+                textColor="black"
+                description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
+                id="1"
+              >
+                  <EventCardRow data-color={color1}  rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="3" linkTo="/event/1"/>
+                  </EventCardRow>
+                  <EventCardRow data-color={color1} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="2" linkTo="/event/1"/>
+                  </EventCardRow>
+                  <EventCardRow data-color={color1} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="3" linkTo="/event/1"/>
+                  </EventCardRow>
+              </PageSection>
+            </div>
+            <div id="section2">
+              <PageSection 
+                heading="Event Section 2"
+                headingAlignment="center"
+                containerBackgroundColor={color2}
+                textColor="white"
+                description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
+                id="2"
+              >
+                  <EventCardRow data-color={color2} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
+                  </EventCardRow>
+                  <EventCardRow data-color={color2} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="2" backgroundColor="#D1EDE1" linkTo="/event/2"/>
+                  </EventCardRow>
+                  <EventCardRow data-color={color2} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="3" backgroundColor="#D1EDE1" linkTo="/event/2"/>
+                  </EventCardRow>
+              </PageSection>
+            </div>
+            <div id="section3">
+              <PageSection 
+                heading="Event Section 3"
+                headingAlignment="center"
+                containerBackgroundColor={color3}
+                textColor="white"
+                description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
+                id="3"
+              >
+                  <EventCardRow data-color={color3} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
+                  </EventCardRow>
+                  <EventCardRow data-color={color3} rippleTriggerFunction={handleClick}>
                     <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
-                </EventCardRow>
-                <EventCardRow data-color={color3} rippleTriggerFunction={handleClick}>
-                  <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
-                </EventCardRow>
-                <EventCardRow data-color={color3} rippleTriggerFunction={handleClick}>
-                  <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
-                </EventCardRow>
-            </PageSection>
-            <PageSection 
-              heading="Event Section 4"
-              headingAlignment="center"
-              containerBackgroundColor={color4}
-              textColor="black"
-              description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
-              id="4"
-            >
-                <EventCardRow data-color={color4}  rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="3" linkTo="/event/4"/>
-                </EventCardRow>
-                <EventCardRow data-color={color4} rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="2" linkTo="/event/4"/>
-                </EventCardRow>
-                <EventCardRow data-color={color4} rippleTriggerFunction={handleClick}>
-                    <SimpleGrid n="3" linkTo="/event/4"/>
-                </EventCardRow>
-            </PageSection>
+                  </EventCardRow>
+                  <EventCardRow data-color={color3} rippleTriggerFunction={handleClick}>
+                    <SimpleGrid n="3" backgroundColor="#E1DCD9" linkTo="/event/3"/>
+                  </EventCardRow>
+              </PageSection>
+            </div>
+            <div id="section4">
+              <PageSection 
+                heading="Event Section 4"
+                headingAlignment="center"
+                containerBackgroundColor={color4}
+                textColor="black"
+                description="This is the first event category at tryst. Lorem ipsum dolor sit amet. "
+                id="4"
+              >
+                  <EventCardRow data-color={color4}  rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="3" linkTo="/event/4"/>
+                  </EventCardRow>
+                  <EventCardRow data-color={color4} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="2" linkTo="/event/4"/>
+                  </EventCardRow>
+                  <EventCardRow data-color={color4} rippleTriggerFunction={handleClick}>
+                      <SimpleGrid n="3" linkTo="/event/4"/>
+                  </EventCardRow>
+              </PageSection>
+            </div>
             <div style={{position:"fixed", bottom:40,right:40}}>
               <CategorySpeedDial actions={pageSectionNamesWithIds}/>
             </div>

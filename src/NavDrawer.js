@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
-import { Link } from "react-router-dom";
+import { HashLink as Link } from "react-router-hash-link";
 import Collapse from "@material-ui/core/Collapse";
 import clsx from 'clsx';
 
@@ -53,18 +53,20 @@ export default function NavDrawer(props) {
                                 />
                             </ListItem>
                             <Collapse in={eventCollapse}>
-                                    {[['All events', '/sponsors'], ['Event Section 1', '/home'], ['Event Section 2', '/events'],['Event Section 3', '/lodging'], ['Event Section 4', '/team']].map((subtext) => (
-                                        <ListItem button key={subtext[0]}>
-                                            <ListItemText 
-                                            primary={subtext[0]} 
-                                            className={classes.listText}
-                                        />
-                                        </ListItem>
+                                    {[['All events', '/events'], ['Event Section 1', '/events#section1'], ['Event Section 2', '/events#section2'],['Event Section 3', '/events#section3'], ['Event Section 4', '/events#section4']].map((subtext) => (
+                                        <Link to={subtext[1]} className={classes.link} onClick={toggleDrawer}>
+                                            <ListItem button key={subtext[0]}>
+                                                <ListItemText 
+                                                primary={subtext[0]} 
+                                                className={classes.listText}
+                                            />
+                                            </ListItem>
+                                        </Link>
                                     ))}
                             </Collapse>
                         </React.Fragment>
                     : 
-                        <Link className={classes.link} to={text[1]}>
+                        <Link className={classes.link} to={text[1]} onClick={toggleDrawer}>
                             <ListItem button key={text[0]}>
                                 <ListItemText 
                                     primary={text[0]} 

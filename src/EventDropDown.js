@@ -5,6 +5,7 @@ import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
+import { HashLink as Link } from 'react-router-hash-link';
 
 const largeButtonStyle = makeStyles(theme => ({
     root: {
@@ -22,13 +23,10 @@ const smallButtonStyle = makeStyles(theme => ({
     },
 }));
 
-const buttonStyle = makeStyles(theme => ({
-    root: {
-        transition: 'all 0.5s',
-        color: theme.palette.getContrastText(theme.palette.primary.dark),
-        border: '0px', 
-        paddingRight: theme.spacing(0.5)
-    }
+const linkStyle = makeStyles(theme => ({
+    link: {
+        textDecoration: "none"
+    },
 }));
 
 const arrowStyle = makeStyles(theme => ({
@@ -79,6 +77,7 @@ function EventDropDown(props) {
     const trigger = useScrollTrigger();
     const largeScreen = useMediaQuery('(min-width:600px)');
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const linkClasses = linkStyle();
 
     const handleClick = event => {
         setAnchorEl(event.currentTarget);
@@ -95,11 +94,21 @@ function EventDropDown(props) {
                     Events
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
-                    <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Event Section 1</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Event Section 2</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Event Section 3</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
+                    <Link className={linkClasses.link} to="/events">
+                        <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
+                    </Link>
+                    <Link className={linkClasses.link} to="/events#section1">
+                        <StyledMenuItem onClick={handleClose}>Event Section 1</StyledMenuItem>
+                    </Link>
+                    <Link className={linkClasses.link} to="/events#section2">
+                        <StyledMenuItem onClick={handleClose}>Event Section 2</StyledMenuItem>
+                    </Link>
+                    <Link className={linkClasses.link} to="/events#section3">
+                        <StyledMenuItem onClick={handleClose}>Event Section 3</StyledMenuItem>
+                    </Link>
+                    <Link className={linkClasses.link} to="/events#section4">
+                        <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
+                    </Link>
                 </StyledMenu>
             </div>
         );
@@ -114,7 +123,9 @@ function EventDropDown(props) {
                     <StyledMenuItem onClick={handleClose}>Event Section 1</StyledMenuItem>
                     <StyledMenuItem onClick={handleClose}>Event Section 2</StyledMenuItem>
                     <StyledMenuItem onClick={handleClose}>Event Section 3</StyledMenuItem>
-                    <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
+                    <Link>
+                        <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
+                    </Link>
                 </StyledMenu>
             </div>
         );
