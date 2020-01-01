@@ -14,7 +14,7 @@ import SignUp from './Form/SignUp';
 import Lodging from './Additional Pages/Lodging';
 import Sponsors from './Additional Pages/Sponsors';
 import Team from './Additional Pages/Team';
-
+import ComingSoon from './ComingSoon'
 function App() {
   return (
       <Fragment>
@@ -23,7 +23,7 @@ function App() {
             <Route path="/home">
               <HomePage/>
             </Route>
-            <Route path="/event/1">
+            {/* <Route path="/event/1">
               <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
             </Route>
             <Route path="/event/2">
@@ -31,23 +31,23 @@ function App() {
             </Route>
             <Route path="/event/3">
               <EventDetail heading="Super Event" containerBackgroundColor="#A67F78" textColor="white"/>
-            </Route>
+            </Route> */}
             <Route path="/events">
-              <EventsPage/>
+              <ComingSoon/>
             </Route>
-            <Route path="/event/4">
+            {/* <Route path="/event/4">
               <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
-            </Route>
+            </Route> */}
             <Route path="/" exact>
               <HomePage/>
             </Route>
             
-            <Route path="/login">
+            {/* <Route path="/login">
               <SignIn/>
             </Route>
             <Route path="/signUp">
               <SignUp/>
-            </Route>
+            </Route> */}
             <Route path="/lodging">
               <Lodging/>
             </Route>
