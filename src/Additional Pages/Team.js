@@ -10,6 +10,13 @@ import Typography from '@material-ui/core/Typography';
 import TeamCard from './TeamCard';
 import ImageBanner from '../ImageBanner';
 import Fade from '@material-ui/core/Fade';
+import ImageSarthakKala from '../images/SarthakKala.jpg';
+import ImageSonalJangir from '../images/SonalJangir.jpg';
+import ImageAtishyaJain from '../images/AtishyaJain.jpg';
+import ImageHarmanMehta from '../images/HarmanMehta.jpg';
+import ImageNaitikGupta from '../images/NaitikGupta.jpg';
+import ImageSatyageet from '../images/Satyageet.jpg';
+import ImageShubhamVerma from '../images/ShubhamVerma.jpg';
 
 const theme = createMuiTheme({
     palette: {
@@ -53,27 +60,33 @@ function Sponsors(props) {
                     <TeamCard
                         cardHeading="Sarthak Kala"
                         cardDescription="Overall Co-ordinator"
-                        cardImage=""
+                        cardImage={ImageSarthakKala}
                         email="sarthakkala22@gmail.com"
+                    />
+                    <TeamCard
+                        cardHeading="Naitik Gupta"
+                        cardDescription="Overall Co-ordinator"
+                        cardImage={ImageNaitikGupta}
+                        email="naitik2491997@gmail.com"
                     />
                 </SponsorCardRow>
                 <SponsorCardRow>
                     <TeamCard
                         cardHeading="Atishya Jain"
                         cardDescription="CTM, Technical"
-                        cardImage="https://drive.google.com/open?id=1W6mPBRCa7BzWho63o4v5TaFNGY6xUHJe"
+                        cardImage={ImageAtishyaJain}
                         email="workshops@tryst-iitd.com"
                     />
                     <TeamCard
                         cardHeading="Shubham Verma"
                         cardDescription="CTM, Publicity"
-                        cardImage="https://drive.google.com/open?id=1xQMJTusnpmT38CK8MIO-zHcFG3NznslI"
+                        cardImage={ImageShubhamVerma}
                         email="vermashubham28896@gmail.com"
                     />
                     <TeamCard
                         cardHeading="Sonal Jangir"
                         cardDescription="CTM, Logistics"
-                        cardImage="https://drive.google.com/open?id=10dqZ_tgLmffuZ-kA-89u5AMgXJ01AeTk"
+                        cardImage={ImageSonalJangir}
                         email="sonal16j@gmail.com"
                     />
                 </SponsorCardRow>
@@ -81,14 +94,14 @@ function Sponsors(props) {
                     <TeamCard
                         cardHeading="Satyageet Yadav"
                         cardDescription="CTM, Events"
-                        cardImage="https://drive.google.com/open?id=1wf7bc4_Pi-DoQMRy2tjJs-YVOEy0mrD9"
+                        cardImage={ImageSatyageet}
                         email="satyageetyadav01@gmail.com"
                     />
                     <TeamCard
-                        cardHeading="John Doe"
-                        cardDescription="CTM, Stuff"
-                        cardImage=""
-                        email="urnasemper@tryst-iitd.com"
+                        cardHeading="Harman Mehta"
+                        cardDescription="CTM, Guest Lectures"
+                        cardImage={ImageHarmanMehta}
+                        email="harmanmehta98@gmail.com"
                     />
                     <TeamCard
                         cardHeading="John Doe"
