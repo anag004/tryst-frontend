@@ -7,6 +7,9 @@ import Backdrop from '@material-ui/core/Backdrop';
 import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 import { typography } from '@material-ui/system';
 import Countdown from 'react-countdown-now';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
+import IconButton from '@material-ui/core/IconButton';
 
 const theme = createMuiTheme({
     palette: {
@@ -27,7 +30,8 @@ const useStyle = makeStyles(theme => ({
     root: {
         color: "white",
         padding: theme.spacing(10),
-        paddingTop: theme.spacing(20)
+        paddingTop: theme.spacing(15),
+        maxWidth: 850
     },
 
     typography: {
@@ -43,17 +47,26 @@ function HomePage(props) {
             <div id="element" className={classes.background}>
             </div>
             <NavBar threshold={10}/>
-                <Container maxWidth={100} classes={classes}>
+                <Container classes={classes}>
                     <Typography variant="h1" align="center">
                         TRYST '20
                     </Typography>
                     <Typography variant="h4" align="center">
-                        <Countdown date={Date.now() + 5000}></Countdown>
+                        <Countdown date="2020-03-06T00:00:00"></Countdown>
                     </Typography>
                     <br></br>
                     <Typography variant="body1" className={classes.typography}>
                         TRYST, IIT Delhi is North India's largest science, technological and management festival conducted by the student community of IIT Delhi. From enchanting guest lectures to learning hands-on skills through workshops, from exciting departmental activities and competitions to mesmerising techno-cultural nights, from meeting eminent personalities to discovering science as never seen before, TRYST has it all. With 75+ events and participation of 40,000 students from all over the nation, team TRYST ensures there is something fun for everyone. Come aboard and have an experience of a lifetime!
                     </Typography>
+                    <Container align="center" style={{paddingTop: theme.spacing(5)}}>
+                        <Typography variant="h5">Get in touch!</Typography>
+                        <IconButton style={{color: "white"}} >
+                        	<InstagramIcon fontSize="large"></InstagramIcon>
+                        </IconButton>
+                        <IconButton style={{color: "white"}} >
+                        	<FacebookIcon fontSize="large"></FacebookIcon>
+                        </IconButton>
+                    </Container>
                 </Container>
         </ThemeProvider>
     )
