@@ -6,6 +6,7 @@ import NavBar from './TopNavBar';
 import Backdrop from '@material-ui/core/Backdrop';
 import { createMuiTheme, responsiveFontSizes, ThemeProvider } from '@material-ui/core/styles';
 import { typography } from '@material-ui/system';
+import Countdown from 'react-countdown-now';
 
 const theme = createMuiTheme({
     palette: {
@@ -47,7 +48,7 @@ function HomePage(props) {
                         TRYST '20
                     </Typography>
                     <Typography variant="h4" align="center">
-                        Coming Soon
+                        <Countdown date={Date.now() + 5000}></Countdown>
                     </Typography>
                     <br></br>
                     <Typography variant="body1" className={classes.typography}>
