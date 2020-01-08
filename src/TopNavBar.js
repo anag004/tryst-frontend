@@ -30,7 +30,6 @@ const scaledStyle = makeStyles({
     }
 });    
 
-
 function ScaleOnScroll(props) {
     const { children } = props;
     const trigger = useScrollTrigger();

@@ -25,9 +25,11 @@ const theme = createMuiTheme({
 const styles = theme => ({
     background: {
         position: "fixed",
+        top: 0,
         width: "100%",
         height: "100%",
-        zIndex: -1
+        zIndex: -1,
+        webkitBackfaceVisibility: "hidden"
     },
 
     root: {
