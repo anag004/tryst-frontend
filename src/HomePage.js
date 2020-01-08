@@ -60,6 +60,10 @@ class HomePage extends React.Component {
         })
     }
 
+    componentWillUnmount() {
+        if (this.vantaEffect) this.vantaEffect.destroy()
+    }
+
     render () {
         const { classes } = this.props;
 
