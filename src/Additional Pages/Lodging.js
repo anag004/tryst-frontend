@@ -13,14 +13,14 @@ const theme = createMuiTheme({
     }
 });
 
+const useStyle = makeStyles((theme) => ({
+    root: {
+        padding:theme.spacing(3)
+    }, 
+}));
+
 export default function Lodging(props) {
     const {heading, containerBackgroundColor,textColor, ...others} = props;
-
-    const useStyle = makeStyles((theme) => ({
-        root: {
-            padding:theme.spacing(3)
-        }, 
-    }));
 
     const post = {
         category:"Lodging",

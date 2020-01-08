@@ -19,19 +19,20 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 
+const useStyles = makeStyles((theme) => ({
+    root: props => ({
+        backgroundColor: props.backgroundColor ? props.backgroundColor : "white",
+    }),
+    media: {
+        height: 140,
+    },
+    register: {
+        marginLeft: 'auto'
+    }
+}));
+
 function EventCard(props) {
     const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, rippleTriggerFunction, others } = props;
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            backgroundColor: backgroundColor ? backgroundColor : "white",
-        },
-        media: {
-            height: 140,
-        },
-        register: {
-            marginLeft: 'auto'
-        }
-    }));
     
     console.log(rippleTriggerFunction);
     const classes = useStyles();

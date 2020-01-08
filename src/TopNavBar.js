@@ -13,39 +13,39 @@ import NavDrawer from './NavDrawer';
 import NavBarMenuButton from './NavBarMenuButton';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 
+const normalStyle = makeStyles({
+    root: {
+        transition: 'font-size 0.5s',
+        fontSize: 20,
+        '@media (min-width:600px)': {
+            fontSize: 40,
+        }
+    }
+});
+
+const scaledStyle = makeStyles({
+    root: {
+        transition: 'font-size 0.5s',
+        fontSize: 20,
+    }
+});    
+
 
 function ScaleOnScroll(props) {
-    const { children, initialSize, finalSize } = props;
+    const { children } = props;
     const trigger = useScrollTrigger();
-
-    const normalStyle = makeStyles({
-        root: {
-            transition: 'font-size 0.5s',
-            fontSize: 20,
-            '@media (min-width:600px)': {
-                fontSize: initialSize,
-            }
-        }
-    });
-
-    const scaledStyle = makeStyles({
-        root: {
-            transition: 'font-size 0.5s',
-            fontSize: finalSize,
-        }
-    });    
+    const classesNormal = normalStyle();
+    const classesScaled = scaledStyle();
 
     if (!trigger) {
-        const classes = normalStyle();
         return  (
-            <Box classes={{ root: classes.root }}>
+            <Box classes={{ root: classesNormal.root }}>
                 {children}
             </Box>
         );   
     } else {
-        const classes = scaledStyle();
         return (
-            <Box classes={{ root: classes.root }}>
+            <Box classes={{ root: classesScaled.root }}>
                 {children}
             </Box>
         );
@@ -64,9 +64,22 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
+const appBarStyleTransparent = makeStyles({
+    root: {
+        backgroundColor: 'transparent'
+    }
+});
+
+const appBarStyleOpaque = makeStyles({
+    root: {
+        transition: 'all 0.5s'
+    }
+});
+
 function NavBar(props) {
     const { threshold, disableOpacity, ...others } = props;
     const largeScreen = useMediaQuery('(min-width:850px)');
+    const [scrollPosition, setScrollPosition] = React.useState(null);
 
     const handleScroll = (event) => {
         const currScrollPosition = window.pageYOffset > threshold;
@@ -75,32 +88,11 @@ function NavBar(props) {
         }
     }
 
-    const [scrollPosition, setScrollPosition] = React.useState(null);
-
     window.addEventListener('scroll', handleScroll);
-
-    const appBarStyleTransparent = makeStyles({
-        root: {
-            backgroundColor: 'transparent'
-        }
-    });
-
-    const appBarStyleOpaque = makeStyles({
-        root: {
-            transition: 'all 0.5s'
-        }
-    });
-
-    const appBarTransition = makeStyles({
-        root: {
-            transition: 'all 0.5s'
-        }
-    });
 
     const classes = useStyles();
     const classesAppBarTransparent = appBarStyleTransparent();
     const classesAppBarOpaque = {};
-    const classesAppBarTransition = appBarTransition();
     const [visible, setVisible] = React.useState(false);
     
     const toggleDrawer = () => {
@@ -112,11 +104,11 @@ function NavBar(props) {
         <React.Fragment>
             <NavDrawer visible={visible} toggleDrawer={toggleDrawer}/>
             <Slide in={true}>
-                <AppBar classes={ (scrollPosition || disableOpacity) ? {} : classesAppBarTransparent } className={classesAppBarTransition} elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
+                <AppBar classes={ (scrollPosition || disableOpacity) ? {} : classesAppBarTransparent } elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
                     <Toolbar variant="dense" className={classes.toolbar}>
                             {/* ScaleOnScroll animates NavBar font here */}
                             <Typography variant="h6" className={classes.title}>
-                                	<ScaleOnScroll initialSize={40} finalSize={20}>
+                                	<ScaleOnScroll>
                                         TRYST
                                     </ScaleOnScroll>
                             </Typography>

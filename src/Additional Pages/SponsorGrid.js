@@ -3,17 +3,13 @@ import Sponsorcard from './Sponsorcard';
 
 // Returns a grid of cards for demo purposes
 function SponsorGrid(props) {
-    const {n, backgroundColor, linkTo} = props;
+    const {n, backgroundColor} = props;
     let arr = [];
 
     for (let i = 0; i < n; i++) {
         arr.push(i);
     }
-
     
-    const maxHeight = 800;
-    const dummyText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula mauris, tempor ut turpis eget, congue ullamcorper nisi. Praesent ac venenatis quam. Proin porta velit at pharetra maximus. `;
-
     return (
         <>
             {arr.map(() => 

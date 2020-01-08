@@ -12,19 +12,19 @@ import SimpleGrid from './SimpleGrid';
 let theme = createMuiTheme();
 theme = responsiveFontSizes(theme);
 
+const useStyle = makeStyles((theme) => ({
+    root: props => ({
+        backgroundColor: props.containerBackgroundColor,
+        color: props.textColor,
+        padding: theme.spacing(3),
+        paddingTop: props.padding ? theme.spacing(props.padding) : theme.spacing(3)
+    }),
+}));
+
 function PageSection(props) {
     const { heading, padding, headingAlignment, containerBackgroundColor, textColor, description, children, ...others } = props;
 
-    const useStyle = makeStyles((theme) => ({
-        root: {
-            backgroundColor: containerBackgroundColor,
-            color: textColor,
-            padding: theme.spacing(3),
-            paddingTop: padding ? theme.spacing(padding) : theme.spacing(3)
-        },
-    }));
-
-    const classes = useStyle();
+    const classes = useStyle(props);
     const cards = [1, 2, 3, 4, 5, 6];
 
     return (

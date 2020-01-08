@@ -16,21 +16,20 @@ const theme = createMuiTheme({
     }
 });
 
+const useStyles = makeStyles((theme) => ({
+    root: {
+        backgroundColor:"#white",
+        
+    },
+    media: {
+        height: 140,
+    },
+    pageSection:{
+        marginTop:100,
+    }
+}));
 
 function Sponsors(props) {
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            backgroundColor:"#white",
-            
-        },
-        media: {
-            height: 140,
-        },
-        pageSection:{
-            marginTop:100,
-        }
-    }));
-    
     const post = {
         category:"Sponsors",
         title: 'Sponsors',
