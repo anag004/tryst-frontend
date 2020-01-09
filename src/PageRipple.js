@@ -38,6 +38,7 @@ export default function PageRipple(props) {
         animation-name: ${splash};
         animation-duration: 0.4s;
         animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
         height: 1px; 
         width: 1px;
         border-radius: 50%;

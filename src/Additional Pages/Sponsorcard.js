@@ -9,22 +9,23 @@ import Zoom from 'react-reveal';
 import Grid from '@material-ui/core/Grid';
 import { withRouter } from 'react-router-dom';
 
+const useStyles = makeStyles((theme) => ({
+    root: props => ({
+        backgroundColor: props.backgroundColor ? props.backgroundColor : "white",
+        maxWidth:450,
+        alignItems:"center",
+        margin:"auto"
+
+    }),
+    media: {
+        height: 140,
+    },
+}));
+
 function SponsorCard(props) {
     const { cardHeading, cardImage, backgroundColor, others } = props;
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            backgroundColor: backgroundColor ? backgroundColor : "white",
-            maxWidth:450,
-            alignItems:"center",
-            margin:"auto"
-
-        },
-        media: {
-            height: 140,
-        },
-    }));
     
-    const classes = useStyles();
+    const classes = useStyles(props);
 
     return (
             <Grid item xs>

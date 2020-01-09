@@ -12,19 +12,20 @@ import CardActions from '@material-ui/core/CardActions';
 import Link from '@material-ui/core/Link';
 import md5 from 'md5';
 
+const useStyles = makeStyles((theme) => ({
+    root: props => ({
+        backgroundColor: props.backgroundColor ? props.backgroundColor : "#efefef",
+        maxWidth:200,
+        alignItems:"center",
+        margin:"auto",
+    }),
+    media: {
+        height: 140,
+    },
+}));
+
 function SponsorCard(props) {
     const { cardHeading, cardImage, backgroundColor, cardDescription, email, others } = props;
-    const useStyles = makeStyles((theme) => ({
-        root: {
-            backgroundColor: backgroundColor ? backgroundColor : "#efefef",
-            maxWidth:200,
-            alignItems:"center",
-            margin:"auto",
-        },
-        media: {
-            height: 140,
-        },
-    }));
     
     const classes = useStyles();
     let gravatar = "";

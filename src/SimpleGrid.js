@@ -11,7 +11,6 @@ function SimpleGrid(props) {
     }
 
     
-    const maxHeight = 800;
     const dummyText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula mauris, tempor ut turpis eget, congue ullamcorper nisi. Praesent ac venenatis quam. Proin porta velit at pharetra maximus. `;
 
     return (

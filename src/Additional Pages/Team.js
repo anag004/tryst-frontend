@@ -25,16 +25,17 @@ const theme = createMuiTheme({
     }
   });
 
-function Sponsors(props) {
-    const useStyles = makeStyles((theme) => ({
-        media: {
-            height: 140,
-        },
-        pageSection:{
-            marginTop:100,
-        }
-    }));
+const useStyles = makeStyles((theme) => ({
+    media: {
+        height: 140,
+    },
+    pageSection:{
+        marginTop:100,
+    }
+}));
 
+
+function Sponsors(props) {
     const post = {
         category:"The Team",
         title: 'The Organizing Team',

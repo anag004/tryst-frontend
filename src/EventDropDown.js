@@ -30,15 +30,6 @@ const linkStyle = makeStyles(theme => ({
     },
 }));
 
-const arrowStyle = makeStyles(theme => ({
-    root: {
-        transition: 'all 0.5s',
-        color: theme.palette.getContrastText(theme.palette.primary.dark),
-        border: '0px', 
-        paddingLeft: theme.spacing(0.5)
-    }
-}));
-
 const StyledMenu = withStyles({
     paper: {
         border: '0px solid #d3d4d5',
