@@ -14,6 +14,7 @@ import SignUp from './Form/SignUp';
 import Lodging from './Additional Pages/Lodging';
 import Sponsors from './Additional Pages/Sponsors';
 import Team from './Additional Pages/Team';
+import ComingSoon from './ComingSoon';
 
 class App extends React.Component {
   componentDidMount() {
@@ -41,19 +42,20 @@ class App extends React.Component {
                 <HomePage/>
               </Route>
               <Route path="/event/1">
-                <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
+                <ComingSoon/>{/* <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/> */}
               </Route>
               <Route path="/event/2">
-                <EventDetail heading="Super Event" containerBackgroundColor="#7BC5AE" textColor="white"/>
+                <ComingSoon/>{/* <EventDetail heading="Super Event" containerBackgroundColor="#7BC5AE" textColor="white"/> */}
               </Route>
               <Route path="/event/3">
-                <EventDetail heading="Super Event" containerBackgroundColor="#A67F78" textColor="white"/>
+                <ComingSoon/>{/* <EventDetail heading="Super Event" containerBackgroundColor="#A67F78" textColor="white"/> */}
               </Route>
               <Route path="/events">
-                <EventsPage/>
+                <ComingSoon/>
               </Route>
               <Route path="/event/4">
-                <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/>
+                <ComingSoon/>
+                {/* <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/> */}
               </Route>
               <Route path="/" exact>
                 <HomePage/>
