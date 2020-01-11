@@ -4,8 +4,26 @@ import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
 import Fade from '@material-ui/core/Fade';
-import Slide from '@material-ui/core/Slide';
+import Grow from '@material-ui/core/Grow';
 import SVGTitle from './SVGTitle';
+import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
+import styled from 'styled-components';
+import { keyframes } from 'styled-components';
+
+const oscillate = keyframes`
+    from {
+        transform: translate(0px, 2px);
+    }
+
+    to {
+        transform: translate(0px, -2px);
+    }
+`;
+
+const Oscillate = styled.div`
+    animation: ${oscillate} 1s ease-in-out infinite;
+    animation-direction: alternate-reverse;
+`;
 
 const useStyles = makeStyles(theme => ({
     imageBanner: {
@@ -39,6 +57,9 @@ const useStyles = makeStyles(theme => ({
     title: {
         textAlign: "center",
         margin: theme.spacing(2)
+    },
+    tooltip: {
+        marginTop: theme.spacing(10)
     }
 }));
 
@@ -65,13 +86,24 @@ export default function LandingScreen(props) {
                 </Fade>
             </Grid>
             <Grid container md={12} justify="center">
-                <SVGTitle/>
+                <Grow in={true} timeout={4000}> 
+                    <SVGTitle/>
+                </Grow>
             </Grid>
             <Grid container md={12} justify="center">
                 <Fade in={true} timeout={2000}>
                     <Typography variant="h4" className={classes.title}>
                         Decade
                     </Typography>
+                </Fade>
+            </Grid>
+            <Grid container md={12} justify="center">
+                <Fade in={true} timeout={5000}>
+                    <Oscillate>
+                        <div align="center" className={classes.tooltip}>
+                            <ArrowDownwardIcon/>
+                        </div>
+                    </Oscillate>
                 </Fade>
             </Grid>
         </Paper>
