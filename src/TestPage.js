@@ -1,6 +1,6 @@
 import React from 'react';
 import * as ScrollMagic from "scrollmagic";
-import { TweenMax, TimelineMax } from "gsap";
+import { TweenMax, TimelineMax, Linear } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
@@ -9,19 +9,19 @@ class TestPage extends React.Component {
    constructor(props) {
        super(props);
        this.controller = new ScrollMagic.Controller();
+       this.magicRef = React.createRef();
    }
 
    componentDidMount() {
+        const tween = new TimelineMax()
+                    .add(TweenMax.to("#myElement", 0.9, {strokeDashoffset: 0}));
+
        new ScrollMagic.Scene({
            triggerElement: '#scrollStarts',
            duration: 400,
-           offset: 200
+           offset: 0
        })
-        .setTween("#myElement", {
-            left: "50%",
-            color: "red"
-        })
-        .setPin("#myElement")
+        .setTween(tween)
         .addTo(this.controller);
    }
 
@@ -39,13 +39,13 @@ class TestPage extends React.Component {
             id="wrapper"
             style={{ height: "800px", background: "lightgreen" }}
           >
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="200">
-                <path 
+            <svg id="myElementWrapper" version="1.1" xmlns="http://www.w3.org/2000/svg" width="350" height="200">
+                <path id="myElement" ref={this.magicRef}
                     style={{
                         strokeLinecap: "round", 
                         strokeLinejoin: "round", 
                         strokeDasharray: "1009.22px", 
-                        strokeDashoffset: "0", 
+                        strokeDashoffset: "1009.22px", 
                         fill: "none", 
                     }}
                     stroke="#000000"
