@@ -15,6 +15,7 @@ import Lodging from './Additional Pages/Lodging';
 import Sponsors from './Additional Pages/Sponsors';
 import Team from './Additional Pages/Team';
 import TestPage from './TestPage';
+import ThemePage from './ThemePage';
 
 class App extends React.Component {
   componentDidMount() {
@@ -77,6 +78,9 @@ class App extends React.Component {
               </Route>
               <Route path="/test">
                 <TestPage/>
+              </Route>
+              <Route path="/theme">
+                <ThemePage/>
               </Route>
             </Switch>
           </Router>
