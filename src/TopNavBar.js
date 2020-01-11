@@ -56,16 +56,13 @@ function ScaleOnScroll(props) {
 
 const useStyles = makeStyles(theme => ({
     iconWrapper: {
-        // padding: theme.spacing(1),
         height: "inherit",
         maxHeight: "inherit"
     },
     mainIcon: {
-        // padding: theme.spacing(1),
         maxHeight: "100%",
         maxWidth: "100%",
         boxSizing: "border-box",
-        // overflow:"hidden",
     },
     link:{
         textDecoration:"none",
@@ -81,11 +78,11 @@ const appBarStyleTransparent = makeStyles({
     }
 });
 
-const appBarStyleOpaque = makeStyles({
+const appBarStyle = makeStyles({
     root: {
-        transition: 'all 0.5s'
+        overflow: "hidden"
     }
-});
+})
 
 function NavBar(props) {
     const { threshold, disableOpacity, ...others } = props;
@@ -103,7 +100,6 @@ function NavBar(props) {
 
     const classes = useStyles();
     const classesAppBarTransparent = appBarStyleTransparent();
-    const classesAppBarOpaque = {};
     const [visible, setVisible] = React.useState(false);
     
     const toggleDrawer = () => {
@@ -116,13 +112,7 @@ function NavBar(props) {
             <NavDrawer visible={visible} toggleDrawer={toggleDrawer}/>
             <Slide in={true}>
                 <AppBar classes={ (scrollPosition || disableOpacity) ? {} : classesAppBarTransparent } elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
-                    <Toolbar variant="dense" className={classes.toolbar}>
-                            {/* ScaleOnScroll animates NavBar font here */}
-                            {/* <Typography variant="h6" className={classes.title}>
-                                	<ScaleOnScroll>
-                                        TRYST
-                                    </ScaleOnScroll>
-                            </Typography> */}
+                    <Toolbar style={{overflow:"hidden"}} variant="dense" className={classes.toolbar}>
                             <ScaleOnScroll>
                                 <div className={classes.iconWrapper}>
                                     <img src={logo} className={classes.mainIcon}></img>
