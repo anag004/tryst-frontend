@@ -12,21 +12,24 @@ import { Link } from "react-router-dom";
 import NavDrawer from './NavDrawer';
 import NavBarMenuButton from './NavBarMenuButton';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import logo from './images/logo-white-min.png';
 
 const normalStyle = makeStyles({
     root: {
-        transition: 'font-size 0.5s',
-        fontSize: 20,
+        flexGrow: 1,
+        transition: 'height 0.5s',
+        height: 50,
         '@media (min-width:600px)': {
-            fontSize: 40,
+            height: 70,
         }
     }
 });
 
 const scaledStyle = makeStyles({
     root: {
-        transition: 'font-size 0.5s',
-        fontSize: 20,
+        transition: 'height 0.5s',
+        flexGrow: 1,
+        height: 50,
     }
 });    
 
@@ -52,8 +55,17 @@ function ScaleOnScroll(props) {
 }
 
 const useStyles = makeStyles(theme => ({
-    title: {
-        flexGrow: 1
+    iconWrapper: {
+        // padding: theme.spacing(1),
+        height: "inherit",
+        maxHeight: "inherit"
+    },
+    mainIcon: {
+        // padding: theme.spacing(1),
+        maxHeight: "100%",
+        maxWidth: "100%",
+        boxSizing: "border-box",
+        // overflow:"hidden",
     },
     link:{
         textDecoration:"none",
@@ -106,11 +118,16 @@ function NavBar(props) {
                 <AppBar classes={ (scrollPosition || disableOpacity) ? {} : classesAppBarTransparent } elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
                     <Toolbar variant="dense" className={classes.toolbar}>
                             {/* ScaleOnScroll animates NavBar font here */}
-                            <Typography variant="h6" className={classes.title}>
+                            {/* <Typography variant="h6" className={classes.title}>
                                 	<ScaleOnScroll>
                                         TRYST
                                     </ScaleOnScroll>
-                            </Typography>
+                            </Typography> */}
+                            <ScaleOnScroll>
+                                <div className={classes.iconWrapper}>
+                                    <img src={logo} className={classes.mainIcon}></img>
+                                </div>
+                            </ScaleOnScroll>
                             { largeScreen
                                 ? (
                                     <React.Fragment>
