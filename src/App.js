@@ -14,6 +14,7 @@ import SignUp from './Form/SignUp';
 import Lodging from './Additional Pages/Lodging';
 import Sponsors from './Additional Pages/Sponsors';
 import Team from './Additional Pages/Team';
+import TestPage from './TestPage';
 
 class App extends React.Component {
   componentDidMount() {
@@ -73,6 +74,9 @@ class App extends React.Component {
               </Route>
               <Route path="/sponsors">
                 <Sponsors/>
+              </Route>
+              <Route path="/test">
+                <TestPage/>
               </Route>
             </Switch>
           </Router>
