@@ -6,6 +6,7 @@ import * as ScrollMagic from "scrollmagic";
 import { TweenMax, TimelineMax, Linear } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import TimelineDot from './themeComponents/TimelineDot';
+import DateLabel from './themeComponents/DateLabel';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -43,11 +44,18 @@ class ThemePage extends React.Component {
             <>
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>
-                <SVGVerticalLine/>
-                <TimelineDot dotID="1" controller={this.controller}/>
+                <div>
+                    <SVGVerticalLine/>
+                    <DateLabel
+                        topDistance="104%"
+                        leftDistance="52.5%"
+                        labelID="1"
+                        controller={this.controller}
+                    />
+                    <TimelineDot dotID="1" controller={this.controller}/>
+                </div>
             </>
         );
     }
 }
-
 export default ThemePage;

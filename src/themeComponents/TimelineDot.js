@@ -25,20 +25,20 @@ class TimelineDot extends React.Component {
 
     render() {
         return (
-            <div align="center">
-                <div 
-                    id={"dotScroll" + this.props.dotID}
-                    style={{
-                        position: "relative",
-                        top: "10%",
-                        backgroundColor: "black",
-                        borderRadius: "10px",
-                        height:"20px",
-                        width: "20px",
-                        transform: "scale(0.05)"
-                    }}
-                >
-                </div>
+            <div 
+                id={"dotScroll" + this.props.dotID}
+                style={{
+                    position: "absolute",
+                    backgroundColor: "black",
+                    borderRadius: "10px",
+                    height:"20px",
+                    width: "20px",
+                    transform: "scale(0.05)",
+                    left: "50%",
+                    marginLeft: "-10px",
+                    top: "105%"
+                }}
+            >
             </div>
         )
     }

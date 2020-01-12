@@ -6,7 +6,7 @@ function Icon() {
       style={{
         marginLeft: "-2.5px",
         position: "absolute",
-        top: "100%",
+        top: "105%",
         left: "50%",
       }}
     >
