@@ -7,6 +7,7 @@ import { TweenMax, TimelineMax, Linear } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import TimelineDot from './themeComponents/TimelineDot';
 import DateLabel from './themeComponents/DateLabel';
+import SVGLeftFork from './themeComponents/SVGLeftFork';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -52,7 +53,17 @@ class ThemePage extends React.Component {
                         labelID="1"
                         controller={this.controller}
                     />
-                    <TimelineDot dotID="1" controller={this.controller}/>
+                    <TimelineDot 
+                        dotID="1" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition="105%"
+                    />
+                    <SVGLeftFork
+                        forkID="1"
+                        topPosition="120%"
+                        controller={this.controller}
+                    />
                 </div>
             </>
         );
