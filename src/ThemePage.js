@@ -53,6 +53,36 @@ class ThemePage extends React.Component {
                         leftPosition="60%"
                         controller={this.controller}
                     />
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="2" 
+                        topPosition="205%"
+                    />
+                    <DateLabel
+                        topDistance="204%"
+                        leftDistance="52.5%"
+                        labelID="2"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="2" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition="205%"
+                    />
+                    <SVGRightFork
+                        forkID="2"
+                        topPosition="220%"
+                        controller={this.controller}
+                    />
+                    <TextBox
+                        date="January 18, 2011"
+                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        textBoxID="2"
+                        topPosition="240%"
+                        leftPosition="60%"
+                        controller={this.controller}
+                    />
                 </div>
             </>
         );
