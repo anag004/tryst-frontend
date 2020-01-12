@@ -37,7 +37,7 @@ const styles = theme => ({
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
       zIndex: -2,
-      height: '600px',
+      minHeight: "100%"
     },
     overlay: {
       position: 'absolute',
@@ -49,7 +49,8 @@ const styles = theme => ({
         rgba(0, 0, 0, 0.9),
         rgba(0,0, 0, 0.3)
       )`,
-      zIndex: -1
+      zIndex: -1,
+      minHeight: "100%"
     },
     presents: {
         margin: theme.spacing(5),
