@@ -2,8 +2,17 @@ import React from "react";
 
 function Icon() {
   return (
-    <>
-      <div id="startLineScroll"></div>
+    <div  
+      style={{
+        marginLeft: "-2.5px",
+        position: "absolute",
+        top: "100%",
+        left: "50%",
+      }}
+    >
+      <div 
+        id="startLineScroll"
+      ></div>
       <div align="center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +37,7 @@ function Icon() {
           ></path>
         </svg>
       </div>
-    </>
+    </div>
   );
 }
 

@@ -1,11 +1,11 @@
 import React from 'react';
 import NavBar from './TopNavBar';
-import ImageBanner from './ImageBanner';
 import LandingScreen from './themeComponents/LandingScreen';
 import SVGVerticalLine from './themeComponents/SVGVerticalLine';
 import * as ScrollMagic from "scrollmagic";
 import { TweenMax, TimelineMax, Linear } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import TimelineDot from './themeComponents/TimelineDot';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -30,10 +30,12 @@ class ThemePage extends React.Component {
         
         new ScrollMagic.Scene({
             triggerElement: '#startLineScroll',
-            duration: "120%",
+            duration: "150%",
         })
         .setTween(tween)
         .addTo(this.controller);
+
+        
     }
 
     render() {
@@ -42,6 +44,7 @@ class ThemePage extends React.Component {
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>
                 <SVGVerticalLine/>
+                <TimelineDot dotID="1" controller={this.controller}/>
             </>
         );
     }
