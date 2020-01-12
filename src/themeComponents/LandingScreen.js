@@ -1,5 +1,5 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { withStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
 import { Typography } from '@material-ui/core';
@@ -9,6 +9,8 @@ import SVGTitle from './SVGTitle';
 import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
+import * as THREE from 'three';
+import WAVES from '../vanta/vanta.waves.min.js';
 
 const oscillate = keyframes`
     from {
@@ -25,7 +27,7 @@ const Oscillate = styled.div`
     animation-direction: alternate-reverse;
 `;
 
-const useStyles = makeStyles(theme => ({
+const styles = theme => ({
     imageBanner: {
       position: 'relative',
       backgroundColor: theme.palette.grey[800],
@@ -61,51 +63,73 @@ const useStyles = makeStyles(theme => ({
     tooltip: {
         marginTop: theme.spacing(10)
     }
-}));
+});
 
-export default function LandingScreen(props) {
-    const {...others} = props;
-    const classes = useStyles();
+class LandingScreen extends React.Component {
+    constructor(props) {
+        super(props);
+        this.vantaRef = React.createRef();
+    }
 
-    return (
-        <Paper className={classes.imageBanner} {...others}>
-            {/* Increase the priority of the hero background image */}
-            <div className={classes.overlay} />
-            <Grid container justify="center" alignItems="center">
-                <Fade in={true} timeout={1000}>
-                    <Typography variant="h5" className={classes.presents}>
-                        Tryst presents
-                    </Typography>
-                </Fade>
-            </Grid>
-            <Grid container md={12} justify="center">
-                <Fade in={true} timeout={2000}>
-                    <Typography variant="h4" className={classes.title}>
-                        The
-                    </Typography>
-                </Fade>
-            </Grid>
-            <Grid container md={12} justify="center">
-                <Grow in={true} timeout={4000}> 
-                    <SVGTitle/>
-                </Grow>
-            </Grid>
-            <Grid container md={12} justify="center">
-                <Fade in={true} timeout={2000}>
-                    <Typography variant="h4" className={classes.title}>
-                        Decade
-                    </Typography>
-                </Fade>
-            </Grid>
-            <Grid container md={12} justify="center">
-                <Fade in={true} timeout={5000}>
-                    <Oscillate>
-                        <div align="center" className={classes.tooltip}>
-                            <ArrowDownwardIcon/>
-                        </div>
-                    </Oscillate>
-                </Fade>
-            </Grid>
-        </Paper>
-    );
+    componentDidMount() {
+        this.vantaEffect = WAVES({
+            THREE: THREE,
+            el: this.vantaRef.current,
+            color: 0x111111,
+            shininess: 56.00,
+            waveHeight: 29.00,
+            waveSpeed: 0.90,
+            zoom: 0.65
+        })
+    }
+
+    componentWillUnmount() {
+        if (this.vantaEffect) this.vantaEffect.destroy()
+    }
+
+    render() {
+        return (
+            <Paper className={this.props.classes.imageBanner} {...this.props.others}>
+                {/* Increase the priority of the hero background image */}
+                <div className={this.props.classes.overlay} ref={this.vantaRef}/>
+                <Grid container justify="center" alignItems="center">
+                    <Fade in={true} timeout={1000}>
+                        <Typography variant="h5" className={this.props.classes.presents}>
+                            Tryst presents
+                        </Typography>
+                    </Fade>
+                </Grid>
+                <Grid container md={12} justify="center">
+                    <Fade in={true} timeout={2000}>
+                        <Typography variant="h4" className={this.props.classes.title}>
+                            The
+                        </Typography>
+                    </Fade>
+                </Grid>
+                <Grid container md={12} justify="center">
+                    <Grow in={true} timeout={4000}> 
+                        <SVGTitle/>
+                    </Grow>
+                </Grid>
+                <Grid container md={12} justify="center">
+                    <Fade in={true} timeout={2000}>
+                        <Typography variant="h4" className={this.props.classes.title}>
+                            Decade
+                        </Typography>
+                    </Fade>
+                </Grid>
+                <Grid container md={12} justify="center">
+                    <Fade in={true} timeout={5000}>
+                        <Oscillate>
+                            <div align="center" className={this.props.classes.tooltip}>
+                                <ArrowDownwardIcon/>
+                            </div>
+                        </Oscillate>
+                    </Fade>
+                </Grid>
+            </Paper>
+        );
+    }
 }
+
+export default withStyles(styles)(LandingScreen);
