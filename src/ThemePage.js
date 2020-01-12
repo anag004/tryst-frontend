@@ -9,17 +9,10 @@ import TimelineDot from './themeComponents/TimelineDot';
 import DateLabel from './themeComponents/DateLabel';
 import SVGLeftFork from './themeComponents/SVGLeftFork';
 import SVGRightFork from './themeComponents/SVGRightFork';
+import TextBox from './themeComponents/TextBox';
+import { Typography } from '@material-ui/core';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
-
-const post = {
-    category:"The Team",
-    title: '',
-    description:
-      "",
-    image: 'https://source.unsplash.com/random',
-    imgText: 'main image description',
-};
 
 class ThemePage extends React.Component {
     constructor(props) {
@@ -65,6 +58,13 @@ class ThemePage extends React.Component {
                         topPosition="120%"
                         controller={this.controller}
                     />
+                    <TextBox>
+                        <Typography variant="body1">
+                            <i>January 18, 2010</i><br></br>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </Typography>
+
+                    </TextBox>
                 </div>
             </>
         );
