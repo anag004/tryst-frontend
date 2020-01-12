@@ -13,6 +13,7 @@ import NavDrawer from './NavDrawer';
 import NavBarMenuButton from './NavBarMenuButton';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import logo from './images/logo-white-min.png';
+import clsx from 'clsx';
 
 const normalStyle = makeStyles({
     root: {
@@ -79,10 +80,14 @@ const appBarStyleTransparent = makeStyles({
 });
 
 const appBarStyle = makeStyles({
-    root: {
-        overflow: "hidden"
-    }
-})
+    root: props => (
+        props.backgroundColor ? 
+        {
+            backgroundColor: props.backgroundColor
+        }
+        : {}
+    )
+});
 
 function NavBar(props) {
     const { threshold, disableOpacity, ...others } = props;
@@ -100,6 +105,7 @@ function NavBar(props) {
 
     const classes = useStyles();
     const classesAppBarTransparent = appBarStyleTransparent();
+    const classesAppBar = appBarStyle(props);
     const [visible, setVisible] = React.useState(false);
     
     const toggleDrawer = () => {
@@ -111,7 +117,7 @@ function NavBar(props) {
         <React.Fragment>
             <NavDrawer visible={visible} toggleDrawer={toggleDrawer}/>
             <Slide in={true}>
-                <AppBar classes={ (scrollPosition || disableOpacity) ? {} : classesAppBarTransparent } elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
+                <AppBar classes={ (scrollPosition || disableOpacity) ? classesAppBar : classesAppBarTransparent } elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
                     <Toolbar style={{overflow:"hidden"}} variant="dense" className={classes.toolbar}>
                             <ScaleOnScroll>
                                 <div className={classes.iconWrapper}>
