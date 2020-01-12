@@ -20,27 +20,14 @@ class ThemePage extends React.Component {
         this.controller = new ScrollMagic.Controller();
     }
 
-    componentDidMount() {
-        const tween = new TimelineMax()
-                    .add(TweenMax.to("#verticalLine", 1, {strokeDashoffset: "0px"}, Linear.easeNone));
-        
-        new ScrollMagic.Scene({
-            triggerElement: '#startLineScroll',
-            duration: "150%",
-        })
-        .setTween(tween)
-        .addTo(this.controller);
-
-        
-    }
-
     render() {
         return (
             <>
+                <div style={{position: "absolute", top: 0, left: 0, visibility: "hidden", height: "1000%", width: "100%"}}></div>
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>
                 <div>
-                    <SVGVerticalLine/>
+                    <SVGVerticalLine controller={this.controller} lineID="1" topPosition="105%"/>
                     <DateLabel
                         topDistance="104%"
                         leftDistance="52.5%"
@@ -58,13 +45,14 @@ class ThemePage extends React.Component {
                         topPosition="120%"
                         controller={this.controller}
                     />
-                    <TextBox>
-                        <Typography variant="body1">
-                            <i>January 18, 2010</i><br></br>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        </Typography>
-
-                    </TextBox>
+                    <TextBox
+                        date="January 18, 2010"
+                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        textBoxID="1"
+                        topPosition="140%"
+                        leftPosition="60%"
+                        controller={this.controller}
+                    />
                 </div>
             </>
         );
