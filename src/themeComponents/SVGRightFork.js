@@ -25,9 +25,10 @@ class SVGLeftFork extends React.Component {
                 style={{
                     position: "absolute",
                     top: this.props.topPosition,
-                    left: "20%",
+                    left: "50%",
                     width: "30%",
                     height: "30%",
+                    transform: "scaleX(-1)"
                 }}
             >
                 <div 
