@@ -3,7 +3,7 @@ import NavBar from './TopNavBar';
 import LandingScreen from './themeComponents/LandingScreen';
 import SVGVerticalLine from './themeComponents/SVGVerticalLine';
 import * as ScrollMagic from "scrollmagic";
-import { TweenMax, TimelineMax, Linear } from "gsap";
+import { TweenMax, TimelineMax, Linear, CSSPlugin } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import TimelineDot from './themeComponents/TimelineDot';
 import DateLabel from './themeComponents/DateLabel';
@@ -13,6 +13,8 @@ import TextBox from './themeComponents/TextBox';
 import { Typography } from '@material-ui/core';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
+// Write this line so that webpack does not drop plugins
+const plugins = [ CSSPlugin ];
 
 class ThemePage extends React.Component {
     constructor(props) {

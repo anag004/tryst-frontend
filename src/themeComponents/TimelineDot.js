@@ -12,7 +12,7 @@ class TimelineDot extends React.Component {
 
     componentDidMount() {
         const tween = new TimelineMax()
-                    .add(TweenMax.to("#dotScroll" + this.props.dotID, 1, {scale: 1, ease:  Elastic.easeOut}));
+                    .add(TweenMax.to("#dotScroll" + this.props.dotID, 1, {css: {scale: 1}, ease:  Elastic.easeOut}));
         
         new ScrollMagic.Scene({
             triggerElement: "#dotScroll" + this.props.dotID,

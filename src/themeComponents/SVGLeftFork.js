@@ -8,7 +8,7 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 class SVGLeftFork extends React.Component {
     componentDidMount() {
         const tween = new TimelineMax()
-                    .add(TweenMax.to("#forkScroll" + this.props.forkID, 1, {strokeDashoffset: "0px", ease:  Linear.easeNone}));
+                    .add(TweenMax.to("#forkScroll" + this.props.forkID, 1, {css: {strokeDashoffset: "0px"}, ease:  Linear.easeNone}));
         
         new ScrollMagic.Scene({
             triggerElement: "#startForkScroll" + this.props.forkID,

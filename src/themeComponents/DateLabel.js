@@ -9,7 +9,7 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 class DateLabel extends React.Component {
     componentDidMount() {
         const tween = new TimelineMax()
-                    .add(TweenMax.to("#dateLabelScroll" + this.props.labelID, 1, {opacity: 1, ease:  Linear.easeOut}));
+                    .add(TweenMax.to("#dateLabelScroll" + this.props.labelID, 1, {css: {opacity: 1}, ease:  Linear.easeOut}));
         
         new ScrollMagic.Scene({
             triggerElement: "#dateLabelScroll" + this.props.labelID,

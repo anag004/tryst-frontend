@@ -22,7 +22,7 @@ const styles = theme => ({
 class TextBox extends React.Component {
     componentDidMount() {
         const tween = new TimelineMax()
-                    .add(TweenMax.to("#textBoxScroll" + this.props.textBoxID, 1, {scale: 1, ease:  Elastic.easeInOut}))
+                    .add(TweenMax.to("#textBoxScroll" + this.props.textBoxID, 1, {css: {scale: 1}, ease:  Elastic.easeInOut}))
                     .add(TweenMax.to("#textScroll" + this.props.textBoxID, 1, {opacity: 1, ease:  Linear.easeNone}));
         new ScrollMagic.Scene({
             triggerElement: "#textBoxScroll" + this.props.textBoxID,

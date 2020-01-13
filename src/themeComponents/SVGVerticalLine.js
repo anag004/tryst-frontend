@@ -8,7 +8,7 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 class Icon extends React.Component {
   componentDidMount() {
     const tween = new TimelineMax()
-                .add(TweenMax.to("#verticalLine" + this.props.lineID, 1, {strokeDashoffset: "0px"}, Linear.easeNone));
+                .add(TweenMax.to("#verticalLine" + this.props.lineID, 1, {css: {strokeDashoffset: "0px"}}, Linear.easeNone));
     
     new ScrollMagic.Scene({
         triggerElement: '#startLineScroll' + this.props.lineID,
