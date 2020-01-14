@@ -7,6 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { HashLink as Link } from "react-router-hash-link";
 import Collapse from "@material-ui/core/Collapse";
 import clsx from 'clsx';
+import { withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     paper: {
@@ -27,13 +28,15 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-export default function NavDrawer(props) {
+function NavDrawer(props) {
     const classes = useStyles();
-    const { visible, toggleDrawer, ...others } = props;
+    const { visible, toggleDrawer, history, ...others } = props;
     const [eventCollapse, setEventCollapse] = React.useState(false);
 
     const handleCollapse = () => {
-        setEventCollapse(!eventCollapse);
+        // Change this later
+        // setEventCollapse(!eventCollapse);
+        history.push("/events");
     }
 
     const sideList = () => (
@@ -97,3 +100,5 @@ export default function NavDrawer(props) {
         </div>
     )
 }
+
+export default withRouter(NavDrawer);
