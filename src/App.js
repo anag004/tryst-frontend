@@ -60,21 +60,14 @@ class App extends React.Component {
               <Route path="/" exact>
                 <HomePage/>
               </Route>
-              
-              <Route path="/login">
-                <SignIn/>
-              </Route>
-              <Route path="/signUp">
-                <SignUp/>
-              </Route>
               <Route path="/lodging">
-                <Lodging/>
+              <ComingSoon/>
               </Route>
               <Route path="/team">
                 <Team/>
               </Route>
               <Route path="/sponsors">
-                <Sponsors/>
+              <ComingSoon/>
               </Route>
             </Switch>
           </Router>
