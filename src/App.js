@@ -16,6 +16,11 @@ import Sponsors from './Additional Pages/Sponsors';
 import Team from './Additional Pages/Team';
 import ComingSoon from './ComingSoon';
 
+const homeText = "TRYST, IIT Delhi is North India's largest science, technological and management festival conducted by the student community of IIT Delhi. From enchanting guest lectures to learning hands-on skills through workshops, from exciting departmental activities and competitions to mesmerising techno-cultural nights, from meeting eminent personalities to discovering science as never seen before, TRYST has it all. With 75+ events and participation of 40,000 students from all over the nation, team TRYST ensures there is something fun for everyone. Come aboard and have an experience of a lifetime!";
+const lodgingText = "Coming Soon! Stay tuned for lodging updates. Contact us if you have any questions.";
+const eventsText = "Coming Soon! Amazing events coming soon. Contact us if you have any questions.";
+const sponsorsText = "Coming Soon! We have great sponsors this time who make Tryst possible. Stay tuned to know more about them. Contact us if you have any questions.";
+
 class App extends React.Component {
   componentDidMount() {
     
@@ -39,35 +44,22 @@ class App extends React.Component {
           <Router>
             <Switch>
               <Route path="/home">
-                <HomePage/>
-              </Route>
-              <Route path="/event/1">
-                <ComingSoon/>{/* <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/> */}
-              </Route>
-              <Route path="/event/2">
-                <ComingSoon/>{/* <EventDetail heading="Super Event" containerBackgroundColor="#7BC5AE" textColor="white"/> */}
-              </Route>
-              <Route path="/event/3">
-                <ComingSoon/>{/* <EventDetail heading="Super Event" containerBackgroundColor="#A67F78" textColor="white"/> */}
+                <HomePage description={homeText}/>
               </Route>
               <Route path="/events">
-                <ComingSoon/>
-              </Route>
-              <Route path="/event/4">
-                <ComingSoon/>
-                {/* <EventDetail heading="Super Event" containerBackgroundColor="white" textColor="black"/> */}
+              <HomePage description={eventsText}/>
               </Route>
               <Route path="/" exact>
-                <HomePage/>
+                <HomePage description={homeText}/>
               </Route>
               <Route path="/lodging">
-              <ComingSoon/>
+                <HomePage description={lodgingText}/>
               </Route>
               <Route path="/team">
                 <Team/>
               </Route>
               <Route path="/sponsors">
-              <ComingSoon/>
+                <HomePage description={sponsorsText}/>
               </Route>
             </Switch>
           </Router>
