@@ -47,8 +47,8 @@ const styles =theme =>({
         fontSize:40,
         color:"white",
         display:"inline",
-        marginRight:10,
-        marginLeft:10,
+        marginRight:4,
+        marginLeft:4,
         padding:8,
         borderStyle:"groove",
         borderWidth:"2px",
@@ -122,7 +122,8 @@ class ComingSoon extends React.Component {
                             <br/>
                             <div className={classes.countdownText}>Days</div><div className={classes.countdownText}>Hours</div><div className={classes.countdownText}>Min</div><div className={classes.countdownText}>Second</div>
                         </div>
-                        <Container style={{position:"fixed",bottom:0,left: -10,width:"100%"}}>
+                        <br/><br/>
+                        <Container style={{position:"relative",bottom:0,left: -10,width:"100%"}}>
                             <Container align="center" >
                                 <Typography variant="h5" className={classes.text}>Get in touch!</Typography>
                                 <IconButton style={{color: "white"}}>
