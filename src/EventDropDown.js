@@ -6,6 +6,7 @@ import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import { HashLink as Link } from 'react-router-hash-link';
+import { withRouter } from 'react-router-dom';
 
 const largeButtonStyle = makeStyles(theme => ({
     root: {
@@ -63,7 +64,7 @@ const StyledMenuItem = withStyles(theme => ({
     }))(MenuItem);
 
 function EventDropDown(props) {
-    const {children, ...others} = props;
+    const {children, history, ...others} = props;
     const classesLarge = largeButtonStyle();
     const classesSmall = smallButtonStyle();
     const trigger = useScrollTrigger();
@@ -71,8 +72,11 @@ function EventDropDown(props) {
     const [anchorEl, setAnchorEl] = React.useState(null);
     const linkClasses = linkStyle();
 
+
     const handleClick = event => {
-        setAnchorEl(event.currentTarget);
+        // For the coming soon version just navigate to one page
+        // setAnchorEl(event.currentTarget);
+        history.push('/events');
     }
 
     const handleClose = event => {
@@ -132,4 +136,4 @@ function EventDropDown(props) {
     }
 }
 
-export default EventDropDown;
+export default withRouter(EventDropDown);

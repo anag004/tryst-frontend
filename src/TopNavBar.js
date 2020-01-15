@@ -12,21 +12,25 @@ import { Link } from "react-router-dom";
 import NavDrawer from './NavDrawer';
 import NavBarMenuButton from './NavBarMenuButton';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
+import logo from './images/logo-white-min.png';
+import clsx from 'clsx';
 
 const normalStyle = makeStyles({
     root: {
-        transition: 'font-size 0.5s',
-        fontSize: 20,
+        flexGrow: 1,
+        transition: 'height 0.5s',
+        height: 50,
         '@media (min-width:600px)': {
-            fontSize: 40,
+            height: 70,
         }
     }
 });
 
 const scaledStyle = makeStyles({
     root: {
-        transition: 'font-size 0.5s',
-        fontSize: 20,
+        transition: 'height 0.5s',
+        flexGrow: 1,
+        height: 50,
     }
 });    
 
@@ -52,8 +56,14 @@ function ScaleOnScroll(props) {
 }
 
 const useStyles = makeStyles(theme => ({
-    title: {
-        flexGrow: 1
+    iconWrapper: {
+        height: "inherit",
+        maxHeight: "inherit"
+    },
+    mainIcon: {
+        maxHeight: "100%",
+        maxWidth: "100%",
+        boxSizing: "border-box",
     },
     link:{
         textDecoration:"none",
@@ -69,10 +79,14 @@ const appBarStyleTransparent = makeStyles({
     }
 });
 
-const appBarStyleOpaque = makeStyles({
-    root: {
-        transition: 'all 0.5s'
-    }
+const appBarStyle = makeStyles({
+    root: props => (
+        props.backgroundColor ? 
+        {
+            backgroundColor: props.backgroundColor
+        }
+        : {}
+    )
 });
 
 function NavBar(props) {
@@ -91,7 +105,7 @@ function NavBar(props) {
 
     const classes = useStyles();
     const classesAppBarTransparent = appBarStyleTransparent();
-    const classesAppBarOpaque = {};
+    const classesAppBar = appBarStyle(props);
     const [visible, setVisible] = React.useState(false);
     
     const toggleDrawer = () => {
@@ -103,14 +117,13 @@ function NavBar(props) {
         <React.Fragment>
             <NavDrawer visible={visible} toggleDrawer={toggleDrawer}/>
             <Slide in={true}>
-                <AppBar classes={ (scrollPosition || disableOpacity) ? {} : classesAppBarTransparent } elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
-                    <Toolbar variant="dense" className={classes.toolbar}>
-                            {/* ScaleOnScroll animates NavBar font here */}
-                            <Typography variant="h6" className={classes.title}>
-                                	<ScaleOnScroll>
-                                        TRYST
-                                    </ScaleOnScroll>
-                            </Typography>
+                <AppBar classes={ (scrollPosition || disableOpacity) ? classesAppBar : classesAppBarTransparent } elevation={(scrollPosition || disableOpacity) ? 4 : 0} {...others}>
+                    <Toolbar style={{overflow:"hidden"}} variant="dense" className={classes.toolbar}>
+                            <ScaleOnScroll>
+                                <div className={classes.iconWrapper}>
+                                    <img src={logo} className={classes.mainIcon}></img>
+                                </div>
+                            </ScaleOnScroll>
                             { largeScreen
                                 ? (
                                     <React.Fragment>

@@ -104,26 +104,6 @@ function Sponsors(props) {
                         cardImage={ImageHarmanMehta}
                         email="harmanmehta98@gmail.com"
                     />
-                    <TeamCard
-                        cardHeading="John Doe"
-                        cardDescription="CTM, Stuff"
-                        cardImage=""
-                        email="urnasemper@tryst-iitd.com"
-                    />
-                </SponsorCardRow>
-                <SponsorCardRow>
-                    <TeamCard
-                        cardHeading="John Doe"
-                        cardDescription="Technical Co-ordinator"
-                        cardImage=""
-                        email="urnasemper@tryst-iitd.com"
-                    />
-                    <TeamCard
-                        cardHeading="John Doe"
-                        cardDescription="Technical Co-ordinator"
-                        cardImage=""
-                        email="urnasemper@tryst-iitd.com"
-                    />
                 </SponsorCardRow>
 
             </PageSection>
