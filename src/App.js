@@ -17,9 +17,9 @@ import Team from './Additional Pages/Team';
 import ComingSoon from './ComingSoon';
 
 const homeText = "TRYST, IIT Delhi is North India's largest science, technological and management festival conducted by the student community of IIT Delhi. From enchanting guest lectures to learning hands-on skills through workshops, from exciting departmental activities and competitions to mesmerising techno-cultural nights, from meeting eminent personalities to discovering science as never seen before, TRYST has it all. With 75+ events and participation of 40,000 students from all over the nation, team TRYST ensures there is something fun for everyone. Come aboard and have an experience of a lifetime!";
-const lodgingText = "Coming Soon! Stay tuned for lodging updates. Contact us if you have any questions.";
-const eventsText = "Coming Soon! Contact us if you have any questions.";
-const sponsorsText = "Coming Soon! We have great sponsors this time who make Tryst possible. Stay tuned to know more about them. Contact us if you have any questions.";
+const lodgingText = "Stay tuned for lodging updates. Contact us if you have any questions.";
+const eventsText = "Contact us if you have any questions.";
+const sponsorsText = "We have great sponsors this time who make Tryst possible. Stay tuned to know more about them. Contact us if you have any questions.";
 
 class App extends React.Component {
   componentDidMount() {
@@ -47,19 +47,19 @@ class App extends React.Component {
                 <HomePage description={homeText}/>
               </Route>
               <Route path="/events">
-              <HomePage description={eventsText}/>
+                <ComingSoon description={eventsText}/>
               </Route>
               <Route path="/" exact>
                 <HomePage description={homeText}/>
               </Route>
               <Route path="/lodging">
-                <HomePage description={lodgingText}/>
+                <ComingSoon description={lodgingText}/>
               </Route>
               <Route path="/team">
                 <Team/>
               </Route>
               <Route path="/sponsors">
-                <HomePage description={sponsorsText}/>
+                <ComingSoon description={sponsorsText}/>
               </Route>
             </Switch>
           </Router>

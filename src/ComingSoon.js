@@ -26,6 +26,7 @@ const styles =theme =>({
         bottom:0,
         right:0,
         left:0,
+        maxWidth:1000
     },
     background: {
         position: "fixed",
@@ -98,9 +99,6 @@ class ComingSoon extends React.Component {
     
     render(){
         const {classes} = this.props;
-        
-        
-        
         return (
             <ThemeProvider theme={theme} >
                 <div className={classes.background} ref={this.vantaRef}>
@@ -115,7 +113,7 @@ class ComingSoon extends React.Component {
                             <Typography variant="h1" align="center" className={classes.text}>Coming Soon!</Typography>
                         </Fade>
                         <br/>
-                        <Typography variant="h5" align="center" className={classes.text}>Follow us for updates now!</Typography>
+                        <Typography variant="h5" align="center" className={classes.text}> {this.props.description} </Typography>
                         <br/>
                         <br/>
                         <div align="center">
