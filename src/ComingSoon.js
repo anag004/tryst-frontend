@@ -109,13 +109,13 @@ class ComingSoon extends React.Component {
                 <Container classes={classes}>
                 <Fade in={true} timeout={1000}>
                     <Container className={classes.container} maxWidth="lg">
-                        <Typography variant="h1" align="center" className={classes.text}> TRYST '20</Typography>
+                        <Typography variant="h3" align="center" className={classes.text}> TRYST '20</Typography>
                         <br/>
                         <Fade in={this.state.show} timeout={800}>
-                            <Typography variant="h3" align="center" className={classes.text}>Coming Soon!</Typography>
+                            <Typography variant="h1" align="center" className={classes.text}>Coming Soon!</Typography>
                         </Fade>
                         <br/>
-                        <Typography variant="h6" align="center" className={classes.text}>Follow us for updates now!</Typography>
+                        <Typography variant="h5" align="center" className={classes.text}>Follow us for updates now!</Typography>
                         <br/>
                         <br/>
                         <div align="center">
