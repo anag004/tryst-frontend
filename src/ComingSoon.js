@@ -1,6 +1,6 @@
 import React, {useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Container, makeStyles, Fade, IconButton } from '@material-ui/core';
+import { Container, makeStyles, Fade, IconButton, Link } from '@material-ui/core';
 import TopNavBar from './TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import FacebookIcon from '@material-ui/icons/Facebook';
@@ -16,8 +16,8 @@ const theme = createMuiTheme({
         secondary: { main: '#4CAF50' }
     }
 });
-const TrystDate=new Date(2020, 2, 7);
-const today=new Date();
+const TrystDate=new Date(2020, 2, 6);
+var today=new Date();
         
 const styles =theme =>({
     root: {
@@ -84,6 +84,11 @@ class ComingSoon extends React.Component {
             waveSpeed: 0.90,
             zoom: 0.65
         })
+        today=new Date();
+        this.setState({
+            time:TrystDate.getTime()- today.getTime(),
+            show:this.state.show
+        })
         this.interval=setInterval(()=>{
             this.setState({
                 time:this.state.time-1000,
@@ -127,12 +132,25 @@ class ComingSoon extends React.Component {
                             <Container align="center" >
                                 <Typography variant="h5" className={classes.text}>Get in touch!</Typography>
                                 <IconButton style={{color: "white"}}>
-                                    <FacebookIcon style={{fontSize:40}} />
+                                    <Link 
+                                    href="https://www.instagram.com/trystiitd/"
+                                    variant="button"
+                                    underline="none"
+                                    color="inherit"
+                                    >
+                                        <InstagramIcon style={{fontSize:40}} />
+                                    </Link>
                                 </IconButton>
                                 <IconButton style={{color: "white"}}>
-                                    <InstagramIcon style={{fontSize:40}} />
+                                    <Link 
+                                    href="https://www.facebook.com/IITD.Tryst/"
+                                    variant="button"
+                                    underline="none"
+                                    color="inherit"
+                                    >
+                                        <FacebookIcon style={{fontSize:40}} />
+                                    </Link>
                                 </IconButton>
-                                
                             </Container>
                         </Container>
                     </Container>
