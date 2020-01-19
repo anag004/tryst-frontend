@@ -11,12 +11,15 @@ ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 const styles = theme => ({
     image: {
         display: "inline-block",
-        maxWidth: "30%",
+        maxWidth: "40%",
         opacity: 0,
         transform: "translateY(100px)",
-        border: "1px solid #ddd",
-        borderRadius: "4px",
-        padding: "5px",
+        // border: "1px solid #ddd",
+        // borderRadius: "4px",
+        // padding: "5px",
+        margin: 0,
+        padding: 0,
+        fontSize: 0
     }
 });
 
@@ -36,7 +39,7 @@ class ImageBox extends React.Component {
 
     render() {
         return (
-            <div 
+            <Card 
                 id={"imageScroll" + this.props.imageID} 
                 style={{
                     position:"absolute",
@@ -44,9 +47,10 @@ class ImageBox extends React.Component {
                     left: this.props.leftPosition
                 }}
                 className={this.props.classes.image}
+                square
             >
-                <img src={this.props.url}></img>
-            </div>
+                <img src={this.props.url} style={{maxWidth:"100%"}}></img>
+            </Card>
         )
     }
 }
