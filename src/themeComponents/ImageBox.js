@@ -13,7 +13,10 @@ const styles = theme => ({
         display: "inline-block",
         maxWidth: "30%",
         opacity: 0,
-        transform: "translateY(100px)"
+        transform: "translateY(100px)",
+        border: "1px solid #ddd",
+        borderRadius: "4px",
+        padding: "5px",
     }
 });
 
