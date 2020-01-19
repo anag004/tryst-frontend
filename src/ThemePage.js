@@ -49,11 +49,20 @@ class ThemePage extends React.Component {
                         forkID="1"
                         topPosition="120%"
                         controller={this.controller}
+                        height="15"
+                        width="30"
+                    />
+                    <SVGLeftFork
+                        forkID="2"
+                        topPosition="130%"
+                        controller={this.controller}
+                        width="20"
+                        height="15"
                     />
                     <TextBox
-                        date="January 18, 2010"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                        heading="Curiosity lands on Mars"
+                        date="January 18, 2016"
+                        description="The world's first high-res VR head set for personal use."
+                        heading="Oculus Rift released"
                         textBoxID="1"
                         topPosition="140%"
                         leftPosition="60%"
@@ -63,6 +72,8 @@ class ThemePage extends React.Component {
                         url={oculus_image}
                         imageID="1"
                         controller={this.controller}
+                        topPosition="160%"
+                        leftPosition="5"
                     />
                     <SVGVerticalLine 
                         controller={this.controller} 
@@ -83,7 +94,7 @@ class ThemePage extends React.Component {
                         topPosition="205%"
                     />
                     <SVGRightFork
-                        forkID="2"
+                        forkID="3"
                         topPosition="220%"
                         controller={this.controller}
                     />

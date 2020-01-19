@@ -26,8 +26,8 @@ class SVGLeftFork extends React.Component {
                     position: "absolute",
                     top: this.props.topPosition,
                     left: "50%",
-                    width: "30%",
-                    height: "30%",
+                    width: this.props.width + "%",
+                    height: this.props.height + "%",
                     transform: "scaleX(-1)"
                 }}
             >
@@ -38,6 +38,11 @@ class SVGLeftFork extends React.Component {
                     xmlns="http://www.w3.org/2000/svg"
                     version="1.1"
                     viewBox="0 0 59.185 46.783"
+                    preserveAspectRatio="none"
+                    style={{
+                        height:"100%",
+                        width: "100%"
+                    }}
                 >
                 <path
                     id={"forkScroll" + this.props.forkID}
