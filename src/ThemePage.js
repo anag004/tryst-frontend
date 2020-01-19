@@ -32,6 +32,7 @@ class ThemePage extends React.Component {
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>
                 <div> 
+                    {/* First section */}
                     <SVGVerticalLine controller={this.controller} lineID="1" topPosition="105%"/>
                     <DateLabel
                         topDistance="104%"
@@ -76,6 +77,7 @@ class ThemePage extends React.Component {
                         topPosition="145%"
                         leftPosition="5%"
                     />
+                    {/* Second section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="2" 
@@ -106,7 +108,7 @@ class ThemePage extends React.Component {
                         heading="Electric cars"
                         description="The year saw the revolutionary masterpieces namely Tesla motors model 3 and BMW i3, the all electric vehicles being rapidly mass produced. "
                         textBoxID="2"
-                        topPosition="240%"
+                        topPosition="230%"
                         leftPosition="5%"
                         controller={this.controller}
                     />
@@ -123,6 +125,55 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                         topPosition="220%"
                         leftPosition="60%"
+                    />
+                    {/* Third section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="3" 
+                        topPosition="296%"
+                    />
+                    <DateLabel
+                        topDistance="296%"
+                        leftDistance="52.5%"
+                        labelID="3"
+                        year="2018"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="3" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition="296%"
+                    />
+                    <SVGLeftFork
+                        forkID="5"
+                        topPosition="330%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    <TextBox
+                        date="January 18, 2018"
+                        heading="3D Metal Printing"
+                        description="HP opens preorders for its industrial-scale Metal Jet printers"
+                        textBoxID="3"
+                        topPosition="320%"
+                        leftPosition="55%"
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="6"
+                        topPosition="310%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={electric_cars_image}
+                        imageID="3"
+                        controller={this.controller}
+                        topPosition="335%"
+                        leftPosition="5%"
                     />
                 </div>
             </>
