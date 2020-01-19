@@ -11,6 +11,8 @@ import SVGLeftFork from './themeComponents/SVGLeftFork';
 import SVGRightFork from './themeComponents/SVGRightFork';
 import TextBox from './themeComponents/TextBox';
 import { Typography } from '@material-ui/core';
+import ImageBox from './themeComponents/ImageBox';
+import oculus_image from './images/oculus.jpg';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -53,6 +55,11 @@ class ThemePage extends React.Component {
                         textBoxID="1"
                         topPosition="140%"
                         leftPosition="60%"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={oculus_image}
+                        imageID="1"
                         controller={this.controller}
                     />
                     <SVGVerticalLine 
