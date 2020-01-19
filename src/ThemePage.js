@@ -52,6 +52,7 @@ class ThemePage extends React.Component {
                     <TextBox
                         date="January 18, 2010"
                         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        heading="Curiosity lands on Mars"
                         textBoxID="1"
                         topPosition="140%"
                         leftPosition="60%"
