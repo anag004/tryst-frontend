@@ -13,6 +13,7 @@ import TextBox from './themeComponents/TextBox';
 import { Typography } from '@material-ui/core';
 import ImageBox from './themeComponents/ImageBox';
 import oculus_image from './images/oculus.jpg';
+import electric_cars_image from './images/electric_cars.jpg';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -30,7 +31,7 @@ class ThemePage extends React.Component {
                 <div style={{position: "absolute", top: 0, left: 0, visibility: "hidden", height: "1000%", width: "100%"}}></div>
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>
-                <div>
+                <div> 
                     <SVGVerticalLine controller={this.controller} lineID="1" topPosition="105%"/>
                     <DateLabel
                         topDistance="104%"
@@ -81,10 +82,10 @@ class ThemePage extends React.Component {
                         topPosition="200%"
                     />
                     <DateLabel
-                        topDistance="204%"
+                        topDistance="200%"
                         leftDistance="52.5%"
                         labelID="2"
-                        year="2010"
+                        year="2017"
                         controller={this.controller}
                     />
                     <TimelineDot 
@@ -93,18 +94,35 @@ class ThemePage extends React.Component {
                         radius={10}
                         topPosition="200%"
                     />
-                    <SVGRightFork
+                    <SVGLeftFork
                         forkID="3"
                         topPosition="220%"
+                        width="30"
+                        height="10"
                         controller={this.controller}
                     />
                     <TextBox
-                        date="January 18, 2011"
-                        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                        date="January 18, 2017"
+                        heading="Electric cars"
+                        description="The year saw the revolutionary masterpieces namely Tesla motors model 3 and BMW i3, the all electric vehicles being rapidly mass produced. "
                         textBoxID="2"
                         topPosition="240%"
-                        leftPosition="60%"
+                        leftPosition="5%"
                         controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="4"
+                        topPosition="210%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={electric_cars_image}
+                        imageID="2"
+                        controller={this.controller}
+                        topPosition="220%"
+                        leftPosition="60%"
                     />
                 </div>
             </>
