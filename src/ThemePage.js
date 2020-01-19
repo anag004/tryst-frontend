@@ -64,7 +64,7 @@ class ThemePage extends React.Component {
                         description="The world's first high-res VR head set for personal use."
                         heading="Oculus Rift released"
                         textBoxID="1"
-                        topPosition="140%"
+                        topPosition="135%"
                         leftPosition="60%"
                         controller={this.controller}
                     />
@@ -72,13 +72,13 @@ class ThemePage extends React.Component {
                         url={oculus_image}
                         imageID="1"
                         controller={this.controller}
-                        topPosition="160%"
-                        leftPosition="5"
+                        topPosition="145%"
+                        leftPosition="5%"
                     />
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="2" 
-                        topPosition="205%"
+                        topPosition="200%"
                     />
                     <DateLabel
                         topDistance="204%"
@@ -91,7 +91,7 @@ class ThemePage extends React.Component {
                         dotID="2" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="205%"
+                        topPosition="200%"
                     />
                     <SVGRightFork
                         forkID="3"
