@@ -14,6 +14,8 @@ import { Typography } from '@material-ui/core';
 import ImageBox from './themeComponents/ImageBox';
 import oculus_image from './images/oculus.jpg';
 import electric_cars_image from './images/electric_cars.jpg';
+import fusion_image from './images/fusion_image.jpg';
+import metal_printing_image from './images/metal_printing.jpg';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -169,10 +171,59 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={electric_cars_image}
+                        url={metal_printing_image}
                         imageID="3"
                         controller={this.controller}
                         topPosition="335%"
+                        leftPosition="5%"
+                    />
+                    {/* Fourth section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="4" 
+                        topPosition="390%"
+                    />
+                    <DateLabel
+                        topDistance="390%"
+                        leftDistance="52.5%"
+                        labelID="4"
+                        year="2019"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="4" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition="390%"
+                    />
+                    <SVGLeftFork
+                        forkID="7"
+                        topPosition="430%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    <TextBox
+                        date="January 18, 2019"
+                        heading="Fusion reactor"
+                        description="New nuclear designs promise to make fusion power safer and cheaper. "
+                        textBoxID="4"
+                        topPosition="420%"
+                        leftPosition="55%"
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="8"
+                        topPosition="410%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={fusion_image}
+                        imageID="4"
+                        controller={this.controller}
+                        topPosition="435%"
                         leftPosition="5%"
                     />
                 </div>
