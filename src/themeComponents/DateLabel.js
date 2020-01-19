@@ -32,7 +32,7 @@ class DateLabel extends React.Component {
                 }}
             >
                 <Typography variant="h4">
-                    2010
+                    {this.props.year}
                 </Typography>
             </div>
         );

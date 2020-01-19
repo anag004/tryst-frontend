@@ -36,6 +36,7 @@ class ThemePage extends React.Component {
                         topDistance="104%"
                         leftDistance="52.5%"
                         labelID="1"
+                        year="2016"
                         controller={this.controller}
                     />
                     <TimelineDot 
@@ -72,6 +73,7 @@ class ThemePage extends React.Component {
                         topDistance="204%"
                         leftDistance="52.5%"
                         labelID="2"
+                        year="2010"
                         controller={this.controller}
                     />
                     <TimelineDot 
