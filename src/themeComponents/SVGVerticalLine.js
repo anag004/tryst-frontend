@@ -38,6 +38,11 @@ class Icon extends React.Component {
             height="742.008"
             version="1.1"
             viewBox="0 0 1.25 196.323"
+            preserveAspectRatio="none"
+            style={{
+              height: "100%",
+              width: "100%"
+            }}
           >
             <path
               id={"verticalLine" + this.props.lineID}
@@ -50,7 +55,7 @@ class Icon extends React.Component {
               strokeMiterlimit="4"
               strokeOpacity="1"
               strokeWidth="1.25"
-              d="M100.647 3.728V200.05"
+              d="M 100.647 3.728V200.05"
               transform="translate(-100.022 -3.728)"
             ></path>
           </svg>
