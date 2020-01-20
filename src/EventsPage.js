@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './App.css';
 import NavBar from "./TopNavBar";
 import DummyText from "./DummyText";
@@ -13,6 +13,7 @@ import SimpleGrid from './SimpleGrid';
 import CategorySpeedDial from './CategorySpeedDial';
 import PageRipple from './PageRipple';
 import NavDrawer from './NavDrawer';
+import axios from 'axios';
 
 const theme = createMuiTheme({
   palette: {
@@ -27,31 +28,9 @@ const mainFeaturedPost = {
     "We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor.",
   image: 'https://source.unsplash.com/random',
   imgText: 'main image description',
-  linkText: 'Continue Reading...'
+  linkText: ''
 };
 
-const pageSectionNamesWithIds=[
-  {
-    name:"Section4",
-    id:"4"
-  },
-  {
-    name:"Section3",
-    id:"3"
-  },
-  {
-    name:"Section2",
-    id:"2"
-  },
-  {
-    name:"Section1",
-    id:"1"
-  },
-  {
-    name: "Home",
-    id: "0"
-  } 
-]
 
 const useStyles = makeStyles(theme => ({
     anchor:  {
@@ -69,10 +48,50 @@ export default function EventsPage() {
   const [screenWidth, setScreenWidth] = React.useState(false);
   const [screenHeight, setScreenHeight] = React.useState(false);
   const [transitionColor,setTransitionColor] = React.useState("green");
+  const [values,setValues]=React.useState([]);
   const classes = useStyles();
 
-  const color1="white",color2="#7BC5AE",color3="#A67F78", color4="white"; 
+  useEffect(()=>{
+    axios.get('data/sampleData/file.json')
+    .then(res=>{const data=res.data
+      console.log(data)
+      setValues(data)
+    });
+  },[])
 
+  const color1="white",color2="#7BC5AE",color3="#A67F78", color4="white"; 
+  const color=[color1,color2,color3,color4];
+  const textColor=["black","white","white","black"]
+
+  var arr=[];
+  const setArr=(n)=>{
+    let x=Math.floor(n/3);
+    if(n%3!=0){
+      x=x+1;
+    }
+    arr=[];
+    if(n%3!=1 || n==1){
+      for (let i = 0; i < x; i++) {
+        arr.push([3*i,3]);
+      }
+    }
+    else{
+      for (let i = 0; i < x-2; i++) {
+        arr.push([3*i,3]);
+      }
+      arr.push([n-4,2]);
+      arr.push([n-2,2]);
+      // console.log(arr);
+    }
+  }
+
+  var pageSectionNamesWithIds=[{"name":"Home","id":0}];
+  
+  const pushPageSectionIdAndName=(name,id)=>{
+    let o ={"name":name,"id":id};
+    pageSectionNamesWithIds=[o].concat(pageSectionNamesWithIds);
+  }
+  
   const handleClick = (event) => {
     setActivateRippleEffect(true);
     setPositionX(event.clientX); setPositionY(event.clientY);
@@ -94,9 +113,28 @@ export default function EventsPage() {
             <NavBar threshold={10}/>
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
-            <div id="section1" className={classes.anchor}>
-            </div>
+
+            {values.map(pageSection=><div>
+              <div id={"section"+pageSection.id} className={classes.anchor}>
+              </div>
               <PageSection 
+                heading={pageSection.category}
+                headingAlignment="center"
+                containerBackgroundColor={color[(pageSection.id-1)]}//assuming ids start from 1 as home having an id of 0
+                textColor={textColor[(pageSection.id-1)]}
+                description={pageSection.categoryDescription}
+                id={pageSection.id}
+              >
+                {pushPageSectionIdAndName(pageSection.category,pageSection.id)}
+                {setArr((pageSection.events).length)}
+                {arr.map(i=><EventCardRow key={i}
+                  data-color={color1}  rippleTriggerFunction={handleClick}>
+                    <SimpleGrid linkTo={"/event"} postArray={(pageSection.events).slice(i[0],(i[0])+i[1])}></SimpleGrid>
+                  </EventCardRow>)}
+              </PageSection>
+            </div>)}
+
+              {/* <PageSection 
                 heading="Event Section 1"
                 headingAlignment="center"
                 containerBackgroundColor={color1}
@@ -114,7 +152,6 @@ export default function EventsPage() {
                       <SimpleGrid n="3" linkTo="/event/1"/>
                   </EventCardRow>
               </PageSection>
-            
             <div id="section2" className={classes.anchor}>
             </div>
               <PageSection 
@@ -176,7 +213,7 @@ export default function EventsPage() {
                   <EventCardRow data-color={color4} rippleTriggerFunction={handleClick}>
                       <SimpleGrid n="3" linkTo="/event/4"/>
                   </EventCardRow>
-              </PageSection>
+              </PageSection> */}
             
             <div style={{position:"fixed", bottom:40,right:40}}>
               <CategorySpeedDial actions={pageSectionNamesWithIds}/>
