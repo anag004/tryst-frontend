@@ -32,7 +32,7 @@ class Icon extends React.Component {
         <div 
           id={"startLineScroll" + this.props.lineID}
         ></div>
-        <div align="center" style={{height: "100%", width: "5px"}}>
+        <div align="center" style={{height: this.props.height ? this.props.height : "100%", width: "5px"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="4.724"

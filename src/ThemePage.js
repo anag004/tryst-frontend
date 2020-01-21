@@ -18,10 +18,25 @@ import fusion_image from './images/fusion_image.jpg';
 import metal_printing_image from './images/metal_printing.jpg';
 import { Timeline } from 'gsap/gsap-core';
 import NavigationIcon from '@material-ui/icons/Navigation';
+import Card from '@material-ui/core/Card';
+import {withStyles} from '@material-ui/core/styles';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
 const plugins = [ CSSPlugin ];
+
+const styles = theme => ({
+    paper: {
+        position: "absolute",
+        top: "70%",
+        left: "50%",
+        marginLeft: -130,
+        display: "inline-block",
+        backgroundColor: "white",
+        padding: theme.spacing(4),
+        transform: "scale(0)"
+    }
+});
 
 class ThemePage extends React.Component {
     constructor(props) {
@@ -31,6 +46,7 @@ class ThemePage extends React.Component {
 
     componentDidMount() {
         const tween = new TimelineMax()
+                        .add(TweenMax.to("#trystContainer", 1, {scale: 1, ease: Elastic.easeInOut}))
                         .add(TweenMax.to("#trystYear", 1, {opacity: 1, ease: Linear.easeNone}))
                         .add(TweenMax.to("#trystTitle", 1, {opacity: 1, ease: Linear.easeNone}))
                         .add(TweenMax.to("#trystDate", 1, {scale: 1, ease: Elastic.easeInOut}));
@@ -232,7 +248,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "120%",
+                        height: "160%",
                         width: "100%",
                         background: "#FFFFFF",
                         background: "-webkit-linear-gradient(top left, #FFFFFF, #9D9D9D)",
@@ -245,6 +261,7 @@ class ThemePage extends React.Component {
                         controller={this.controller} 
                         lineID="4" 
                         topPosition={-10}
+                        height="90%"
                     />
                     <DateLabel
                         topDistance={-20}
@@ -295,39 +312,42 @@ class ThemePage extends React.Component {
                         radius={10}
                         topPosition="60%"
                     />
-                    <Typography variant="h4" id="trystYear"
-                        style={{
-                            position: "absolute",
-                            top: "76%",
-                            left: "50%",
-                            marginLeft: -30,
-                            opacity: "0"
-                        }}
-                    >2020
-                    </Typography>
-                    <Typography variant="h1" align="center" id="trystTitle"
-                        style={{
-                            position: "absolute",
-                            top: "80%",
-                            left: "50%",
-                            marginLeft: -100,
-                            opacity: "0"
-                        }}
-                    >
-                        Tryst
-                    </Typography>
-                    <Typography variant="h5" id="trystDate"
-                        style={{
-                            position: "absolute",
-                            top: "93%",
-                            left: "50%",
-                            marginLeft: -50,
-                            transform: "scale(0)",
-                        }}
-                    >6-8 March</Typography>
+                    <Card className={this.props.classes.paper} id="trystContainer">
+                        <Typography variant="h4" id="trystYear" align="center"
+                            style={{
+                                position: "relative",
+                                // top: "66%",
+                                // left: "50%",
+                                // marginLeft: -30,
+                                opacity: "0"
+                            }}
+                        >2020
+                        </Typography>
+                        <br/>
+                        <Typography variant="h1" align="center" id="trystTitle" align="center"
+                            style={{
+                                position: "relative",
+                                // left: "0%",
+                                // marginLeft: -100,
+                                opacity: "0"
+                            }}
+                        >
+                            Tryst
+                        </Typography>
+                        <br/>
+                        <Typography variant="h5" id="trystDate" align="center"
+                            style={{
+                                position: "relative",
+                                // top: "83%",
+                                // left: "50%",
+                                // marginLeft: -50,
+                                transform: "scale(0)",
+                            }}
+                        >6-8 March</Typography>
+                    </Card>
                 </div>
             </>
         );
     }
 }
-export default ThemePage;
+export default withStyles(styles)(ThemePage);
