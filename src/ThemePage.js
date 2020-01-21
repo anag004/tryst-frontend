@@ -38,7 +38,11 @@ class ThemePage extends React.Component {
                     style={{
                         position: "relative",
                         height: "100%",
-                        width: "100%"
+                        width: "100%",
+                        background: "#83C4CF",
+                        background: "-webkit-linear-gradient(top left, #83C4CF, #D2F5FA)",
+                        background: "-moz-linear-gradient(top left, #83C4CF, #D2F5FA)",
+                        background: "linear-gradient(to bottom right, #83C4CF, #D2F5FA)",
                     }}
                 >  
                     <SVGVerticalLine controller={this.controller} lineID="1" topPosition="5%"/>
@@ -90,17 +94,21 @@ class ThemePage extends React.Component {
                     style={{
                         position: "relative",
                         height: "100%",
-                        width: "100%"
+                        width: "100%",
+                        background: "#FAF494",
+                        background: "-webkit-linear-gradient(top left, #FAF494, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #FAF494, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #FAF494, #FFFFFF)"
                     }}
                 >  
                     {/* Second section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="2" 
-                        topPosition="0%"
+                        topPosition={-10}
                     />
                     <DateLabel
-                        topDistance="0%"
+                        topDistance={-20}
                         leftDistance="52.5%"
                         labelID="2"
                         year="2017"
@@ -110,7 +118,7 @@ class ThemePage extends React.Component {
                         dotID="2" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="0%"
+                        topPosition={-10}
                     />
                     <SVGLeftFork
                         forkID="3"
@@ -147,17 +155,21 @@ class ThemePage extends React.Component {
                     style={{
                         position: "relative",
                         height: "100%",
-                        width: "100%"
+                        width: "100%",
+                        background: "#A6FA94",
+                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
                     }}
                 >  
                     {/* Third section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="3" 
-                        topPosition="0%"
+                        topPosition={-10}
                     />
                     <DateLabel
-                        topDistance="0%"
+                        topDistance={-20}
                         leftDistance="52.5%"
                         labelID="3"
                         year="2018"
@@ -167,7 +179,7 @@ class ThemePage extends React.Component {
                         dotID="3" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="0%"
+                        topPosition={-10}
                     />
                     <SVGLeftFork
                         forkID="5"
@@ -204,17 +216,21 @@ class ThemePage extends React.Component {
                     style={{
                         position: "relative",
                         height: "100%",
-                        width: "100%"
+                        width: "100%",
+                        background: "#FFFFFF",
+                        background: "-webkit-linear-gradient(top left, #FFFFFF, #9D9D9D)",
+                        background: "-moz-linear-gradient(top left, #FFFFFF, #9D9D9D)",
+                        background: "linear-gradient(to bottom right, #FFFFFF, #9D9D9D)"
                     }}
                 >  
                     {/* Fourth section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="4" 
-                        topPosition="0%"
+                        topPosition={-10}
                     />
                     <DateLabel
-                        topDistance="0%"
+                        topDistance={-20}
                         leftDistance="52.5%"
                         labelID="4"
                         year="2019"
@@ -224,7 +240,7 @@ class ThemePage extends React.Component {
                         dotID="4" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="0%"
+                        topPosition={-10}
                     />
                     <SVGLeftFork
                         forkID="7"
