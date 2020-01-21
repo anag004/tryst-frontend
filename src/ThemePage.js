@@ -3,7 +3,7 @@ import NavBar from './TopNavBar';
 import LandingScreen from './themeComponents/LandingScreen';
 import SVGVerticalLine from './themeComponents/SVGVerticalLine';
 import * as ScrollMagic from "scrollmagic";
-import { TweenMax, TimelineMax, Linear, CSSPlugin } from "gsap";
+import { TweenMax, TimelineMax, Linear, CSSPlugin, Elastic } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
 import TimelineDot from './themeComponents/TimelineDot';
 import DateLabel from './themeComponents/DateLabel';
@@ -16,6 +16,8 @@ import oculus_image from './images/oculus.jpg';
 import electric_cars_image from './images/electric_cars.jpg';
 import fusion_image from './images/fusion_image.jpg';
 import metal_printing_image from './images/metal_printing.jpg';
+import { Timeline } from 'gsap/gsap-core';
+import NavigationIcon from '@material-ui/icons/Navigation';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -27,10 +29,25 @@ class ThemePage extends React.Component {
         this.controller = new ScrollMagic.Controller();
     }
 
+    componentDidMount() {
+        const tween = new TimelineMax()
+                        .add(TweenMax.to("#trystYear", 1, {opacity: 1, ease: Linear.easeNone}))
+                        .add(TweenMax.to("#trystTitle", 1, {opacity: 1, ease: Linear.easeNone}))
+                        .add(TweenMax.to("#trystDate", 1, {scale: 1, ease: Elastic.easeInOut}));
+
+        new ScrollMagic.Scene({
+            triggerElement: "#dotScroll5",
+            duration: 100,
+            offset: -100
+        })
+        .setTween(tween)
+        .addTo(this.controller);
+    }
+
     render() {
         return (
             <>
-                <div style={{position: "absolute", top: 0, left: 0, visibility: "hidden", height: "1000%", width: "100%"}}></div>
+                <div style={{position: "absolute", top: 0, left: 0, visibility: "hidden", width: "100%"}}></div>
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>
                 {/* First section */}
@@ -272,6 +289,42 @@ class ThemePage extends React.Component {
                         topPosition="35%"
                         leftPosition="5%"
                     />
+                     <TimelineDot 
+                        dotID="5" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition="50%"
+                    />
+                    <Typography variant="h4" id="trystYear"
+                        style={{
+                            position: "absolute",
+                            top: "60%",
+                            left: "50%",
+                            marginLeft: -30,
+                            opacity: "0"
+                        }}
+                    >2020
+                    </Typography>
+                    <Typography variant="h1" align="center" id="trystTitle"
+                        style={{
+                            position: "absolute",
+                            top: "70%",
+                            left: "50%",
+                            marginLeft: -100,
+                            opacity: "0"
+                        }}
+                    >
+                        Tryst
+                    </Typography>
+                    <Typography variant="h5" id="trystDate"
+                        style={{
+                            position: "absolute",
+                            top: "86%",
+                            left: "50%",
+                            marginLeft: -50,
+                            transform: "scale(0)",
+                        }}
+                    >6-8 March</Typography>
                 </div>
             </>
         );
