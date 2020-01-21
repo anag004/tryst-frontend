@@ -33,11 +33,17 @@ class ThemePage extends React.Component {
                 <div style={{position: "absolute", top: 0, left: 0, visibility: "hidden", height: "1000%", width: "100%"}}></div>
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>
-                <div> 
-                    {/* First section */}
-                    <SVGVerticalLine controller={this.controller} lineID="1" topPosition="105%"/>
+                {/* First section */}
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%"
+                    }}
+                >  
+                    <SVGVerticalLine controller={this.controller} lineID="1" topPosition="5%"/>
                     <DateLabel
-                        topDistance="104%"
+                        topDistance="4%"
                         leftDistance="52.5%"
                         labelID="1"
                         year="2016"
@@ -47,18 +53,18 @@ class ThemePage extends React.Component {
                         dotID="1" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="105%"
+                        topPosition="5%"
                     />
                     <SVGRightFork
                         forkID="1"
-                        topPosition="120%"
+                        topPosition="20%"
                         controller={this.controller}
                         height="15"
                         width="30"
                     />
                     <SVGLeftFork
                         forkID="2"
-                        topPosition="130%"
+                        topPosition="30%"
                         controller={this.controller}
                         width="20"
                         height="15"
@@ -68,7 +74,7 @@ class ThemePage extends React.Component {
                         description="The world's first high-res VR head set for personal use."
                         heading="Oculus Rift released"
                         textBoxID="1"
-                        topPosition="135%"
+                        topPosition="35%"
                         leftPosition="60%"
                         controller={this.controller}
                     />
@@ -76,17 +82,25 @@ class ThemePage extends React.Component {
                         url={oculus_image}
                         imageID="1"
                         controller={this.controller}
-                        topPosition="145%"
+                        topPosition="45%"
                         leftPosition="5%"
                     />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%"
+                    }}
+                >  
                     {/* Second section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="2" 
-                        topPosition="200%"
+                        topPosition="0%"
                     />
                     <DateLabel
-                        topDistance="200%"
+                        topDistance="0%"
                         leftDistance="52.5%"
                         labelID="2"
                         year="2017"
@@ -96,11 +110,11 @@ class ThemePage extends React.Component {
                         dotID="2" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="200%"
+                        topPosition="0%"
                     />
                     <SVGLeftFork
                         forkID="3"
-                        topPosition="220%"
+                        topPosition="20%"
                         width="30"
                         height="10"
                         controller={this.controller}
@@ -110,13 +124,13 @@ class ThemePage extends React.Component {
                         heading="Electric cars"
                         description="The year saw the revolutionary masterpieces namely Tesla motors model 3 and BMW i3, the all electric vehicles being rapidly mass produced. "
                         textBoxID="2"
-                        topPosition="230%"
+                        topPosition="30%"
                         leftPosition="5%"
                         controller={this.controller}
                     />
                     <SVGRightFork
                         forkID="4"
-                        topPosition="210%"
+                        topPosition="10%"
                         width="30"
                         height="10"
                         controller={this.controller}
@@ -125,17 +139,25 @@ class ThemePage extends React.Component {
                         url={electric_cars_image}
                         imageID="2"
                         controller={this.controller}
-                        topPosition="220%"
+                        topPosition="20%"
                         leftPosition="60%"
                     />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%"
+                    }}
+                >  
                     {/* Third section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="3" 
-                        topPosition="296%"
+                        topPosition="0%"
                     />
                     <DateLabel
-                        topDistance="296%"
+                        topDistance="0%"
                         leftDistance="52.5%"
                         labelID="3"
                         year="2018"
@@ -145,11 +167,11 @@ class ThemePage extends React.Component {
                         dotID="3" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="296%"
+                        topPosition="0%"
                     />
                     <SVGLeftFork
                         forkID="5"
-                        topPosition="330%"
+                        topPosition="30%"
                         width="35"
                         height="5"
                         controller={this.controller}
@@ -159,13 +181,13 @@ class ThemePage extends React.Component {
                         heading="3D Metal Printing"
                         description="HP opens preorders for its industrial-scale Metal Jet printers"
                         textBoxID="3"
-                        topPosition="320%"
+                        topPosition="20%"
                         leftPosition="55%"
                         controller={this.controller}
                     />
                     <SVGRightFork
                         forkID="6"
-                        topPosition="310%"
+                        topPosition="10%"
                         width="30"
                         height="10"
                         controller={this.controller}
@@ -174,17 +196,25 @@ class ThemePage extends React.Component {
                         url={metal_printing_image}
                         imageID="3"
                         controller={this.controller}
-                        topPosition="335%"
+                        topPosition="35%"
                         leftPosition="5%"
                     />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%"
+                    }}
+                >  
                     {/* Fourth section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
                         lineID="4" 
-                        topPosition="390%"
+                        topPosition="0%"
                     />
                     <DateLabel
-                        topDistance="390%"
+                        topDistance="0%"
                         leftDistance="52.5%"
                         labelID="4"
                         year="2019"
@@ -194,11 +224,11 @@ class ThemePage extends React.Component {
                         dotID="4" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="390%"
+                        topPosition="0%"
                     />
                     <SVGLeftFork
                         forkID="7"
-                        topPosition="430%"
+                        topPosition="30%"
                         width="35"
                         height="5"
                         controller={this.controller}
@@ -208,13 +238,13 @@ class ThemePage extends React.Component {
                         heading="Fusion reactor"
                         description="New nuclear designs promise to make fusion power safer and cheaper. "
                         textBoxID="4"
-                        topPosition="420%"
+                        topPosition="20%"
                         leftPosition="55%"
                         controller={this.controller}
                     />
                     <SVGRightFork
                         forkID="8"
-                        topPosition="410%"
+                        topPosition="10%"
                         width="30"
                         height="10"
                         controller={this.controller}
@@ -223,7 +253,7 @@ class ThemePage extends React.Component {
                         url={fusion_image}
                         imageID="4"
                         controller={this.controller}
-                        topPosition="435%"
+                        topPosition="35%"
                         leftPosition="5%"
                     />
                 </div>
