@@ -26,12 +26,13 @@ class Icon extends React.Component {
           position: "absolute",
           top: this.props.topPosition,
           left: "50%",
+          height: "100%",
         }}
       >
         <div 
           id={"startLineScroll" + this.props.lineID}
         ></div>
-        <div align="center">
+        <div align="center" style={{height: this.props.height ? this.props.height : "100%", width: "5px"}}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="4.724"
@@ -47,7 +48,7 @@ class Icon extends React.Component {
             <path
               id={"verticalLine" + this.props.lineID}
               fill="none"
-              stroke="#000"
+              stroke={this.props.color ? this.props.color : "#000"}
               strokeDasharray="200px"
               strokeDashoffset="200px"
               strokeLinecap="butt"
