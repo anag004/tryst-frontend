@@ -232,7 +232,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "120%",
                         width: "100%",
                         background: "#FFFFFF",
                         background: "-webkit-linear-gradient(top left, #FFFFFF, #9D9D9D)",
@@ -293,12 +293,12 @@ class ThemePage extends React.Component {
                         dotID="5" 
                         controller={this.controller}
                         radius={10}
-                        topPosition="50%"
+                        topPosition="60%"
                     />
                     <Typography variant="h4" id="trystYear"
                         style={{
                             position: "absolute",
-                            top: "60%",
+                            top: "76%",
                             left: "50%",
                             marginLeft: -30,
                             opacity: "0"
@@ -308,7 +308,7 @@ class ThemePage extends React.Component {
                     <Typography variant="h1" align="center" id="trystTitle"
                         style={{
                             position: "absolute",
-                            top: "70%",
+                            top: "80%",
                             left: "50%",
                             marginLeft: -100,
                             opacity: "0"
@@ -319,7 +319,7 @@ class ThemePage extends React.Component {
                     <Typography variant="h5" id="trystDate"
                         style={{
                             position: "absolute",
-                            top: "86%",
+                            top: "93%",
                             left: "50%",
                             marginLeft: -50,
                             transform: "scale(0)",
