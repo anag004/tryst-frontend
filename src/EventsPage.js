@@ -98,7 +98,7 @@ export default function EventsPage() {
     setScreenWidth(window.innerWidth); setScreenHeight(window.innerHeight);
     setTransitionColor(event.currentTarget.dataset.color)
   }
-
+  var z;
 
   return (
         <ThemeProvider theme={theme}>
@@ -113,23 +113,23 @@ export default function EventsPage() {
             <NavBar threshold={10}/>
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
-
-            {values.map(pageSection=><div>
-              <div id={"section"+pageSection.id} className={classes.anchor}>
+            {Object.keys(values).map((pageSectionName,index)=><div>
+              <div id={"section"+(index+1)} className={classes.anchor}>
               </div>
               <PageSection 
-                heading={pageSection.category}
+                heading={pageSectionName}
                 headingAlignment="center"
-                containerBackgroundColor={color[(pageSection.id-1)]}//assuming ids start from 1 as home having an id of 0
-                textColor={textColor[(pageSection.id-1)]}
-                description={pageSection.categoryDescription}
-                id={pageSection.id}
+                containerBackgroundColor={color[(index)]}
+                textColor={textColor[(index)]}
+                description={""}
+                id={index+1}
               >
-                {pushPageSectionIdAndName(pageSection.category,pageSection.id)}
-                {setArr((pageSection.events).length)}
+                {pushPageSectionIdAndName(pageSectionName,index+1)}
+
+                {setArr((values[pageSectionName]).length)}
                 {arr.map(i=><EventCardRow key={i}
                   data-color={color1}  rippleTriggerFunction={handleClick}>
-                    <SimpleGrid linkTo={"/event"} postArray={(pageSection.events).slice(i[0],(i[0])+i[1])}></SimpleGrid>
+                    <SimpleGrid linkTo={"/event/"} postArray={(values[pageSectionName]).slice(i[0],(i[0])+i[1])}></SimpleGrid>
                   </EventCardRow>)}
               </PageSection>
             </div>)}

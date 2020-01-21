@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
@@ -40,7 +40,7 @@ export default function EventDetail(props) {
         axios.get('/data/sampleData/event'+(props.match.params.id)+'.json')
         .then(res=>{const data=res.data
             // console.log(data)
-            setValue(data)
+            setValue([data])
             // console.log(value)
         });
       },[])
@@ -59,42 +59,60 @@ export default function EventDetail(props) {
                 {value.map(post=>   
                     <div>
                         <Fade in={true}  timeout={1000}>
-                            <ImageBanner post={{category:post.category,title:post.eventName,description:post.eventCardDescription,image:post.image,imgText:post.imgText}}/>
+                            <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:(post.photos)[0],imgText:""}}/>
                         </Fade>
                         <Fade in={true} timeout={1000}>
                             <Container classes={classes} maxWidth="sm">
                                 <Typography variant="h4">Description</Typography>
                                 <br/>
                                 <Typography variant="body1">
-                                    {post.eventDescription} 
+                                    {post.description} 
                                 </Typography>
                                 <br></br>
                                 <Typography variant="h4">Rules</Typography>
                                 <br></br>
-                                {(post.rules).description}
                                 <Typography variant="body1">
+                                    {post.rules}
+                                </Typography>
+                                <br></br>
+                                {/* <Typography variant="body1">
                                     <ol>
                                         {((post.rules).list).map(str=><li>{str}</li>)}
                                     </ol>
-                                </Typography>
+                                </Typography> */}
                                 <Typography variant="h4">Prizes</Typography>
                                 <br></br>
-                                {(post.prizes).description}
                                 <Typography variant="body1">
+                                    {post.prizes}
+                                </Typography>
+                                {/* <Typography variant="body1">
                                     <ul>
                                     {((post.prizes).list).map(str=><li>{str}</li>)}
                                     </ul>
+                                </Typography> */}
+                                <br/>
+                                <Typography variant="h4">
+                                    Contact Info
                                 </Typography>
-                                <Typography variant="body2">
-                                    <b> 
-                                        {(post.contactInfo).description}
-                                    </b>
+                                <Typography>
+                                    <ul>
+                                        {(post.poc).map(obj=>
+                                            <Fragment>
+                                                Name: {obj.name}
+                                                <br/>
+                                                Email: {obj.email}
+                                                <br/>
+                                                Designation: {obj.designation}
+                                                <br/>   
+                                            </Fragment>
+                                        )}
+                                    </ul>
                                 </Typography>
-                                <Typography variant="body1">
+                                {/* <Typography variant="body1">
                                     <ul>
                                         {((post.contactInfo).list).map(str=><li>{str}</li>)}
                                     </ul>
-                                </Typography>
+                                </Typography> */}
                             </Container>
                         </Fade>
                     </div>)}

@@ -48,12 +48,12 @@ class App extends React.Component {
                 <ThemePage/>
               </Route>
               <Route path="/events">
-                <ComingSoon description={eventsText}/>
+                <EventsPage/>
               </Route>
               <Route path="/" exact>
                 <ThemePage/>
               </Route>
-              {/* <Route path="/event:id" component={EventDetail} /> */}
+              <Route path="/event/:id" component={EventDetail} />
               <Route path="/lodging">
                 <ComingSoon description={lodgingText}/>
               </Route>

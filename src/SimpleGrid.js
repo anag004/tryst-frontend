@@ -17,9 +17,9 @@ function SimpleGrid(props) {
         <>
             {postArray.map((event) => 
                 <EventCard
-                    cardHeading = {event.eventName}
-                    cardDescription = {event.eventCardDescription}
-                    cardImage = {event.eventImage}
+                    cardHeading = {event.name}
+                    cardDescription = {event.subheading}
+                    cardImage = {(event.photos)[0]}
                     xs={8}
                     backgroundColor = {backgroundColor}
                     linkTo = {linkTo+(event.id)}
