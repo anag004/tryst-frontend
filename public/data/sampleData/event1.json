@@ -1,0 +1,33 @@
+[
+    {
+        "id":1,
+        "eventName":"Event 1",
+        "category":"Workshops",
+        "eventCardDescription":"Here is a  small description of the Event",
+        "eventDescription":"bcsabvjkbdkvnbsnjk",
+        "image": "https://source.unsplash.com/random",
+        "imgText": "main image description",
+        "rules":{
+            "description":"All of the rules below are binding and failure to follow will result in immediate disqualification.",
+            "list":[
+                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
+                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
+                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
+                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
+                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend."
+            ]
+        },
+        "prizes":{
+            "description":"Some amazing prizes to make you rich",
+            "list":[
+                "First prize : 35000 INR",
+                "Second prize : 25000 INR",
+                "Third prize : 10000 INR"
+            ]
+        },
+        "contactInfo":{
+            "description":"Contact urnasemper@gmail.com for any queries.",
+            "list":[]
+        }
+    }
+]

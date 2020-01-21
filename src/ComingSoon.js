@@ -1,4 +1,4 @@
-import React, {useEffect } from 'react';
+import React, {useEffect, Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Container, makeStyles, Fade, IconButton, Link } from '@material-ui/core';
 import TopNavBar from './TopNavBar';
@@ -47,8 +47,8 @@ const styles =theme =>({
         fontSize:40,
         color:"white",
         display:"inline",
-        marginRight:4,
-        marginLeft:4,
+        marginRight:10,
+        marginLeft:10,
         padding:8,
         borderStyle:"groove",
         borderWidth:"2px",
@@ -59,7 +59,7 @@ const styles =theme =>({
         fontSize:28,
         color:"white",
         display:"inline",
-        padding:15,
+        padding:8,
     },
     
     
@@ -122,10 +122,34 @@ class ComingSoon extends React.Component {
                         <br/>
                         <br/>
                         <div align="center">
-                            <div className={classes.countdownTime}>{("0"+Math.floor(this.state.time/(60000*60*24))).slice(-2)}</div> <div className={classes.countdownTime}>{("0"+Math.floor(((this.state.time/(60000*60))%(24)))).slice(-2)}</div> <div className={classes.countdownTime} >{("0"+Math.floor(((this.state.time/60000)%(60)))).slice(-2)}</div><div className={classes.countdownTime}>{("0"+Math.floor(((this.state.time/1000)%60))).slice(-2)} </div>
+                            <div className={classes.countdownTime}>
+                                {("0"+Math.floor(this.state.time/(60000*60*24))).slice(-2)}
+                            </div>
+                            <div className={classes.countdownTime}>
+                                {("0"+Math.floor(((this.state.time/(60000*60))%(24)))).slice(-2)}
+                            </div>
+                            {window.screen.width<600?
+                                <div style={{marginTop:50}}>
+                                    <div className={classes.countdownTime}>
+                                        {("0"+Math.floor(((this.state.time/60000)%(60)))).slice(-2)}
+                                    </div>
+                                    <div className={classes.countdownTime}>
+                                        {("0"+Math.floor(((this.state.time/1000)%60))).slice(-2)} 
+                                    </div>
+                                </div>
+                            :
+                                <Fragment>
+                                    <div className={classes.countdownTime} >
+                                        {("0"+Math.floor(((this.state.time/60000)%(60)))).slice(-2)}
+                                    </div>
+                                    <div className={classes.countdownTime}>
+                                        {("0"+Math.floor(((this.state.time/1000)%60))).slice(-2)}
+                                    </div>
+                                </Fragment>
+                            }
                             <br/>
                             <br/>
-                            <div className={classes.countdownText}>Days</div><div className={classes.countdownText}>Hours</div><div className={classes.countdownText}>Min</div><div className={classes.countdownText}>Second</div>
+                            {window.screen.width>600?<Fragment><div className={classes.countdownText}>Days</div><div className={classes.countdownText}>Hours</div><div className={classes.countdownText}>Min</div><div className={classes.countdownText}>Second</div></Fragment>:<Fragment></Fragment>}
                         </div>
                         <br/><br/>
                         <Container style={{position:"relative",bottom:0,left: -10,width:"100%"}}>

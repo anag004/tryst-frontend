@@ -3,26 +3,26 @@ import EventCard from './EventCard';
 
 // Returns a grid of cards for demo purposes
 function SimpleGrid(props) {
-    const {n, backgroundColor, linkTo, rippleTriggerFunction} = props;
-    let arr = [];
+    const { backgroundColor, linkTo, rippleTriggerFunction,postArray} = props;
+    // let arr = [];
 
-    for (let i = 0; i < n; i++) {
-        arr.push(i);
-    }
+    // for (let i = 0; i < n; i++) {
+    //     arr.push(i);
+    // }
 
     
     const dummyText = `Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ligula mauris, tempor ut turpis eget, congue ullamcorper nisi. Praesent ac venenatis quam. Proin porta velit at pharetra maximus. `;
 
     return (
         <>
-            {arr.map(() => 
+            {postArray.map((event) => 
                 <EventCard
-                    cardHeading = {"Bubba Grump Shrimp Co."}
-                    cardDescription = {dummyText}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
+                    cardHeading = {event.eventName}
+                    cardDescription = {event.eventCardDescription}
+                    cardImage = {event.eventImage}
                     xs={8}
                     backgroundColor = {backgroundColor}
-                    linkTo = {linkTo}
+                    linkTo = {linkTo+(event.id)}
                     rippleTriggerFunction={rippleTriggerFunction}
                 />
             )}

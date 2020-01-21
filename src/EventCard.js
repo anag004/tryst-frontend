@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import CardContent from '@material-ui/core/CardContent';
 import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
@@ -34,7 +34,7 @@ const useStyles = makeStyles((theme) => ({
 function EventCard(props) {
     const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, rippleTriggerFunction, others } = props;
     
-    console.log(rippleTriggerFunction);
+    // console.log(rippleTriggerFunction);
     const classes = useStyles();
 
     const handleClick = (event) => {
