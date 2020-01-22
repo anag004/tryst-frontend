@@ -52,10 +52,10 @@ export default function EventsPage() {
   const classes = useStyles();
 
   useEffect(()=>{
-    axios.get('data/sampleData/file.json')
+    axios.get('https://backend2020.tryst-iitd.org/api/event/getCategories')
     .then(res=>{const data=res.data
-      console.log(data)
-      setValues(data)
+      console.log(data.data)
+      setValues(data.data)
     });
   },[])
 

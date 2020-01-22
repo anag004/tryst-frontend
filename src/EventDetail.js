@@ -37,10 +37,10 @@ export default function EventDetail(props) {
     }));
 
     useEffect(()=>{
-        axios.get('/data/sampleData/event'+(props.match.params.id)+'.json')
+        axios.get('https://backend2020.tryst-iitd.org/api/event/view/'+(props.match.params.id))
         .then(res=>{const data=res.data
-            // console.log(data)
-            setValue([data])
+            console.log(data.data)
+            setValue([(data.data)])
             // console.log(value)
         });
       },[])

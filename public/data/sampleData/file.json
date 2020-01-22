@@ -1,9 +1,9 @@
 {
     "event": [
         {
-            "id": "1",
+            "id": "EVENTsokju",
             "name": "Event 1",
-            "photos": [],
+            "photos": ["https://source.unsplash.com/random"],
             "dtv": [
                 {
                     "type": "",
