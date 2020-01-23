@@ -121,16 +121,22 @@ function NavBar(props) {
                     <Toolbar style={{overflow:"hidden"}} variant="dense" className={classes.toolbar}>
                             <ScaleOnScroll>
                                 <div className={classes.iconWrapper}>
-                                    <img src={logo} className={classes.mainIcon}></img>
+                                    <Link to="/home" className={classes.link}>
+                                        <img src={logo} className={classes.mainIcon}></img>
+                                    </Link>
                                 </div>
                             </ScaleOnScroll>
                             { largeScreen
                                 ? (
                                     <React.Fragment>
-                                        <Link to="/home" className={classes.link}>
+                                        {/* <Link to="/home" className={classes.link}>
                                             <NavBarButton>Home</NavBarButton>
-                                        </Link>
+                                        </Link> */}
                                         <EventDropDown/>
+                                        <Link to="/exhibitions" className={classes.link}>
+                                            <NavBarButton>Exhibitions</NavBarButton>
+                                        </Link>
+                                        
                                         <Link to="/lodging" className={classes.link}>
                                             <NavBarButton>Lodging</NavBarButton>
                                         </Link>
