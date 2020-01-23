@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper } from '@material-ui/core';
+import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Grid, Link } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
 import TopNavBar from './TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
@@ -44,22 +44,39 @@ export default function EventDetail(props) {
             // console.log(value)
         });
       },[])
+    const checkDisabled=(deadline)=>{
+        // console.log(deadline);
+        const deadline_date=new Date(deadline);
+        // console.log(deadline_date);
+        const today=new Date();
+        if(today.getTime()<deadline_date.getTime()){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+    const Time=(time)=>{
+        const date=new Date(time);
+        // console.log(date);
+        return date.toLocaleTimeString('en-US');
+    }
     const classes = useStyle();
 
     return (
         <ThemeProvider theme={theme}>
             <ScrollToTop/>
-                <Grow in={true}>
-                    <Fab variant="extended" className={classes.fab} size="medium">
-                        <AddIcon fontSize="small"/>
-                        register
-                    </Fab>
-                </Grow>
                 <TopNavBar threshold={10}/>
                 {value.map(post=>   
                     <div>
+                        <Grow in={true}>
+                            <Fab variant="extended" className={classes.fab} size="medium" href={post.reg_link} disabled={checkDisabled(post.reg_deadline)}>
+                                <AddIcon fontSize="small"/>
+                                register
+                            </Fab>
+                        </Grow>
                         <Fade in={true}  timeout={1000}>
-                            <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:(post.photos)[0],imgText:""}}/>
+                            <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:((post.photos)[1])[0],imgText:""}}/>
                         </Fade>
                         <Fade in={true} timeout={1000}>
                             <Container classes={classes} maxWidth="sm">
@@ -69,50 +86,89 @@ export default function EventDetail(props) {
                                     {post.description} 
                                 </Typography>
                                 <br></br>
-                                <Typography variant="h4">Rules</Typography>
-                                <br></br>
-                                <Typography variant="body1">
-                                    {post.rules}
-                                </Typography>
-                                <br></br>
+                                {(post.dtv).length!=0?
+                                    <Fragment>
+                                        <Typography variant="h4">Event Info.</Typography>
+                                        <Grid container>
+                                        {(post.dtv).map(info=>
+                                            <Grid item sm style={{marginTop:10,marginLeft:25,marginBottom:10}}>
+                                                <Typography variant="body">Type: {info.type} </Typography><br/>
+                                                <Typography variant="body">Date: {info.date} </Typography><br/>
+                                                <Typography variant="body">Time: {Time(info.start_time)} </Typography><br/>
+                                                <Typography variant="body">Venue: {info.venue} </Typography><br/>
+                                            </Grid>
+                                            
+                                        )}
+                                        </Grid>
+                                    </Fragment>
+                                :
+                                    <Fragment/>
+                                }
+                                {(post.rules).length!=0?<Fragment>
+                                    <Typography variant="h4">Rules</Typography>
+                                    <br></br>
+                                    <Typography variant="body1">
+                                        {post.rules}
+                                    </Typography>
+                                    <br/>
+                                </Fragment>
+                                :
+                                    <Fragment/>
+                                }
                                 {/* <Typography variant="body1">
                                     <ol>
                                         {((post.rules).list).map(str=><li>{str}</li>)}
                                     </ol>
                                 </Typography> */}
-                                <Typography variant="h4">Prizes</Typography>
-                                <br></br>
-                                <Typography variant="body1">
-                                    {post.prizes}
-                                </Typography>
+                                {(post.prizes).length!=0?<Fragment>
+                                    <Typography variant="h4">Prizes</Typography>
+                                    <br></br>
+                                    <Typography variant="body1">
+                                        {post.prizes}
+                                    </Typography>
+                                </Fragment>
+                                :<Fragment/>
+                                }
                                 {/* <Typography variant="body1">
                                     <ul>
                                     {((post.prizes).list).map(str=><li>{str}</li>)}
                                     </ul>
                                 </Typography> */}
                                 <br/>
-                                <Typography variant="h4">
-                                    Contact Info
-                                </Typography>
-                                <Typography>
-                                    <ul>
-                                        {(post.poc).map(obj=>
-                                            <Fragment>
-                                                Name: {obj.name}
-                                                <br/>
-                                                Email: {obj.email}
-                                                <br/>
-                                                Designation: {obj.designation}
-                                                <br/>   
-                                            </Fragment>
-                                        )}
-                                    </ul>
-                                </Typography>
-                                {/* <Typography variant="body1">
-                                    <ul>
-                                        {((post.contactInfo).list).map(str=><li>{str}</li>)}
-                                    </ul>
-                                </Typography> */}
+                                {(post.poc).length!=0?<Fragment>
+                                    <Typography variant="h4">
+                                        Contact Info
+                                    </Typography>
+                                    <Typography>
+                                        <ul>
+                                            {(post.poc).map(obj=>
+                                                <Fragment>
+                                                    Name: {obj.name}
+                                                    <br/>
+                                                    Email: {obj.email}
+                                                    <br/>
+                                                    Designation: {obj.designation}
+                                                    <br/>   
+                                                </Fragment>
+                                            )}
+                                        </ul>
+                                    </Typography>
+                                </Fragment>
+                                :<Fragment/>
+                                }
+                                {(post.url).length!=0?
+                                    <Fragment>
+                                        <Link href={"http://"+(post.url)} target="_blank" rel="noreferrer">
+                                            <Typography variant="h6">Problem Statement</Typography>
+                                        </Link>
+                                    </Fragment>
+                                :
+                                    <Fragment/>
+                                }
+                                <br/>
+                                <Typography variant="h5">Organised by: {post.category_name} </Typography>
+                                <br/>
+                                
                             </Container>
                         </Fade>
                     </div>)}

@@ -57,13 +57,8 @@ function EventCard(props) {
                             </CardContent>
                         </CardActionArea>
                         <CardActions disableSpacing>
-                            <IconButton aria-label="add to favorites">
-                                <FacebookIcon fontSize="small"/>
-                            </IconButton>
-                            <IconButton aria-label="share">
-                                <InstagramIcon fontSize="small"/>
-                            </IconButton>
-                            <Button className={classes.register}>Register</Button>
+                            {/* <Button className={classes.register}>Register</Button> */}
+                            <Typography variant="body">Here are some prizes</Typography>
                         </CardActions>
                     </Card>
                 </Zoom>
