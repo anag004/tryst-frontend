@@ -20,6 +20,8 @@ const theme = createMuiTheme({
         position:"relative",
         // top:0,
         // backgroundColor:"grey"
+        // overflow:"scroll"
+        overflowX:"hide"
     },
     img:{
         width:"100%",
@@ -28,7 +30,10 @@ const theme = createMuiTheme({
     topContainer:{
         position:"absolute",
         top:0,
-        backgroundColor:"black"
+        // bottom:0,
+        backgroundColor:"black",
+        // overflow:"scroll",
+        // overflowX:"hidden"
     }
 }))
 export default function GuestLecture(props){
@@ -36,15 +41,17 @@ export default function GuestLecture(props){
     const classes=useStyles();
     return(
         <ThemeProvider theme={theme}>
+            
             <div className={classes.topContainer}>
-            <div className={classes.container}>
+                
+                <div className={classes.container}>
                 <NavBar threshold={10} backgroundColor="black"/>
-                <div className={classes.background}>
-                    <GuestLectureSection left_side={true} backgroundColor="black"/>
-                    <GuestLectureSection left_side={false} backgroundColor="black"/>
-                    <GuestLectureSection left_side={true} backgroundColor="black"/>
+                    <div className={classes.background}>
+                        <GuestLectureSection left_side={true} backgroundColor="black"/>
+                        <GuestLectureSection left_side={false} backgroundColor="black"/>
+                        <GuestLectureSection left_side={true} backgroundColor="black"/>
+                    </div>
                 </div>
-            </div>
             </div>
         </ThemeProvider>
     )
