@@ -12,18 +12,23 @@ const theme = createMuiTheme({
   });
   const useStyles = makeStyles(th => ({
     background:  {
-      marginTop:60,
+      marginTop:80,
       marginRight:20,
     //   
     },
     container:{
-        position:"absolute",
-        top:0,
-        backgroundColor:"grey"
+        position:"relative",
+        // top:0,
+        // backgroundColor:"grey"
     },
     img:{
         width:"100%",
         height:"50%",
+    },
+    topContainer:{
+        position:"absolute",
+        top:0,
+        backgroundColor:"black"
     }
 }))
 export default function GuestLecture(props){
@@ -31,6 +36,7 @@ export default function GuestLecture(props){
     const classes=useStyles();
     return(
         <ThemeProvider theme={theme}>
+            <div className={classes.topContainer}>
             <div className={classes.container}>
                 <NavBar threshold={10} backgroundColor="black"/>
                 <div className={classes.background}>
@@ -38,6 +44,7 @@ export default function GuestLecture(props){
                     <GuestLectureSection left_side={false} backgroundColor="black"/>
                     <GuestLectureSection left_side={true} backgroundColor="black"/>
                 </div>
+            </div>
             </div>
         </ThemeProvider>
     )

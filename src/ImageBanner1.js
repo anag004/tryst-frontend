@@ -60,8 +60,8 @@ const useStyles = makeStyles(theme => ({
         {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
         <div className={classes.overlay} />
         <Grid container>
-            <Grid item md={2}>  </Grid>
-            <Grid item md={8}>
+            {/* <Grid item md={2}>  </Grid> */}
+            <Grid item sm>
                 <div className={classes.imageBannerContent}>
                 <Fade in={true} timeout={1000}>
                         <Typography component="h5" variant="h5" align="center" color="inherit" gutterBottom>
