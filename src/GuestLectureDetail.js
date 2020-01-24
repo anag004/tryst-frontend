@@ -3,6 +3,7 @@ import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/sty
 import { Typography, Grid } from '@material-ui/core';
 import GuestLectureSection from './GuestLectureSection'
 import NavBar from './TopNavBar';
+import axios from 'axios';
 
 const theme = createMuiTheme({
     palette: {
@@ -18,9 +19,6 @@ const theme = createMuiTheme({
     },
     container:{
         position:"relative",
-        // top:0,
-        // backgroundColor:"grey"
-        // overflow:"scroll"
         overflowX:"hide"
     },
     img:{
@@ -30,26 +28,32 @@ const theme = createMuiTheme({
     topContainer:{
         position:"absolute",
         top:0,
-        // bottom:0,
-        backgroundColor:"black",
-        // overflow:"scroll",
-        // overflowX:"hidden"
     }
 }))
-export default function GuestLecture(props){
+export default function GuestLectureDetail(props){
+
     // const {left_side,backgroundColor}=props;
+    const [value,setValue]=React.useState([]);
+    useEffect(()=>{
+        axios.get('/data/sampleData/event'+(props.match.params.id)+'.json')
+        .then(res=>{const data=res.data
+            // console.log(data.data.photos)
+            setValue((data.data.photos))
+            console.log("dbsafjbazvbzvhk")
+            // console.log(value)
+        });
+      },[])
     const classes=useStyles();
     return(
         <ThemeProvider theme={theme}>
-            
+            <div style={{position:"fixed", width:"100%",height:"100%",zIndex:"-1",backgroundColor:"black"}}></div>
             <div className={classes.topContainer}>
-                
                 <div className={classes.container}>
                 <NavBar threshold={10} backgroundColor="black"/>
                     <div className={classes.background}>
-                        <GuestLectureSection left_side={true} backgroundColor="black"/>
-                        <GuestLectureSection left_side={false} backgroundColor="black"/>
-                        <GuestLectureSection left_side={true} backgroundColor="black"/>
+                        {value.map(lecturer=>
+                            <GuestLectureSection lecturer={lecturer}/>
+                        )}
                     </div>
                 </div>
             </div>

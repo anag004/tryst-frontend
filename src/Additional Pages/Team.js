@@ -48,9 +48,9 @@ function Sponsors(props) {
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
-            <NavBar threshold={10} disableOpacity={true}/>
+            <NavBar threshold={10} backgroundColor="#192841" disableOpacity={true}/>
             <PageSection
-                heading="The Tryst Team"
+                heading="THE TRYST TEAM"
                 headingAlignment="center"
                 containerBackgroundColor="white"
                 textColor="black"

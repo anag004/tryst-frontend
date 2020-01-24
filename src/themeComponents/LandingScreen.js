@@ -95,8 +95,8 @@ class LandingScreen extends React.Component {
                 <div className={this.props.classes.overlay} ref={this.vantaRef}/>
                 <Grid container justify="center" alignItems="center">
                     <Fade in={true} timeout={1000}>
-                        <Typography variant="h5" className={this.props.classes.presents}>
-                            Tryst presents
+                        <Typography style={{fontFamily:['Maven Pro','sans-serif'].join(','),fontSize:"45px"}} className={this.props.classes.presents}>
+                            TRYST PRESENTS
                         </Typography>
                     </Fade>
                 </Grid>

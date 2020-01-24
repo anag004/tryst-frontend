@@ -1,18 +1,22 @@
 {
-    "id":3,
-    "name":"Event 3",
-    "category_name":"Workshops",
-    "subheading":"Here is a  small description of the Event",
-    "description":"bcsabvjkbdkvnbsnjk",
-    "rules":"All of the rules below are binding and failure to follow will result in immediate disqualification.",
-    "prizes":"Some amazing prizes to make you rich",
-    "photos":[
-        "http://source.unsplash.com/collection/146130/random","image1.com"
-    ],
-    "poc":[{
-        "email":"username@gmail.com",
-        "name":"user",
-        "designation":"Overall Coordinator",
-        "contact":"9999999999"
-    }]
+    "data":{
+        "id":1,
+        "name":"Event 1",
+        "category_name":"Workshops",
+        "subheading":"Here is a  small description of the Event",
+        "description":"bcsabvjkbdkvnbsnjk",
+        "rules":"All of the rules below are binding and failure to follow will result in immediate disqualification.",
+        "prizes":"Some amazing prizes to make you rich",
+        "photos": [
+            ["https://vignette.wikia.nocookie.net/tomandfriends/images/e/ea/Unnamed.jpg/revision/latest/scale-to-width-down/310?cb=20190623193016","Tom","This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. "],
+            ["https://vignette.wikia.nocookie.net/tomandfriends/images/e/ea/Unnamed.jpg/revision/latest/scale-to-width-down/310?cb=20190623193016","Tom","This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. "],
+            ["https://vignette.wikia.nocookie.net/tomandfriends/images/e/ea/Unnamed.jpg/revision/latest/scale-to-width-down/310?cb=20190623193016","Tom","This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. This is a lecture. "]
+        ],
+        "poc":[{
+            "email":"username@gmail.com",
+            "name":"user",
+            "designation":"Overall Coordinator",
+            "contact":"9999999999"
+        }]
+    }
 }

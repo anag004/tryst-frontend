@@ -19,11 +19,11 @@ function SimpleGrid(props) {
             
             {postArray.map((event,i) => 
                 <>
-                {console.log(event)}
+                {/* {console.log(event)} */}
                 <EventCard
                     cardHeading = {event.name}
                     cardDescription = {event.prizes}
-                    cardImage = {(event.photos)[0]}
+                    cardImage = {(event.photos).length==0?"":((event.photos)[0])[0]}
                     xs={8}
                     backgroundColor = {backgroundColor}
                     linkTo = {linkTo+(event.id)}

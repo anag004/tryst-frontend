@@ -71,7 +71,7 @@ class ComingSoon extends React.Component {
         this.vantaRef = React.createRef()
         this.state={
             time:TrystDate.getTime()- today.getTime(),
-            show:true
+            // show:true
         }
     }
     componentDidMount() {
@@ -87,12 +87,12 @@ class ComingSoon extends React.Component {
         today=new Date();
         this.setState({
             time:TrystDate.getTime()- today.getTime(),
-            show:this.state.show
+            // show:this.state.show
         })
         this.interval=setInterval(()=>{
             this.setState({
                 time:this.state.time-1000,
-                show:!this.state.show 
+                // show:!this.state.show 
             })
         },1000);
     }
@@ -112,11 +112,9 @@ class ComingSoon extends React.Component {
                 <Container classes={classes}>
                 <Fade in={true} timeout={1000}>
                     <Container className={classes.container} maxWidth="lg">
-                        <Typography variant="h3" align="center" className={classes.text}> TRYST '20</Typography>
-                        <br/>
-                        <Fade in={this.state.show} timeout={800}>
-                            <Typography variant="h1" align="center" className={classes.text}>Coming Soon!</Typography>
-                        </Fade>
+                        <Typography variant="h3" align="center"  style={{fontFamily:['Montserrat','sans-serif'].join(','),marginTop:30}} className={classes.text}> TRYST '20</Typography>
+                        {/* <br/> */}
+                        <Typography variant="h1" align="center" style={{fontFamily:['Faster One','cursive'].join(',')}}  className={classes.text}>Coming Soon!</Typography>
                         <br/>
                         <Typography variant="h5" align="center" className={classes.text}> {this.props.description} </Typography>
                         <br/>
@@ -158,6 +156,7 @@ class ComingSoon extends React.Component {
                                 <IconButton style={{color: "white"}}>
                                     <Link 
                                     href="https://www.instagram.com/trystiitd/"
+                                    target="_blank"
                                     variant="button"
                                     underline="none"
                                     color="inherit"
@@ -168,6 +167,7 @@ class ComingSoon extends React.Component {
                                 <IconButton style={{color: "white"}}>
                                     <Link 
                                     href="https://www.facebook.com/IITD.Tryst/"
+                                    target="_blank"
                                     variant="button"
                                     underline="none"
                                     color="inherit"

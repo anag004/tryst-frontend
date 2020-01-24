@@ -64,17 +64,17 @@ const useStyles = makeStyles(theme => ({
             <Grid item sm>
                 <div className={classes.imageBannerContent}>
                 <Fade in={true} timeout={1000}>
-                        <Typography component="h5" variant="h5" align="center" color="inherit" gutterBottom>
-                            TRYST presents
+                        <Typography style={{fontFamily:['Maven Pro','sans-serif'].join(','),fontSize:"25px"}} align="center" color="inherit" gutterBottom>
+                            TRYST PRESENTS
                         </Typography>
                     </Fade>
                     <Fade in={true} timeout={1000}>
-                        <Typography component="h1" variant="h2" align="center" color="inherit" gutterBottom>
-                            {post.title}
+                        <Typography style={{fontFamily:['Muli','sans-serif'].join(','),fontSize:"65px"}} variant="h2" align="center" color="inherit" gutterBottom>
+                            <b>{post.title}</b>
                         </Typography>
                     </Fade>
                     <Fade in={true} timeout={2000}>
-                        <Typography variant="h5" align="center" color="inherit" paragraph>
+                        <Typography style={{fontFamily:['Gelasio','serif'].join(','),fontSize:"25px"}} align="center" color="inherit" paragraph>
                             {post.description}
                         </Typography>
                     </Fade>

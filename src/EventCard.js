@@ -48,8 +48,8 @@ function EventCard(props) {
                         <CardActionArea onClick={(e) => {rippleTriggerFunction(e); handleClick(e)}}>
                             <CardMedia className={classes.media} image={cardImage} {...others}/>
                             <CardContent>
-                                <Typography gutterBottom variant="h6" style={{marginBottom:5}} component="h2">
-                                    {cardHeading}
+                                <Typography gutterBottom style={{fontFamily:['Raleway','sans-serif'].join(','),marginBottom:5}} variant="h6">
+                                    <b>{cardHeading}</b>
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     {cardDescription}

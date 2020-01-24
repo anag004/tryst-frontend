@@ -134,18 +134,21 @@ function NavBar(props) {
                                         </Link> */}
                                         <EventDropDown/>
                                         <Link to="/exhibitions" className={classes.link}>
-                                            <NavBarButton>Exhibitions</NavBarButton>
+                                            <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Exhibitions</Typography></NavBarButton>
                                         </Link>
-                                        
+                                        <Link to="/guestLectures" className={classes.link}>
+                                            <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Guest Lectures</Typography></NavBarButton>
+                                        </Link>
                                         <Link to="/lodging" className={classes.link}>
-                                            <NavBarButton>Lodging</NavBarButton>
+                                            <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Lodging</Typography></NavBarButton>
                                         </Link>
                                         <Link to="/team" className={classes.link}>
-                                            <NavBarButton>Team</NavBarButton>
+                                            <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Team</Typography></NavBarButton>
                                         </Link>
                                         <Link to="/sponsors" className={classes.link}>
-                                            <NavBarButton>Sponsors</NavBarButton>
+                                            <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Sponsors</Typography></NavBarButton>
                                         </Link>
+                                        
                                     </React.Fragment>
                                 )
                                 : <NavBarMenuButton onClick={toggleDrawer}/>

@@ -60,8 +60,8 @@ export default function EventsPage() {
   },[])
 
   const color1="white",color2="#7BC5AE",color3="#A67F78", color4="white"; 
-  const color=[color1,color2,color3,color4];
-  const textColor=["black","white","white","black"]
+  const color=[color1,color2,color3,color4,color1,color2,color3,color4];
+  const textColor=["black","white","white","black","black","white","white","black"]
 
   var arr=[];
   const setArr=(n)=>{
@@ -98,8 +98,6 @@ export default function EventsPage() {
     setScreenWidth(window.innerWidth); setScreenHeight(window.innerHeight);
     setTransitionColor(event.currentTarget.dataset.color)
   }
-  var z;
-
   return (
         <ThemeProvider theme={theme}>
           <React.Fragment>
@@ -110,14 +108,14 @@ export default function EventsPage() {
                         screenWidth={screenWidth}
                         backgroundColor={transitionColor}
             />
-            <NavBar threshold={10}/>
+            <NavBar threshold={10} backgroundColor="#192841"/>
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             {Object.keys(values).map((pageSectionName,index)=><div>
               <div id={"section"+(index+1)} className={classes.anchor}>
               </div>
               <PageSection 
-                heading={pageSectionName}
+                heading={(pageSectionName).toUpperCase()}
                 headingAlignment="center"
                 containerBackgroundColor={color[(index)]}
                 textColor={textColor[(index)]}
