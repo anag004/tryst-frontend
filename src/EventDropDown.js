@@ -112,7 +112,7 @@ function EventDropDown(props) {
         return (
             <div>
                 <Button className={classesSmall.root} size="small" onClick={handleClick} {...others}> 	
-                    Events
+                    <Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Events</Typography>   
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
                     <Link className={linkClasses.link} to="/events#home">
