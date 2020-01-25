@@ -1,11 +1,13 @@
 import React, { Fragment, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Link } from '@material-ui/core';
+import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Link, useMediaQuery } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
 import axios from 'axios';
+import NavBar from './TopNavBar';
 
 
 export default function EventDetail(props) {
+    const largeScreen = useMediaQuery('(min-width:500px)');
     const {heading, containerBackgroundColor,textColor, ...others} = props;
     const [value, setValue] = React.useState("description");
     const [section,setSection] = React.useState("<h1></h1>");
@@ -42,23 +44,6 @@ export default function EventDetail(props) {
         return date.toLocaleTimeString('en-US');
     }
     
-
-    // const post = {
-    //     category:"Tryst Event Category 1",
-    //     title: 'Events @Tryst',
-    //     description:
-    //       "We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum..",
-    //     image: 'https://source.unsplash.com/random',
-    //     imgText: 'main image description',
-    //     linkText: 'Continue Reading...',
-    //     postDescription:{
-    //         about:"We are hosting some amazing events this year",
-    //         details:"the event will be held a s folows on this date and this time",
-    //         prize:"The prizes for the event are as follows",
-    //         register:"Follow below to register"
-    //     },
-    // };
-
     const handleChange = (event, newValue) => {
         setValue(newValue);
         // showData(post.description.{newValue})
@@ -70,37 +55,39 @@ export default function EventDetail(props) {
             
         },
         dialog: {
-            backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
+            marginTop:largeScreen?30:60,
+            // marginBottom:largeScreen?"auto":"auto"
           },
         imageBanner:{
             height:420,
-            width:window.innerWidth>1000?"auto":"auto",
+            width:largeScreen?"auto":"auto",
             overflow:"hidden",
             marginLeft:"auto"
         },
         data:{
-            margin:window.innerWidth>1000?20:10,
-            fontSize:window.innerWidth>1000?20:15
+            margin:largeScreen?20:10,
+            fontSize:20
         },
         tabs:{
-            fontSize:window.innerWidth>1000?20:"auto",
-            marginTop:window.innerWidth>1000?20:"auto",
-            color:"black",  
+            fontSize:largeScreen?20:"auto",
+            marginTop:largeScreen?20:"auto",
+            color:"black",
         },
         category:{
             fontSize:20,
             backgroundColor:"#D5D3D6",
         },
         heading:{
-            marginTop:20
+            marginTop:10
         },
         dialogContent:{
             backgroundColor:"#D5D3D6",
         }
     }));
+    const dateFunction=(date)=>{
+        var s=new Date(date)
+        return(s.toDateString())
+    }
     const getSection=(value,post)=>{
         if(value=="description"){
             return(
@@ -117,7 +104,7 @@ export default function EventDetail(props) {
                     <Typography variant="h6">The following rules are binding:</Typography>
                     <Typography variant="body1">
                         <ol>
-                            {((post.rules).list).map(str=><li>{str}</li>)}
+                            {(post.rules).map(str=><li>{str}</li>)}
                         </ol>
                     </Typography>
                 </div>
@@ -132,7 +119,7 @@ export default function EventDetail(props) {
         }
         else if(value=="contact"){
             return(
-                <Typography>
+                <Typography variant="body">
                     <ul>
                         {(post.poc).map(obj=>
                             <li>
@@ -164,7 +151,7 @@ export default function EventDetail(props) {
                     <div>
                         {value==info.type?
                             <ul>
-                                <li><Typography variant="body">Date: {info.date} </Typography></li>
+                                <li><Typography variant="body">Date: {dateFunction(info.date)} </Typography></li>
                                 <li><Typography variant="body">Time: {Time(info.start_time)} </Typography></li>
                                 <li><Typography variant="body">Venue: {info.venue} </Typography></li>
                             </ul>
@@ -181,22 +168,27 @@ export default function EventDetail(props) {
     return (
         <div className={classes.root}>
             {data.map(post=>
+                <>
+                <div style={{position:"fixed",width:"100%",height:"100%",backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',}}/>
                 <Dialog
                     open={true}
-                    maxWidth="false"
+                    maxWidth={true}
                     className={classes.dialog}
+                    fullScreen={largeScreen?false:true}
                     // TransitionComponent={Transition}
                 >
+                    <NavBar threshold={10} backgroundColor="#192841"/>
+            
                     <DialogTitle className={classes.category}>
-                        Organised by: {post.category_name}
+                        Organised by: {(post.category_name)?(post.category_name).toUpperCase():""}
                     </DialogTitle>
                     {/* <Paper className={classes.paper}> */}
                         <DialogContent className={classes.dialogContent}>
                             <div className={classes.imageBanner}>
                                 <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:"https://source.unsplash.com/random",imgText:""}}/>
                             </div>
-                            <Typography variant="h3" className={classes.heading} > {post.name} </Typography>
-                            {(post.url).length!=0?<Link href={"http://"+(post.url)} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></Link>:null}
+                            <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"55px"}} className={classes.heading} > {(post.name).toUpperCase()} </Typography>
+                            {(post.url)?<Link href={"http://"+(post.url)} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></Link>:null}
                             <Tabs
                                 value={value}
                                 onChange={handleChange}
@@ -206,12 +198,11 @@ export default function EventDetail(props) {
                                 scrollButtons="auto"
                                 // className={classes.tabs}    
                             >
-                                {(post.description).length!=0?<Tab label="About" value="description" className={classes.tabs} />:null}
-                                {(post.rules).length!=0?<Tab label="Rules" value="rules" className={classes.tabs} />:null}
-                                {(post.prizes).length!=0?<Tab label="Prizes" value="prizes" className={classes.tabs} />:null}
+                                {(post.description)?<Tab label="About" value="description" className={classes.tabs} />:null}
+                                {(post.rules)?<Tab label="Rules" value="rules" className={classes.tabs} />:null}
+                                {(post.prizes)?<Tab label="Prizes" value="prizes" className={classes.tabs} />:null}
                                 <Tab label="Register" value="register" className={classes.tabs} disabled={checkDisabled(post.reg_deadline)} />
-                                
-                                {(post.poc).length!=0?<Tab label="Contact Info." value="contact" className={classes.tabs} />:null}
+                                {(post.poc)?<Tab label="Contact Info." value="contact" className={classes.tabs} />:null}
                                 {(post.dtv).map(info=>(
                                     <Tab label={info.type} value={info.type} className={classes.tabs}/>
                                 ))}
@@ -222,6 +213,7 @@ export default function EventDetail(props) {
                         </DialogContent>
                     {/* </Paper> */}
                 </Dialog>
+                </>
             )}
         </div>
     );

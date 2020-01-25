@@ -52,13 +52,14 @@ const useStyles = makeStyles(theme => ({
           <Grid item md={6}>
             <div className={classes.imageBannerContent}>
               <Fade in={true} timeout={1000}>
-                  <Typography component="h1" style={{fontFamily:['Gothic A1','serif'].join(','),fontSize:"53px"}} color="inherit" gutterBottom>
-                    {post.title}
+                  <Typography component="h1" style={{fontFamily:['Gothic A1','serif'].join(','),fontSize:"55px"}} color="inherit" gutterBottom>
+                    {(post.title).toUpperCase()}
                   </Typography>
               </Fade>
               <Fade in={true} timeout={2000}>
-                  <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"20px"}} color="inherit" paragraph>
+                  <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"21px"}} color="inherit" paragraph>
                     {post.description}
+                    This is a subheading. Heh heh heh
                   </Typography>
               </Fade>
               <Fade in={true} timeout={3000}>
