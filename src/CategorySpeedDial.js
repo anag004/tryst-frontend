@@ -1,12 +1,17 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, createMuiTheme, MuiThemeProvider } from '@material-ui/core/styles';
 import SpeedDial from '@material-ui/lab/SpeedDial';
 import SpeedDialAction from '@material-ui/lab/SpeedDialAction';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import Backdrop from '@material-ui/core/Backdrop';
 import SpeedDialIcon from '@material-ui/lab/SpeedDialIcon';
-
-
+import grey from '@material-ui/core/colors/grey';
+const theme = createMuiTheme({
+  palette: {
+       primary: {main:"#00bcd4"},
+       secondary: {main:"#192841"}
+     }
+   });
 const useStyles = makeStyles(theme => ({
   root: {
     height: 380,
@@ -42,6 +47,7 @@ export default function CategorySpeedDial(props) {
       <React.Fragment>
         <Backdrop open={open} />
         <div className={classes.root}>
+          <MuiThemeProvider theme={theme}>
             <SpeedDial
               ariaLabel="SpeedDial openIcon example"
               className={classes.speedDial}
@@ -49,6 +55,7 @@ export default function CategorySpeedDial(props) {
               onClose={handleClose}
               onOpen={handleOpen}
               open={open}
+              FabProps={{color:"secondary"}}
             >
             {actions.map(action => (
                 <SpeedDialAction
@@ -60,6 +67,7 @@ export default function CategorySpeedDial(props) {
                 />
             ))}
             </SpeedDial>
+          </MuiThemeProvider>
         </div>
       </React.Fragment>
     );

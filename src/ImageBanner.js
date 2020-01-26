@@ -59,7 +59,6 @@ const useStyles = makeStyles(theme => ({
               <Fade in={true} timeout={2000}>
                   <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"21px"}} color="inherit" paragraph>
                     {post.description}
-                    This is a subheading. Heh heh heh
                   </Typography>
               </Fade>
               <Fade in={true} timeout={3000}>

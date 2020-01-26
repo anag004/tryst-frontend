@@ -108,7 +108,7 @@ class ComingSoon extends React.Component {
             <ThemeProvider theme={theme} >
                 <div className={classes.background} ref={this.vantaRef}>
                 </div>
-                <TopNavBar threshold={10}/>
+                <TopNavBar threshold={10} backgroundColor="black"/>
                 <Container classes={classes}>
                 <Fade in={true} timeout={1000}>
                     <Container className={classes.container} maxWidth="lg">

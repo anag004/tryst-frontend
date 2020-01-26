@@ -111,7 +111,7 @@ export default function EventsPage() {
             <NavBar threshold={10} backgroundColor="#192841"/>
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
-            {Object.keys(values).map((pageSectionName,index)=><div>
+            {Object.keys(values).map((pageSectionName,index)=>[((((pageSectionName).toUpperCase())=="GUEST LECTURES")||(((pageSectionName).toUpperCase())=="EXHIBITIONS"))?null:<div>
               <div id={"section"+(index+1)} className={classes.anchor}>
               </div>
               <PageSection 
@@ -130,7 +130,7 @@ export default function EventsPage() {
                     <SimpleGrid linkTo={"/event/"} postArray={(values[pageSectionName]).slice(i[0],(i[0])+i[1])}></SimpleGrid>
                   </EventCardRow>)}
               </PageSection>
-            </div>)}
+                </div>])}
 
               {/* <PageSection 
                 heading="Event Section 1"

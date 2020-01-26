@@ -34,7 +34,7 @@ export default function GuestLectures() {
     const classes = useStyles();
 
     useEffect(()=>{
-        axios.get('/data/sampleData/file1.json')
+        axios.get('https://backend2020.tryst-iitd.org/api/event/viewByCategory/guestlectures')
         .then(res=>{const data=res.data
         //   console.log(data.data)
           setValues(data.data)
