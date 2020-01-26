@@ -16,6 +16,7 @@ import Sponsors from './Additional Pages/Sponsors';
 import Team from './Additional Pages/Team';
 import ComingSoon from './ComingSoon';
 import ThemePage from './ThemePage';
+import Register from './Form/Register';
 import Exhibition from './Exhibitions'
 import GuestLecture from './GuestLectures';
 import GuestLectureDetail from './GuestLectureDetail';
@@ -72,6 +73,9 @@ class App extends React.Component {
               </Route>
               <Route path="/sponsors">
                 <ComingSoon description={sponsorsText}/>
+              </Route>
+              <Route path="/register">
+                <Register/>
               </Route>
             </Switch>
           </Router>
