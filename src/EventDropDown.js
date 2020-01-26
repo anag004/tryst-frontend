@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles, withStyles } from "@material-ui/core/styles";
-import { Button } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Menu from '@material-ui/core/Menu';
@@ -87,7 +87,7 @@ function EventDropDown(props) {
         return (
             <div>
                 <Button className={classesLarge.root} size="large" onClick={handleClick} {...others}> 	
-                    Events
+                    <Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Events</Typography>
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
                     <Link className={linkClasses.link} to="/events#home">
@@ -112,7 +112,7 @@ function EventDropDown(props) {
         return (
             <div>
                 <Button className={classesSmall.root} size="small" onClick={handleClick} {...others}> 	
-                    Events
+                    <Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Events</Typography>   
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
                     <Link className={linkClasses.link} to="/events#home">

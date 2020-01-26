@@ -52,16 +52,16 @@ export default function EventsPage() {
   const classes = useStyles();
 
   useEffect(()=>{
-    axios.get('data/sampleData/file.json')
+    axios.get('https://backend2020.tryst-iitd.org/api/event/getCategories')
     .then(res=>{const data=res.data
-      console.log(data)
-      setValues(data)
+      console.log(data.data)
+      setValues(data.data)
     });
   },[])
 
   const color1="white",color2="#7BC5AE",color3="#A67F78", color4="white"; 
-  const color=[color1,color2,color3,color4];
-  const textColor=["black","white","white","black"]
+  const color=[color1,color2,color3,color4,color1,color2,color3,color4];
+  const textColor=["black","white","white","black","black","white","white","black"]
 
   var arr=[];
   const setArr=(n)=>{
@@ -98,8 +98,6 @@ export default function EventsPage() {
     setScreenWidth(window.innerWidth); setScreenHeight(window.innerHeight);
     setTransitionColor(event.currentTarget.dataset.color)
   }
-
-
   return (
         <ThemeProvider theme={theme}>
           <React.Fragment>
@@ -110,26 +108,26 @@ export default function EventsPage() {
                         screenWidth={screenWidth}
                         backgroundColor={transitionColor}
             />
-            <NavBar threshold={10}/>
+            <NavBar threshold={10} backgroundColor="#192841"/>
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
-
-            {values.map(pageSection=><div>
-              <div id={"section"+pageSection.id} className={classes.anchor}>
+            {Object.keys(values).map((pageSectionName,index)=><div>
+              <div id={"section"+(index+1)} className={classes.anchor}>
               </div>
               <PageSection 
-                heading={pageSection.category}
+                heading={(pageSectionName).toUpperCase()}
                 headingAlignment="center"
-                containerBackgroundColor={color[(pageSection.id-1)]}//assuming ids start from 1 as home having an id of 0
-                textColor={textColor[(pageSection.id-1)]}
-                description={pageSection.categoryDescription}
-                id={pageSection.id}
+                containerBackgroundColor={color[(index)]}
+                textColor={textColor[(index)]}
+                description={""}
+                id={index+1}
               >
-                {pushPageSectionIdAndName(pageSection.category,pageSection.id)}
-                {setArr((pageSection.events).length)}
+                {pushPageSectionIdAndName(pageSectionName,index+1)}
+
+                {setArr((values[pageSectionName]).length)}
                 {arr.map(i=><EventCardRow key={i}
                   data-color={color1}  rippleTriggerFunction={handleClick}>
-                    <SimpleGrid linkTo={"/event"} postArray={(pageSection.events).slice(i[0],(i[0])+i[1])}></SimpleGrid>
+                    <SimpleGrid linkTo={"/event/"} postArray={(values[pageSectionName]).slice(i[0],(i[0])+i[1])}></SimpleGrid>
                   </EventCardRow>)}
               </PageSection>
             </div>)}

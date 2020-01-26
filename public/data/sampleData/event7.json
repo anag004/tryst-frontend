@@ -1,33 +1,18 @@
-[
-    {
-        "id":7,
-        "eventName":"Event 7",
-        "category":"Workshops",
-        "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-        "eventDescription":"bcsabvjkbdkvnbsnjk",
-        "image": "https://source.unsplash.com/random",
-        "imgText": "main image description",
-        "rules":{
-            "description":"All of the rules below are binding and failure to follow will result in immediate disqualification.",
-            "list":[
-                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
-                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
-                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
-                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend.",
-                "We do not talk about Fight Club. Lorem ipsum dolor sit amet,consectetur adipiscing elit. Maecenas tristique tempus varius. Donec ac ante nec lectus bibendum eleifend."
-            ]
-        },
-        "prizes":{
-            "description":"Some amazing prizes to make you rich",
-            "list":[
-                "First prize : 35000 INR",
-                "Second prize : 25000 INR",
-                "Third prize : 10000 INR"
-            ]
-        },
-        "contactInfo":{
-            "description":"Contact urnasemper@gmail.com for any queries.",
-            "list":[]
-        }
-    }
-]
+{
+    "id":7,
+    "name":"Event 7",
+    "category_name":"Workshops",
+    "subheading":"Here is a  small description of the Event",
+    "description":"bcsabvjkbdkvnbsnjk",
+    "rules":"All of the rules below are binding and failure to follow will result in immediate disqualification.",
+    "prizes":"Some amazing prizes to make you rich",
+    "photos":[
+        "http://source.unsplash.com/collection/146130/random","image1.com"
+    ],
+    "poc":[{
+        "email":"username@gmail.com",
+        "name":"user",
+        "designation":"Overall Coordinator",
+        "contact":"9999999999"
+    }]
+}

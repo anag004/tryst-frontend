@@ -32,10 +32,10 @@ function PageSection(props) {
             <Container {...others} classes={classes} maxWidth={false}> 
                 <Container maxWidth="md">
                     <Fade in={true}>
-                        <Typography variant="h3" align={headingAlignment}>{heading}</Typography>
+                        <Typography  style={{fontFamily:['Montserrat','sans-serif'].join(','),fontSize:44, marginBottom:10}} align={headingAlignment}>{heading}</Typography>
                     </Fade>
                     <Fade in={true}> 
-                        <Typography variant="h5" align={headingAlignment}>{description}</Typography>
+                        <Typography variant="h5" style={{fontFamily:['Antic Slab','serif'].join(','), marginBottom:10}} align={headingAlignment}>{description}</Typography>
                     </Fade>
                     {children}
                 </Container>

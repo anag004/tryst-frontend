@@ -8,7 +8,7 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardActions from '@material-ui/core/CardActions';
 import { makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
-import Zoom from 'react-reveal';
+import Zoom from 'react-reveal/Zoom'
 import Grid from '@material-ui/core/Grid';
 import Box from '@material-ui/core/Box';
 import { IconButton } from '@material-ui/core';
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 function EventCard(props) {
-    const { cardHeading, cardImage, cardDescription, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, rippleTriggerFunction, others } = props;
+    const { cardHeading, cardImage, cardDescription,left, right, xs, maxWidth, maxHeight, backgroundColor, history, linkTo, rippleTriggerFunction, others } = props;
     
     // console.log(rippleTriggerFunction);
     const classes = useStyles();
@@ -43,28 +43,23 @@ function EventCard(props) {
 
     return (
             <Grid item xs>
-                <Zoom>
+                <Zoom left={left} right={right}>
                     <Card className={classes.card} classes={classes} >
                         <CardActionArea onClick={(e) => {rippleTriggerFunction(e); handleClick(e)}}>
                             <CardMedia className={classes.media} image={cardImage} {...others}/>
                             <CardContent>
-                                <Typography gutterBottom variant="h6" component="h2">
-                                    {cardHeading}
+                                <Typography gutterBottom style={{fontFamily:['Raleway','sans-serif'].join(','),marginBottom:5}} variant="h6">
+                                    <b>{cardHeading}</b>
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     {cardDescription}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                        <CardActions disableSpacing>
-                            <IconButton aria-label="add to favorites">
-                                <FacebookIcon fontSize="small"/>
-                            </IconButton>
-                            <IconButton aria-label="share">
-                                <InstagramIcon fontSize="small"/>
-                            </IconButton>
-                            <Button className={classes.register}>Register</Button>
-                        </CardActions>
+                        {/* <CardActions disableSpacing>
+                             <Button className={classes.register}>Register</Button> 
+                            <Typography variant="body">Here are some prizes</Typography>
+                        </CardActions> */}
                     </Card>
                 </Zoom>
             </Grid>

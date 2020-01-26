@@ -1,169 +1,143 @@
-[
-    {
-        "id":1,
-        "category":"Workshops",
-        "categoryDescription":"Here are a lot of workshops",
-        "events":[
-            {
-                "id":1,
-                "eventName":"Event 1",
-                "eventCardDescription":"Here is a small description of the event.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":2,
-                "eventName":"Event 2",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":3,
-                "eventName":"Event 3",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":4,
-                "eventName":"Event 4",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":5,
-                "eventName":"Event 5",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":6,
-                "eventName":"Event 6",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":7,
-                "eventName":"Event 7",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":8,
-                "eventName":"Event 8",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":9,
-                "eventName":"Event 9",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            }
-        ]
-    },
-    {
-        "id":2,
-        "category":"GuestLectures",
-        "categoryDescription":"Here are a lot of Guest Lectures",
-        "events":[
-            {
-                "id":1,
-                "eventName":"Event 1",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":2,
-                "eventName":"Event 2",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":3,
-                "eventName":"Event 3",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":4,
-                "eventName":"Event 4",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":5,
-                "eventName":"Event 5",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":6,
-                "eventName":"Event 6",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":7,
-                "eventName":"Event 7",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            }
-        ]
-    },
-    {
-        "id":3,
-        "category":"Competitions",
-        "categoryDescription":"Here are a lot of Competitions",
-        "events":[
-            {
-                "id":1,
-                "eventName":"Event 1",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":2,
-                "eventName":"Event 2",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":3,
-                "eventName":"Event 3",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":4,
-                "eventName":"Event 4",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":5,
-                "eventName":"Event 5",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":6,
-                "eventName":"Event 6",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":7,
-                "eventName":"Event 7",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            },
-            {
-                "id":8,
-                "eventName":"Event 8",
-                "eventCardDescription":"Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                "eventImage":"http://source.unsplash.com/collection/146130/random"
-            }
-            
-        ]
-    }
-
-]
+{
+    "event": [
+        {
+            "id": "EVENTsokju",
+            "name": "Event 1",
+            "photos": ["https://source.unsplash.com/random"],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        },
+        {
+            "id": "2",
+            "name": "Event 2",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        },
+        {
+            "id": "3",
+            "name": "Event 3",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        }
+    ],
+    "workshop": [
+        {
+            "id": "4",
+            "name": "Event 4",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        },
+        {
+            "id": "5",
+            "name": "Event 5",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        },
+        {
+            "id": "6",
+            "name": "Event 6",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        }
+    ],
+    "competitions": [
+        {
+            "id": "4",
+            "name": "Event 4",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        },
+        {
+            "id": "5",
+            "name": "Event 5",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        },
+        {
+            "id": "6",
+            "name": "Event 6",
+            "photos": [],
+            "dtv": [
+                {
+                    "type": "",
+                    "date": "",
+                    "start_time": "",
+                    "end_time": "",
+                    "venue": ""
+                }
+            ],
+            "category_name": ""
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+import React, { useEffect, Fragment } from 'react';
+import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
+import { Typography, Grid, Paper, useMediaQuery } from '@material-ui/core';
+// import './font.css'
+const theme = createMuiTheme({
+    palette: {
+      primary: { main: '#2196F3' },
+      secondary: { main: '#4CAF50' }
+    },
+  });
+const useStyles = makeStyles(th => ({
+    
+    box:  {
+      display: "block",
+      position: "relative",
+    //   width:(window.screen.width)*0.48,
+      height:window.screen.width>500?((window.screen.height)*0.4):"auto",
+      marginLeft:20,
+      marginRight:20,
+      
+    },
+    container:{
+        // color:"white",
+    },
+    paper:{
+        margin:10,
+        marginRight:0,
+        paddingBottom:0,
+        overflowY:"hidden",
+        overflowX:"hidden",
+        backgroundColor:"grey",
+        // maxHeight:window.screen.height>500?(window.screen.height)*0.5:"auto",
+    },  
+    img:{
+        width:"100%",
+        height:(window.screen.height)*0.3,
+    }
+}))
+export default function GuestLectureSection(props){
+
+    const largeScreen = useMediaQuery('(min-width:850px)');
+    const {lecturer}=props;
+    const classes=useStyles();
+    return(
+        <ThemeProvider theme={theme}>
+
+            <Fragment>
+                <Paper className={classes.paper}>
+                    {console.log(lecturer)}
+                    <Grid container spacing={4} alignItems={largeScreen?"stretch":"center"} direction={largeScreen?"row":"column"} style={{marginTop:10}}>
+                        <Grid item xs={largeScreen?3:12} style={{marginRight:30}}>
+                            <Typography variant="h3" align={largeScreen?"right":"center"} style={{fontFamily:['Montserrat','sans-serif'].join(',')}}>{lecturer[1]}</Typography>
+                        </Grid>
+                        <Grid xs={5}/>
+                        <Grid item xs={largeScreen?4:[window.screen.width<500?12:6]} className={classes.box} >
+                            <img className={classes.img} border="2px" src={lecturer[0]}/>
+                        </Grid>
+                        <Grid item xs={largeScreen?7:12} className={classes.box}>
+                            <Typography variant="h6" >{lecturer[2]} </Typography>
+                            {/* style={{fontSize:"18px",}} */}
+                        </Grid>
+                        
+                    </Grid>
+                </Paper>   
+            </Fragment>
+        </ThemeProvider>
+    )
+} 
