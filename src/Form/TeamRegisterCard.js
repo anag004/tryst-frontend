@@ -14,7 +14,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     textfield: {
-        margin: theme.spacing(3)
+        margin: theme.spacing(1)
+    },
+
+    heading: {
+        marginBottom: theme.spacing(1)
     }
 }));
 
@@ -24,18 +28,18 @@ function TeamRegisterCard(props) {
 
     return (
         <Card className={classes.card}>
-            <Typography variant="h4">Team Member #{number}</Typography>
+            <Typography variant="h4" className={classes.heading}>Team Member #{number}</Typography>
             <Grid container>
-                <Grid item xs={6}>
+                <Grid item xs  style={{minWidth: 200}}>
                     <TextField className={classes.textfield} label="Name" variant="outlined" required="true"/>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs  style={{minWidth: 200}}>
                     <TextField className={classes.textfield} label="Email ID" variant="outlined" required="true"/>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs  style={{minWidth: 200}}>
                     <TextField className={classes.textfield} label="Contact No." variant="outlined" required="true"/>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs  style={{minWidth: 200}}>
                     <TextField className={classes.textfield} label="College" variant="outlined" required="true"/>
                 </Grid>
             </Grid>

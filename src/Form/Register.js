@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import { makeStyles } from "@material-ui/core/styles";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import { Typography } from '@material-ui/core';
+import { Typography, Button } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -31,8 +31,14 @@ const useStyles = makeStyles((theme) => ({
     },
 
     addButton: {
-        left: "50%",
+        left: "40%",
         marginLeft: -17,
+        marginTop: theme.spacing(2),
+        marginBottom: theme.spacing(2),
+        position: "relative"
+    },
+    submitButton: {
+        left: "45%",
         marginTop: theme.spacing(2),
         marginBottom: theme.spacing(2),
         position: "relative"
@@ -69,10 +75,13 @@ function Register(props) {
                     </Container>
                 </RadioGroup>
             <Container className={classes.container}>
-                {teamNumbers.map((number) => <TeamRegisterCard number={number}/>)}
-                <IconButton variant="extended" color="primary" className={classes.addButton} onClick={handleClick}>
-                    <AddIcon/>
-                </IconButton>
+                <form action="">
+                    {teamNumbers.map((number) => <TeamRegisterCard number={number}/>)}
+                    <IconButton variant="extended" color="primary" className={classes.addButton} onClick={handleClick}>
+                        <AddIcon/>
+                    </IconButton>
+                    <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
+                </form>
             </Container>
         </>
     )
