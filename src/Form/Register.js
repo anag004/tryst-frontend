@@ -68,20 +68,42 @@ function Register(props) {
         <>
             <NavBar threshold={10} disableOpacity={true} backgroundColor="black"/>
             <Typography variant="h2" style={{marginTop: 100}} align="center">Registration</Typography>
-                <RadioGroup row onChange={handleChange} defaultValue="Individual">
+                <RadioGroup row onChange={handleChange} style={{marginTop: 30}}defaultValue="Individual">
                     <Container className={classes.container}>
                         <FormControlLabel value="Individual" control={<Radio />} label="Individual" />
                         <FormControlLabel value="Team" control={<Radio />} label="Team" />
                     </Container>
                 </RadioGroup>
             <Container className={classes.container}>
-                <form action="">
-                    {teamNumbers.map((number) => <TeamRegisterCard number={number}/>)}
-                    <IconButton variant="extended" color="primary" className={classes.addButton} onClick={handleClick}>
-                        <AddIcon/>
-                    </IconButton>
-                    <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
-                </form>
+                {   value == "Team" ?
+                        <form action="">
+                            {teamNumbers.map((number) => <TeamRegisterCard number={number}/>)}
+                            <IconButton variant="extended" color="primary" className={classes.addButton} onClick={handleClick}>
+                                <AddIcon/>
+                            </IconButton>
+                            <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
+                        </form>
+                    : 
+                        <form>
+                            <Card className={classes.card}>
+                                <Grid container>
+                                    <Grid item xs  style={{minWidth: 200}}>
+                                        <TextField className={classes.textfield} label="Name" variant="outlined" required="true"/>
+                                    </Grid>
+                                    <Grid item xs  style={{minWidth: 200}}>
+                                        <TextField className={classes.textfield} label="Email ID" variant="outlined" required="true"/>
+                                    </Grid>
+                                    <Grid item xs  style={{minWidth: 200}}>
+                                        <TextField className={classes.textfield} label="Contact No." variant="outlined" required="true"/>
+                                    </Grid>
+                                    <Grid item xs  style={{minWidth: 200}}>
+                                        <TextField className={classes.textfield} label="College" variant="outlined" required="true"/>
+                                    </Grid>
+                                </Grid>
+                            </Card>
+                            <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
+                        </form>
+                }
             </Container>
         </>
     )
