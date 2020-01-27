@@ -148,7 +148,9 @@ function NavBar(props) {
                                         <Link to="/sponsors" className={classes.link}>
                                             <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Sponsors</Typography></NavBarButton>
                                         </Link>
-                                        
+                                        <Link to="/about" className={classes.link}>
+                                            <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>About</Typography></NavBarButton>
+                                        </Link>
                                     </React.Fragment>
                                 )
                                 : <NavBarMenuButton onClick={toggleDrawer}/>

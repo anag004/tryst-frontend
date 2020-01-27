@@ -20,6 +20,8 @@ import Register from './Form/Register';
 import Exhibition from './Exhibitions'
 import GuestLecture from './GuestLectures';
 import GuestLectureDetail from './GuestLectureDetail';
+import AboutPage from './AboutPage';
+
 const homeText = "TRYST, IIT Delhi is North India's largest science, technological and management festival conducted by the student community of IIT Delhi. From enchanting guest lectures to learning hands-on skills through workshops, from exciting departmental activities and competitions to mesmerising techno-cultural nights, from meeting eminent personalities to discovering science as never seen before, TRYST has it all. With 75+ events and participation of 40,000 students from all over the nation, team TRYST ensures there is something fun for everyone. Come aboard and have an experience of a lifetime!";
 const lodgingText = "Stay tuned for lodging updates. Contact us if you have any questions.";
 const eventsText = "Contact us if you have any questions.";
@@ -76,6 +78,9 @@ class App extends React.Component {
               </Route>
               <Route path="/register">
                 <Register/>
+              </Route>
+              <Route path="/about">
+                <AboutPage/>
               </Route>
             </Switch>
           </Router>

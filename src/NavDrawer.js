@@ -45,7 +45,7 @@ function NavDrawer(props) {
             role="presentation"
         >
             <List>
-                {[ ['Events', '/events'],['Exhibitions','/exhibitions'],['Guest Lectures','/guestLectures'],['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors']].map((text) => (
+                {[ ['Events', '/events'],['Exhibitions','/exhibitions'],['Guest Lectures','/guestLectures'],['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors'], ['About', '/about']].map((text) => (
                     text[0] == "Events"
                     ? 
                         <React.Fragment>
