@@ -49,6 +49,7 @@ function Sponsors(props) {
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
+            <div style={{position:"fixed", width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#1e314f"}}></div>
             <NavBar threshold={10} backgroundColor="#192841" disableOpacity={true}/>
             <PageSection
                 heading="THE TRYST TEAM"
