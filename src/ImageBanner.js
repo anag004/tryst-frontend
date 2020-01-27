@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Fade from '@material-ui/core/Fade';
 
+
 const useStyles = makeStyles(theme => ({
     imageBanner: {
       position: 'relative',
@@ -44,9 +45,10 @@ const useStyles = makeStyles(theme => ({
     const { post, ...others } = props;
   
     return (
-      <Paper className={classes.imageBanner} style={{ backgroundImage: `url(${post.image})` }} {...others}>
+      <Paper className={classes.imageBanner} style={{ backgroundImage: post.image,backgroundSize:"cover",backgroundPosition:"center" }} {...others}>
         {/* Increase the priority of the hero background image */}
-        {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+        {console.log(post.image)}
+        {/* {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />} */}
         <div className={classes.overlay} />
         <Grid container>
           <Grid item md={6}>

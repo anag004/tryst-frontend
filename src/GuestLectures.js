@@ -77,7 +77,7 @@ export default function GuestLectures() {
                             screenWidth={screenWidth}
                             backgroundColor={transitionColor}
                 />
-                <NavBar threshold={10} backgroundColor="black"/>
+                <NavBar threshold={10} backgroundColor="#192841"/>
                 <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"grey"}} />
                 <br/><br/>
                 <PageSection 

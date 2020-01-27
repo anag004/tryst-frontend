@@ -4,6 +4,7 @@ import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, 
 import ImageBanner from './ImageBanner';
 import axios from 'axios';
 import NavBar from './TopNavBar';
+import ImageEventsDetailPage from './images/eventDetailBackground.jpeg';
 
 
 export default function EventDetail(props) {
@@ -169,7 +170,7 @@ export default function EventDetail(props) {
         <div className={classes.root}>
             {data.map(post=>
                 <>
-                <div style={{position:"fixed",width:"100%",height:"100%",backgroundImage: 'url(http://source.unsplash.com/collection/146130/random)',}}/>
+                <div style={{position:"fixed",width:"100%",height:"100%",backgroundImage: `url(${ImageEventsDetailPage})`,}}/>
                 <Dialog
                     open={true}
                     maxWidth={true}
@@ -185,7 +186,7 @@ export default function EventDetail(props) {
                     {/* <Paper className={classes.paper}> */}
                         <DialogContent className={classes.dialogContent}>
                             <div className={classes.imageBanner}>
-                                <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:"https://source.unsplash.com/random",imgText:""}}/>
+                                <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:"url(https://source.unsplash.com/random)",imgText:""}}/>
                             </div>
                             <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"55px"}} className={classes.heading} > {(post.name).toUpperCase()} </Typography>
                             {(post.url)?<Link href={"http://"+(post.url)} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></Link>:null}
