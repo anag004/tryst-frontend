@@ -18,6 +18,7 @@ import ImageNaitikGupta from '../images/NaitikGupta.jpg';
 import ImageSatyageet from '../images/Satyageet.jpg';
 import ImageShubhamVerma from '../images/ShubhamVerma.jpg';
 import ImageTeamPageBackground from '../images/teamPageBackground.jpg';
+import ImageSidharthSingh from '../images/Siddhart_Singh.jpg';
 
 const theme = createMuiTheme({
     palette: {
@@ -77,7 +78,7 @@ function Sponsors(props) {
                         cardHeading="Atishya Jain"
                         cardDescription="CTM, Technical"
                         cardImage={ImageAtishyaJain}
-                        email="workshops@tryst-iitd.com"
+                        email="atishyajain1212@gmail.com"
                     />
                     <TeamCard
                         cardHeading="Shubham Verma"
@@ -104,6 +105,12 @@ function Sponsors(props) {
                         cardDescription="CTM, Guest Lectures"
                         cardImage={ImageHarmanMehta}
                         email="harmanmehta98@gmail.com"
+                    />
+                    <TeamCard
+                        cardHeading="Siddharth Singh"
+                        cardDescription="CTM, Finance"
+                        cardImage={ImageSidharthSingh}
+                        email="ch7160178@chemical.iitd.ac.in"
                     />
                 </SponsorCardRow>
 
