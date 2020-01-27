@@ -17,6 +17,7 @@ import ImageHarmanMehta from '../images/HarmanMehta.jpg';
 import ImageNaitikGupta from '../images/NaitikGupta.jpg';
 import ImageSatyageet from '../images/Satyageet.jpg';
 import ImageShubhamVerma from '../images/ShubhamVerma.jpg';
+import ImageTeamPageBackground from '../images/teamPageBackground.jpg';
 
 const theme = createMuiTheme({
     palette: {
@@ -52,8 +53,8 @@ function Sponsors(props) {
             <PageSection
                 heading="THE TRYST TEAM"
                 headingAlignment="center"
-                containerBackgroundColor="white"
-                textColor="black"
+                containerBackgroundColor="#1e314f"
+                textColor="white"
                 description="The people who make sure Tryst runs bug-free"
                 padding={12}
             >

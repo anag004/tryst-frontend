@@ -7,6 +7,7 @@ import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Fade from '@material-ui/core/Fade';
 
+
 const useStyles = makeStyles(theme => ({
     imageBanner: {
       position: 'relative',
@@ -44,20 +45,21 @@ const useStyles = makeStyles(theme => ({
     const { post, ...others } = props;
   
     return (
-      <Paper className={classes.imageBanner} style={{ backgroundImage: `url(${post.image})` }} {...others}>
+      <Paper className={classes.imageBanner} style={{ backgroundImage: post.image,backgroundSize:"cover",backgroundPosition:"center" }} {...others}>
         {/* Increase the priority of the hero background image */}
-        {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />}
+        {console.log(post.image)}
+        {/* {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />} */}
         <div className={classes.overlay} />
         <Grid container>
           <Grid item md={6}>
             <div className={classes.imageBannerContent}>
               <Fade in={true} timeout={1000}>
-                  <Typography component="h1" style={{fontFamily:['Gothic A1','serif'].join(','),fontSize:"53px"}} color="inherit" gutterBottom>
-                    {post.title}
+                  <Typography component="h1" style={{fontFamily:['Gothic A1','serif'].join(','),fontSize:"55px"}} color="inherit" gutterBottom>
+                    {(post.title).toUpperCase()}
                   </Typography>
               </Fade>
               <Fade in={true} timeout={2000}>
-                  <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"20px"}} color="inherit" paragraph>
+                  <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"21px"}} color="inherit" paragraph>
                     {post.description}
                   </Typography>
               </Fade>

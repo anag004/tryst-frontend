@@ -53,6 +53,21 @@ const useStyles = makeStyles(theme => ({
   export default function ImageBanner(props) {
     const classes = useStyles();
     const { post, ...others } = props;
+    const Time=(time)=>{
+      const date=new Date(time);
+      // console.log(date);
+      if(time==""){
+        return null
+      }
+      return date.toLocaleTimeString('en-US');
+    }
+    const dateFunction=(date)=>{
+      if(date==""){
+        return null
+      }
+      var s=new Date(date)
+      return(s.toDateString())
+    }
     var temp=0
     return (
       <Paper className={classes.imageBanner} style={{ backgroundImage: `url(${post.image})` }}>
@@ -70,19 +85,29 @@ const useStyles = makeStyles(theme => ({
                     </Fade>
                     <Fade in={true} timeout={1000}>
                         <Typography style={{fontFamily:['Muli','sans-serif'].join(','),fontSize:"65px"}} variant="h2" align="center" color="inherit" gutterBottom>
-                            <b>{post.title}</b>
+                            <b>{post.name}</b>
                         </Typography>
                     </Fade>
                     <Fade in={true} timeout={2000}>
                         <Typography style={{fontFamily:['Gelasio','serif'].join(','),fontSize:"25px"}} align="center" color="inherit" paragraph>
-                            {post.description}
+                            {post.subheading}
                         </Typography>
                     </Fade>
                     <Fade in={true} timeout={3000}>
                         <Typography variant="h6" align="center" color="inherit" paragraph>
-                            {post.description2}
+                            {post.description}
                         </Typography>
                     </Fade>
+                    {(post.dtv).map(info=>(
+                      <Fade in={true} timeout={4000}>
+                          <Typography variant="h6" align="center" color="inherit" paragraph>
+                            {dateFunction(info.start_time)} {Time(info.start_time)}<br/>
+                            to<br/>
+                            {dateFunction(info.end_time)} {Time(info.end_time)}<br/>
+                          </Typography>
+                      </Fade>
+                    ))}
+                    
                 </div>
             </Grid>
         </Grid>

@@ -45,7 +45,7 @@ function NavDrawer(props) {
             role="presentation"
         >
             <List>
-                {[ ['Events', '/events'],['Exhibitions','/exhibitions'],['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors']].map((text) => (
+                {[ ['Events', '/events'],['Exhibitions','/exhibitions'],['Guest Lectures','/guestLectures'],['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors']].map((text) => (
                     text[0] == "Events"
                     ? 
                         <React.Fragment>
@@ -53,7 +53,7 @@ function NavDrawer(props) {
                                 <ListItemText 
                                     primary={text[0]} 
                                     className={classes.listText}
-                                    primaryTypographyProps={{style: {fontWeight: 'bold'}}}
+                                    primaryTypographyProps={{style: {fontFamily:['Josefin Sans','sans-serif'].join(','),fontWeight: 'bold'}}}
                                 />
                             </ListItem>
                             <Collapse in={eventCollapse}>
@@ -63,6 +63,7 @@ function NavDrawer(props) {
                                                 <ListItemText 
                                                 primary={subtext[0]} 
                                                 className={classes.listText}
+                                                primaryTypographyProps={{style: {fontFamily:['Josefin Sans','sans-serif'].join(',')}}}
                                             />
                                             </ListItem>
                                         </Link>
@@ -75,7 +76,7 @@ function NavDrawer(props) {
                                 <ListItemText 
                                     primary={text[0]} 
                                     className={classes.listText}
-                                    primaryTypographyProps={{style: {fontWeight: 'bold'}}}
+                                    primaryTypographyProps={{style: {fontFamily:['Josefin Sans','sans-serif'].join(','),fontWeight: 'bold'}}}
                                 />
                             </ListItem>
                         </Link>    

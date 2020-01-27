@@ -12,7 +12,7 @@ import EventCardRow from './EventCardRow'
 import SimpleGrid from './SimpleGrid';
 import CategorySpeedDial from './CategorySpeedDial';
 import PageRipple from './PageRipple';
-import NavDrawer from './NavDrawer';
+import ImageEventsPage from './images/eventsPageBackground.jpeg';
 import axios from 'axios';
 
 const theme = createMuiTheme({
@@ -25,8 +25,8 @@ const theme = createMuiTheme({
 const mainFeaturedPost = {
   title: 'Events @Tryst',
   description:
-    "We are hosting some amazing events this year. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis felis ante, feugiat id laoreet eget, accumsan et ipsum. Curabitur malesuada in magna interdum congue. Etiam viverra nisi sed tempor ullamcorper. Mauris eget felis diam. Aenean vel urna libero. Etiam nunc mauris, maximus id orci a, facilisis pretium tortor.",
-  image: 'https://source.unsplash.com/random',
+    "Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!",
+  image: `url(${ImageEventsPage})`,
   imgText: 'main image description',
   linkText: ''
 };
@@ -59,8 +59,8 @@ export default function EventsPage() {
     });
   },[])
 
-  const color1="white",color2="#7BC5AE",color3="#A67F78", color4="white"; 
-  const color=[color1,color2,color3,color4,color1,color2,color3,color4];
+  const color1="#29426c",color2="#24395d",color3="#1e314f", color4="#192841",color5="#141f33"; 
+  const color=[color1,color2,color3,color4,color5,color5,color5,color5];
   const textColor=["black","white","white","black","black","white","white","black"]
 
   var arr=[];
@@ -111,7 +111,7 @@ export default function EventsPage() {
             <NavBar threshold={10} backgroundColor="#192841"/>
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
-            {Object.keys(values).map((pageSectionName,index)=><div>
+            {Object.keys(values).map((pageSectionName,index)=>[((((pageSectionName).toUpperCase())=="GUEST LECTURES")||(((pageSectionName).toUpperCase())=="EXHIBITIONS"))?null:<div>
               <div id={"section"+(index+1)} className={classes.anchor}>
               </div>
               <PageSection 
@@ -130,7 +130,7 @@ export default function EventsPage() {
                     <SimpleGrid linkTo={"/event/"} postArray={(values[pageSectionName]).slice(i[0],(i[0])+i[1])}></SimpleGrid>
                   </EventCardRow>)}
               </PageSection>
-            </div>)}
+                </div>])}
 
               {/* <PageSection 
                 heading="Event Section 1"
