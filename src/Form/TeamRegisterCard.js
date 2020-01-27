@@ -25,21 +25,22 @@ const useStyles = makeStyles((theme) => ({
 function TeamRegisterCard(props) {
     const {number, ...other} = props;
     const classes = useStyles();
+    const minWidth = 300;
 
     return (
         <Card className={classes.card}>
             <Typography variant="h4" className={classes.heading}>Team Member #{number}</Typography>
             <Grid container>
-                <Grid item xs  style={{minWidth: 200}}>
+                <Grid item xs style={{minWidth: minWidth}}>
                     <TextField className={classes.textfield} label="Name" variant="outlined" required="true"/>
                 </Grid>
-                <Grid item xs  style={{minWidth: 200}}>
+                <Grid item xs style={{minWidth: minWidth}}>
                     <TextField className={classes.textfield} label="Email ID" variant="outlined" required="true"/>
                 </Grid>
-                <Grid item xs  style={{minWidth: 200}}>
+                <Grid item xs style={{minWidth: minWidth}}>
                     <TextField className={classes.textfield} label="Contact No." variant="outlined" required="true"/>
                 </Grid>
-                <Grid item xs  style={{minWidth: 200}}>
+                <Grid item xs style={{minWidth: minWidth}}>
                     <TextField className={classes.textfield} label="College" variant="outlined" required="true"/>
                 </Grid>
             </Grid>

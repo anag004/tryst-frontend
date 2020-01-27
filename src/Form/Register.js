@@ -87,16 +87,16 @@ function Register(props) {
                         <form>
                             <Card className={classes.card}>
                                 <Grid container>
-                                    <Grid item xs  style={{minWidth: 200}}>
+                                    <Grid item xs  style={{minWidth: 300}}>
                                         <TextField className={classes.textfield} label="Name" variant="outlined" required="true"/>
                                     </Grid>
-                                    <Grid item xs  style={{minWidth: 200}}>
+                                    <Grid item xs  style={{minWidth: 300}}>
                                         <TextField className={classes.textfield} label="Email ID" variant="outlined" required="true"/>
                                     </Grid>
-                                    <Grid item xs  style={{minWidth: 200}}>
+                                    <Grid item xs  style={{minWidth: 300}}>
                                         <TextField className={classes.textfield} label="Contact No." variant="outlined" required="true"/>
                                     </Grid>
-                                    <Grid item xs  style={{minWidth: 200}}>
+                                    <Grid item xs  style={{minWidth: 300}}>
                                         <TextField className={classes.textfield} label="College" variant="outlined" required="true"/>
                                     </Grid>
                                 </Grid>
