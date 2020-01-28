@@ -76,9 +76,7 @@ class App extends React.Component {
               <Route path="/sponsors">
                 <ComingSoon description={sponsorsText}/>
               </Route>
-              <Route path="/register">
-                <Register/>
-              </Route>
+              <Route path="/register/:eventid" component={Register}/>
               <Route path="/about">
                 <AboutPage/>
               </Route>

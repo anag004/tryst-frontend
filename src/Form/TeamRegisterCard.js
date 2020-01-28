@@ -32,16 +32,16 @@ function TeamRegisterCard(props) {
             <Typography variant="h4" className={classes.heading}>Team Member #{number}</Typography>
             <Grid container>
                 <Grid item xs style={{minWidth: minWidth}}>
-                    <TextField className={classes.textfield} label="Name" variant="outlined" required="true"/>
+                    <TextField className={classes.textfield} name={"name_" + number} label="Name" variant="outlined" required="true"/>
                 </Grid>
                 <Grid item xs style={{minWidth: minWidth}}>
-                    <TextField className={classes.textfield} label="Email ID" variant="outlined" required="true"/>
+                    <TextField className={classes.textfield} name={"email_" + number} label="Email ID" variant="outlined" required="true"/>
                 </Grid>
                 <Grid item xs style={{minWidth: minWidth}}>
-                    <TextField className={classes.textfield} label="Contact No." variant="outlined" required="true"/>
+                    <TextField className={classes.textfield} name={"contact_" + number} label="Contact No." variant="outlined" required="true"/>
                 </Grid>
                 <Grid item xs style={{minWidth: minWidth}}>
-                    <TextField className={classes.textfield} label="College" variant="outlined" required="true"/>
+                    <TextField className={classes.textfield} name={"college_" + number} label="College" variant="outlined" required="true"/>
                 </Grid>
             </Grid>
         </Card>

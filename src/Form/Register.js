@@ -49,6 +49,9 @@ function Register(props) {
     const classes = useStyles();
     const [size, setSize] = React.useState(2);
     const [value, setValue] = React.useState("Individual")
+    const {match, ...others} = props;
+
+    console.log(match.params.eventid);
 
     const handleChange = (event) => {
         console.log(event.target.value);
@@ -76,31 +79,42 @@ function Register(props) {
                 </RadioGroup>
             <Container className={classes.container}>
                 {   value == "Team" ?
-                        <form action="">
+                        <form method="POST" enctype="application/json">
+                            <Card className={classes.card}>
+                                <Grid container>
+                                    <Grid item xs  style={{minWidth: 300}}>
+                                        <TextField name="team_name" className={classes.textfield} label="Team Name" variant="outlined" required="true"/>
+                                    </Grid>
+                                </Grid>
+                            </Card>
                             {teamNumbers.map((number) => <TeamRegisterCard number={number}/>)}
                             <IconButton variant="extended" color="primary" className={classes.addButton} onClick={handleClick}>
                                 <AddIcon/>
                             </IconButton>
                             <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
+                            <TextField name="event_id" type="hidden" value={match.params.eventid}></TextField>
+                            <TextField name="num_member" type="hidden" value={size}></TextField>
                         </form>
                     : 
-                        <form>
+                        <form method="POST" enctype="application/json">
                             <Card className={classes.card}>
                                 <Grid container>
                                     <Grid item xs  style={{minWidth: 300}}>
-                                        <TextField className={classes.textfield} label="Name" variant="outlined" required="true"/>
+                                        <TextField className={classes.textfield} name="name_1" label="Name" variant="outlined" required="true"/>
                                     </Grid>
                                     <Grid item xs  style={{minWidth: 300}}>
-                                        <TextField className={classes.textfield} label="Email ID" variant="outlined" required="true"/>
+                                        <TextField className={classes.textfield} name="email_1" label="Email ID" variant="outlined" required="true"/>
                                     </Grid>
                                     <Grid item xs  style={{minWidth: 300}}>
-                                        <TextField className={classes.textfield} label="Contact No." variant="outlined" required="true"/>
+                                        <TextField className={classes.textfield} name="contact_1" label="Contact No." variant="outlined" required="true"/>
                                     </Grid>
                                     <Grid item xs  style={{minWidth: 300}}>
-                                        <TextField className={classes.textfield} label="College" variant="outlined" required="true"/>
+                                        <TextField className={classes.textfield} name="college_1" label="College" variant="outlined" required="true"/>
                                     </Grid>
                                 </Grid>
                             </Card>
+                            <TextField name="num_members" type="hidden" value={1}>1</TextField>
+                            <TextField name="event_id" type="hidden" value={match.params.eventid}></TextField>
                             <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
                         </form>
                 }
