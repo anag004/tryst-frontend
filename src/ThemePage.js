@@ -12,7 +12,10 @@ import SVGRightFork from './themeComponents/SVGRightFork';
 import TextBox from './themeComponents/TextBox';
 import { Typography } from '@material-ui/core';
 import ImageBox from './themeComponents/ImageBox';
-import oculus_image from './images/oculus.jpg';
+import jack_image from './images/iPhone.jpg';
+import life_image from './images/SyntheticLife.jpg';
+import spotify_image from './images/Spotify.jpg';
+import twitch_image from './images/Twitch.jpg';
 import electric_cars_image from './images/electric_cars.jpg';
 import fusion_image from './images/fusion_image.jpg';
 import metal_printing_image from './images/metal_printing.jpg';
@@ -20,6 +23,22 @@ import { Timeline } from 'gsap/gsap-core';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import Card from '@material-ui/core/Card';
 import {withStyles} from '@material-ui/core/styles';
+import higgs_image from './images/HiggsBoson.jpg';
+import avengers_image from './images/Avengers.jpg';
+import mangal_image from './images/mangalyaan.jpg';
+import gravitation_image from './images/GravWaves.jpg';
+import echo_image from './images/Amazonecho.jpg';
+import spacex_image from './images/SpaceX.jpg';
+// TODO This image does not exist currently
+import india_image from './images/oculus.jpg';
+import iphone_image from './images/iPhone4.jpg';
+import proxima_image from './images/ProximaB.png';
+import homo_image from './images/Fossil.jpg';
+import cambridge_image from './images/CambridgeAnalytica.jfif';
+import babies_image from './images/CrisprBabies.jpg';
+import blackhole_image from './images/Black hole.png';
+import larry_image from './images/Larry.png';
+import { createMuiTheme } from "@material-ui/core"
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -83,7 +102,7 @@ class ThemePage extends React.Component {
                         topDistance="4%"
                         leftDistance="52.5%"
                         labelID="1"
-                        year="2016"
+                        year="2010"
                         controller={this.controller}
                     />
                     <TimelineDot 
@@ -106,21 +125,21 @@ class ThemePage extends React.Component {
                         width="20"
                         height="15"
                     />
-                    <TextBox
-                        date="January 18, 2016"
-                        description="The world's first high-res VR head set for personal use."
-                        heading="Oculus Rift released"
-                        textBoxID="1"
-                        topPosition="35%"
-                        leftPosition="60%"
+                    <ImageBox
+                        url={life_image} 
+                        imageID="1_2"
                         controller={this.controller}
+                        topPosition="35%"
+                        leftPosition="55%"
+                        heading={"First synthetic life"}
                     />
                     <ImageBox
-                        url={oculus_image}
+                        url={iphone_image}
                         imageID="1"
                         controller={this.controller}
                         topPosition="45%"
                         leftPosition="5%"
+                        heading={"Apple releases the iPhone"}
                     />
                 </div>
                 <div
@@ -144,7 +163,7 @@ class ThemePage extends React.Component {
                         topDistance={-20}
                         leftDistance="52.5%"
                         labelID="2"
-                        year="2017"
+                        year="2011"
                         controller={this.controller}
                     />
                     <TimelineDot 
@@ -160,13 +179,12 @@ class ThemePage extends React.Component {
                         height="10"
                         controller={this.controller}
                     />
-                    <TextBox
-                        date="January 18, 2017"
-                        heading="Electric cars"
-                        description="The year saw the revolutionary masterpieces namely Tesla motors model 3 and BMW i3, the all electric vehicles being rapidly mass produced. "
-                        textBoxID="2"
+                    <ImageBox
+                        heading="Launch of Twitch"
+                        imageID="2_2"
                         topPosition="30%"
                         leftPosition="5%"
+                        url={twitch_image}
                         controller={this.controller}
                     />
                     <SVGRightFork
@@ -177,11 +195,12 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={electric_cars_image}
+                        url={spotify_image}
                         imageID="2"
+                        heading={"Spotify comes to the US"}
                         controller={this.controller}
                         topPosition="20%"
-                        leftPosition="60%"
+                        leftPosition="55%"
                     />
                 </div>
                 <div
@@ -205,7 +224,7 @@ class ThemePage extends React.Component {
                         topDistance={-20}
                         leftDistance="52.5%"
                         labelID="3"
-                        year="2018"
+                        year="2012"
                         controller={this.controller}
                     />
                     <TimelineDot 
@@ -221,13 +240,12 @@ class ThemePage extends React.Component {
                         height="5"
                         controller={this.controller}
                     />
-                    <TextBox
-                        date="January 18, 2018"
-                        heading="3D Metal Printing"
-                        description="HP opens preorders for its industrial-scale Metal Jet printers"
-                        textBoxID="3"
+                    <ImageBox
+                        heading="Avengers Premiere"
+                        imageID="3_2"
                         topPosition="20%"
                         leftPosition="55%"
+                        url={avengers_image}
                         controller={this.controller}
                     />
                     <SVGRightFork
@@ -238,8 +256,375 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={metal_printing_image}
+                        url={higgs_image}
+                        heading="Higgs Boson discovered"
                         imageID="3"
+                        controller={this.controller}
+                        topPosition="35%"
+                        leftPosition="5%"
+                    />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%",
+                        background: "#A6FA94",
+                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                    }}
+                >  
+                    {/* Third section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="4" 
+                        topPosition={-10}
+                    />
+                    <DateLabel
+                        topDistance={-20}
+                        leftDistance="52.5%"
+                        labelID="4"
+                        year="2013"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="4" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition={-10}
+                    />
+                    <SVGLeftFork
+                        forkID="7"
+                        topPosition="30%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    {/* <ImageBox
+                        heading="Avengers Premiere"
+                        imageID="4_2"
+                        topPosition="20%"
+                        leftPosition="55%"
+                        url={avengers_image}
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="7"
+                        topPosition="10%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    /> */}
+                    <ImageBox
+                        url={mangal_image}
+                        heading="India launches Mangalyaan"
+                        imageID="4"
+                        controller={this.controller}
+                        topPosition="35%"
+                        leftPosition="5%"
+                    />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%",
+                        background: "#A6FA94",
+                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                    }}
+                >  
+                    {/* Third section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="5" 
+                        topPosition={-10}
+                    />
+                    <DateLabel
+                        topDistance={-20}
+                        leftDistance="52.5%"
+                        labelID="5"
+                        year="2014"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="5" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition={-10}
+                    />
+                    <SVGLeftFork
+                        forkID="9"
+                        topPosition="30%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        heading="Experimental proof of gravitational waves"
+                        imageID="5_2"
+                        topPosition="20%"
+                        leftPosition="55%"
+                        url={gravitation_image}
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="10"
+                        topPosition="10%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={echo_image}
+                        heading="Amazon launches Echo"
+                        imageID="5"
+                        controller={this.controller}
+                        topPosition="35%"
+                        leftPosition="5%"
+                    />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%",
+                        background: "#A6FA94",
+                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                    }}
+                >  
+                    {/* Third section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="6" 
+                        topPosition={-10}
+                    />
+                    <DateLabel
+                        topDistance={-20}
+                        leftDistance="52.5%"
+                        labelID="6"
+                        year="2015"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="6" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition={-10}
+                    />
+                    <SVGLeftFork
+                        forkID="11"
+                        topPosition="30%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        heading="SpaceX"
+                        imageID="6_2"
+                        topPosition="20%"
+                        leftPosition="55%"
+                        url={spacex_image}
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="12"
+                        topPosition="10%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={india_image}
+                        heading="Digital India"
+                        imageID="6"
+                        controller={this.controller}
+                        topPosition="35%"
+                        leftPosition="5%"
+                    />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%",
+                        background: "#A6FA94",
+                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                    }}
+                >  
+                    {/* Third section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="7" 
+                        topPosition={-10}
+                    />
+                    <DateLabel
+                        topDistance={-20}
+                        leftDistance="52.5%"
+                        labelID="7"
+                        year="2016"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="7" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition={-10}
+                    />
+                    <SVGLeftFork
+                        forkID="13"
+                        topPosition="30%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        heading="iPhone loses the headphone jack"
+                        imageID="7_2"
+                        topPosition="20%"
+                        leftPosition="55%"
+                        url={jack_image}
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="14"
+                        topPosition="10%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={proxima_image}
+                        heading="Proxima B is discovered"
+                        imageID="7"
+                        controller={this.controller}
+                        topPosition="35%"
+                        leftPosition="5%"
+                    />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%",
+                        background: "#A6FA94",
+                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                    }}
+                >  
+                    {/* Third section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="8" 
+                        topPosition={-10}
+                    />
+                    <DateLabel
+                        topDistance={-20}
+                        leftDistance="52.5%"
+                        labelID="8"
+                        year="2017"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="8" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition={-10}
+                    />
+                    <SVGLeftFork
+                        forkID="15"
+                        topPosition="30%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        heading="Oldest homo sapiens fossils push back 100k years"
+                        imageID="8_2"
+                        topPosition="20%"
+                        leftPosition="55%"
+                        url={homo_image}
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="16"
+                        topPosition="10%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={cambridge_image}
+                        heading="Cambridge Analytica Scandal"
+                        imageID="8"
+                        controller={this.controller}
+                        topPosition="35%"
+                        leftPosition="5%"
+                    />
+                </div>
+                <div
+                    style={{
+                        position: "relative",
+                        height: "100%",
+                        width: "100%",
+                        background: "#A6FA94",
+                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                    }}
+                >  
+                    {/* Third section */}
+                    <SVGVerticalLine 
+                        controller={this.controller} 
+                        lineID="9" 
+                        topPosition={-10}
+                    />
+                    <DateLabel
+                        topDistance={-20}
+                        leftDistance="52.5%"
+                        labelID="9"
+                        year="2018"
+                        controller={this.controller}
+                    />
+                    <TimelineDot 
+                        dotID="9" 
+                        controller={this.controller}
+                        radius={10}
+                        topPosition={-10}
+                    />
+                    <SVGLeftFork
+                        forkID="17"
+                        topPosition="30%"
+                        width="35"
+                        height="5"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        heading="First CRISPR babies"
+                        imageID="9_2"
+                        topPosition="20%"
+                        leftPosition="55%"
+                        url={babies_image}
+                        controller={this.controller}
+                    />
+                    <SVGRightFork
+                        forkID="18"
+                        topPosition="10%"
+                        width="30"
+                        height="10"
+                        controller={this.controller}
+                    />
+                    <ImageBox
+                        url={metal_printing_image}
+                        heading="First 3d metal printing"
+                        imageID="9"
                         controller={this.controller}
                         topPosition="35%"
                         leftPosition="5%"
@@ -256,58 +641,58 @@ class ThemePage extends React.Component {
                         background: "linear-gradient(to bottom right, #FFFFFF, #9D9D9D)"
                     }}
                 >  
-                    {/* Fourth section */}
+                    {/* Last section */}
                     <SVGVerticalLine 
                         controller={this.controller} 
-                        lineID="4" 
+                        lineID="last" 
                         topPosition={-10}
                         height="90%"
                     />
                     <DateLabel
                         topDistance={-20}
                         leftDistance="52.5%"
-                        labelID="4"
+                        labelID="last"
                         year="2019"
                         controller={this.controller}
                     />
                     <TimelineDot 
-                        dotID="4" 
+                        dotID="last" 
                         controller={this.controller}
                         radius={10}
                         topPosition={-10}
                     />
                     <SVGLeftFork
-                        forkID="7"
+                        forkID="last"
                         topPosition="30%"
                         width="35"
                         height="5"
                         controller={this.controller}
                     />
-                    <TextBox
-                        date="January 18, 2019"
-                        heading="Fusion reactor"
-                        description="New nuclear designs promise to make fusion power safer and cheaper. "
-                        textBoxID="4"
+                    <ImageBox
+                        heading="First Black hole image"
+                        url={blackhole_image}
+                        imageID="last"
                         topPosition="20%"
                         leftPosition="55%"
                         controller={this.controller}
                     />
                     <SVGRightFork
-                        forkID="8"
+                        forkID="last_2"
                         topPosition="10%"
                         width="30"
                         height="10"
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={fusion_image}
-                        imageID="4"
+                        url={larry_image}
+                        heading={"Page and Brin leave Google"}
+                        imageID="last"
                         controller={this.controller}
                         topPosition="35%"
                         leftPosition="5%"
                     />
                      <TimelineDot 
-                        dotID="5" 
+                        dotID="last_2" 
                         controller={this.controller}
                         radius={10}
                         topPosition="60%"

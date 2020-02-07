@@ -5,6 +5,9 @@ import Typography from '@material-ui/core/Typography';
 import * as ScrollMagic from "scrollmagic";
 import { TweenMax, TimelineMax, Elastic, Linear } from "gsap";
 import { ScrollMagicPluginGsap } from "scrollmagic-plugin-gsap";
+import CardMedia from '@material-ui/core/CardMedia';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import { CardContent } from '@material-ui/core';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 
@@ -20,6 +23,11 @@ const styles = theme => ({
         margin: 0,
         padding: 0,
         fontSize: 0
+    },
+
+    heading: {
+        color: "white",
+        padding: theme.spacing(1)
     }
 });
 
@@ -44,12 +52,14 @@ class ImageBox extends React.Component {
                 style={{
                     position:"absolute",
                     top: this.props.topPosition,
-                    left: this.props.leftPosition
+                    left: this.props.leftPosition,
+                    backgroundColor: "black"
                 }}
                 className={this.props.classes.image}
                 square
             >
                 <img src={this.props.url} style={{maxWidth:"100%"}}></img>
+            <Typography variant="body1" className={this.props.classes.heading}>{this.props.heading}</Typography>
             </Card>
         )
     }
