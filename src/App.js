@@ -62,6 +62,12 @@ class App extends React.Component {
               <Route path="/guestLecture/:id" component={GuestLectureDetail} />
               <Route path="/events/:message" component={EventsPage}>
               </Route>
+              <Route path="/events/" exact>
+                <EventsPage/>
+              </Route>
+              <Route path="/" exact>
+                <ThemePage/>
+              </Route>
               <Route path="/" exact>
                 <ThemePage/>
               </Route>

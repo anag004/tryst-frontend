@@ -118,17 +118,18 @@ export default function EventsPage(props) {
   }
 
   let alert;
-
-  if (props.match.params.message == "success") {
-    alert = <Collapse in={open}>
-      <Alert className={classes.alert} onClose={handleClose}>Successful registration</Alert>
-    </Collapse>
-  } else if (props.match.params.message == "failed") {
-    alert = <Collapse in={open}>
-      <Alert severity="error" className={classes.alert} onClose={handleClose}>Failed registration</Alert>
-    </Collapse>
-  } else {
-    alert = <></>
+  if (props.match) {
+    if (props.match.params.message == "success") {
+      alert = <Collapse in={open}>
+        <Alert className={classes.alert} onClose={handleClose}>Successful registration</Alert>
+      </Collapse>
+    } else if (props.match.params.message == "failed") {
+      alert = <Collapse in={open}>
+        <Alert severity="error" className={classes.alert} onClose={handleClose}>Failed registration</Alert>
+      </Collapse>
+    } else {
+      alert = <></>
+    }
   }
 
   return (
