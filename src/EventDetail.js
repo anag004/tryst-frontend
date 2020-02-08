@@ -1,10 +1,11 @@
 import React, { Fragment, useEffect } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Link, useMediaQuery } from '@material-ui/core';
+import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, useMediaQuery } from '@material-ui/core';
 import ImageBanner from './ImageBanner';
 import axios from 'axios';
 import NavBar from './TopNavBar';
 import ImageEventsDetailPage from './images/eventDetailBackground.jpeg';
+import { Link } from "react-router-dom";
 
 export default function EventDetail(props) {
     const largeScreen = useMediaQuery('(min-width:500px)');
@@ -139,7 +140,7 @@ export default function EventDetail(props) {
         }
         else if(value=="register"){
             return(
-                <Link to={"/register/" + props.match.params.id}>
+                <Link to={"/register/" + props.match.params.id} target="_blank">
                     <Typography variant="h6">Click here to register!</Typography>
                 </Link>
             )
@@ -188,7 +189,7 @@ export default function EventDetail(props) {
                                 <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:(post.photos).length>1?"url("+(((post.photos)[1])[0])+")":"url(https://source.unsplash.com/random)",imgText:""}}/>
                             </div>
                             <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"55px"}} className={classes.heading} > {(post.name).toUpperCase()} </Typography>
-                            {(post.url)?<Link href={"http://"+(post.url)} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></Link>:null}
+                            {(post.url)?<Link to={"http://"+(post.url)} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></Link>:null}
                             <Tabs
                                 value={value}
                                 onChange={handleChange}
