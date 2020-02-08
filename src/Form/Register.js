@@ -13,6 +13,8 @@ import FormControl from '@material-ui/core/FormControl';
 import AddIcon from '@material-ui/icons/Add';
 import TeamRegisterCard from './TeamRegisterCard';
 import IconButton from '@material-ui/core/IconButton';
+import axios from 'axios';
+import { withRouter } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
     card: {
@@ -48,7 +50,7 @@ function Register(props) {
     const classes = useStyles();
     const [size, setSize] = React.useState(2);
     const [value, setValue] = React.useState("Individual")
-    const {match, ...others} = props;
+    const {match,history, ...others} = props;
 
     console.log(match.params.eventid);
 
@@ -66,6 +68,19 @@ function Register(props) {
         teamNumbers.push(i);
     }
 
+    const handleSubmit = (event, target) => {
+        event.preventDefault();
+        const data = new FormData(event.target);
+        let jsonData = {};
+        data.forEach((value, key) => {jsonData[key] = value;});
+        console.log(JSON.stringify(jsonData));
+        axios.post('/api/register/file', jsonData)
+        .then(response => history.push('/events/success'))
+        .catch(error => history.push('/events/failed'));
+
+        return false;
+    }
+
     return (
         <>
             <NavBar threshold={10} disableOpacity={true} backgroundColor="black"/>
@@ -78,7 +93,7 @@ function Register(props) {
                 </RadioGroup>
             <Container className={classes.container}>
                 {   value == "Team" ?
-                        <form method="POST" enctype="application/json" action="/api/register/file">
+                        <form enctype="application/json" onSubmit={handleSubmit}>
                             <Card className={classes.card}>
                                 <Grid container>
                                     <Grid item xs  style={{minWidth: 300}}>
@@ -95,7 +110,7 @@ function Register(props) {
                             <TextField name="num_member" type="hidden" value={size}></TextField>
                         </form>
                     : 
-                        <form method="POST" enctype="application/json" action="/api/register/file">
+                        <form enctype="application/json" onSubmit={handleSubmit}>
                             <Card className={classes.card}>
                                 <Grid container>
                                     <Grid item xs  style={{minWidth: 300}}>
@@ -122,4 +137,4 @@ function Register(props) {
     )
 }
 
-export default Register;
+export default withRouter(Register);
