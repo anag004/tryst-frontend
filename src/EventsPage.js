@@ -14,11 +14,17 @@ import CategorySpeedDial from './CategorySpeedDial';
 import PageRipple from './PageRipple';
 import ImageEventsPage from './images/eventsPageBackground.jpeg';
 import axios from 'axios';
+import Alert from '@material-ui/lab/Alert';
+import Collapse from '@material-ui/core/Collapse';
 
 const theme = createMuiTheme({
   palette: {
     primary: { main: '#2196F3' },
-    secondary: { main: '#4CAF50' }
+    secondary: { main: '#4CAF50' },
+    success: { main: '#4CAF50' },
+    info: { main: '#4CAF50' },
+    warning: { main: '#4CAF50' },
+    // success: { main: '#4CAF50' }
   }
 });
 
@@ -38,10 +44,16 @@ const useStyles = makeStyles(theme => ({
       position: "relative",
       top: -45,
       visibility: "hidden",
+    },
+    alert: {
+      position: "fixed",
+      zIndex: "10",
+      margin: theme.spacing(5),
+      top: "80%",
     }
 }))
 
-export default function EventsPage() {
+export default function EventsPage(props) {
   const [activateRippleEffect, setActivateRippleEffect] = React.useState(false);
   const [positionX, setPositionX] = React.useState(false);
   const [positionY, setPositionY] = React.useState(false);
@@ -50,6 +62,8 @@ export default function EventsPage() {
   const [transitionColor,setTransitionColor] = React.useState("green");
   const [values,setValues]=React.useState([]);
   const classes = useStyles();
+  const {message} = {props};
+  const [open, setOpen] = React.useState(true);
 
   useEffect(()=>{
     axios.get('https://backend2020.tryst-iitd.org/api/event/getCategories')
@@ -98,8 +112,28 @@ export default function EventsPage() {
     setScreenWidth(window.innerWidth); setScreenHeight(window.innerHeight);
     setTransitionColor(event.currentTarget.dataset.color)
   }
+
+  const handleClose = () => {
+    setOpen(!open);
+  }
+
+  let alert;
+
+  if (props.match.params.message == "success") {
+    alert = <Collapse in={open}>
+      <Alert className={classes.alert} onClose={handleClose}>Successful registration</Alert>
+    </Collapse>
+  } else if (props.match.params.message == "failed") {
+    alert = <Collapse in={open}>
+      <Alert severity="error" className={classes.alert} onClose={handleClose}>Failed registration</Alert>
+    </Collapse>
+  } else {
+    alert = <></>
+  }
+
   return (
         <ThemeProvider theme={theme}>
+          {alert}
           <React.Fragment>
             <PageRipple activated={activateRippleEffect} 
                         positionX={positionX} 
