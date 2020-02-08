@@ -6,7 +6,6 @@ import axios from 'axios';
 import NavBar from './TopNavBar';
 import ImageEventsDetailPage from './images/eventDetailBackground.jpeg';
 
-
 export default function EventDetail(props) {
     const largeScreen = useMediaQuery('(min-width:500px)');
     const {heading, containerBackgroundColor,textColor, ...others} = props;
@@ -140,7 +139,7 @@ export default function EventDetail(props) {
         }
         else if(value=="register"){
             return(
-                <Link to={post.reg_link}>
+                <Link to={"/register/" + props.match.params.id}>
                     <Typography variant="h6">Click here to register!</Typography>
                 </Link>
             )

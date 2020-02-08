@@ -14,7 +14,6 @@ import AddIcon from '@material-ui/icons/Add';
 import TeamRegisterCard from './TeamRegisterCard';
 import IconButton from '@material-ui/core/IconButton';
 
-
 const useStyles = makeStyles((theme) => ({
     card: {
         padding: theme.spacing(4), 
@@ -79,7 +78,7 @@ function Register(props) {
                 </RadioGroup>
             <Container className={classes.container}>
                 {   value == "Team" ?
-                        <form method="POST" enctype="application/json">
+                        <form method="POST" enctype="application/json" action="/api/register/file">
                             <Card className={classes.card}>
                                 <Grid container>
                                     <Grid item xs  style={{minWidth: 300}}>
@@ -96,7 +95,7 @@ function Register(props) {
                             <TextField name="num_member" type="hidden" value={size}></TextField>
                         </form>
                     : 
-                        <form method="POST" enctype="application/json">
+                        <form method="POST" enctype="application/json" action="/api/register/file">
                             <Card className={classes.card}>
                                 <Grid container>
                                     <Grid item xs  style={{minWidth: 300}}>
