@@ -107,7 +107,7 @@ function Register(props) {
                             </IconButton>
                             <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
                             <TextField name="event_id" type="hidden" value={match.params.eventid}></TextField>
-                            <TextField name="num_member" type="hidden" value={size}></TextField>
+                            <TextField name="num_members" type="hidden" value={size}></TextField>
                         </form>
                     : 
                         <form enctype="application/json" onSubmit={handleSubmit}>
@@ -129,6 +129,7 @@ function Register(props) {
                             </Card>
                             <TextField name="num_members" type="hidden" value={1}>1</TextField>
                             <TextField name="event_id" type="hidden" value={match.params.eventid}></TextField>
+                            <TextField name="team_name" type="hidden" value={"individual"}></TextField>
                             <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
                         </form>
                 }
