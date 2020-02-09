@@ -16,6 +16,7 @@ import ImageEventsPage from './images/eventsPageBackground.jpeg';
 import axios from 'axios';
 import Alert from '@material-ui/lab/Alert';
 import Collapse from '@material-ui/core/Collapse';
+import { useMediaQuery } from '@material-ui/core';
 
 const theme = createMuiTheme({
   palette: {
@@ -54,6 +55,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 export default function EventsPage(props) {
+  const largeScreen = useMediaQuery('(min-width:500px)');
   const [activateRippleEffect, setActivateRippleEffect] = React.useState(false);
   const [positionX, setPositionX] = React.useState(false);
   const [positionY, setPositionY] = React.useState(false);
@@ -153,7 +155,7 @@ export default function EventsPage(props) {
                 heading={(pageSectionName).toUpperCase()}
                 headingAlignment="center"
                 containerBackgroundColor={color[(index)]}
-                textColor={textColor[(index)]}
+                textColor={"white"}
                 description={""}
                 id={index+1}
               >
@@ -248,7 +250,7 @@ export default function EventsPage(props) {
                   </EventCardRow>
               </PageSection> */}
             
-            <div style={{position:"fixed", bottom:40,right:40}}>
+            <div style={{position:"fixed", bottom:40,right:largeScreen?40:20}}>
               <CategorySpeedDial actions={pageSectionNamesWithIds}/>
             </div>
           </React.Fragment>

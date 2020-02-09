@@ -6,6 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import Fade from '@material-ui/core/Fade';
+import { useMediaQuery } from '@material-ui/core';
 
 const useStyles = makeStyles(theme => ({
     imageBanner: {
@@ -51,6 +52,7 @@ const useStyles = makeStyles(theme => ({
 //     linkText: ''
 //   };
   export default function ImageBanner(props) {
+    const largeScreen = useMediaQuery('(min-width:500px)');
     const classes = useStyles();
     const { post, ...others } = props;
     const Time=(time)=>{
@@ -76,7 +78,7 @@ const useStyles = makeStyles(theme => ({
         <div className={classes.overlay} />
         <Grid container>
             {/* <Grid item md={2}>  </Grid> */}
-            <Grid item sm>
+            <Grid item md={12} xs={12}>
                 <div className={classes.imageBannerContent}>
                 <Fade in={true} timeout={1000}>
                         <Typography style={{fontFamily:['Maven Pro','sans-serif'].join(','),fontSize:"25px"}} align="center" color="inherit" gutterBottom>
@@ -84,7 +86,7 @@ const useStyles = makeStyles(theme => ({
                         </Typography>
                     </Fade>
                     <Fade in={true} timeout={1000}>
-                        <Typography style={{fontFamily:['Muli','sans-serif'].join(','),fontSize:"65px"}} variant="h2" align="center" color="inherit" gutterBottom>
+                        <Typography style={{fontFamily:['Muli','sans-serif'].join(','),fontSize:largeScreen?"65px":"50px"}} variant="h2" align="center" color="inherit" gutterBottom>
                             <b>{post.name}</b>
                         </Typography>
                     </Fade>

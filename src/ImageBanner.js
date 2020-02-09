@@ -51,7 +51,7 @@ const useStyles = makeStyles(theme => ({
         {/* {<img style={{ display: 'none' }} src={post.image} alt={post.imageText} />} */}
         <div className={classes.overlay} />
         <Grid container>
-          <Grid item md={6}>
+          <Grid item md={6} xs={12}>
             <div className={classes.imageBannerContent}>
               <Fade in={true} timeout={1000}>
                   <Typography component="h1" style={{fontFamily:['Gothic A1','serif'].join(','),fontSize:"55px"}} color="inherit" gutterBottom>

@@ -78,7 +78,7 @@ export default function GuestLectures() {
                             backgroundColor={transitionColor}
                 />
                 <NavBar threshold={10} backgroundColor="#192841"/>
-                <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"grey"}} />
+                <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#29426c"}} />
                 <br/><br/>
                 <PageSection 
                     heading="Guest Lectures"
