@@ -189,7 +189,7 @@ export default function EventDetail(props) {
                                 <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:(post.photos).length>1?"url("+(((post.photos)[1])[0])+")":"url(https://source.unsplash.com/random)",imgText:""}}/>
                             </div>
                             <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"55px"}} className={classes.heading} > {(post.name).toUpperCase()} </Typography>
-                            {(post.url)?<Link to={"http://"+(post.url)} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></Link>:null}
+                            {(post.url)?<a href={post.url} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></a>:null}
                             <Tabs
                                 value={value}
                                 onChange={handleChange}
