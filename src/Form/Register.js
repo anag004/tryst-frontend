@@ -74,7 +74,7 @@ function Register(props) {
         let jsonData = {};
         data.forEach((value, key) => {jsonData[key] = value;});
         console.log(JSON.stringify(jsonData));
-        axios.post('backend2020.tryst-iitd.org/api/register/file', jsonData)
+        axios.post('https://backend2020.tryst-iitd.org/api/register/file', jsonData)
         .then(response => history.push('/events/success'))
         .catch(error => history.push('/events/failed'));
 
