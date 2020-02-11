@@ -3,6 +3,7 @@ import NavBar from './TopNavBar';
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import Fade from '@material-ui/core/Fade';
+import MetaTags from 'react-meta-tags'
 
 const useStyles = makeStyles((theme) => ({
     video: {
@@ -28,6 +29,9 @@ function AboutPage(props) {
 
     return (
         <div>
+            <MetaTags>
+                <meta name="description" content="Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!" />
+            </MetaTags>
             <Fade in={true} timeout={1000}>
                 <Typography align="center" variant="h4" className={classes.title}>About Tryst</Typography>
             </Fade>

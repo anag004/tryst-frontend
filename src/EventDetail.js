@@ -6,6 +6,7 @@ import axios from 'axios';
 import NavBar from './TopNavBar';
 import ImageEventsDetailPage from './images/eventDetailBackground.jpeg';
 import { Link } from "react-router-dom";
+import { MetaTags } from 'react-meta-tags';
 
 export default function EventDetail(props) {
     const largeScreen = useMediaQuery('(min-width:500px)');
@@ -168,6 +169,9 @@ export default function EventDetail(props) {
     var z;
     return (
         <div className={classes.root}>
+            <MetaTags>
+                <meta name="description" content="Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!" />
+            </MetaTags>
             {data.map(post=>
                 <>
                 <div style={{position:"fixed",width:"100%",height:"100%",backgroundImage: `url(${ImageEventsDetailPage})`,}}/>

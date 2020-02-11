@@ -8,6 +8,7 @@ import NavBar from '../TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ImageBanner from '../ImageBanner';
 import Fade from '@material-ui/core/Fade';
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -42,6 +43,9 @@ function Sponsors(props) {
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
+            <MetaTags>
+                <meta name="description" content="Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!" />
+            </MetaTags>
             <NavBar threshold={10}/>
             <Fade in={true}>
                 <ImageBanner post={post}></ImageBanner>

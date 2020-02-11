@@ -8,6 +8,7 @@ import EventCardRow from './EventCardRow'
 import SimpleGrid from './SimpleGrid';
 import PageRipple from './PageRipple';
 import axios from 'axios';
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -69,6 +70,9 @@ export default function GuestLectures() {
     }
     return (
         <ThemeProvider theme={theme}>
+            <MetaTags>
+                <meta name="description" content="Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!" />
+            </MetaTags>
             <React.Fragment>
                 <PageRipple activated={activateRippleEffect} 
                             positionX={positionX} 

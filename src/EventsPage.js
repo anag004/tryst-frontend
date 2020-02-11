@@ -17,6 +17,7 @@ import axios from 'axios';
 import Alert from '@material-ui/lab/Alert';
 import Collapse from '@material-ui/core/Collapse';
 import { useMediaQuery } from '@material-ui/core';
+import MetaTags from 'react-meta-tags'
 
 const theme = createMuiTheme({
   palette: {
@@ -137,6 +138,9 @@ export default function EventsPage(props) {
   return (
         <ThemeProvider theme={theme}>
           {alert}
+          <MetaTags>
+            <meta name="description" content="Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!" />
+          </MetaTags>
           <React.Fragment>
             <PageRipple activated={activateRippleEffect} 
                         positionX={positionX} 
