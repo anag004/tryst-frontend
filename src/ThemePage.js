@@ -108,7 +108,7 @@ class ThemePage extends React.Component {
                     id="section1"
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#83C4CF",
                         // background: "-webkit-linear-gradient(top left, #83C4CF, #D2F5FA)",
@@ -167,7 +167,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#FAF494",
                         // background: "-webkit-linear-gradient(top left, #FAF494, #FFFFFF)",
@@ -230,7 +230,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#A6FA94",
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
@@ -295,7 +295,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#A6FA94",
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
@@ -358,7 +358,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#A6FA94",
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
@@ -421,7 +421,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#A6FA94",
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
@@ -484,7 +484,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#A6FA94",
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
@@ -547,7 +547,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#A6FA94",
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
@@ -610,7 +610,7 @@ class ThemePage extends React.Component {
                 <div
                     style={{
                         position: "relative",
-                        height: "100%",
+                        height: "130%",
                         width: "100%",
                         // background: "#A6FA94",
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
