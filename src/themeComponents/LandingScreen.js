@@ -46,7 +46,7 @@ const growin = keyframes`
 `
 
 const GrowIn = styled.div`
-    animation: ${growin} 5s ease-in-out;
+    animation: ${growin} 10s ease-in-out;
     animation-fill-mode: forwards;
 `
 
@@ -124,14 +124,16 @@ class LandingScreen extends React.Component {
                         </Typography>
                     </Fade>
                 </Grid>
-                <GrowIn>
-                <Grid container md={12} justify="center">
-                        <img style={{width:"40%"}}src={logo}></img>
+                
+                <Grid container md={12} style={{position:"relative",height:"100px"}} justify="center">
+                        <Fade in={true} timeout={4000}>
+                            <img src={logo} style={{height: "100px"}}></img>
+                        </Fade>
                 </Grid>
-                </GrowIn>
+                
                 <Grid container md={12} justify="center">
                     <Fade in={true} timeout={2000}>
-                        <Typography variant="h2" className={this.props.classes.title}>
+                        <Typography variant="h3" className={this.props.classes.title}>
                             REMINISCENSE
                         </Typography>
                     </Fade>
