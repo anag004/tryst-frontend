@@ -90,6 +90,7 @@ class ThemePage extends React.Component {
                 <LandingScreen/>
                 {/* First section */}
                 <div
+                    id="section1"
                     style={{
                         position: "relative",
                         height: "100%",
