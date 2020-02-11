@@ -39,6 +39,7 @@ import babies_image from './images/CrisprBabies.jpg';
 import blackhole_image from './images/Black hole.png';
 import larry_image from './images/Larry.png';
 import { createMuiTheme } from "@material-ui/core"
+import { MetaTags } from 'react-meta-tags';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -82,6 +83,9 @@ class ThemePage extends React.Component {
     render() {
         return (
             <>
+                <MetaTags>
+                    <meta name="title_Page" content="TRYST 2020, IIT Delhi, Home Page" />
+                </MetaTags>
                 <div style={{position: "absolute", top: 0, left: 0, visibility: "hidden", width: "100%"}}></div>
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>

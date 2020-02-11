@@ -57,7 +57,7 @@ export default function GuestLectureDetail(props){
     return(
         <ThemeProvider theme={theme}>
             <MetaTags>
-                <meta name="description" content="Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!" />
+                <meta name="title_Page" content="TRYST 2020, IIT Delhi, Guest Lectures" />
             </MetaTags>
             <div style={{position:"fixed", width:"100%",height:"100%",zIndex:"-1",backgroundColor:"black"}}></div>
             <div className={classes.topContainer}>
