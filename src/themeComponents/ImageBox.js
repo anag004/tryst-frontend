@@ -17,9 +17,9 @@ const styles = theme => ({
         maxWidth: "40%",
         opacity: 0,
         transform: "translateY(100px)",
-        // border: "1px solid #ddd",
-        // borderRadius: "4px",
-        // padding: "5px",
+        border: "5px solid #ddd",
+        borderRadius: "4px",
+        padding: "5px",
         margin: 0,
         padding: 0,
         fontSize: 0

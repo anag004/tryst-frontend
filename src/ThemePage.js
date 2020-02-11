@@ -18,7 +18,7 @@ import spotify_image from './images/Spotify.jpg';
 import twitch_image from './images/Twitch.jpg';
 import electric_cars_image from './images/electric_cars.jpg';
 import fusion_image from './images/fusion_image.jpg';
-import metal_printing_image from './images/metal_printing.jpg';
+import metal_printing_image from './images/3dprint.jpg';
 import { Timeline } from 'gsap/gsap-core';
 import NavigationIcon from '@material-ui/icons/Navigation';
 import Card from '@material-ui/core/Card';
@@ -32,13 +32,17 @@ import spacex_image from './images/SpaceX.jpg';
 // TODO This image does not exist currently
 import india_image from './images/oculus.jpg';
 import iphone_image from './images/iPhone4.jpg';
-import proxima_image from './images/ProximaB.png';
+import proxima_image from './images/ProximaB.jpg';
 import homo_image from './images/Fossil.jpg';
-import cambridge_image from './images/CambridgeAnalytica.jfif';
+import cambridge_image from './images/CambridgeAnalytica.jpg';
 import babies_image from './images/CrisprBabies.jpg';
-import blackhole_image from './images/Black hole.png';
+import blackhole_image from './images/Black hole.jpg';
 import larry_image from './images/Larry.png';
-import { createMuiTheme } from "@material-ui/core"
+// import { createMuiTheme } from "@material-ui/core"
+import { createMuiTheme } from "@material-ui/core";
+import crissCross from "./images/criss-cross.png";
+import crissCrossDark from "./images/criss-cross-dark.png";
+import herringBone from "./images/herringbone.png";
 import { MetaTags } from 'react-meta-tags';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
@@ -91,14 +95,18 @@ class ThemePage extends React.Component {
                 <LandingScreen/>
                 {/* First section */}
                 <div
+                    id="section1"
                     style={{
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#83C4CF",
-                        background: "-webkit-linear-gradient(top left, #83C4CF, #D2F5FA)",
-                        background: "-moz-linear-gradient(top left, #83C4CF, #D2F5FA)",
-                        background: "linear-gradient(to bottom right, #83C4CF, #D2F5FA)",
+                        // background: "#83C4CF",
+                        // background: "-webkit-linear-gradient(top left, #83C4CF, #D2F5FA)",
+                        // background: "-moz-linear-gradient(top left, #83C4CF, #D2F5FA)",
+                        // background: "linear-gradient(to bottom right, #E94B3CFF, #D2F5FA)",
+                        // background: "#E94B3CFF",
+                        background: "url(" + crissCross + ")",
+                        backgroundRepeat: "repeat",
                     }}
                 >  
                     <SVGVerticalLine controller={this.controller} lineID="1" topPosition="5%"/>
@@ -135,7 +143,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                         topPosition="35%"
                         leftPosition="55%"
-                        heading={"First synthetic life"}
+                        heading={"Craig Venter creates synthetic life form"}
                     />
                     <ImageBox
                         url={iphone_image}
@@ -143,7 +151,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                         topPosition="45%"
                         leftPosition="5%"
-                        heading={"Apple releases the iPhone"}
+                        heading={"iPhone 4 was first unveiled"}
                     />
                 </div>
                 <div
@@ -151,10 +159,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#FAF494",
-                        background: "-webkit-linear-gradient(top left, #FAF494, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #FAF494, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #FAF494, #FFFFFF)"
+                        // background: "#FAF494",
+                        // background: "-webkit-linear-gradient(top left, #FAF494, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #FAF494, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #FAF494, #FFFFFF)"
+                        background: "url(" + crissCrossDark + ")",
+                        backgroundRepeat: "repeat",
                     }}
                 >  
                     {/* Second section */}
@@ -212,10 +222,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#A6FA94",
-                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        // background: "#A6FA94",
+                        // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        background: "url(" + crissCrossDark + ")",
+                        backgroundRepeat: "repeat",
                     }}
                 >  
                     {/* Third section */}
@@ -245,7 +257,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        heading="Avengers Premiere"
+                        heading="Premiere of Avengers (2012)"
                         imageID="3_2"
                         topPosition="20%"
                         leftPosition="55%"
@@ -261,7 +273,7 @@ class ThemePage extends React.Component {
                     />
                     <ImageBox
                         url={higgs_image}
-                        heading="Higgs Boson discovered"
+                        heading="Detection of Higgs Boson, the god particle confirmed"
                         imageID="3"
                         controller={this.controller}
                         topPosition="35%"
@@ -322,7 +334,7 @@ class ThemePage extends React.Component {
                     /> */}
                     <ImageBox
                         url={mangal_image}
-                        heading="India launches Mangalyaan"
+                        heading="ISRO launches mangalyan, the Mars Orbiter Mission"
                         imageID="4"
                         controller={this.controller}
                         topPosition="35%"
@@ -367,7 +379,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        heading="Experimental proof of gravitational waves"
+                        heading="Ligo detects gravitational waves"
                         imageID="5_2"
                         topPosition="20%"
                         leftPosition="55%"
@@ -383,7 +395,7 @@ class ThemePage extends React.Component {
                     />
                     <ImageBox
                         url={echo_image}
-                        heading="Amazon launches Echo"
+                        heading="Launch of amazon echo"
                         imageID="5"
                         controller={this.controller}
                         topPosition="35%"
@@ -428,7 +440,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        heading="SpaceX"
+                        heading="SpaceX successfully landed its Falcon 9 rocket"
                         imageID="6_2"
                         topPosition="20%"
                         leftPosition="55%"
@@ -444,7 +456,7 @@ class ThemePage extends React.Component {
                     />
                     <ImageBox
                         url={india_image}
-                        heading="Digital India"
+                        heading="Digital India was launched"
                         imageID="6"
                         controller={this.controller}
                         topPosition="35%"
@@ -489,7 +501,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        heading="iPhone loses the headphone jack"
+                        heading="Apple kills the headphone jack"
                         imageID="7_2"
                         topPosition="20%"
                         leftPosition="55%"
@@ -505,7 +517,7 @@ class ThemePage extends React.Component {
                     />
                     <ImageBox
                         url={proxima_image}
-                        heading="Proxima B is discovered"
+                        heading="Astronomers announced that a Earth-like planet orbits Proxima Centauri"
                         imageID="7"
                         controller={this.controller}
                         topPosition="35%"
@@ -550,7 +562,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        heading="Oldest homo sapiens fossils push back 100k years"
+                        heading="Oldest Homo sapiens fossil claim rewrites our species' history"
                         imageID="8_2"
                         topPosition="20%"
                         leftPosition="55%"
@@ -566,7 +578,7 @@ class ThemePage extends React.Component {
                     />
                     <ImageBox
                         url={cambridge_image}
-                        heading="Cambridge Analytica Scandal"
+                        heading="Facebook Cambridge Analytical Data Scandal"
                         imageID="8"
                         controller={this.controller}
                         topPosition="35%"
@@ -611,7 +623,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        heading="First CRISPR babies"
+                        heading="First CRISPR babies born"
                         imageID="9_2"
                         topPosition="20%"
                         leftPosition="55%"
@@ -673,7 +685,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        heading="First Black hole image"
+                        heading="NASA releases first Black hole image"
                         url={blackhole_image}
                         imageID="last"
                         topPosition="20%"

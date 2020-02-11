@@ -11,6 +11,7 @@ import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import * as THREE from 'three';
 import WAVES from '../vanta/vanta.waves.min.js';
+import logo from '../images/logo-white.png';
 
 const oscillate = keyframes`
     from {
@@ -26,6 +27,28 @@ const Oscillate = styled.div`
     animation: ${oscillate} 1s ease-in-out infinite;
     animation-direction: alternate-reverse;
 `;
+
+const growin = keyframes`
+    from {
+        height: 0px;
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 0;
+        height: 250px;
+    }
+
+    100% {
+        opacity: 1;
+         height: 250px;
+    }
+`
+
+const GrowIn = styled.div`
+    animation: ${growin} 5s ease-in-out;
+    animation-fill-mode: forwards;
+`
 
 const styles = theme => ({
     imageBanner: {
@@ -95,31 +118,37 @@ class LandingScreen extends React.Component {
                 <div className={this.props.classes.overlay} ref={this.vantaRef}/>
                 <Grid container justify="center" alignItems="center">
                     <Fade in={true} timeout={1000}>
-                        <Typography style={{fontFamily:['Maven Pro','sans-serif'].join(','),fontSize:"45px"}} className={this.props.classes.presents}>
-                            TRYST PRESENTS
+                        <Typography style={{fontFamily:['Maven Pro','sans-serif'].join(','),fontSize:"25px"}} className={this.props.classes.presents}>
+                            TRYST 2020  <br></br>
+                            PRESENTS
                         </Typography>
                     </Fade>
                 </Grid>
+                <GrowIn>
+                <Grid container md={12} justify="center">
+                        <img style={{width:"40%"}}src={logo}></img>
+                </Grid>
+                </GrowIn>
                 <Grid container md={12} justify="center">
                     <Fade in={true} timeout={2000}>
-                        <Typography variant="h4" className={this.props.classes.title}>
-                            The
+                        <Typography variant="h2" className={this.props.classes.title}>
+                            REMINISCENSE
                         </Typography>
                     </Fade>
                 </Grid>
-                <Grid container md={12} justify="center">
+                {/* <Grid container md={12} justify="center">
                     <Grow in={true} timeout={4000}> 
                         <SVGTitle/>
                     </Grow>
-                </Grid>
+                </Grid> */}
                 <Grid container md={12} justify="center">
                     <Fade in={true} timeout={2000}>
                         <Typography variant="h4" className={this.props.classes.title}>
-                            Decade
+                            A Denouement Of The Decade
                         </Typography>
                     </Fade>
                 </Grid>
-                <Grid container md={12} justify="center">
+                <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
                     <Fade in={true} timeout={5000}>
                         <Oscillate>
                             <div align="center" className={this.props.classes.tooltip}>
