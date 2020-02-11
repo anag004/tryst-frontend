@@ -42,6 +42,16 @@ import { createMuiTheme } from "@material-ui/core";
 import crissCross from "./images/criss-cross.png";
 import crissCrossDark from "./images/criss-cross-dark.png";
 import herringBone from "./images/herringbone.png";
+import websiteImage0 from './images/websitemerged0.jpg';
+import websiteImage1 from './images/websitemerged1.jpg';
+import websiteImage2 from './images/websitemerged2.jpg';
+import websiteImage3 from './images/websitemerged3.jpg';
+import websiteImage4 from './images/websitemerged4.jpg';
+import websiteImage5 from './images/websitemerged5.jpg';
+import websiteImage6 from './images/websitemerged6.jpg';
+import websiteImage7 from './images/websitemerged7.jpg';
+import websiteImage8 from './images/websitemerged8.jpg';
+import websiteImage9 from './images/websitemerged9.jpg';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -100,8 +110,8 @@ class ThemePage extends React.Component {
                         // background: "-moz-linear-gradient(top left, #83C4CF, #D2F5FA)",
                         // background: "linear-gradient(to bottom right, #E94B3CFF, #D2F5FA)",
                         // background: "#E94B3CFF",
-                        background: "url(" + crissCross + ")",
-                        backgroundRepeat: "repeat",
+                        background: "url(" + websiteImage0 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     <SVGVerticalLine controller={this.controller} lineID="1" topPosition="5%"/>
@@ -158,8 +168,8 @@ class ThemePage extends React.Component {
                         // background: "-webkit-linear-gradient(top left, #FAF494, #FFFFFF)",
                         // background: "-moz-linear-gradient(top left, #FAF494, #FFFFFF)",
                         // background: "linear-gradient(to bottom right, #FAF494, #FFFFFF)"
-                        background: "url(" + crissCrossDark + ")",
-                        backgroundRepeat: "repeat",
+                        background: "url(" + websiteImage1 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Second section */}
@@ -221,8 +231,10 @@ class ThemePage extends React.Component {
                         // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
                         // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
                         // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
-                        background: "url(" + crissCrossDark + ")",
-                        backgroundRepeat: "repeat",
+                        // background: "url(" + crissCrossDark + ")",
+                        // backgroundRepeat: "repeat",
+                        background: "url(" + websiteImage2 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Third section */}
@@ -280,10 +292,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#A6FA94",
-                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        // background: "#A6FA94",
+                        // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        background: "url(" + websiteImage3 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Third section */}
@@ -341,10 +355,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#A6FA94",
-                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        // background: "#A6FA94",
+                        // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        background: "url(" + websiteImage4 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Third section */}
@@ -402,10 +418,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#A6FA94",
-                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        // background: "#A6FA94",
+                        // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        background: "url(" + websiteImage5 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Third section */}
@@ -463,10 +481,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#A6FA94",
-                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        // background: "#A6FA94",
+                        // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        background: "url(" + websiteImage6 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Third section */}
@@ -524,10 +544,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#A6FA94",
-                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        // background: "#A6FA94",
+                        // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        background: "url(" + websiteImage7 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Third section */}
@@ -585,10 +607,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "100%",
                         width: "100%",
-                        background: "#A6FA94",
-                        background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
-                        background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        // background: "#A6FA94",
+                        // background: "-webkit-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "-moz-linear-gradient(top left, #A6FA94, #FFFFFF)",
+                        // background: "linear-gradient(to bottom right, #A6FA94, #FFFFFF)",
+                        background: "url(" + websiteImage8 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Third section */}
@@ -646,10 +670,12 @@ class ThemePage extends React.Component {
                         position: "relative",
                         height: "160%",
                         width: "100%",
-                        background: "#FFFFFF",
-                        background: "-webkit-linear-gradient(top left, #FFFFFF, #9D9D9D)",
-                        background: "-moz-linear-gradient(top left, #FFFFFF, #9D9D9D)",
-                        background: "linear-gradient(to bottom right, #FFFFFF, #9D9D9D)"
+                        // background: "#FFFFFF",
+                        // background: "-webkit-linear-gradient(top left, #FFFFFF, #9D9D9D)",
+                        // background: "-moz-linear-gradient(top left, #FFFFFF, #9D9D9D)",
+                        // background: "linear-gradient(to bottom right, #FFFFFF, #9D9D9D)"
+                        background: "url(" + websiteImage9 + ")",
+                        backgroundSize: "auto 100%"
                     }}
                 >  
                     {/* Last section */}
