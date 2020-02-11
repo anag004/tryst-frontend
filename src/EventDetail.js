@@ -6,6 +6,7 @@ import axios from 'axios';
 import NavBar from './TopNavBar';
 import ImageEventsDetailPage from './images/eventDetailBackground.jpeg';
 import { Link } from "react-router-dom";
+import { MetaTags } from 'react-meta-tags';
 
 export default function EventDetail(props) {
     const largeScreen = useMediaQuery('(min-width:500px)');
@@ -168,6 +169,9 @@ export default function EventDetail(props) {
     var z;
     return (
         <div className={classes.root}>
+            <MetaTags>
+            <meta name="title_Page" content="TRYST 2020, IIT Delhi, Events Page" />
+            </MetaTags>
             {data.map(post=>
                 <>
                 <div style={{position:"fixed",width:"100%",height:"100%",backgroundImage: `url(${ImageEventsDetailPage})`,}}/>

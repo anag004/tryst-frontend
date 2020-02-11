@@ -8,6 +8,7 @@ import EventCardRow from './EventCardRow'
 import SimpleGrid from './SimpleGrid';
 import PageRipple from './PageRipple';
 import axios from 'axios';
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -69,6 +70,9 @@ export default function GuestLectures() {
     }
     return (
         <ThemeProvider theme={theme}>
+            <MetaTags>
+            <meta name="title_Page" content="TRYST 2020, IIT Delhi, Guest Lectures" />            
+            </MetaTags>
             <React.Fragment>
                 <PageRipple activated={activateRippleEffect} 
                             positionX={positionX} 

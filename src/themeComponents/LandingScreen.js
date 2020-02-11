@@ -36,12 +36,12 @@ const growin = keyframes`
 
     25% {
         opacity: 0;
-        height: 250px;
+        height: 30%;
     }
 
     100% {
         opacity: 1;
-         height: 250px;
+         height: 30%;
     }
 `
 

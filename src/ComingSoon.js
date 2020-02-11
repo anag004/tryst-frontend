@@ -9,6 +9,7 @@ import TwitterIcon from '@material-ui/icons/Twitter'
 import * as THREE from 'three';
 import WAVES from './vanta/vanta.waves.min.js';
 import { withStyles } from "@material-ui/core/styles";
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -106,6 +107,9 @@ class ComingSoon extends React.Component {
         const {classes} = this.props;
         return (
             <ThemeProvider theme={theme} >
+                <MetaTags>
+                    <meta name="title_Page" content="TRYST 2020, IIT Delhi Coming Soon" />
+                </MetaTags>
                 <div className={classes.background} ref={this.vantaRef}>
                 </div>
                 <TopNavBar threshold={10} backgroundColor="black"/>

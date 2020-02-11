@@ -17,6 +17,7 @@ import axios from 'axios';
 import Alert from '@material-ui/lab/Alert';
 import Collapse from '@material-ui/core/Collapse';
 import { useMediaQuery } from '@material-ui/core';
+import MetaTags from 'react-meta-tags'
 
 const theme = createMuiTheme({
   palette: {
@@ -137,6 +138,9 @@ export default function EventsPage(props) {
   return (
         <ThemeProvider theme={theme}>
           {alert}
+          <MetaTags>
+          <meta name="title_Page" content="TRYST 2020, IIT Delhi, Events Page" />
+          </MetaTags>
           <React.Fragment>
             <PageRipple activated={activateRippleEffect} 
                         positionX={positionX} 

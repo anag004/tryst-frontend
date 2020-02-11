@@ -19,6 +19,7 @@ import ImageSatyageet from '../images/Satyageet.jpg';
 import ImageShubhamVerma from '../images/ShubhamVerma.jpg';
 import ImageTeamPageBackground from '../images/teamPageBackground.jpg';
 import ImageSidharthSingh from '../images/Siddhart_Singh.jpg';
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -50,6 +51,9 @@ function Sponsors(props) {
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
+            <MetaTags>
+                <meta name="title_Page" content="TRYST 2020, IIT Delhi, Team" />
+            </MetaTags>
             <div style={{position:"fixed", width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#1e314f"}}></div>
             <NavBar threshold={10} backgroundColor="#192841" disableOpacity={true}/>
             <PageSection

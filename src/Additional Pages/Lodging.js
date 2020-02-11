@@ -5,6 +5,7 @@ import ImageBanner from '../ImageBanner';
 import TopNavBar from '../TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ScrollToTop from '../ScrollToTop';
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -35,6 +36,9 @@ export default function Lodging(props) {
 
     return (
         <ThemeProvider theme={theme}>
+            <MetaTags>
+                <meta name="title_Page" content="TRYST 2020, IIT Delhi, Lodgings" />
+            </MetaTags>
             <ScrollToTop/>
             <TopNavBar threshold={10}/>
             <Fade in={true}  timeout={1000}>

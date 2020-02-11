@@ -38,6 +38,7 @@ import cambridge_image from './images/CambridgeAnalytica.jpg';
 import babies_image from './images/CrisprBabies.jpg';
 import blackhole_image from './images/Black hole.jpg';
 import larry_image from './images/Larry.png';
+// import { createMuiTheme } from "@material-ui/core"
 import { createMuiTheme } from "@material-ui/core";
 import crissCross from "./images/criss-cross.png";
 import crissCrossDark from "./images/criss-cross-dark.png";
@@ -52,6 +53,7 @@ import websiteImage6 from './images/websitemerged6.jpg';
 import websiteImage7 from './images/websitemerged7.jpg';
 import websiteImage8 from './images/websitemerged8.jpg';
 import websiteImage9 from './images/websitemerged9.jpg';
+import { MetaTags } from 'react-meta-tags';
 
 ScrollMagicPluginGsap(ScrollMagic, TweenMax, TimelineMax);
 // Write this line so that webpack does not drop plugins
@@ -95,6 +97,9 @@ class ThemePage extends React.Component {
     render() {
         return (
             <>
+                <MetaTags>
+                    <meta name="title_Page" content="TRYST 2020, IIT Delhi, Home Page" />
+                </MetaTags>
                 <div style={{position: "absolute", top: 0, left: 0, visibility: "hidden", width: "100%"}}></div>
                 <NavBar threshold={10} backgroundColor="black"></NavBar>
                 <LandingScreen/>

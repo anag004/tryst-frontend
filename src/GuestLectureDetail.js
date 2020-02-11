@@ -4,6 +4,7 @@ import { Typography, Grid } from '@material-ui/core';
 import GuestLectureSection from './GuestLectureSection'
 import NavBar from './TopNavBar';
 import axios from 'axios';
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -55,6 +56,9 @@ export default function GuestLectureDetail(props){
     const classes=useStyles();
     return(
         <ThemeProvider theme={theme}>
+            <MetaTags>
+                <meta name="title_Page" content="TRYST 2020, IIT Delhi, Guest Lectures" />
+            </MetaTags>
             <div style={{position:"fixed", width:"100%",height:"100%",zIndex:"-1",backgroundColor:"black"}}></div>
             <div className={classes.topContainer}>
                 <div className={classes.container}>

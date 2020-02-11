@@ -8,6 +8,7 @@ import NavBar from '../TopNavBar';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ImageBanner from '../ImageBanner';
 import Fade from '@material-ui/core/Fade';
+import { MetaTags } from 'react-meta-tags';
 
 const theme = createMuiTheme({
     palette: {
@@ -42,6 +43,9 @@ function Sponsors(props) {
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
+            <MetaTags>
+            <meta name="title_Page" content="TRYST 2020, IIT Delhi, Sponsors" />
+            </MetaTags>
             <NavBar threshold={10}/>
             <Fade in={true}>
                 <ImageBanner post={post}></ImageBanner>
