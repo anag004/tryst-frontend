@@ -68,8 +68,10 @@ function AboutPage(props) {
                     margin: "auto",
                         display: "block"
                     }}
-                    src={`https://www.youtube.com/embed/sNwukK7Y8wQ`}
+                    src={`https://drive.google.com/file/d/19x8M93KWhdA6_JvbuU3KvU3u0aTRCqlZ/preview`}
+                    allow="autoplay"
                     frameBorder="0"
+                    allowFullScreen
                 />
                 </div>
         </div>
