@@ -35,6 +35,7 @@ const StyledMenu = withStyles({
     paper: {
         border: '0px solid #d3d4d5',
         borderRadius: '0px',
+        backgroundColor:'#5D8AA8',
     },
     })(props => (
     <Menu
@@ -75,8 +76,8 @@ function EventDropDown(props) {
 
     const handleClick = event => {
         // For the coming soon version just navigate to one page
-        // setAnchorEl(event.currentTarget);
-        history.push('/events');
+        setAnchorEl(event.currentTarget);
+        // history.push('/events');
     }
 
     const handleClose = event => {
@@ -91,20 +92,20 @@ function EventDropDown(props) {
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
                     <Link className={linkClasses.link} to="/events#home">
-                        <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>All events</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section1">
-                        <StyledMenuItem onClick={handleClose}>Event Section 1</StyledMenuItem>
+                    <Link className={linkClasses.link} to="/events#Competitions">
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>Competitions</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section2">
-                        <StyledMenuItem onClick={handleClose}>Event Section 2</StyledMenuItem>
+                    <Link className={linkClasses.link} to="/events#Workshops">
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>Workshops</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section3">
-                        <StyledMenuItem onClick={handleClose}>Event Section 3</StyledMenuItem>
+                    <Link className={linkClasses.link} to="/events#Flagship">
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>Flagship</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section4">
+                    {/* <Link className={linkClasses.link} to="/events#section4">
                         <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
-                    </Link>
+                    </Link> */}
                 </StyledMenu>
             </div>
         );
@@ -115,21 +116,21 @@ function EventDropDown(props) {
                     <Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Events</Typography>   
                 </Button>
                 <StyledMenu anchorEl={anchorEl} keepMounted open={Boolean(anchorEl)} onClose={handleClose} disableAutoFocusItem>
-                    <Link className={linkClasses.link} to="/events#home">
-                        <StyledMenuItem onClick={handleClose}>All events</StyledMenuItem>
+                <Link className={linkClasses.link} to="/events#home">
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>All events</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section1">
-                        <StyledMenuItem onClick={handleClose}>Event Section 1</StyledMenuItem>
+                    <Link className={linkClasses.link} to="/events#Competitions">
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>Competitions</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section2">
-                        <StyledMenuItem onClick={handleClose}>Event Section 2</StyledMenuItem>
+                    <Link className={linkClasses.link} to="/events#Workshops">
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>Workshops</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section3">
-                        <StyledMenuItem onClick={handleClose}>Event Section 3</StyledMenuItem>
+                    <Link className={linkClasses.link} to="/events#Flagship">
+                        <StyledMenuItem onClick={handleClose}><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px",color:"#FFFFFF"}}>Flagship</Typography></StyledMenuItem>
                     </Link>
-                    <Link className={linkClasses.link} to="/events#section4">
+                    {/* <Link className={linkClasses.link} to="/events#section4">
                         <StyledMenuItem onClick={handleClose}>Event Section 4</StyledMenuItem>
-                    </Link>
+                    </Link> */}
                 </StyledMenu>
             </div>
         );

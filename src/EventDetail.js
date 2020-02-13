@@ -43,7 +43,7 @@ export default function EventDetail(props) {
     const Time=(time)=>{
         const date=new Date(time);
         // console.log(date);
-        return date.toLocaleTimeString('en-US');
+        return date.toLocaleTimeString('en',{ timeStyle: 'short', hour12: true, timeZone: 'UTC' });
     }
     
     const handleChange = (event, newValue) => {
@@ -131,7 +131,8 @@ export default function EventDetail(props) {
                                     Email: {obj.email}
                                     <br/>
                                     Designation: {obj.designation}
-                                    <br/>   
+                                    <br/>
+                                    Contact: {obj.contact}
                                 </Fragment>
                             </li>
                         )}
