@@ -24,3 +24,6 @@ yarn-error.log*
 
 # AWS key
 *.pem
+
+# Conversion script
+convert.js

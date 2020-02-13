@@ -26,7 +26,8 @@
     "scrollmagic-plugin-gsap": "^1.0.4",
     "styled-components": "^4.4.1",
     "three": "^0.112.1",
-    "typeface-roboto": "0.0.75"
+    "typeface-roboto": "0.0.75",
+    "webp-converter": "^2.2.3"
   },
   "scripts": {
     "start": "react-scripts start",
