@@ -61,7 +61,7 @@ const useStyles = makeStyles(theme => ({
       if(time==""){
         return null
       }
-      return date.toLocaleTimeString('en-US');
+      return date.toLocaleTimeString('en',{ timeStyle: 'short', hour12: true, timeZone: 'UTC' });
     }
     const dateFunction=(date)=>{
       if(date==""){
@@ -103,9 +103,7 @@ const useStyles = makeStyles(theme => ({
                     {(post.dtv).map(info=>(
                       <Fade in={true} timeout={4000}>
                           <Typography variant="h6" align="center" color="inherit" paragraph>
-                            {dateFunction(info.start_time)} {Time(info.start_time)}<br/>
-                            to<br/>
-                            {dateFunction(info.end_time)} {Time(info.end_time)}<br/>
+                            {dateFunction(info.date)}, {Time(info.start_time)} to {Time(info.end_time)} <br/>
                           </Typography>
                       </Fade>
                     ))}
