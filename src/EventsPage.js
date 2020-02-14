@@ -153,7 +153,7 @@ export default function EventsPage(props) {
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             {Object.keys(values).map((pageSectionName,index)=>[((((pageSectionName).toUpperCase())=="GUEST LECTURES")||(((pageSectionName).toUpperCase())=="EXHIBITIONS"))?null:<div>
-              <div id={"section"+(index+1)} className={classes.anchor}>
+              <div id={pageSectionName} className={classes.anchor}>
               </div>
               <PageSection 
                 heading={(pageSectionName).toUpperCase()}
