@@ -155,7 +155,8 @@ export default function EventDetail(props) {
                         {value==info.type?
                             <ul>
                                 <li><Typography variant="body">Date: {dateFunction(info.date)} </Typography></li>
-                                <li><Typography variant="body">Time: {Time(info.start_time)} </Typography></li>
+                                <li><Typography variant="body">Start Time: {Time(info.start_time)} </Typography></li>
+                                <li><Typography variant="body">End Time: {Time(info.end_time)} </Typography></li>
                                 <li><Typography variant="body">Venue: {info.venue} </Typography></li>
                             </ul>
                         :
@@ -208,10 +209,10 @@ export default function EventDetail(props) {
                                 {(post.rules)?<Tab label="Rules" value="rules" className={classes.tabs} />:null}
                                 {(post.prizes)?<Tab label="Prizes" value="prizes" className={classes.tabs} />:null}
                                 <Tab label="Register" value="register" className={classes.tabs} disabled={checkDisabled(post.reg_deadline)} />
-                                {(post.poc)?<Tab label="Contact Info." value="contact" className={classes.tabs} />:null}
                                 {(post.dtv).map(info=>(
                                     <Tab label={info.type} value={info.type} className={classes.tabs}/>
                                 ))}
+                                {(post.poc)?<Tab label="Contact Info." value="contact" className={classes.tabs} />:null}
                             </Tabs>
                             <div className={classes.data}>
                                 {getSection(value,post)}
