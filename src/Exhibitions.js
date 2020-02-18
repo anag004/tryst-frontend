@@ -27,7 +27,7 @@ export default function Exhibitions(){
             </MetaTags>  
             <Fragment>
             <NavBar threshold={10} backgroundColor="#192841"/>
-            {value.map(post=>(<ImageBanner1 post={{name:post.name,subheading:post.subheading,description:post.description,dtv:post.dtv,image:(post.photos).length==0?"":((post.photos)[0])[0]}} />))}
+            {value.map(post=>(<ImageBanner1 post={{name:(post.name).toUpperCase() ,subheading:post.subheading,description:post.description,dtv:post.dtv,image:(post.photos).length==0?"":((post.photos)[0])[0]}} />))}
             </Fragment>
         </ThemeProvider>
     )

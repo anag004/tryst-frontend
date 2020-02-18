@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
             <div className={classes.imageBannerContent}>
               <Fade in={true} timeout={1000}>
                   <Typography component="h1" style={{fontFamily:['Gothic A1','serif'].join(','),fontSize:"55px"}} color="inherit" gutterBottom>
-                    {(post.title).toUpperCase()}
+                    {(post.title)}
                   </Typography>
               </Fade>
               <Fade in={true} timeout={2000}>
