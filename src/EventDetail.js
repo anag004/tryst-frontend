@@ -237,11 +237,13 @@ export default function EventDetail(props) {
                                 <Tab label="About" value="description" className={classes.tabs} />
                                 {(post.rules)?<Tab label="Rules" value="rules" className={classes.tabs} />:null}
                                 {(post.prizes)?<Tab label="Prizes" value="prizes" className={classes.tabs} />:null}
-                                {checkDisabled(post.reg_deadline)?null:<Tab label="Register" value="register" className={classes.tabs}/>}
+                                {(!checkDisabled(post.reg_deadline))&&(post.reg_status)?<Tab label="Register" value="register" className={classes.tabs}/>:null}
                                 {(post.url)? <Tab label="Problem Statement" value="problemStatement" className={classes.tabs} />:null }
                                 {(post.dtv).map(info=>(
                                     info.type!="General"?<Tab label={info.type} value={info.type} className={classes.tabs}/>:null
                                 ))}
+                                {/* {console.log(checkDisabled(post.reg_deadline))}
+                                {console.log(post.reg_status==true)} */}
                                 {(post.poc)?<Tab label="Contact Info." value="contact" className={classes.tabs} />:null}
                             </Tabs>
                             <div className={classes.data}>
