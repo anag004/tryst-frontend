@@ -222,7 +222,7 @@ export default function EventDetail(props) {
                     {/* <Paper className={classes.paper}> */}
                         <DialogContent className={classes.dialogContent}>
                             <div className={classes.imageBanner}>
-                                <ImageBanner post={{category:post.category_name,title:(post.name).toUpperCase(),description:post.subheading,image:(post.photos).length>1?"url("+(((post.photos)[1])[0])+")":"url(https://source.unsplash.com/random)",imgText:""}}/>
+                                <ImageBanner post={{category:post.category_name,title:(post.name),description:post.subheading,image:(post.photos).length>1?"url("+(((post.photos)[1])[0])+")":"url(https://source.unsplash.com/random)",imgText:""}}/>
                             </div>
                             <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"55px"}} className={classes.heading} > {capitalize(post.name)} </Typography>
                             <Tabs
