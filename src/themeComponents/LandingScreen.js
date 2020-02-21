@@ -56,7 +56,6 @@ const styles = theme => ({
       position: 'relative',
       backgroundColor: theme.palette.grey[800],
       color: theme.palette.common.white,
-      backgroundImage: 'url(https://source.unsplash.com/random)',
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
@@ -157,11 +156,11 @@ class LandingScreen extends React.Component {
                         </Typography>
                     </Fade>
                 </Grid>
-                <Grid container md={12} style={{position:"relative"}} justify="center">
-                        <Fade in={true} timeout={4000}>
-                            <img src={SponsorLogo} style={{width: "600px", height: "auto", maxWidth:"80%" }}></img>
-                        </Fade>
-                </Grid>
+                <center>
+                    <Fade in={true} timeout={4000}>
+                        <img src={SponsorLogo} style={{margin: "auto", width:"80%", height: "auto", maxWidth: "600px"}}></img>
+                    </Fade>
+                </center>
                 {/* <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
                     <Fade in={true} timeout={5000}>
                         <Oscillate>
