@@ -78,7 +78,7 @@ const styles = theme => ({
     },
     presents: {
         margin: theme.spacing(2),
-        marginTop: theme.spacing(15),
+        marginTop: theme.spacing(10),
         textAlign: "center"
     },
     title: {
@@ -159,10 +159,10 @@ class LandingScreen extends React.Component {
                 </Grid>
                 <Grid container md={12} style={{position:"relative",height:"100px"}} justify="center">
                         <Fade in={true} timeout={4000}>
-                            <img src={SponsorLogo} style={{height: "100px"}}></img>
+                            <img src={SponsorLogo} style={{maxHeight: "100px"}}></img>
                         </Fade>
                 </Grid>
-                <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
+                {/* <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
                     <Fade in={true} timeout={5000}>
                         <Oscillate>
                             <div align="center" className={this.props.classes.tooltip}>
@@ -170,7 +170,7 @@ class LandingScreen extends React.Component {
                             </div>
                         </Oscillate>
                     </Fade>
-                </Grid>
+                </Grid> */}
             </Paper>
         );
     }
