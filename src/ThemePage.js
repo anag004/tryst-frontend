@@ -38,6 +38,7 @@ import cambridge_image from './images/CambridgeAnalytica.webp';
 import babies_image from './images/CrisprBabies.webp';
 import blackhole_image from './images/Blackhole.webp';
 import larry_image from './images/Larry.webp';
+import graphite_image from './images/graphite.jpeg';
 // import { createMuiTheme } from "@material-ui/core"
 import { createMuiTheme } from "@material-ui/core";
 import crissCross from "./images/criss-cross.png";
@@ -730,8 +731,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={larry_image}
-                        heading={"Page and Brin leave Google"}
+                        url={graphite_image}
                         imageID="last"
                         controller={this.controller}
                         topPosition="35%"
