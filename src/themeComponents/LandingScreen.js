@@ -157,9 +157,9 @@ class LandingScreen extends React.Component {
                         </Typography>
                     </Fade>
                 </Grid>
-                <Grid container md={12} style={{position:"relative",height:"100px"}} justify="center">
+                <Grid container md={12} style={{position:"relative"}} justify="center">
                         <Fade in={true} timeout={4000}>
-                            <img src={SponsorLogo} style={{maxHeight: "100px", maxWidth:"80%"}}></img>
+                            <img src={SponsorLogo} style={{width: "auto", height: "auto", maxWidth:"600px" }}></img>
                         </Fade>
                 </Grid>
                 {/* <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
