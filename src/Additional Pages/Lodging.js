@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper } from '@material-ui/core';
+import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Button, useMediaQuery } from '@material-ui/core';
 import ImageBanner from '../ImageBanner';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ScrollToTop from '../ScrollToTop';
@@ -10,7 +10,7 @@ import NavBar from '../TopNavBar';
 const theme = createMuiTheme({
     palette: {
         primary: { main: '#2196F3' },
-        secondary: { main: '#4CAF50' }
+        secondary: { main: '#FFFFFF' }
     }
 });
 
@@ -21,6 +21,7 @@ const useStyle = makeStyles((theme) => ({
 }));
 
 export default function Lodging(props) {
+    const largeScreen = useMediaQuery('(min-width:500px)');
     const {heading, containerBackgroundColor,textColor, ...others} = props;
 
     const post = {
@@ -69,20 +70,26 @@ export default function Lodging(props) {
                     <Typography variant="body" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>Dirt cheap rates</Typography>
                     <Typography variant="body1" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>
                         <ul>
-                            <li><i>Day One </i> 500 INR</li>
+                            <li><i>Day One: </i> 500 INR</li>
                             <li><i>Day Two: </i> 1000 INR</li>
                             <li><i>Day Three: </i> 1000 INR</li>
                             <li><i>Total for 3D 2N: </i> 2500 INR</li>
                         </ul>
                     </Typography>
-                    {/* <Typography variant="body2">
-                        <b> 
-                            Contact urnasemper@gmail.com to make resevations.
-                        </b>
-                    </Typography> */}
+                    <Typography variant="body1" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>
+                        For any queries, contact:<br/>
+                        <ul>
+                            <i> 
+                                <li>Ronak: 9166739069</li>
+                                <li>Jatin: 9041839881</li>
+                            </i>
+                        </ul>
+                    </Typography>
                 </Container>
             </Fade>
-            
+            <div style={{position:"fixed", bottom:40,right:largeScreen?40:20}}>
+                <Button variant="outlined" color="secondary" href="https://forms.gle/UPpgXuds6uKr5Am5A" target="__blank" size="large">Register</Button>
+            </div>
         </ThemeProvider>
     );
 }
