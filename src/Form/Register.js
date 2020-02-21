@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from '../TopNavBar';
 import TextField from '@material-ui/core/TextField';
 import Card from '@material-ui/core/Card';
@@ -48,11 +48,17 @@ const useStyles = makeStyles((theme) => ({
 
 function Register(props) {
     const classes = useStyles();
-    const [size, setSize] = React.useState(2);
-    const [value, setValue] = React.useState("Individual")
+    const [size, setSize] = React.useState(1);
+    const [value, setValue] = React.useState(null)
     const {match,history, ...others} = props;
 
     console.log(match.params.eventid);
+    useEffect(()=>{
+        axios.get('https://backend2020.tryst-iitd.org/api/event/view/'+(match.params.eventid))
+        .then(res=>{const data=res.data
+            setValue(((data.data).reg_type)=="single"?"Individual":"Team")
+        });
+      },[])
 
     const handleChange = (event) => {
         console.log(event.target.value);
@@ -82,15 +88,15 @@ function Register(props) {
     }
 
     return (
-        <>
+        value!=null?<>
             <NavBar threshold={10} disableOpacity={true} backgroundColor="black"/>
             <Typography variant="h2" style={{marginTop: 100}} align="center">Registration</Typography>
-                <RadioGroup row onChange={handleChange} style={{marginTop: 30}}defaultValue="Individual">
+                {/* <RadioGroup row onChange={handleChange} style={{marginTop: 30}}defaultValue="Individual">
                     <Container className={classes.container}>
                         <FormControlLabel value="Individual" control={<Radio />} label="Individual" />
                         <FormControlLabel value="Team" control={<Radio />} label="Team" />
                     </Container>
-                </RadioGroup>
+                </RadioGroup> */}
             <Container className={classes.container}>
                 {   value == "Team" ?
                         <form enctype="application/json" onSubmit={handleSubmit}>
@@ -134,7 +140,7 @@ function Register(props) {
                         </form>
                 }
             </Container>
-        </>
+        </>:null
     )
 }
 

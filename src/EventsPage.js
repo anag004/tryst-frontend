@@ -31,7 +31,7 @@ const theme = createMuiTheme({
 });
 
 const mainFeaturedPost = {
-  title: 'Events @Tryst',
+  title: 'EVENTS @TRYST',
   description:
     "Tryst 2020 is all about a journey through the last decade. We bring to you Reminiscence : Denouement of the decade. And to celebrate the same we have multiple events lined up for you. From every aspect of science and engineering, you can definitely find a way to two to display your skills. With exciting awards and mind blowing prize money, be sure to have an experience like never before!",
   image: `url(${ImageEventsPage})`,
@@ -153,7 +153,7 @@ export default function EventsPage(props) {
             <div id="home"></div>
             <ImageBanner post={mainFeaturedPost} id="0"/>
             {Object.keys(values).map((pageSectionName,index)=>[((((pageSectionName).toUpperCase())=="GUEST LECTURES")||(((pageSectionName).toUpperCase())=="EXHIBITIONS"))?null:<div>
-              <div id={"section"+(index+1)} className={classes.anchor}>
+              <div id={pageSectionName} className={classes.anchor}>
               </div>
               <PageSection 
                 heading={(pageSectionName).toUpperCase()}

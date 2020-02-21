@@ -73,7 +73,8 @@ class App extends React.Component {
               </Route>
               <Route path="/event/:id" component={EventDetail} />
               <Route path="/lodging">
-                <ComingSoon description={lodgingText}/>
+                {/* <ComingSoon description={lodgingText}/> */}
+                <Lodging/>
               </Route>
               <Route path="/team">
                 <Team/>

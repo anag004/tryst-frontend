@@ -40,7 +40,13 @@ function EventCard(props) {
     const handleClick = (event) => {
         setTimeout(() => history.push(linkTo) , 700);
     } 
-
+    const capitalize =(str)=>{
+        var str1=str.toLowerCase().split(' ');
+        for(var i=0;i<str1.length;i++){
+            str1[i]=str1[i].charAt(0).toUpperCase()+str1[i].substring(1);
+        }
+        return str1.join(' ');
+    }
     return (
             <Grid item xs>
                 <Zoom left={left} right={right}>
@@ -49,7 +55,7 @@ function EventCard(props) {
                             <CardMedia className={classes.media} image={cardImage} {...others}/>
                             <CardContent>
                                 <Typography gutterBottom style={{fontFamily:['Raleway','sans-serif'].join(','),marginBottom:5}} variant="h6">
-                                    <b>{cardHeading}</b>
+                                    <b>{capitalize(cardHeading)}</b>
                                 </Typography>
                                 <Typography variant="body2" color="textSecondary" component="p">
                                     {cardDescription}

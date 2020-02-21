@@ -43,7 +43,7 @@ export default function EventDetail(props) {
     const Time=(time)=>{
         const date=new Date(time);
         // console.log(date);
-        return date.toLocaleTimeString('en-US');
+        return date.toLocaleTimeString('en',{ timeStyle: 'short', hour12: true, timeZone: 'UTC' });
     }
     
     const handleChange = (event, newValue) => {
@@ -97,6 +97,22 @@ export default function EventDetail(props) {
                     <Typography variant="body1">
                         {post.description} 
                     </Typography>
+                    <div>
+                        {(post.dtv).map(info=>(
+                            <div>
+                                {"General"==info.type?
+                                    <div>
+                                        <br/>
+                                        <Typography variant="body1">Date: {dateFunction(info.date)} </Typography>
+                                        <Typography variant="body1">Start Time: {Time(info.start_time)} </Typography>
+                                        <Typography variant="body1">End Time: {Time(info.end_time)} </Typography>
+                                        <Typography variant="body1">Venue: {info.venue} </Typography>
+                                    </div>
+                                :
+                                null}
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )
         }
@@ -131,7 +147,8 @@ export default function EventDetail(props) {
                                     Email: {obj.email}
                                     <br/>
                                     Designation: {obj.designation}
-                                    <br/>   
+                                    <br/>
+                                    Contact: {obj.contact}
                                 </Fragment>
                             </li>
                         )}
@@ -146,6 +163,13 @@ export default function EventDetail(props) {
                 </Link>
             )
         }
+        else if(value=="problemStatement"){
+            return(
+                <a href={post.url} target="_blank" rel="noreferrer">
+                    <Typography variant="h6" className={classes.heading} >Problem Statement</Typography>
+                </a>
+            )
+        }
         else{
             return(
                 <div>
@@ -154,7 +178,8 @@ export default function EventDetail(props) {
                         {value==info.type?
                             <ul>
                                 <li><Typography variant="body">Date: {dateFunction(info.date)} </Typography></li>
-                                <li><Typography variant="body">Time: {Time(info.start_time)} </Typography></li>
+                                <li><Typography variant="body">Start Time: {Time(info.start_time)} </Typography></li>
+                                <li><Typography variant="body">End Time: {Time(info.end_time)} </Typography></li>
                                 <li><Typography variant="body">Venue: {info.venue} </Typography></li>
                             </ul>
                         :
@@ -167,6 +192,13 @@ export default function EventDetail(props) {
     }
     const classes=useStyle()
     var z;
+    const capitalize =(str)=>{
+        var str1=str.toLowerCase().split(' ');
+        for(var i=0;i<str1.length;i++){
+            str1[i]=str1[i].charAt(0).toUpperCase()+str1[i].substring(1);
+        }
+        return str1.join(' ');
+    }
     return (
         <div className={classes.root}>
             <MetaTags>
@@ -190,10 +222,9 @@ export default function EventDetail(props) {
                     {/* <Paper className={classes.paper}> */}
                         <DialogContent className={classes.dialogContent}>
                             <div className={classes.imageBanner}>
-                                <ImageBanner post={{category:post.category_name,title:post.name,description:post.subheading,image:(post.photos).length>1?"url("+(((post.photos)[1])[0])+")":"url(https://source.unsplash.com/random)",imgText:""}}/>
+                                <ImageBanner post={{category:post.category_name,title:(post.name),description:post.subheading,image:(post.photos).length>1?"url("+(((post.photos)[1])[0])+")":"url(https://source.unsplash.com/random)",imgText:""}}/>
                             </div>
-                            <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"55px"}} className={classes.heading} > {(post.name).toUpperCase()} </Typography>
-                            {(post.url)?<a href={post.url} target="_blank" rel="noreferrer"><Typography variant="h6" className={classes.heading} >Problem Statement</Typography></a>:null}
+                            <Typography style={{fontFamily:['Questrial','serif'].join(','),fontSize:"55px"}} className={classes.heading} > {capitalize(post.name)} </Typography>
                             <Tabs
                                 value={value}
                                 onChange={handleChange}
@@ -203,14 +234,17 @@ export default function EventDetail(props) {
                                 scrollButtons="auto"
                                 // className={classes.tabs}    
                             >
-                                {(post.description)?<Tab label="About" value="description" className={classes.tabs} />:null}
+                                <Tab label="About" value="description" className={classes.tabs} />
                                 {(post.rules)?<Tab label="Rules" value="rules" className={classes.tabs} />:null}
                                 {(post.prizes)?<Tab label="Prizes" value="prizes" className={classes.tabs} />:null}
-                                <Tab label="Register" value="register" className={classes.tabs} disabled={checkDisabled(post.reg_deadline)} />
-                                {(post.poc)?<Tab label="Contact Info." value="contact" className={classes.tabs} />:null}
+                                {(!checkDisabled(post.reg_deadline))&&(post.reg_status)?<Tab label="Register" value="register" className={classes.tabs}/>:null}
+                                {(post.url)? <Tab label="Problem Statement" value="problemStatement" className={classes.tabs} />:null }
                                 {(post.dtv).map(info=>(
-                                    <Tab label={info.type} value={info.type} className={classes.tabs}/>
+                                    info.type!="General"?<Tab label={info.type} value={info.type} className={classes.tabs}/>:null
                                 ))}
+                                {/* {console.log(checkDisabled(post.reg_deadline))}
+                                {console.log(post.reg_status==true)} */}
+                                {(post.poc)?<Tab label="Contact Info." value="contact" className={classes.tabs} />:null}
                             </Tabs>
                             <div className={classes.data}>
                                 {getSection(value,post)}
