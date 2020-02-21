@@ -78,7 +78,7 @@ const styles = theme => ({
     },
     presents: {
         margin: theme.spacing(2),
-        marginTop: theme.spacing(10),
+        marginTop: theme.spacing(8),
         textAlign: "center"
     },
     title: {
@@ -159,7 +159,7 @@ class LandingScreen extends React.Component {
                 </Grid>
                 <Grid container md={12} style={{position:"relative"}} justify="center">
                         <Fade in={true} timeout={4000}>
-                            <img src={SponsorLogo} style={{width: "auto", height: "auto", maxWidth:"600px" }}></img>
+                            <img src={SponsorLogo} style={{width: "600px", height: "auto", maxWidth:"80%" }}></img>
                         </Fade>
                 </Grid>
                 {/* <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
