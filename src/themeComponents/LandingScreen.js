@@ -10,6 +10,7 @@ import ArrowDownwardIcon from '@material-ui/icons/ArrowDownward';
 import styled from 'styled-components';
 import { keyframes } from 'styled-components';
 import * as THREE from 'three';
+import SponsorLogo from '../images/SponsorLogo.png';
 import WAVES from '../vanta/vanta.waves.min.js';
 import logo from '../images/logo-white.png';
 
@@ -76,8 +77,8 @@ const styles = theme => ({
       minHeight: "100%"
     },
     presents: {
-        margin: theme.spacing(5),
-        marginTop: theme.spacing(20),
+        margin: theme.spacing(2),
+        marginTop: theme.spacing(15),
         textAlign: "center"
     },
     title: {
@@ -118,22 +119,21 @@ class LandingScreen extends React.Component {
                 <div className={this.props.classes.overlay} ref={this.vantaRef}/>
                 <Grid container justify="center" alignItems="center">
                     <Fade in={true} timeout={1000}>
-                        <Typography style={{fontFamily:['Maven Pro','sans-serif'].join(','),fontSize:"25px"}} className={this.props.classes.presents}>
+                        <Typography style={{fontFamily:['Maven Pro','sans-serif'].join(','),fontSize:"35px"}} className={this.props.classes.presents}>
                             TRYST 2020  <br></br>
-                            PRESENTS
                         </Typography>
                     </Fade>
                 </Grid>
                 
-                <Grid container md={12} style={{position:"relative",height:"100px"}} justify="center">
+                <Grid container md={12} style={{position:"relative",height:"150px"}} justify="center">
                         <Fade in={true} timeout={4000}>
-                            <img src={logo} style={{height: "100px"}}></img>
+                            <img src={logo} style={{height: "150px"}}></img>
                         </Fade>
                 </Grid>
                 
                 <Grid container md={12} justify="center">
                     <Fade in={true} timeout={2000}>
-                        <Typography variant="h3" className={this.props.classes.title}>
+                        <Typography variant="h4" className={this.props.classes.title}>
                             REMINISCENSE
                         </Typography>
                     </Fade>
@@ -149,6 +149,18 @@ class LandingScreen extends React.Component {
                             A Denouement Of The Decade
                         </Typography>
                     </Fade>
+                </Grid>
+                <Grid container md={12} justify="center">
+                    <Fade in={true} timeout={2000}>
+                        <Typography variant="h6" className={this.props.classes.title}>
+                            Sponsored by
+                        </Typography>
+                    </Fade>
+                </Grid>
+                <Grid container md={12} style={{position:"relative",height:"100px"}} justify="center">
+                        <Fade in={true} timeout={4000}>
+                            <img src={SponsorLogo} style={{height: "100px"}}></img>
+                        </Fade>
                 </Grid>
                 <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
                     <Fade in={true} timeout={5000}>
