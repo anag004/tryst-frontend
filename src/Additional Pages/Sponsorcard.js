@@ -16,10 +16,10 @@ const useStyles = makeStyles((theme) => ({
         margin:"auto"
 
     }),
-    media: {
-        height: 140,
-        width:"auto"
-    },
+    // media: {
+    //     height: 140,
+    //     width:"inherit"
+    // },
 }));
 
 function SponsorCard(props) {
@@ -34,12 +34,13 @@ function SponsorCard(props) {
                 <Zoom>
                     <Card className={classes.card} classes={classes} >
                         <CardActionArea onClick={handleClick}>
-                            <CardMedia className={classes.media} image={cardImage} {...others}/>
-                            <CardContent>
+                            {/* <CardMedia className={classes.media} image={cardImage} {...others}/> */}
+                            <img src={cardImage} style={{maxWidth:"100%"}}></img>
+                            {/* <CardContent>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     {cardHeading}
                                 </Typography>
-                            </CardContent>
+                            </CardContent> */}
                         </CardActionArea>
                     </Card>
                 </Zoom>
