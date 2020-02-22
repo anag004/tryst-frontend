@@ -12,32 +12,35 @@ import { withRouter } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
     root: props => ({
         backgroundColor: props.backgroundColor ? props.backgroundColor : "white",
-        maxWidth:450,
         alignItems:"center",
         margin:"auto"
 
     }),
-    media: {
-        height: 140,
-    },
+    // media: {
+    //     height: 140,
+    //     width:"inherit"
+    // },
 }));
 
 function SponsorCard(props) {
-    const { cardHeading, cardImage, backgroundColor, others } = props;
-    
+    const { cardHeading, cardImage, linkTo, history, backgroundColor, others } = props;
+    const handleClick=()=>{
+        window.open(linkTo)
+    }
     const classes = useStyles(props);
 
     return (
             <Grid item xs>
                 <Zoom>
                     <Card className={classes.card} classes={classes} >
-                        <CardActionArea>
-                            <CardMedia className={classes.media} image={cardImage} {...others}/>
-                            <CardContent>
+                        <CardActionArea onClick={handleClick}>
+                            {/* <CardMedia className={classes.media} image={cardImage} {...others}/> */}
+                            <img src={cardImage} style={{maxWidth:"100%"}}></img>
+                            {/* <CardContent>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     {cardHeading}
                                 </Typography>
-                            </CardContent>
+                            </CardContent> */}
                         </CardActionArea>
                     </Card>
                 </Zoom>

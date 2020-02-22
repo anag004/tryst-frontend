@@ -75,7 +75,9 @@ export default function Lodging(props) {
                             <li><i>Day Three: </i> 1000 INR</li>
                             <li><i>Total for 3D 2N: </i> 2500 INR</li>
                         </ul>
+                        <b>The prices are inclusive of 3 meals a day.</b>
                     </Typography>
+                    <br/>
                     <Typography variant="body1" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>
                         For any queries, contact:<br/>
                         <ul>

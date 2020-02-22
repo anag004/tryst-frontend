@@ -3,7 +3,7 @@ import Sponsorcard from './Sponsorcard';
 
 // Returns a grid of cards for demo purposes
 function SponsorGrid(props) {
-    const {n, backgroundColor} = props;
+    const {n, backgroundColor,post} = props;
     let arr = [];
 
     for (let i = 0; i < n; i++) {
@@ -12,10 +12,11 @@ function SponsorGrid(props) {
     
     return (
         <>
-            {arr.map(() => 
+            {post.map((sponsor) => 
                 <Sponsorcard
-                    cardHeading = {"Bubba Grump Shrimp"}
-                    cardImage = "http://source.unsplash.com/collection/146130/random"
+                    cardHeading = {sponsor.title}
+                    cardImage = {sponsor.image}
+                    linkTo={sponsor.link}
                     xs={8}
                     backgroundColor = {backgroundColor}
                 />

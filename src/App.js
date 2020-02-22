@@ -80,7 +80,8 @@ class App extends React.Component {
                 <Team/>
               </Route>
               <Route path="/sponsors">
-                <ComingSoon description={sponsorsText}/>
+                {/* <ComingSoon description={sponsorsText}/> */}
+                <Sponsors/>
               </Route>
               <Route path="/register/:eventid" component={Register}/>
               <Route path="/about">
