@@ -9,6 +9,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ImageBanner from '../ImageBanner';
 import Fade from '@material-ui/core/Fade';
 import { MetaTags } from 'react-meta-tags';
+import titleSponsor from '../images/TitleSponsor.png';
 
 const theme = createMuiTheme({
     palette: {
@@ -39,29 +40,36 @@ function Sponsors(props) {
         image: 'https://source.unsplash.com/random',
         imgText: 'main image description',
     };
-
+    const titleSponsorPost=[
+        {
+            title:"GRAPHITE",
+            image:titleSponsor,
+            link:"https://graphitegtc.com/index"
+        }
+    ];
     const classes = useStyles();
     return (
         <ThemeProvider theme={theme}>
             <MetaTags>
-            <meta name="title_Page" content="TRYST 2020, IIT Delhi, Sponsors" />
+                <meta name="title_Page" content="TRYST 2020, IIT Delhi, Sponsors" />
             </MetaTags>
-            <NavBar threshold={10}/>
+            <NavBar threshold={10} backgroundColor="#192841"/>
+            <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#29426c"}} />
             <Fade in={true}>
                 <ImageBanner post={post}></ImageBanner>
             </Fade>
             <PageSection
-                heading="Title Sponsors"
+                heading="Title Sponsor"
                 headingAlignment="center"
-                containerBackgroundColor="#FFF"
-                textColor="black"
+                containerBackgroundColor="#29426c"
+                textColor="white"
                 description=""
             >
                 <SponsorCardRow>
-                    <SponsorGrid n="2"/>
+                    <SponsorGrid n="1" backgroundColor="white" post={titleSponsorPost}/>
                 </SponsorCardRow>
             </PageSection>
-            <PageSection
+            {/* <PageSection
                 heading="Media Sponsors"
                 headingAlignment="center"
                 containerBackgroundColor="#FFF"
@@ -93,7 +101,7 @@ function Sponsors(props) {
                 <SponsorCardRow>
                     <SponsorGrid n="3"/>
                 </SponsorCardRow>
-            </PageSection>
+            </PageSection> */}
         </ThemeProvider>
     );
 }
