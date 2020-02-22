@@ -149,7 +149,7 @@ class ThemePage extends React.Component {
                             height="15"
                         />
                         <ImageBox
-                            url={life_image} 
+                            url={"https://lh3.googleusercontent.com/byv47yfUrI3KwFfN7fbbhh8MrtBPVOlbsJvKV2JK-5G54Mn7noOSCtZmuSyHkuOjQQNjrHqGhyAOVXXTa1pjHo6P6IxdX2wpJGeGZJxGebxZ9wpgaQm9f6ZwzNPY8PXa8bojnGj2fxB8wzGq_87VC3CnZRaySPyr_HyN8-maj-KJQpYGvrjHJArrz0xQUVnEf2x4LDgHX4j2ZUUpkSnMRwqAsg93HzcWhH3U6X8qGZ1Ibaq-okboBWT7yDmak4BUFufFPDPQVb2N2V1VYKO_zf2TL2h4wnJNShvWSF57J3z2OYsLEt7wdBrwMFVOxscBBrm-XE2hx_TPPPnPZNIDa2y9Z77s8RjL26pEOGjDSK4w2ouImYuPIgWIgD6RWpfryMgKvGmx-10FunW9zJecanGE9FfQDniHH2jMPvVRrM5EvpzoVSoLOdiTvEK9D19JutG-8Qd-dRpq8EmGiPN-bxV84yh0TXBjUwVNfFSvABAg80CyGbmUfkkFtqaTkwm6AhudNQL7Dk2aK54C6NepQri0L6doomQEb0EiKKz5jpnu141D2V3n8FulmENUcpsnzALgVzTererY_GDaK5voqSmIjMhl-3f8A7L0pv7eBUtE9ogM6L999SwfYph09E2JktOKrWgZr1D8HbAY3YV_kRzP37NzpWsbHXZ5U4S0IAvQuk2TF-Hz2QdjgRbQ1vHboN3Xgo0TWlm4c8iDvpr0dFn79ergkNRqWBVx9qg3sW4ZPw=w800-h600-no"} 
                             imageID="1_2"
                             controller={this.controller}
                             topPosition="35%"
@@ -157,7 +157,7 @@ class ThemePage extends React.Component {
                             heading={"Craig Venter creates synthetic life form"}
                         />
                         <ImageBox
-                            url={iphone_image}
+                            url={"https://lh3.googleusercontent.com/sK4ygaKpiMfZ7OlPyfJB0JuT3GJJuGBxknt6KUEWxWLGtdC90B5qYl7c7P-xkkLzjFJQBcS63b3dS5DNkpZhEwhBjpsiqcVqvZUiBGOOf8wEiOfGdFKsQEi4lD4r78mFVSid23oQ6LTQTqh3b-5-WjWOrxxgRKUQn6KNOY8enuhzVwUWlK7b5LdvPH4YD1nxlZW0sDqr89zNUqplWBopGHcQw86FDuldZFj0JaUbXsmKG9TNWlNQ4N8L6vHyE1RFDHvFssyGhaK6XPA2ooVzwHbjkLjLlQcuj7xoeUY3xmbWyOqoLsNp1Uk7indBsc_6Pl8HaiffnFiWItItfshF6plq7rrzqSN5EKEBwmmXaD1aphYdCKCWgWrDdHBNWw8ECyOk4pr3hWElGtzXaJ0_Uue5r_GFD2hR9on3aRX7IJZ-oezui-K2fEUiWuy_3tYSz9K2LUNQrw26LJZ6mNN3R7S1oHk9J0SrRoAybtCjwcOrSWhJRa7FD-PcfSAQqa918p3sT_TOOT3ikRvlixruHL0vSK0k5YYTL7GXrVHuSz4y3XXEWq4vcLuKQ9LJH3-BGkVD9-boXFFZkBSN-n4B42lVk7yaaNUUkcnmCPoUEzCWZLLOy1a_wVyLo12ye3MPTmalJZy3UHfcMpuIJuxcOEuvCjcMcYls6oY_bTugFizfiuaB3Tu4YYw0KrWepk9qtfHCjufqnpfAxoFW3vC-etxwl4AiTtb-bAIaScNARrf1Bg=w800-h600-no"}
                             imageID="1"
                             controller={this.controller}
                             topPosition="45%"
@@ -221,7 +221,7 @@ class ThemePage extends React.Component {
                             controller={this.controller}
                         />
                         <ImageBox
-                            url={spotify_image}
+                            url={"https://lh3.googleusercontent.com/bppRXX-xd2oc0u-hCmMpiD26-Z-eRMcpPbaEvWjvlh1NgVEfcS256H31Pu7zI6zH7aaAQe0vYZfAZr2Vff8xRD4PKxy4mmXJVzqSMvq-XpreY9Cr96rK8E6_jbLbX0aq8KBP2xVfI3P6DxDPFET67j89UL86jz4VKrC29IFnPzIC76UJh4PYP-2BPjm33cRyfCrtK_RO2S0nEhG2Rf_pByrNrZmurDdNx5ycex-vefnxoH_GJjtz94aMvK0PMheWhfVyCbX2xq8-AvZF9whGX-8wocz79TM4es2QSEfd44Sv_k3ap6JbKEMD_17xgfhGWGH6GCaLH1mMvZCxrwSsN33OEZzAlBO2Nsqhq6miqv9hwGuqHR1q6_CB6MfvAVHYYiD_cFv5wf7lOvWJJCyLwS5FllUDiLjFWKJ4gb0O1TFsiP8bT2N88HCXJjNDBCzC4AaMGl6ch0-Ia7z8nCohtFp1C6Hx5Ml6lYr0GEsG42fwUANkU4NjSuxRrnlYfXH_Uiw9fKYAG1n-RBGWtxk6wIYjCsQigQ-9SSey1jjXXfWM2wYkD1W6KGkDMEBan9_fpHwWSNeUVibjJf1_tjjriQZG-OT8V5HiRyLH80krmg4W8uML6LPMdoKOWzJQS401bIlESmOZ0Jud3qH6v3SJGKXhi71cBpwCAEIcOfW8wNwn0fLb3vbRpO4Nmz-Slo5pYqNFceY25glSqw-LhBc9yEft9wQVIi-uh2nj3P1iTg26lA=w800-h600-no"}
                             imageID="2"
                             heading={"Spotify comes to the US"}
                             controller={this.controller}
@@ -276,7 +276,7 @@ class ThemePage extends React.Component {
                             imageID="3_2"
                             topPosition="20%"
                             leftPosition="55%"
-                            url={avengers_image}
+                            url={"https://lh3.googleusercontent.com/NGVgILEGNj-nktnyl-PWdnuen078IEGix4-hd5FJnXtwlozZBCYAd4O5O0YA0enzIxTvR7D2hc7nYnV2h3GsKlOT-JKA1EdseH6mEQ1FARw4e0wPhPlTV6qkB5XgpuE2Q_d_5vMhQyvZrZodMm5bwgmqdIn1U5xzTF9JZFJbLFrYNRsP9vKqbMaEd6GUjNsTY-Qjw7twaOFrGEJXMtHew8SRZj3JT2Y69msg7Y_qrZ_kZ_mQU8OJpolY5mVQ11iTL5KDI0SNVD17vLt_XN-8RG3QWL1TcYAzook2mqMgpDb7ywah8wRomDXfiTqGzm3huWnVt4yxpCsiCf8EkJXANgqGTVMcCOBWYtjmawMGZ3LpAq7uWtakJ11zSj1TuteqticBdd00tmS70zHaGD31u9xHDltOAu7XH3HO3OXLJ2iixxpYgd0UGS4mzoP1N4I5o22cXelTGe9_GD1-u9cuATxilAGdWEHXV-Zyk-eK4yICv3i6s8584fbIw5zuJEk_iOV74mHwgr24FR5wKGoG-uk2cq6UotXFsfwdcjPiYV5QxwZLXDeIF6arD7z6-_lJ1SXXP7okHSI3YpdaXjHn_b0zI4d-yjPo9kc7_dEtd51mp6F7tn_JO5e1OpK3wWV3-zo2mmnEvyJzvKDjbHZykWhJRe6D12FiU3v-V9jDrnuqOSQhvia5H4p2sCLe_0zfk_QC7pi6GB9Y6oLfSPO7x3HjePEFVasLQEMWS3qhKBsxPw=w800-h600-no"}
                             controller={this.controller}
                         />
                         <SVGRightFork
@@ -287,7 +287,7 @@ class ThemePage extends React.Component {
                             controller={this.controller}
                         />
                         <ImageBox
-                            url={higgs_image}
+                            url={"https://lh3.googleusercontent.com/8q2hTHXyJc4NTKBmUImQtRIk37qGYpbI4U5jWejPiDt-oYGprEhpEquDdW_j2a4Hi3o4GFhyQBeAgAjbEqPsFoxuxG1PIZj9S_iliilCzdr5VUNYRGDiCaJS7mFEotJVw1MIlXsFCDDJG2Bmw85VC1fMng2Zf_kseWE_t28QwVwlvcxvXPVxDYPgRIzBCJqaBqC-2mIN1_Bpn6Kh6rAYIFLli9Zi5SujFZMlTzRpgXdzHrJzwEg9sNIQ4YlBVJ44c0s8UJ5CWEGRjOaemwI-G_21TV6IhkMr5GvQQmgmaHuYYvbQpI1rHXE9JnVxAZmAhvLLz1xr_iYOd26_lwHbJ0P77OmM0C31RWhneqX7iUnNSParJ6fUbFJUOMlgP4odqphMeZGHonlFEjQFguPSUoL0KD7iOfSMWLh03XNM2R2WIeZ7NnKC4OYl3D7sXVarHEb8W07cNHkNCdfBsCvYt1A1f0Vl6bMeHHRFMT06qlZDI5DUy6nxgoZ_rdQ2JE2jqLVu0GtdCTqUOnN5xNC6OdbnER6JO5LCvUmWzr2ckJIdVTpQH5gRJ5rDmRXqgbfkM6Dg6eYHOgshLSBsnpo4cRirEGyLE2Gm-iPJNgGN0JDOY5BDmQvXWpYXvYIXMELK_yP4D7drO9GuRCyF60zHaSAsorrSm5rJR9wYM_-W16m9w1ai2_BIkP4noN5jqMvc4foOmoCkAd2UABs1a3kyq6h8zjMGbm9JihE12NnagF50Mg=w800-h600-no"}
                             heading="Detection of Higgs Boson, the god particle confirmed"
                             imageID="3"
                             controller={this.controller}
@@ -351,7 +351,7 @@ class ThemePage extends React.Component {
                             controller={this.controller}
                         /> */}
                         <ImageBox
-                            url={mangal_image}
+                            url={"https://lh3.googleusercontent.com/3tJBu7glsca_mG2fKkVTu1vpTZIa3cpVQcRB3ZofJdH3xA6N6MW4BbrFoqIL0fc7xGT01ZaOyC4tHur0iUyo0Gd_VAehNVVewtZbavJV4cVIWxiTC4-KIqosYK00_DMQgIIdy-uhw_lcxQYtBQqcebo2WeqYcoBh7XSxdEL7SlOoRI4brJjiMKXdl30JTGOtkENaxLQpdFJ8jXfqw2hL3KX3cA2fw9Fux_yLXMONfuo3VYmd_DjQjg1wuxez3VXcuJooxskcMPKYDkI92W1cThbliI4LmOEpFAVvPWmn-j-NyCuqGcY9mZMCWSgYxUBv5ZjFAvUaTXq5Z4rrX291yRjyXYvhuUoZAGlEy09Ecb59SQY1SoijoQwg5xuKJcoLSQZCTwN46Jut_lWIxJrmz9-TOQivgDUwKjNsMD9dUB64c2_pTxnaV-uxcDuJ9t3OTNCt7peUTKYuzIjkvAg79p6wZt6OBxikcWWP8-K0gvH31e_d8Wjo_rnOXUJqqXKXxABgGBbszH_gRQ409ZYxqRdUGy5TFVVAQ88kGOXgj5rY8YGffLvzbg2ckQTyhsHQh4iupcJ09tKrhSjVRfo7oE2hHqqaVzTxhP_1-Ij-nvt__Yky9L4vjIVJSHqzSKvByqGvu64ur0Bl3KZiXpfi510-vDags_Tp1LYM1wbSmTP7aXGhlznUgNPJP0git-ocpBcFPHht1eX3HhJwTPKYkNDwz236ihdzyOH1I_OrxepzYA=w800-h600-no"}
                             heading="ISRO launches mangalyan, the Mars Orbiter Mission"
                             imageID="4"
                             controller={this.controller}
@@ -415,7 +415,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={echo_image}
+                        url={"https://lh3.googleusercontent.com/FGBfPSMdNIBs3TT51okDwbIt93gTzGfXUqicJAsumXLIDIwJp93vuzHvElZl7P95ZEiiQh1SSKrE15brAxCAUqGoqWl9elLXycfxWyEkQZCLTclW3k3cZf_CrMim7N20Rdw8RjHMuITse12N_mO5KrsuHkoYlxI-STT-seHokbce3nIfzsscZE90e_DHdR7tadfZCgoUYH6j8JKNEmuLsIr0eamgSsaMcAylGtSmxgZ3MEiEDqQXeNjUMQvuW-NrnFb2g5RwrZ46ciTcg22rubpl5pMO_SvSQhzTYrwW3KYvkpoIfSmglC8Ehh9KhA5DDHad4SAp-XXTd4crYwhBywSwFxJpn2w9udTv8m21yv0VRilL1t5CEZMH3Btuk0Vr4AuGqepWSFy9C4hLGlIDbBnsu1V9PaX4lkFzQ-gKmRLwKb8EczhdRLsmJ36dyGPfSzbOw1TsxuoGii4UVL3WBjW5EV54Ti-pe22CrkFafvBnRo87POgvVUYhJ7AUs0IvaPez3LhXyCodmdRyewUps4LTWHN9dp29Gij16Rl_E4nz2V9kOJB1m9Nw_24wwFAO5NdpSLOA2cYB9Fc4yslh9Mn0tBar71luHEQCttd3lX18j7hptYRWtFta1lCrmjtloB5O6Z9Pq4p3gkvtW7z1FdZPv3g6eDsmdJaw_lmOpn3lludF98R2uqyisy6o78gRZai3Ri4kSU1NZEe_I2QDaQhkDGyLhH2viAUNA543pcO89A=w800-h600-no"}
                         heading="Launch of amazon echo"
                         imageID="5"
                         controller={this.controller}
@@ -467,7 +467,7 @@ class ThemePage extends React.Component {
                         imageID="6_2"
                         topPosition="20%"
                         leftPosition="55%"
-                        url={spacex_image}
+                        url={"https://lh3.googleusercontent.com/ZYBJHI5UNZG7sn0j1lJXSM7CoYEJTOTJ_UZh0zTVXo9PLsypEylbNbO3xHchGlNUz4qpEDMeRJDaQ_BXkL_CR4sKS9-wsYV-lrIi9xjv0HCcYjRIBTxisfXHEJvI4bVWffcB7p9tjbxtdHm8zuEoG_2OcCoYRAuysx1mM_Sey_pqLeulx_bdy41UQ_HhreMBkw8RSOzWKPrU-l2dMzeBeCBpBdDI0DSyrEhbVSt4Ydx0iqRXu3pJRAQfzoBPaErLbAVBJLIwemqTtgFDK-e-pWyo95hu40sbpLw8_mNg0Brv3zgl7ly-sih4dUwsXb9rwjUuYI8FO01sYql72iDKv0P0UPjXGUnN5ODxcdqW4475TsJZZlxS4WU9DWnP2JzKxZfmp_WXGsqwkf7bYpNkhjvIAS8QhvcR6i2MzmKz6EbhA-OgEB1FX23XI0anSSu4YEgrtR_Gdf-4zV3k4JO5IiwvJG0LTHJnMVJZnN6uNlG1k5uoQUh-zR_fut_S8sLhkdGSJk6otzgZoWjBjBR8pRH2W0JY3S92H7D-r1K-gIUA-ov-uB56RngNGbCJJVe80Zb8YmUTCVOEZFR8QVpJza8h8hYnBhqiIjaVnctqWI9HrWQD78sQ0yfwhYkwDsAdRRpWwNbf_mAIuWv0aP4DW6FMc7zt5TPBd1e4oVtDFlrInnZXfMkAwRpR15XjbK5HgajjXEYSvIfrOXwkHUsko7NSnQzrdkdxSH8V8ooJ1HjY_w=w800-h600-no"}
                         controller={this.controller}
                     />
                     <SVGRightFork
@@ -478,7 +478,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={india_image}
+                        url={"https://lh3.googleusercontent.com/4kI3bJNBv5N_XU7GrFCyLdO_Tt3TfzD5W1UkQKyn3eYxFryicA-DH8oySHkEjSqFBl_pTnTmDkFd_anLjjP_3ptiQpV4Uo82dFaG7zZos92v8Zj6URspuSlY2ymlHA3AR1XMueD13gZbxAxTM42wZDCAcGxdNZm86PB5VDxQrmLth3ZLN69duqTFrfAYzoArtcJyL3765TBO_C9WfFk7Tu0Lq5e0hYu0e26vHWTipvl6bX2cU9yLUrmbjKen7ghgCJ3SDiREcM8SL_zuqOLqUjiSjouDrhYcTgoeiKlOIWAVOkT4WmHYjdpVoMhElHo4pUqvEjtqv4l4SsSR3lq0I6FLPkuXqcbEQSyvz_A6CotEBipXhJR-oW-MUbFBOyeaOqAJkHbmP5jnltBSEs1ZxBjvQBk4F0RGwO9tstDFMRWEp2pI4LYFoK7yrcGe9v9n6zm1sCvVqBj8gtz8hyEZLFwTQ7mT7Thdd5ZP3kCX30zIhg9nV7d3OXJhIUBpkJGsGCcD0CxkZLvdMxMxBUOI-7jhiR2_oBzdwSJCZUIBoL7yTRLz2D1AkblRWVLppkfriJFPA_sL6zqbmebETYGd7sYAIXQ9FnF-qwldUMm1PIgQWqBFOOcPIbPMROfdn6OCmmYb3AcdHu_9K4RHKj0CCEek1263u2SvU4k-IXL9pGALA98l3srrBzqMY4l6WBZyQz5P02o9vGk3ys6ryfPFeZmJjcOup1TFuV1k8x_z2HXfwQ=w300-h168-no"}
                         heading="Digital India was launched"
                         imageID="6"
                         controller={this.controller}
@@ -593,7 +593,7 @@ class ThemePage extends React.Component {
                         imageID="8_2"
                         topPosition="20%"
                         leftPosition="55%"
-                        url={homo_image}
+                        url={"https://lh3.googleusercontent.com/KCBzY_tQag6D2JZ4U7_UNkohx6v0_Y4elspbi86kqv2Sl0ZvitQ0yvwYhIlL6cVHee6MBhrgUa0DZUGxf21Xz4xB45jdF52YfBqJovgaqE6lKRZrL0CXQq3jYHqDUn7sSaVDyHxhNQPbtgIZ215uJP39zjzm2K0vsTHmk-xlk7Kvfkq_pPjexKWuFHjjOxA9iCbo51xJC1cxkNafaxG7TemW7VX88GC6GocgEA6AOMhz4F4bSAFnd0zvM5n8BTUANfWEMwbjVY8g0UTTrg1niAiGM4wbBx-uhyyo-bYJS_H61b2nH18EoQqyGbDttz1yCIZi2tA9fddTW2iRVVDVnqtgtLWQVm120sWtNmeUd_q415iBTsEB-Vq9ipEUiFmXi9mHy5fbbfZupKT8JN0lUyxy724c3mkeZKAwKMMgUsW3C5L7I9eMLb9EeCE46VNRQccG3LlokK9GJyGVKN1oGRxPIMw0U7waYI5Y74-1XBgATN0KQUb5TvdE4x8jFQXj8xG4AxYzgOsz6B_gh2gjeHiLToiIfzv0cs79ieWVlwPHva2jIJx1d-NXlrfM6lEDcXsxTTeukvt5XA_GqeDW7b2k7TzKIV5V1xwX2t-x_gcBTV3CytwQjLlStbtyIqJrmhLPUuWgoljrvhzS8VNwmMLvKA3q5_OSZDiVwk2JRWhfkv7iAdE-ayy6JLOIlNq-Yk51sYIRB0uPsAgixNsXqHOK3jCxbX7KskeNc7SdcZbwKQ=w800-h600-no"}
                         controller={this.controller}
                     />
                     <SVGRightFork
@@ -656,7 +656,7 @@ class ThemePage extends React.Component {
                         imageID="9_2"
                         topPosition="20%"
                         leftPosition="55%"
-                        url={babies_image}
+                        url={"https://lh3.googleusercontent.com/gVDh9hvKn3GOCvG-pPRqPhSUneUUzTo9QRDUGmrjQn-V5tQ-WGVk7Wx10JwKtHq2xOgvz3I24V3lIbBUzJfmsWaOZejddUf5unCMaqDK7EtfN2fCFTFpvpRPa1p7DW-IWGsZIt-fqKfHZMheOhWy-z39ltAhm6yuSgbhYsoo0JLBeaqwWr2iC8bWXY6KuEWAR7F9u9xHXvsrmp-7RTimIyLy8jJZ80k6Jix3Q6nFBVsCO4jK_ysxG3pZIfu3PKT3m0YJgZY4fj8kqmqBMDC3cbhvSoUzef9B5SRADNEQbaq-9KNxN-VqTmWYl5UNbLnGsOYyuc8jDfpMMfJOADsLuQwNd8q0Cf-vhegNE-1MBj_tZsyv1bPT_M5li9VA1kpCkv0V3dtdMIjSzOu8yw3H2GyGgY3tgSQC_oInKSxRGS_emYpLO-KsEAP9XFqLYyePe-Zz4VWiCvqclb_VqhGCzPURDm_iBNbbDraID7Qj_MDL3chw0A8hus9Kv-xypmkTPqgIWlKUYmcaG1bIrABPWAZoOxonAQmnt7cPafUUht6CWP23fND5auFzjhlFB-2NkU_YfslJL5aOjzufjwt_amdBV_xl0cK5S3kNtR5T0bS0HtHrnubrEYBoddSD2uyYFU1lYXA2eCqrN5mrYf3WUQFBxVob1QVLg8qjTvg8ObbG-G3ye_GwEA3wIUCOJ_txNKuDplGB07iTNXDve0wRXnvYAeqs6nu0PykZ-rGYvzMfkQ=w800-h600-no"}
                         controller={this.controller}
                     />
                     <SVGRightFork
@@ -667,7 +667,7 @@ class ThemePage extends React.Component {
                         controller={this.controller}
                     />
                     <ImageBox
-                        url={metal_printing_image}
+                        url={"https://lh3.googleusercontent.com/AFpGvvBJp3c1UYVNw5sou17ehpkIxz9R-arsYFexKyo2aLYp0vDPCjJ17Cp9oj8Z5rZAa9qglYI-qRlQoKr9Xs4PyMYbNQTXvl88IUYTnI2CJTT3GOs4vVeaUjjxdMJiCu-BCINrfUSYqHsd2ABcUjX_8--sSKhPmQXHMT30A2j11eDWtTu8VRFlOSHztYT0anQvfIEeQOVDin0cl54mkeEgrr_92JLa09Ryy-X5ISE-lG5RIhjxiJ3AS_PwpJTimoPpTs9nO1ldsAoyNwBXiPZr2o4ynrBcRnGphYzdBPhnYxj060G4CkRyeGfixtzxTHb_HJ_TtOInv9aQ6vyaXXOAhseDmgSCIPE32Z0hO4_X77K2fw1HGqdUOkgywMu7pmMMIOpWhLN-24LJxfoq2r3YGWpOZpNcaoqtk8Nix9fCplYG4bzsWFVm-fdf5DaDhOpQZbAbPNoYYVVnnekeOdLusQcHWA1qGUHM6XilFBQ7mpCVzDiocsqCO93iqMD2Xqyn_rQY9KckO3OunitGHwuTHTVPQihKOeNnh8eRbXcH7EaYoyJeqYWFS_53VODG84HbDJgmsTJ4foQqBPl6o-hbCQ4mT-0Un0dT7Z74TB9_NdQAyqdohsXJe58E-GfBp6OX9PG5Qgiag-BJCWLskmDObAD9H7ljij_nid2btAy4_s2PiCdZGEzHSnaRzLJHAkO9DdW8Nwxds5qPaVk1K00-9Lg5IEBfPj1em6KcnCs8TA=w275-h183-no"}
                         heading="First 3d metal printing"
                         imageID="9"
                         controller={this.controller}
@@ -717,7 +717,7 @@ class ThemePage extends React.Component {
                     />
                     <ImageBox
                         heading="NASA releases first Black hole image"
-                        url={blackhole_image}
+                        url={"https://lh3.googleusercontent.com/T1FWeuUV8_SuCSDXZFUSda_ltiwDjjkACLHJW8pdVNdYLtrkpKVIsMlBy_lNEZyUXxvnZAuaf-4EDyk1ZXkbMedq5aNG-yRzNnWkdJ85HrQ1MzywqM7HrbWSxjsissplflT42DEaY4Gx7HxEZ1NX2BaWLvandKNrmMKFYBEvxv3bknRUBjwoKippistTvhtcMuONSXLnLgzc-14jN02Op3IySbjg5XiwI7Z3TmMcRwHyT3GYvt2-9KzJVeHpaqXNOHrn3pnkjxMXlVaFMURe1pxCd1-qINmpl8Lbyxq5K4MYcnwcJ2-cw7xFk7BDya7wJJSTQx_8EnJGvYKKD6qhp2yQwZdsNdDlnqxmgfS_r05MFlHVP__kCzVz7sGSVCmCIrE1-7eeelV95ujfb-fPjRN8QYPlI3LnbiqNLFBHdUKPmlQoJk_VnQYae5SgIOqIh_NoYqn1Cm37kgdKUhNiMgnJmO1pugSGbBg_tk_M4-4YbtdchbJua-iq5sOdF8ydHvdXhVY0tJN2cRJ5vQfZeQAgS9P6yfx4iNddhouY2JUjxFFQuU1af9cWHTUwouVVSFpO_vvUzPCEpyTDw-p39JvIX3WE7WjLMsonKtJoeD6lHije-aNDeu5VZMDaC3d-BPhM3Z0DDdHO2sDyGHSCkwLQhej09P2LXq-pzr0aVJ8e2N7pBn2_kFQySn1Xa7MaAuiF52fYfh3O3S2FNvT8-FSSNLL27sMW1A0UCjHZx9rwaQ=w800-h600-no"}
                         imageID="last"
                         topPosition="20%"
                         leftPosition="55%"
@@ -730,13 +730,15 @@ class ThemePage extends React.Component {
                         height="10"
                         controller={this.controller}
                     />
-                    <ImageBox
-                        url={graphite_image}
-                        imageID="last"
-                        controller={this.controller}
-                        topPosition="35%"
-                        leftPosition="5%"
-                    />
+                    <a target="_blank" href="https://graphitegtc.com/index">
+                        <ImageBox
+                            url={"https://lh3.googleusercontent.com/XG1Rxr160tLznuh2LdZSRSnRZmub-GX3mg4cpz0Z953uNFtJB07rjf70nYZXK9M2eQTL98PFwll7qKHorOTXsyv-IzHa18xOoACxAzJ4ElklwsVpLVeNRzaLkfddJK8yQWnem5L8jWx_nWzy1aZaFdfV39lQhWCU4zYgE4mm-bRHXecatc2L9jN8mZEtNJht_oDldvwakzoa7cv94a1sDZMdIQ-H9m4cAVC-I3OTSF0GX9DfE8KRAe_ot-sqD4YJOXrQJQOrct07eSHPaZ9eW9xRHxji7zzt78bADIWRCcNohYmUYu4q2Cyur2RHGAlOd0mBHAT2YSZAKCcIsf0xQLEC5hJGa0rFra9w6yrW3uz8HOui87MpElDfxKCtF7QUExzpDWtmksiPjPtisbb2iY_WZHsh3kPAVaTp1dC33430Wz_bpn3JMicWSONuxpUyodnj-sr5ZbrCO6n38N_I9pX_Z31kKLCSNGoPDt2QctsOpoDCVGL0hqJ2w5UPIXGY3etpSRQbPQkjSWgTm1HKtR1DYDK_C-B_oscx3UnYwpwQnH96_qQ7fdBIajv_j19w4vC-TWNDwa54ROrBAgWDTed5ve6ng3zj9aQWTSPd3riK9UP66R2zxaSCoEH9k9J83ipA6M6e6ssfwzaU0d8MI1RCpeFQMMsBH5M4IERMiFwaF-S9ZpfwCTSj7wV-yvWy2BHElSIwGU4eObhTtz-ke6QBWWl9DJElmNrmHY8YXF7JiHc=w512-h314-no"}
+                            imageID="last"
+                            controller={this.controller}
+                            topPosition="35%"
+                            leftPosition="5%"
+                        />
+                    </a>
                      <TimelineDot 
                         dotID="last_2" 
                         controller={this.controller}
