@@ -10,6 +10,8 @@ import ImageBanner from '../ImageBanner';
 import Fade from '@material-ui/core/Fade';
 import { MetaTags } from 'react-meta-tags';
 import titleSponsor from '../images/TitleSponsor.png';
+import GenericBackground from '../images/GenericBackground.jpg';
+
 
 const theme = createMuiTheme({
     palette: {
@@ -37,7 +39,7 @@ function Sponsors(props) {
         title: 'Sponsors',
         description:
           "We thank all of our sponsors for making Tryst possible",
-        image: 'https://source.unsplash.com/random',
+        image: `url(${GenericBackground})`,
         imgText: 'main image description',
     };
     const titleSponsorPost=[
@@ -55,9 +57,7 @@ function Sponsors(props) {
             </MetaTags>
             <NavBar threshold={10} backgroundColor="#192841"/>
             <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#29426c"}} />
-            <Fade in={true}>
-                <ImageBanner post={post}></ImageBanner>
-            </Fade>
+            <ImageBanner post={post}/>
             <PageSection
                 heading="Title Sponsor"
                 headingAlignment="center"

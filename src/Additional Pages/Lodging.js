@@ -6,6 +6,7 @@ import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ScrollToTop from '../ScrollToTop';
 import { MetaTags } from 'react-meta-tags';
 import NavBar from '../TopNavBar';
+import LodgingImage from '../images/Lodging.jfif'
 
 const theme = createMuiTheme({
     palette: {
@@ -23,13 +24,12 @@ const useStyle = makeStyles((theme) => ({
 export default function Lodging(props) {
     const largeScreen = useMediaQuery('(min-width:500px)');
     const {heading, containerBackgroundColor,textColor, ...others} = props;
-
     const post = {
         category:"Lodging",
         title: "Lodging @Tryst",
         description:
           "Stay on campus while you enjoy what Tryst has to offer",
-        image: 'https://source.unsplash.com/random',
+        image: `url(${LodgingImage})`,
         imgText: 'main image description',
     };
 
@@ -43,9 +43,7 @@ export default function Lodging(props) {
             <ScrollToTop/>
             <NavBar threshold={10} backgroundColor="#192841"/>
             <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#29426c"}} />
-            <Fade in={true}  timeout={1000}>
-                <ImageBanner post={post}/>
-            </Fade>
+            <ImageBanner post={post}/>
             <Fade in={true} timeout={1000}>
                 <Container classes={classes} maxWidth="sm">
                     <Typography variant="h4" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}} align="center">Affordable. Convenient. Unique</Typography>
