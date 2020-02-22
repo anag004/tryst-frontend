@@ -59,7 +59,7 @@ const styles = theme => ({
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
-      zIndex: -2,
+      zIndex: 1,
       minHeight: "100%"
     },
     overlay: {
@@ -72,7 +72,7 @@ const styles = theme => ({
         rgba(0, 0, 0, 0.9),
         rgba(0,0, 0, 0.3)
       )`,
-      zIndex: -1,
+      zIndex: -3,
       minHeight: "100%"
     },
     presents: {
@@ -157,9 +157,11 @@ class LandingScreen extends React.Component {
                     </Fade>
                 </Grid>
                 <center>
-                    <Fade in={true} timeout={4000}>
-                        <img src={SponsorLogo} style={{margin: "auto", width:"80%", height: "auto", maxWidth: "600px"}}></img>
-                    </Fade>
+                    <a target="_blank" href="https://graphitegtc.com/index" style={{pointerEvents: "auto !important", cursor: "pointer !important"}}>
+                        <Fade in={true} timeout={4000}>
+                            <img src={SponsorLogo} style={{margin: "auto", width:"80%", height: "auto", maxWidth: "600px"}}></img>
+                        </Fade>
+                    </a>
                 </center>
                 {/* <Grid container md={12} justify="center" style={{marginTop: "-5%"}}>
                     <Fade in={true} timeout={5000}>
