@@ -14,10 +14,11 @@ const theme = createMuiTheme({
   });
   const useStyles = makeStyles(th => ({
     background:  {
-      marginTop:80,
-      marginRight:20,
-    //   
+      marginTop:60,
     },
+    sections:  {
+        marginRight:15,
+      },
     container:{
         position:"relative",
         overflowX:"hide"
@@ -90,29 +91,30 @@ export default function GuestLectureDetail(props){
             <div className={classes.topContainer}>
                 <div className={classes.container}>
                     <NavBar threshold={10} backgroundColor="#192841"/>
-                    <div className={classes.background}>
+                    <div  className={classes.background}>
+                        {(data.dtv)?(data.dtv).map(info=>(
+                            <div>
+                                {"General"==info.type?
+                                    <Container>
+                                        <br/>
+                                        <Typography variant="h6" style={{color:"white"}}>Date: {dateFunction(info.date)},  {Time(info.start_time)} to {Time(info.end_time)}  </Typography>
+                                         <Typography variant="h6" style={{color:"white"}}>Venue: {info.venue}  </Typography>
+                                        {/*<Typography variant="h6" style={{color:"white"}}></Typography>
+                                        <Typography variant="h6" style={{color:"white"}}> </Typography> */}
+                                        <hr style={{marginTop:5}}></hr>
+                                    </Container>
+                                :
+                                null}
+                            </div>
+                        )):null}
+                    </div>
+                    <div className={classes.sections}>
                         {value.map(lecturer=>
                             <>
                             <GuestLectureSection left_side={left_side} lecturer={lecturer}/>
                             {left_side=!left_side}
                             </>
                         )}
-                    </div>
-                    <div>
-                        {(data.dtv)?(data.dtv).map(info=>(
-                            <div>
-                                {"General"==info.type?
-                                    <Container>
-                                        <br/>
-                                        <Typography variant="h6" style={{color:"white"}}>Date: {dateFunction(info.date)} </Typography>
-                                        <Typography variant="h6" style={{color:"white"}}>Start Time: {Time(info.start_time)} </Typography>
-                                        <Typography variant="h6" style={{color:"white"}}>End Time: {Time(info.end_time)} </Typography>
-                                        <Typography variant="h6" style={{color:"white"}}>Venue: {info.venue} </Typography>
-                                    </Container>
-                                :
-                                null}
-                            </div>
-                        )):null}
                     </div>
                     {data.reg_status?
                         (!checkDisabled(data.reg_deadline)?

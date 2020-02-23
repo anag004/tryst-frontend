@@ -52,7 +52,7 @@ export default function GuestLectureSection(props){
                     {!largeScreen?
                         <Grid container spacing={4} alignItems="center" direction="column" style={{marginTop:10}}>
                             <Grid item xs={12} style={{marginRight:30}}>
-                                <Typography variant="h3" align="center" style={{color:"#FFFFFF", fontFamily:['Montserrat','sans-serif'].join(',')}}>{lecturer[1]}</Typography>
+                                <Typography variant={(lecturer[1]).length>25?"h4":"h3"} align="center" style={{color:"#FFFFFF", fontFamily:['Montserrat','sans-serif'].join(',')}}>{lecturer[1]}</Typography>
                             </Grid>
                             <Grid xs={5}/>
                             <Grid item xs={window.screen.width<500?12:6} className={classes.box} >
@@ -68,30 +68,30 @@ export default function GuestLectureSection(props){
                             <Grid container spacing={4} alignItems="stretch" direction="row" style={{marginTop:10}}>
                                 {left_side?
                                     <>
-                                        <Grid item xs={3} style={{marginRight:30}}>
-                                            <Typography variant="h3" align="right" style={{color:"#FFFFFF", fontFamily:['Montserrat','sans-serif'].join(',')}}>{lecturer[1]}</Typography>
+                                        <Grid item xs={12} style={{marginRight:40}}>
+                                            <Typography variant={(lecturer[1]).length>25?"h4":"h3"} align="right" style={{color:"#FFFFFF", fontFamily:['Montserrat','sans-serif'].join(',')}}>{lecturer[1]}</Typography>
                                         </Grid>
-                                        <Grid xs={5}/>
-                                        <Grid item xs={largeScreen?4:[window.screen.width<500?12:6]} className={classes.box} >
-                                            <img className={classes.img} border="2px" src={lecturer[0]}/>
-                                        </Grid>
-                                        <Grid item xs={largeScreen?7:12} className={classes.box}>
-                                            <Typography variant="h6" style={{color:"#FFFFFF",}} >{lecturer[2]} </Typography>
-                                            {/* style={{fontSize:"18px",}} */}
-                                        </Grid>
-                                    </>
-                                :
-                                    <>
-                                        <Grid xs={9}/>
-                                        <Grid item xs={3}>
-                                            <Typography variant="h3" align="left" style={{color:"#FFFFFF",fontFamily:['Montserrat','sans-serif'].join(',')}}>{lecturer[1]}</Typography>
-                                        </Grid>
+                                        {/* <Grid xs={5}/> */}
                                         <Grid item xs={7} className={classes.box}>
                                             <Typography variant="h6" style={{color:"#FFFFFF",}} >{lecturer[2]} </Typography>
                                             {/* style={{fontSize:"18px",}} */}
                                         </Grid>
                                         <Grid item xs={4} className={classes.box} >
                                             <img className={classes.img} border="2px" src={lecturer[0]}/>
+                                        </Grid>
+                                    </>
+                                :
+                                    <>
+                                        {/* <Grid xs={9}/> */}
+                                        <Grid item xs={12} style={{marginLeft:20}}>
+                                            <Typography variant={(lecturer[1]).length>25?"h4":"h3"} align="left" style={{color:"#FFFFFF",fontFamily:['Montserrat','sans-serif'].join(',')}}>{lecturer[1]}</Typography>
+                                        </Grid>
+                                        <Grid item xs={largeScreen?4:[window.screen.width<500?12:6]} className={classes.box} >
+                                            <img className={classes.img} border="2px" src={lecturer[0]}/>
+                                        </Grid>
+                                        <Grid item xs={largeScreen?7:12} className={classes.box}>
+                                            <Typography variant="h6" style={{color:"#FFFFFF",}} >{lecturer[2]} </Typography>
+                                            {/* style={{fontSize:"18px",}} */}
                                         </Grid>
                                     </>
                                 }
