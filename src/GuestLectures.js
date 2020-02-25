@@ -9,6 +9,8 @@ import SimpleGrid from './SimpleGrid';
 import PageRipple from './PageRipple';
 import axios from 'axios';
 import { MetaTags } from 'react-meta-tags';
+import { useMediaQuery, Typography } from '@material-ui/core';
+import titleSponsorImage from './images/SponsorLogo.png';
 
 const theme = createMuiTheme({
     palette: {
@@ -26,6 +28,7 @@ const useStyles = makeStyles(theme => ({
 }))
 export default function GuestLectures() {
     const [activateRippleEffect, setActivateRippleEffect] = React.useState(false);
+    const largeScreen = useMediaQuery('(min-width:500px)');
     const [positionX, setPositionX] = React.useState(false);
     const [positionY, setPositionY] = React.useState(false);
     const [screenWidth, setScreenWidth] = React.useState(false);
@@ -84,8 +87,10 @@ export default function GuestLectures() {
                 <NavBar threshold={10} backgroundColor="#192841"/>
                 <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#29426c"}} />
                 <br/><br/>
+                <Typography  style={{color:"white",fontFamily:['Montserrat','sans-serif'].join(','),fontSize:largeScreen?54:34,}} align="center">Guest Lectures</Typography>
+                <img src={titleSponsorImage} style={{maxWidth:largeScreen?"30%":"50%",marginLeft:"auto",marginRight:"auto",display:"block"}}></img>
                 <PageSection 
-                    heading="Guest Lectures"
+                    heading=""
                     headingAlignment="center"
                     containerBackgroundColor=""
                     textColor="white"
