@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Button, useMediaQuery } from '@material-ui/core';
+import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Button, useMediaQuery, Link } from '@material-ui/core';
 import ImageBanner from '../ImageBanner';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ScrollToTop from '../ScrollToTop';
@@ -75,6 +75,14 @@ export default function Lodging(props) {
                         </ul>
                         <b>The prices are inclusive of 3 meals a day.</b>
                     </Typography>
+                    <br/>
+                    <u>
+                        <Link href="https://drive.google.com/open?id=1gxjAvStEVq6G0pGfB89ocyZ3PTwMP-z4" target="_blank">
+                            <Typography variant="body1" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>
+                                Bank Details for payment Transfer 
+                            </Typography>
+                        </Link>
+                    </u>
                     <br/>
                     <Typography variant="body1" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>
                         For any queries, contact:<br/>
