@@ -35,7 +35,7 @@ function SponsorCard(props) {
                     <Card className={classes.card} classes={classes} >
                         <CardActionArea onClick={handleClick}>
                             {/* <CardMedia className={classes.media} image={cardImage} {...others}/> */}
-                            <img src={cardImage} style={{maxWidth:"100%"}}></img>
+                            <img src={cardImage} style={{maxWidth:"100%",maxHeight:"280px"}}></img>
                             {/* <CardContent>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     {cardHeading}
