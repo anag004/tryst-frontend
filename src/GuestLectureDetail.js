@@ -1,6 +1,6 @@
 import React, { useEffect, Fragment } from 'react';
 import { createMuiTheme, ThemeProvider, makeStyles } from '@material-ui/core/styles';
-import { Typography, Grid, Button, useMediaQuery } from '@material-ui/core';
+import { Typography, Grid, Button, useMediaQuery, Container } from '@material-ui/core';
 import GuestLectureSection from './GuestLectureSection'
 import NavBar from './TopNavBar';
 import axios from 'axios';
@@ -14,10 +14,11 @@ const theme = createMuiTheme({
   });
   const useStyles = makeStyles(th => ({
     background:  {
-      marginTop:80,
-      marginRight:20,
-    //   
+      marginTop:60,
     },
+    sections:  {
+        marginRight:15,
+      },
     container:{
         position:"relative",
         overflowX:"hide"
@@ -48,7 +49,7 @@ export default function GuestLectureDetail(props){
     useEffect(()=>{
         axios.get('https://backend2020.tryst-iitd.org/api/event/view/'+(props.match.params.id))
         .then(res=>{const data=res.data
-            // console.log(data.data)
+            console.log(data.data)
             setData(data.data);
             setValue((data.data.photos));
             id=data.data.id;
@@ -72,6 +73,15 @@ export default function GuestLectureDetail(props){
             return true;
         }
     }
+    const dateFunction=(date)=>{
+        var s=new Date(date)
+        return(s.toDateString())
+    }
+    const Time=(time)=>{
+        const date=new Date(time);
+        // console.log(date);
+        return date.toLocaleTimeString('en',{ timeStyle: 'short', hour12: true, timeZone: 'UTC' });
+    }
     return(
         <ThemeProvider theme={theme}>
             <MetaTags>
@@ -80,8 +90,25 @@ export default function GuestLectureDetail(props){
             <div style={{position:"fixed", width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#141f33"}}></div>
             <div className={classes.topContainer}>
                 <div className={classes.container}>
-                <NavBar threshold={10} backgroundColor="#192841"/>
-                    <div className={classes.background}>
+                    <NavBar threshold={10} backgroundColor="#192841"/>
+                    <div  className={classes.background}>
+                        {(data.dtv)?(data.dtv).map(info=>(
+                            <div>
+                                {"General"==info.type?
+                                    <Container>
+                                        <br/>
+                                        <Typography variant="h6" style={{color:"white"}}>Date: {dateFunction(info.date)},  {Time(info.start_time)} to {Time(info.end_time)}  </Typography>
+                                         <Typography variant="h6" style={{color:"white"}}>Venue: {info.venue}  </Typography>
+                                        {/*<Typography variant="h6" style={{color:"white"}}></Typography>
+                                        <Typography variant="h6" style={{color:"white"}}> </Typography> */}
+                                        <hr style={{marginTop:5}}></hr>
+                                    </Container>
+                                :
+                                null}
+                            </div>
+                        )):null}
+                    </div>
+                    <div className={classes.sections}>
                         {value.map(lecturer=>
                             <>
                             <GuestLectureSection left_side={left_side} lecturer={lecturer}/>
@@ -89,9 +116,13 @@ export default function GuestLectureDetail(props){
                             </>
                         )}
                     </div>
-                    {data.reg_status?(!checkDisabled(data.reg_deadline)?<div style={{position:"fixed", bottom:40,right:largeScreen?40:20}}>
-                        <Button variant="contained" color="secondary" href={"/register/"+props.match.params.id} size="large">Register</Button>
-                    </div>:null):null}
+                    {data.reg_status?
+                        (!checkDisabled(data.reg_deadline)?
+                            <div style={{position:"fixed", bottom:40,right:largeScreen?40:20}}>
+                                <Button variant="contained" color="secondary" href={"/register/"+props.match.params.id} size="large">Register</Button>
+                            </div>
+                        :null)
+                    :null}
                     {/* {console.log(data)} */}
                 </div>
             </div>

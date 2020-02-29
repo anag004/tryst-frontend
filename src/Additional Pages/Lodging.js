@@ -1,11 +1,12 @@
 import React, { Fragment } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Button, useMediaQuery } from '@material-ui/core';
+import { Container, makeStyles, Fade, Dialog, DialogTitle, DialogContent, Tabs, Tab, Slide, Paper, Button, useMediaQuery, Link } from '@material-ui/core';
 import ImageBanner from '../ImageBanner';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import ScrollToTop from '../ScrollToTop';
 import { MetaTags } from 'react-meta-tags';
 import NavBar from '../TopNavBar';
+import LodgingImage from '../images/Lodging.jfif'
 
 const theme = createMuiTheme({
     palette: {
@@ -23,13 +24,12 @@ const useStyle = makeStyles((theme) => ({
 export default function Lodging(props) {
     const largeScreen = useMediaQuery('(min-width:500px)');
     const {heading, containerBackgroundColor,textColor, ...others} = props;
-
     const post = {
         category:"Lodging",
         title: "Lodging @Tryst",
         description:
           "Stay on campus while you enjoy what Tryst has to offer",
-        image: 'https://source.unsplash.com/random',
+        image: `url(${LodgingImage})`,
         imgText: 'main image description',
     };
 
@@ -43,9 +43,7 @@ export default function Lodging(props) {
             <ScrollToTop/>
             <NavBar threshold={10} backgroundColor="#192841"/>
             <div style={{position:"fixed",width:"100%",height:"100%",zIndex:"-1",backgroundColor:"#29426c"}} />
-            <Fade in={true}  timeout={1000}>
-                <ImageBanner post={post}/>
-            </Fade>
+            <ImageBanner post={post}/>
             <Fade in={true} timeout={1000}>
                 <Container classes={classes} maxWidth="sm">
                     <Typography variant="h4" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}} align="center">Affordable. Convenient. Unique</Typography>
@@ -77,6 +75,14 @@ export default function Lodging(props) {
                         </ul>
                         <b>The prices are inclusive of 3 meals a day.</b>
                     </Typography>
+                    <br/>
+                    <u>
+                        <Link href="https://drive.google.com/open?id=1gxjAvStEVq6G0pGfB89ocyZ3PTwMP-z4" target="_blank">
+                            <Typography variant="body1" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>
+                                Bank Details for payment Transfer 
+                            </Typography>
+                        </Link>
+                    </u>
                     <br/>
                     <Typography variant="body1" style={{fontFamily:['Montserrat','sans-serif'].join(','), color:"white"}}>
                         For any queries, contact:<br/>
