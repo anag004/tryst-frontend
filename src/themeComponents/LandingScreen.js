@@ -82,7 +82,7 @@ const styles = theme => ({
     },
     title: {
         textAlign: "center",
-        margin: theme.spacing(2)
+        marginTop: theme.spacing(2)
     },
     tooltip: {
         marginTop: theme.spacing(10)
@@ -132,7 +132,7 @@ class LandingScreen extends React.Component {
                 
                 <Grid container md={12} justify="center">
                     <Fade in={true} timeout={2000}>
-                        <Typography variant="h4" className={this.props.classes.title}>
+                        <Typography variant="h5">
                             REMINISCENSE
                         </Typography>
                     </Fade>
@@ -146,6 +146,13 @@ class LandingScreen extends React.Component {
                     <Fade in={true} timeout={2000}>
                         <Typography variant="h4" className={this.props.classes.title}>
                             A Denouement Of The Decade
+                        </Typography>
+                    </Fade>
+                </Grid>
+                <Grid container md={12} justify="center">
+                    <Fade in={true} timeout={2000}>
+                        <Typography variant="h6">
+                            (6-8 March)
                         </Typography>
                     </Fade>
                 </Grid>
