@@ -76,31 +76,31 @@ function Sponsors(props) {
             link:"https://seagate.com/in/en/"
         },
     ];
-    const blogPartner=[
+   
+    const generalSponsors1=[
+        {
+            title:"Alumni Partner",
+            image:"https://lh3.googleusercontent.com/XafMCq_-9Ti68BMYoyvIW_hE2jO9mf4-ObVFPAjeGP8dtO2bDOeDmq_S2mlHm5Ejm8vBlHJVTZUrmyZOVJ4tfb8mJ2SYplbAP9u_FNthCgvQ899wCiftEDmM4w4n8PJcBtFFyR3eFRu7iaRAJZBouim3m7U5R5JpYj-2a_NEg8T6VpQlpKxMfT1gItOJPggEFv7PJQx6mcMfOZIay7VByfKVwkS5e7MaRO-kFgycQLV6i-Jfdhhx-RJrVtdFiKJdBeT05MlofNsdYO_tPaGAc_PxYV0B9Ssl0NlwrtYPgd98FuRziBEQACk8MlR2wDiBmwBgBxkVaKy49QCLG288z7nWHTW-nmQEBFZm3P1dtao_hthCFuQVBOR8rgwjzjvwwMVM_9MMfe8h4SUjrtOxolwvcOx7dIxtlirry5pqcnf4nOwXffbAqMiaYHYVJgdl6b22e1tU-qm42Z3wxqSnm7jVKg80GbCU8FzB3N25FjyuG507XiJydSc23N6xULEGkOay7D_J30Kx58PGuNuiX-blScfGSdo_HeBkZ2aq9d4C-ojSzB2mRyrZl-eFsGHYl7VqegQnkG-YouZsRvgMNSLExSMJWM-Iwmi5oEfJT1nB4i6qrV8AUfcAKkNBwOGyuGD_Vn6qYlIAZuvtGE5OhnZRw6HC17ntxyVGThoaaFfB0mn24yTTOD-qhjGRBlmUe3KaTJapqOkvhWEPSuDV468Ah0GvfL-5n0PZff9cEK-Logzu=s200-no",
+            link:""
+        },
+        {
+            title:"Wok to Walk",
+            image:"https://lh3.googleusercontent.com/eQEkTPAPOiMT5PRRiq6rl5BjZyAcgVRx_k-NLKDeSnQF13FiqeQxtjDVsShf0S7hKe0yJU6chUnHy6gVpWkaL55ztKiFGgoa2u62ePcdkqb5JaKKEHUnWsJs7940qIfFMgLe-SkVDPImVfEHu2TE4djfluZkgoZ0Lua3dgCH-hJj6kwAStGxtyiNAhObW-YFtTm5t-JbD0hgMQoQP_CPvQPxLwlykiGEO7Y35KlSrHw94H3mi0HhcmdbVi7Q30Bja2_ckhiGEWNZb5uiK-tWYSSgMPD4ZYwEe2MkCArb6vmw99mhGhEAyJ3EATiQK-ZI8DdkamvVEtuI7QG6pD8k2mTnMd5OmpqLIf_TPvfI6Uu_0hIk5IMuH4mPtTEgBkornQzkY6AfQFk7lVQKCnFslmh91NMc_sek0cY4WbeMxn56f52hId-26qKljFxNj1ahGXQWJyc8vLFaxeA4i5qz3meFkoot9LB_F0_cX1Q5enittdUamZn9UkND5va9Vr137bXioy-99ts3Qe5nYlhac645gJMAM5zTmqLiTv0-__qZIq6BnCZnWK4orNPI__uwJz1WjQ0rRkHVE0CPqsvva0hpDlXVqPVE6KDuZq5ex633QsJ9V-ZhiPvX2gBEYdyTimiKexDXPzyDm5bysmVQZW_Z7ftTjfT5GW6lLkpkBGgb2vrhJPN0TUYQFTWoU_BE1fJWrjZ9gJaj-DXj1hiv76f8HkM66FrnFIO7Uf80Fdmmv1Kz=w413-h68-no",
+            link:"https://woktowalk.com"
+        },
+    ];
+    const generalSponsors2=[
+        {
+            title:"vision India Foundation",
+            image:"https://lh3.googleusercontent.com/j1BQGOD4r9kswft8LJaUjDzPIxF7ERV3yrXKH0JsrVp1L_3aLtLUMAEiitK-xh8OAwFxIePJUb5hBerL0u7WnxZzPzk-B92ncTVb-kEyag4ipbX8yT7-4qfRQSjCBZiDHtfM8OmaJhgqyboqDFjF81Ye_qyXmPft6MfYoMRGPtMI0mxmHTWSn3-U2MYgST0d5hmPOiEbnv2gxN0aTx0oP7fLnBsYsp1jys_C7R1ddvSl6FWYodGU533jQ5gNxGoJ707fY8ptn_qpOuS-lbcU5gW8o9wwjnE3DyewT_1Cs-7yKXMVx9Nhg1b8YgHdJJzMO_Mu5F9KHfnB9jaxEjxq1ODrpKYOXPebFEIyHo79rXRDLEFtCq4X7dtRivw2zuYdiKhXauhHSw2aO-zG9lpmvE0wzA05GgfCTXJBI4fgEGLNAQUYyvgFp9cgkxF02lHA7F7kc1sJI0QLEKwYS82BlEo8vMeXiUf0-W-qbUbwQc_YCLyxAfzDHUhU-sRe0fsJ1b4z748W6gYltZS-y-ooORNbmNtWNag13cQtVOWJLsPG60P6GBdxiDEHh53a6MBZm-Mv-mxmNoy2VwtmNFyhVERak6MSLskSoIiZoAbwkkVWrE_v90KtJ9FJLxhj2i9qfeQlkhMZaVpebw5L-JogeRUDz2pKspE3hKDGYV57rNqAhQFGsZz0msqSX_t9FFD4b4DNmZ4o52dGgEh1ghgtH_cXu-41oObOfsrZrv8_HjoERitz=w522-h521-no",
+            link:"https://visionindiafoundation.com/"
+        },
         {
             title:"ED Times",
             image:"https://lh3.googleusercontent.com/rZ4fdn6oguOwoDTiGjngZ9SsN0PP0b9HnOMR_pyiRWCtnCvzfZR27LGqDaBTwJ8dsho1IcxNAVcWCdBSo1l9p1ADGxeHgpnUNJmtB-ZnJxZBlQgGhaN6Y_MLFcQuBJywJbHtgW5zcVTrEWyJU9BiATcvnCJzMCgeEJ2VqvV1LRi3x4A7St6OnOr8eSKLQ9nOef4dWv_iV8cKuhEKxojJbohAvIkf3bm_MkGb7wzDoiRF-OgyKYxxub3gxNKZ1n3ILVICD1iQoH_D_kG4sVVIaVJEwnQMJx77jap6tSYLcYaGNtFbnX-LIxN9Z3KMCvlGsY43QcgUEoZJ3St8HISS3VX86wGZr0u0Jjvxx8M7T-rLOazFXW8pIbo3VZFeeOGqLIAnnOSSxPT30WaqmsDk8vbN1igcwUVo6T0WAVy-AUNoxCMONyoQnnkR5A_64-RXV9rbvgCPEYJwZjCwSj0BFCCtRs9YKkhn03Y5koe-O8AsPHtp4THKfTHsUxpf4danY1GXF7QhM_gFfV_KPKFhzOp69AZdcGI4CXG8ifZgWbe-B7EoqNMUjMlj6N0WC3_qWb9mtHVPAKuZvZ4zta3hiODC6zmyAc0pIA4DaRrcJiMsBHMC9KD8bhErLX9F1OGd7AGwVUaMHON_nh0LiUw-nM7Fc8S5W-RFzk51AwABXLGAHB0augL8bXH8OYbJ9Gjar7ykHZWiCYf_eTwev-lgLS0ehPeavKOMdH9CnfIygph8uLMU=w947-h735-no",
             link:"https://edtimes.in"
         },
-    ];
-    const alumniPartner=[
-        {
-            title:"Alumni Partner",
-            image:"https://lh3.googleusercontent.com/XafMCq_-9Ti68BMYoyvIW_hE2jO9mf4-ObVFPAjeGP8dtO2bDOeDmq_S2mlHm5Ejm8vBlHJVTZUrmyZOVJ4tfb8mJ2SYplbAP9u_FNthCgvQ899wCiftEDmM4w4n8PJcBtFFyR3eFRu7iaRAJZBouim3m7U5R5JpYj-2a_NEg8T6VpQlpKxMfT1gItOJPggEFv7PJQx6mcMfOZIay7VByfKVwkS5e7MaRO-kFgycQLV6i-Jfdhhx-RJrVtdFiKJdBeT05MlofNsdYO_tPaGAc_PxYV0B9Ssl0NlwrtYPgd98FuRziBEQACk8MlR2wDiBmwBgBxkVaKy49QCLG288z7nWHTW-nmQEBFZm3P1dtao_hthCFuQVBOR8rgwjzjvwwMVM_9MMfe8h4SUjrtOxolwvcOx7dIxtlirry5pqcnf4nOwXffbAqMiaYHYVJgdl6b22e1tU-qm42Z3wxqSnm7jVKg80GbCU8FzB3N25FjyuG507XiJydSc23N6xULEGkOay7D_J30Kx58PGuNuiX-blScfGSdo_HeBkZ2aq9d4C-ojSzB2mRyrZl-eFsGHYl7VqegQnkG-YouZsRvgMNSLExSMJWM-Iwmi5oEfJT1nB4i6qrV8AUfcAKkNBwOGyuGD_Vn6qYlIAZuvtGE5OhnZRw6HC17ntxyVGThoaaFfB0mn24yTTOD-qhjGRBlmUe3KaTJapqOkvhWEPSuDV468Ah0GvfL-5n0PZff9cEK-Logzu=s200-no",
-            link:""
-        },
-        {
-            title:"Alumni Partner",
-            image:"https://lh3.googleusercontent.com/XafMCq_-9Ti68BMYoyvIW_hE2jO9mf4-ObVFPAjeGP8dtO2bDOeDmq_S2mlHm5Ejm8vBlHJVTZUrmyZOVJ4tfb8mJ2SYplbAP9u_FNthCgvQ899wCiftEDmM4w4n8PJcBtFFyR3eFRu7iaRAJZBouim3m7U5R5JpYj-2a_NEg8T6VpQlpKxMfT1gItOJPggEFv7PJQx6mcMfOZIay7VByfKVwkS5e7MaRO-kFgycQLV6i-Jfdhhx-RJrVtdFiKJdBeT05MlofNsdYO_tPaGAc_PxYV0B9Ssl0NlwrtYPgd98FuRziBEQACk8MlR2wDiBmwBgBxkVaKy49QCLG288z7nWHTW-nmQEBFZm3P1dtao_hthCFuQVBOR8rgwjzjvwwMVM_9MMfe8h4SUjrtOxolwvcOx7dIxtlirry5pqcnf4nOwXffbAqMiaYHYVJgdl6b22e1tU-qm42Z3wxqSnm7jVKg80GbCU8FzB3N25FjyuG507XiJydSc23N6xULEGkOay7D_J30Kx58PGuNuiX-blScfGSdo_HeBkZ2aq9d4C-ojSzB2mRyrZl-eFsGHYl7VqegQnkG-YouZsRvgMNSLExSMJWM-Iwmi5oEfJT1nB4i6qrV8AUfcAKkNBwOGyuGD_Vn6qYlIAZuvtGE5OhnZRw6HC17ntxyVGThoaaFfB0mn24yTTOD-qhjGRBlmUe3KaTJapqOkvhWEPSuDV468Ah0GvfL-5n0PZff9cEK-Logzu=s200-no",
-            link:""
-        },
-    ];
-    const couponsPartner=[
-        {
-            title:"Wok to Walk",
-            image:"https://lh3.googleusercontent.com/eQEkTPAPOiMT5PRRiq6rl5BjZyAcgVRx_k-NLKDeSnQF13FiqeQxtjDVsShf0S7hKe0yJU6chUnHy6gVpWkaL55ztKiFGgoa2u62ePcdkqb5JaKKEHUnWsJs7940qIfFMgLe-SkVDPImVfEHu2TE4djfluZkgoZ0Lua3dgCH-hJj6kwAStGxtyiNAhObW-YFtTm5t-JbD0hgMQoQP_CPvQPxLwlykiGEO7Y35KlSrHw94H3mi0HhcmdbVi7Q30Bja2_ckhiGEWNZb5uiK-tWYSSgMPD4ZYwEe2MkCArb6vmw99mhGhEAyJ3EATiQK-ZI8DdkamvVEtuI7QG6pD8k2mTnMd5OmpqLIf_TPvfI6Uu_0hIk5IMuH4mPtTEgBkornQzkY6AfQFk7lVQKCnFslmh91NMc_sek0cY4WbeMxn56f52hId-26qKljFxNj1ahGXQWJyc8vLFaxeA4i5qz3meFkoot9LB_F0_cX1Q5enittdUamZn9UkND5va9Vr137bXioy-99ts3Qe5nYlhac645gJMAM5zTmqLiTv0-__qZIq6BnCZnWK4orNPI__uwJz1WjQ0rRkHVE0CPqsvva0hpDlXVqPVE6KDuZq5ex633QsJ9V-ZhiPvX2gBEYdyTimiKexDXPzyDm5bysmVQZW_Z7ftTjfT5GW6lLkpkBGgb2vrhJPN0TUYQFTWoU_BE1fJWrjZ9gJaj-DXj1hiv76f8HkM66FrnFIO7Uf80Fdmmv1Kz=w413-h68-no",
-            link:"https://woktowalk.com"
-        }
+
     ];
     const eventHostingPartner=[
         {
@@ -116,16 +116,14 @@ function Sponsors(props) {
             image:"https://lh3.googleusercontent.com/LD2tshuuwRdYig0hlsr_E7xZWU5PFDJxJIxM7UQNBAAOkk3QdIMoYVWgPwaIuX1pGU9HB77ojw6XNs_5IdCHMrlAlhgS4pTeDqFOoH7LPjbi6vpUSHfcRmqA3K7sQKmshknqXAh1BOlzjHN8_joFX7SnsamnlhbjP1eXozQXZf_Cz4AgNqpY4dJeYBopWHR1k6xU4VPOo-SbQckhLtnSlFTIDzB90BAiaBjil5X4e2dnRD27YT2JDXghqKUKiqlGKKXW0HX1Pu1DBRdoHFLFsukuKuJ-LSJ53qq_iEdQMp9-Fto3-XZ9Wk2TAfisV5PLVCEYUs5doVzkAK_7DdUuNiTUIWX_wF7oyvL1VvMegQFUXTyiVFUU2ANM5BgihSxbnjVeBVXHQIsJ1x5xNaVzPH4rYW3XuNDrdjNWRHDjGUIU9-W5G4DAJkD1eJNQ3icbGT7oFmf4MYldPBNS5wEYJc618_inHqvpLgx42i-mLh8lvvS5zBDRqtZHkI8oTDaTXD30hTURaoNpFEfyPLW4kdpKBhfLEpaQUOuY5oX725dqtakB7jzQCbh-JcSMkT1Q4TV-lHDNHGnnV6C7RDSAHL8YJnba-bwo3ufSSTP2Qo6D8uqE2Ec1CscqBgAMLsYVwvUE1ZdZmvTPXJHe4aXjTj8Pz6OQ_XdR6SPsuSEs4x_7Sjok-L-KQ1IRC-dcvtVVQbIjxTnhlq30qWQpsN6_S2YK22Zuu7_sFN9PxPnmdCmtQsMY=w400-h140-no",
             link:"https://inshorts.com"
         },
-        
-    ];
-    const digitalMediaPartner2=[
         {
             title:"Your Story",
             image:"https://lh3.googleusercontent.com/iBpTzjj4p3vLVXZHZdmpxupksRE2-0rr-tJw2CjHAM0U8QquDFWaXjw-yPxYOAd978vcUqB5u8Za3so372UzJBMkmDUZPTxiJHtvBFVmgRjypF0BxfBUHnJ06OMgNyDf7BJ6eoBcaKp8Anwqh1GTl1dYdaDv90DZI4tLy1P7SgZ33GogiZNaai0FjjN1I_213fwmcm9XkCg2PIOAn97AEd7GC_xCp4IAuCanouzh-5koOfCzOvHoKeY-6kk-cQVATKEmGO9bPBkWFIqWa-LuwT27Q2wLsdKSYb1oadScdZZVyc1R4Y1Oz0M2nKvv8GA6Nklc-bpF1RI_keSJp5trHQObcpHY7-P2zgK8OarRo9nE5JW2K1Fj-SU3U5JntSAUuVmYMfoxHIbULndWp1oQDQbG92Vy6otY0nJ_A-N1GoKCdBKjKRfGoEeRtmc6zWM_pAHZOdSb8fMVOPBKQjHViC0dn23GTu4IHF8JIZrG7ivrDYGYubo8Z-CmWoOeeMzeZ_YCHGRoU4twuq1s4dbJMQcUaADQO55Ko81JeLGRVGXdDfO2zs1XPQeAMxwxSw05y9ahnOzLe6Mm4bFUkpFyPidhyuqf7pY0ERXG9gXL49HRAAICzumk6D3u99tVp3invmimOUoiNsGbzCTndrb0FTpmtaW7O5R7APm4hT44ztqYmdQ52x6EUCxG-RrCczHj2NNsQf1VRhKyM4fvJRXgOyohc3w666BUiH4gIu-yRk6qUx1_=w606-h556-no",
             link:"https://yourstory.com"
         }
+        
     ];
-
+    
     const digitalMagazinePartner=[
         {
             title:"TheScore Magazine",
@@ -162,15 +160,12 @@ function Sponsors(props) {
             title:"DU Beat",
             image:"https://lh3.googleusercontent.com/_BEHamViwAmC8qeVwRVWP6zl-CCRphfxA-emDU7ssbKG1GXaXXbzlGd6gmx_sN1lnZpgJFf_mhpfIfHStqdc5my-R8S6di7o4sEakj8NU-yD9ntTwg7462ALQtcJJDJxjtZWY6xDXPq_SHVhitX4T5fVkW1njPSQHimaeCzxZnzIEg--Yoeh8S8_HfFTZz-f9W2UKKsU-yDveXkEdd-kOncLRu1YPHNX1vdtUO5DnrHJ8duDoq_GMpCHZYAh2H4pz0ULkySbAfQN1ThKgkMEjcmeAlPblBfS1xoq5CLB7snskgKU6UCkE2ZDkmcGSPYe2URAv23zIUrHQOCTHnEJ__aeEj_QsBZGgF5OOGyQO3EB3FYXAMqVsYGLLpYEAtzWEYbNLcF77eKZ_1_DkiItP-HDYRvulY-cxDqVzjrppNDa-8-jvxYnWuJD-alViCtUNV3VlGlNSsNVlcSIZhXQ_FU0a7QwwVnNQDxC-wQY4Lk3I2OwXt1TxWXA_jKRU63FopU1HmNA2bfkdsbBqoLx2ludbYRqlqMTs50wOGOBZpIrLswLtnGt_GJS_xzsPm8FG27vYHCLttYRDwqxFh5GdVs76jskYKHI0Az_XNhbWZIYetImx9LEMjh4-H2FXJ90eMMml2l23WX89lk3RJ9P2kQuVizkL6R0DspeOasxyQY-PM_8gpSzD5Ljjvk3XDnBF_VRnKYpE9ssLSbTfwcXVR1_MJO9Yv5RVnNAGyiP4w4lR8aO=w440-h272-no",
             link:"https://dubeat.com"
-        }
-    ];
-    const mediaPartner3=[
+        },
         {
             title:"HBR Ascend",
             image:"https://lh3.googleusercontent.com/w-w3zxgV6neYUbGa0GIKgzLbjKnC9iwddTdyiLRveIBpJxHQz6J8mMOqXsNf1Re-pS8DuYRje5N4O7MJkmBB9TkjCRb9B_g1zFuEXVgkLp-m7nJoZvO68OZ6T72hseRCDKlW7IRxNKqGX8rxiJGlNGmdI-FauaGcRC16rBIuvyMj8S7eOYXmgZBzNxdEs2ddCKgYGI7_lBO6vNRGW9sfzIQvGHa9oKB5v-LqmscN65tokdRfJM6qv04hPSxq9bpZfLO1vmprbXjW_RhkRz2uRPwFSNDR-CNX-2vExPYzbAhZLbAiL4R-O8d_Jw0LEQRR6uCcY_Zki-18c-ZDfql3KkLmT8IUOxRRIF-16cc1KnGw-BZx48gqNivEh5UxT8FJVyweJGZn9De7Nryl390GvB37kKOC-Ixxkd8J0X6s-mmGhS219SLh9hTPYuUZ7yYvCYj3M4Z5V17XHb8TdcVBRcaEyx4oKayf5XFmTMHlDmXH46wm9P3DdevuF7fDzGkf0r8h-qD1QnOz-jd1nTCPvE_CxIJttwNEc7T0G7oKCoNkhiC-ato7Ftylgy51CmrMBbikDnvdmtOafdnpfz3g0yQoe54KfIKQjCoY-M1KCKZywZchk649MpC_TvonxZ1up0U9dmDIdgdb4xqJ5u3Jn_iYrMK5E6zPve8Xgn970jalAXSdPYXJM4x-MhnQiN68V5Wqn5zZW82r2Iv7uWUBPxQMgsUcjy7ZfOqxGGjlIOUw1870=w708-h207-no",
             link:"https://hbrascend.org"
         },
-        
     ];
     const eventsPartner=[
         {
@@ -190,14 +185,6 @@ function Sponsors(props) {
         },
         
     ];
-    const governancePartner=[
-        {
-            title:"vision India Foundation",
-            image:"https://lh3.googleusercontent.com/j1BQGOD4r9kswft8LJaUjDzPIxF7ERV3yrXKH0JsrVp1L_3aLtLUMAEiitK-xh8OAwFxIePJUb5hBerL0u7WnxZzPzk-B92ncTVb-kEyag4ipbX8yT7-4qfRQSjCBZiDHtfM8OmaJhgqyboqDFjF81Ye_qyXmPft6MfYoMRGPtMI0mxmHTWSn3-U2MYgST0d5hmPOiEbnv2gxN0aTx0oP7fLnBsYsp1jys_C7R1ddvSl6FWYodGU533jQ5gNxGoJ707fY8ptn_qpOuS-lbcU5gW8o9wwjnE3DyewT_1Cs-7yKXMVx9Nhg1b8YgHdJJzMO_Mu5F9KHfnB9jaxEjxq1ODrpKYOXPebFEIyHo79rXRDLEFtCq4X7dtRivw2zuYdiKhXauhHSw2aO-zG9lpmvE0wzA05GgfCTXJBI4fgEGLNAQUYyvgFp9cgkxF02lHA7F7kc1sJI0QLEKwYS82BlEo8vMeXiUf0-W-qbUbwQc_YCLyxAfzDHUhU-sRe0fsJ1b4z748W6gYltZS-y-ooORNbmNtWNag13cQtVOWJLsPG60P6GBdxiDEHh53a6MBZm-Mv-mxmNoy2VwtmNFyhVERak6MSLskSoIiZoAbwkkVWrE_v90KtJ9FJLxhj2i9qfeQlkhMZaVpebw5L-JogeRUDz2pKspE3hKDGYV57rNqAhQFGsZz0msqSX_t9FFD4b4DNmZ4o52dGgEh1ghgtH_cXu-41oObOfsrZrv8_HjoERitz=w522-h521-no",
-            link:"https://visionindiafoundation.com/"
-        }
-    ];
-    
     
     const associateSponsor=[
         {
@@ -241,9 +228,9 @@ function Sponsors(props) {
                 <SponsorCardRow>
                     <SponsorGrid n="1" backgroundColor="white" post={mediaPartner2}/>
                 </SponsorCardRow>
-                <SponsorCardRow>
+                {/* <SponsorCardRow>
                     <SponsorGrid n="1" backgroundColor="white" post={mediaPartner3}/>
-                </SponsorCardRow>
+                </SponsorCardRow> */}
             </PageSection>
 
             <PageSection
@@ -292,31 +279,6 @@ function Sponsors(props) {
                     <SponsorGrid n="1" backgroundColor="white" post={magazinePartner}/>
                 </SponsorCardRow>
             </PageSection>
-
-            <PageSection
-                heading="Blog Partner"
-                headingAlignment="center"
-                containerBackgroundColor="#29426c"
-                textColor="white"
-                description=""
-            >
-                <SponsorCardRow>
-                    <SponsorGrid n="1" backgroundColor="white" post={blogPartner}/>
-                </SponsorCardRow>
-            </PageSection>
-            
-            <PageSection
-                heading="Alumni Partner"
-                headingAlignment="center"
-                containerBackgroundColor="#29426c"
-                textColor="white"
-                description=""
-            >
-                <SponsorCardRow>
-                    <SponsorGrid n="1" backgroundColor="white" post={alumniPartner}/>
-                </SponsorCardRow>
-            </PageSection>
-            
             <PageSection
                 heading="Online Event Hosting Partner"
                 headingAlignment="center"
@@ -342,30 +304,8 @@ function Sponsors(props) {
                 </SponsorCardRow>
             </PageSection>
 
-            <PageSection
-                heading="Governance Partner"
-                headingAlignment="center"
-                containerBackgroundColor="#29426c"
-                textColor="white"
-                description=""
-            >
-                <SponsorCardRow>
-                    <SponsorGrid n="1" backgroundColor="white" post={governancePartner}/>
-                </SponsorCardRow>
-            </PageSection>
-
-            <PageSection
-                heading="Coupons Partner"
-                headingAlignment="center"
-                containerBackgroundColor="#29426c"
-                textColor="white"
-                description=""
-            >
-                <SponsorCardRow>
-                    <SponsorGrid n="1" backgroundColor="white" post={couponsPartner}/>
-                </SponsorCardRow>
-            </PageSection>
-
+            
+            
             <PageSection
                 heading="Digital Media Partner"
                 headingAlignment="center"
@@ -376,9 +316,9 @@ function Sponsors(props) {
                 <SponsorCardRow>
                     <SponsorGrid n="1" backgroundColor="white" post={digitalMediaPartner1}/>
                 </SponsorCardRow>
-                <SponsorCardRow>
+                {/* <SponsorCardRow>
                     <SponsorGrid n="1" backgroundColor="white" post={digitalMediaPartner2}/>
-                </SponsorCardRow>
+                </SponsorCardRow> */}
             </PageSection>
 
             <PageSection
@@ -392,7 +332,21 @@ function Sponsors(props) {
                     <SponsorGrid n="1" backgroundColor="white" post={digitalMagazinePartner}/>
                 </SponsorCardRow>
             </PageSection>
-
+            <PageSection
+                heading="General Sponsors"
+                headingAlignment="center"
+                containerBackgroundColor="#29426c"
+                textColor="white"
+                description=""
+            >
+                <SponsorCardRow>
+                    <SponsorGrid n="1" backgroundColor="white" post={generalSponsors1}/>
+                </SponsorCardRow>
+                <SponsorCardRow>
+                    <SponsorGrid n="1" backgroundColor="white" post={generalSponsors2}/>
+                </SponsorCardRow>
+            </PageSection>
+            
             
         </ThemeProvider>
     );
