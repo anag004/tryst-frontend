@@ -25,7 +25,10 @@ const useStyles = makeStyles((theme) => ({
 function SponsorCard(props) {
     const { cardHeading, cardImage, linkTo, history, backgroundColor, others } = props;
     const handleClick=()=>{
-        window.open(linkTo)
+        if(linkTo.length>0){
+            window.open(linkTo)
+        }
+        
     }
     const classes = useStyles(props);
 
@@ -35,7 +38,7 @@ function SponsorCard(props) {
                     <Card className={classes.card} classes={classes} >
                         <CardActionArea onClick={handleClick}>
                             {/* <CardMedia className={classes.media} image={cardImage} {...others}/> */}
-                            <img src={cardImage} style={{maxWidth:"100%",maxHeight:"280px"}}></img>
+                            <img src={cardImage} style={{width:"inherit",height:"inherit",maxHeight:"220px"}}></img>
                             {/* <CardContent>
                                 <Typography gutterBottom variant="h6" component="h2">
                                     {cardHeading}
