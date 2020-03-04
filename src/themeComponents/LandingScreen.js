@@ -95,6 +95,7 @@ const styles = theme => ({
         position: "absolute",
         zIndex: 4,
         backgroundColor: "rgba(255, 255, 255, 0.8)",
+        textAlign:"center"
     }
 });
 
@@ -135,8 +136,18 @@ class LandingScreen extends React.Component {
 
             
                 <Paper className={this.props.classes.notif}>
-                    <Typography variant="h4">Tryst postponed</Typography>
-                    <Typography variant="body1">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</Typography>
+                    <Typography variant="h4">Important notice</Typography>
+                    <Typography variant="h6">
+                        TRYST 2020 will not be happening from 6th to 8th March.
+                    </Typography>
+
+                    <Typography variant="body1">
+This decision has been taken in light of the present circumstances in India (increasing number of cases of people getting affected by coronavirus) and keeping in mind the health concerns which have been expressed by multiple registered participants, team members, Dean and Health Experts. Since the Government has ordered to avoid mass gatherings, we would be following their guidelines to avoid the risk of Coronavirus spreading.
+
+We appreciate your interest and we promise to host it again as soon as possible. Stay tuned for further updates. <br></br>
+    <b>#We're Not Done Yet #Tryst2020 #Staysafe</b>
+
+</Typography>
                 </Paper>
   
                 
