@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import { makeStyles } from "@material-ui/core/styles";
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, Link } from '@material-ui/core';
 import Radio from '@material-ui/core/Radio';
 import RadioGroup from '@material-ui/core/RadioGroup';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
@@ -139,6 +139,9 @@ function Register(props) {
                             <Button type="submit" variant="contained" color="primary" className={classes.submitButton}>Submit</Button>
                         </form>
                 }
+                <Link component="button" onClick={()=>{setTimeout(() => history.push("/termsAndConditions") , 700);}}>
+                    <Typography >Terms And Conditions</Typography>
+                </Link>
             </Container>
         </>:null
     )

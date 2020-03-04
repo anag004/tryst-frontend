@@ -91,7 +91,7 @@ const appBarStyle = makeStyles({
 
 function NavBar(props) {
     const { threshold, disableOpacity, ...others } = props;
-    const largeScreen = useMediaQuery('(min-width:850px)');
+    const largeScreen = useMediaQuery('(min-width:950px)');
     const [scrollPosition, setScrollPosition] = React.useState(null);
 
     const handleScroll = (event) => {
@@ -151,6 +151,9 @@ function NavBar(props) {
                                         <Link to="/about" className={classes.link}>
                                             <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>About</Typography></NavBarButton>
                                         </Link>
+                                        <a href="https://drive.google.com/uc?export=download&id=1Nxf00Q0lTjFFycx3DNtO1L8j0j90_euD" download target="_blank" className={classes.link}>
+                                            <NavBarButton><Typography style={{fontFamily:['Josefin Sans','sans-serif'].join(','),fontSize:"17px"}}>Schedule</Typography></NavBarButton>
+                                        </a>
                                     </React.Fragment>
                                 )
                                 : <NavBarMenuButton onClick={toggleDrawer}/>

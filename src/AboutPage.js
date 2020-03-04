@@ -4,7 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Typography from '@material-ui/core/Typography';
 import Fade from '@material-ui/core/Fade';
 import MetaTags from 'react-meta-tags'
-
+import { Link } from "react-router-dom";
 const useStyles = makeStyles((theme) => ({
     video: {
         margin: "auto", 
@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
 
 function AboutPage(props) {
     const classes = useStyles();
-
     return (
         <div>
             <MetaTags>
@@ -48,6 +47,9 @@ function AboutPage(props) {
                 </div>
             </Fade>
             <br/>
+            <Link to="/termsAndConditions" >
+                <Typography className={classes.bodyText} style={{fontFamily:['Montserrat','sans-serif'].join(',')}} variant="h6" >Terms And Conditions</Typography>
+            </Link>
             <NavBar threshold={10} backgroundColor="#192841" disableOpacity={true}/>
             <div
                 className={classes.video}
@@ -73,7 +75,9 @@ function AboutPage(props) {
                     frameBorder="0"
                     allowFullScreen
                 />
-                </div>
+            </div>
+            {/* <Link  onClick={()=>{setTimeout(() => history.push("/termsAndConditions") , 700);}}> */}
+            
         </div>
     )
 } 
