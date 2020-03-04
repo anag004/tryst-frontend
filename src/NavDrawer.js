@@ -45,7 +45,7 @@ function NavDrawer(props) {
             role="presentation"
         >
             <List>
-                {[ ['Events', '/events'],['Exhibitions','/exhibitions'],['Guest Lectures','/guestLectures'],['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors'], ['About', '/about']].map((text) => (
+                {[ ['Events', '/events'],['Exhibitions','/exhibitions'],['Guest Lectures','/guestLectures'],['Lodging', '/lodging'], ['Team', '/team'], ['Sponsors', '/sponsors'], ['About', '/about'],['Schedule','https://drive.google.com/uc?export=download&id=1Nxf00Q0lTjFFycx3DNtO1L8j0j90_euD']].map((text) => (
                     text[0] == "Events"
                     ? 
                         <React.Fragment>
@@ -71,7 +71,7 @@ function NavDrawer(props) {
                             </Collapse>
                         </React.Fragment>
                     : 
-                        <Link className={classes.link} to={text[1]} onClick={toggleDrawer}>
+                        <a className={classes.link} href={text[1]} onClick={toggleDrawer}>
                             <ListItem button key={text[0]}>
                                 <ListItemText 
                                     primary={text[0]} 
@@ -79,7 +79,7 @@ function NavDrawer(props) {
                                     primaryTypographyProps={{style: {fontFamily:['Josefin Sans','sans-serif'].join(','),fontWeight: 'bold'}}}
                                 />
                             </ListItem>
-                        </Link>    
+                        </a>    
                 ))}
             </List>
         </div>
