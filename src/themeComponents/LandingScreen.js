@@ -142,7 +142,7 @@ class LandingScreen extends React.Component {
                     </Typography>
 
                     <Typography variant="body1">
-This decision has been taken in light of the present circumstances in India (increasing number of cases of people getting affected by coronavirus) and keeping in mind the health concerns which have been expressed by multiple registered participants, team members, Dean and Health Experts. Since the Government has ordered to avoid mass gatherings, we would be following their guidelines to avoid the risk of Coronavirus spreading.
+This decision has been taken due to the increasing number of confirmed cases of Covid-19 (Coronavirus) infection in India, and particularly in the Delhi NCR region. Keeping in mind about the health concerns of the participants, team members and government orders to avoid mass gatherings, we would be following their guidelines to avoid the risk of spreading the disease.
 
 We appreciate your interest and we promise to host it again as soon as possible. Stay tuned for further updates. <br></br>
     <b>#We're Not Done Yet #Tryst2020 #Staysafe</b>
