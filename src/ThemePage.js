@@ -120,7 +120,7 @@ class ThemePage extends React.Component {
                         imageID="1"
                         controller={this.controller}
                         topPosition="45%"
-                        leftPosition="5%"
+                        leftPosition="20%"
                     />
                 </div>
                 <div
